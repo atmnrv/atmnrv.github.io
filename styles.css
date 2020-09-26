@@ -388,6 +388,7 @@ ol li:before {
     font-size: 1.10rem;
     position: absolute;
     margin-left: -2.5rem;
+    line-height: 1.3rem;   /* custom */
 }
 
 ul li:before {
