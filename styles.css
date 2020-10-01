@@ -709,8 +709,8 @@ caps {
 dops, sops { display: initial; }
 /* double chevron : dolly */
 dopla { margin-left: -0.598em; }        /* ¶ */
-dops { margin-right: 0.606em; }
-dopl { margin-left: -0.606em; }
+dops { margin-right: 0.66em; }    /* 0.606em; */
+dopl { margin-left: -0.66em; }  /* -0.606em; */
 /* chevron simple : dolly */
 sopla { margin-left: -0.598em; }        /* ¶ */
 sops { margin-right: 0.37em; }
