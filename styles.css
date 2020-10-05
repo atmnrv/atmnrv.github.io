@@ -57,8 +57,9 @@ titre {
 titre.court {
     font-family: inherit;
     font-size: 170%; text-transform: inherit;
+    letter-spacing: normal; /*because of titre letter-spacing: 0.1em*/
     font-style: italic;
-    padding-top: 0.1em;
+    padding-top: 0.4em; /*0.1em;*/
     padding-bottom: 0.15em;
 }
 
@@ -709,7 +710,7 @@ caps {
 
 dops, sops { display: initial; }
 /* double chevron : dolly */
-dopla { margin-left: -0.598em; }        /* ¶ */
+dopla { margin-left: -0.66em; }        /* ¶ *//*-0.598em;*/
 dops { margin-right: 0.66em; }    /* 0.606em; */
 dopl { margin-left: -0.66em; }  /* -0.606em; */
 /* chevron simple : dolly */
