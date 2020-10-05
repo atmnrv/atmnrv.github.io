@@ -59,7 +59,8 @@ titre.court {
     font-size: 170%; text-transform: inherit;
     letter-spacing: normal; /*because of titre letter-spacing: 0.1em*/
     font-style: italic;
-    padding-top: 0.4em; /*0.1em;*/
+    line-height: 1.33; /*addendum*/
+    padding-top: 0.1em; /*0.1em;*/
     padding-bottom: 0.15em;
 }
 
