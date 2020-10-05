@@ -44,7 +44,7 @@ titre {
     display: block;
     font-family: libesans-semcon; font-weight: 400; letter-spacing: 0.1em; /* "advocate-c41" */
     font-size: 2.3rem;
-    text-transform: uppercase;
+    text-transform: none; /*uppercase;*/
     font-style: normal;
     line-height: 1.1;
     margin-top: 1rem;
@@ -417,6 +417,7 @@ ul.children li {
 ul.children li:before {
     margin-left: -2em;
     padding-right: 1.5em;
+    font-weight: bold; /*custom*/
     position: static;              /* because they're in columns */
 }
 
