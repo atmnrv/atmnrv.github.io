@@ -144,7 +144,7 @@ groupe-titre, aside {
     aside p {                        /* custom */
     background: #fefefe;
     padding: 0.3rem 0.5rem;
-    width: 90%;
+    width: 100%;   /*width: 90%;*/
     border: 1px solid #ccc;
     border-left: 3px solid #ccc;
     }
