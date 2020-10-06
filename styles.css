@@ -690,6 +690,12 @@ aside em {
     letter-spacing: 0px;
 }
 
+run-in {
+text-transform: lowercase;
+padding-right: 0.4em;
+font-family: "concourse-c4";
+}
+
 strong {
     font-weight: bolder;
 }
