@@ -730,21 +730,3 @@ dopsen { margin-right:  ; }
 doplen { margin-left:   ; }
 sopsen { margin-right:  ; }
 soplen { margin-left:   ; }
-
-
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.Rtable-cell--alignTop,
-.Rtable-cell--alignMiddle,
-.Rtable-cell--alignBottom { display: flex; }
-
-.Rtable-cell--alignTop { align-items: flex-start; }
-.Rtable-cell--alignMiddle { align-items: center; }
-.Rtable-cell--alignBottom { align-items: flex-end; }
-
-.Rtable-cell--alignLeft { text-align: left; }
-.Rtable-cell--alignCenter { text-align: center; }
-.Rtable-cell--alignRight { text-align: right; }
