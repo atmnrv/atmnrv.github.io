@@ -206,7 +206,7 @@ p, li {
 
     font-family: dolly-caps;
     display: block;
-    font-weight: bolder;
+    font-weight: bold; /*bolder;*/
     margin-bottom: 0.8rem;
 }
 
