@@ -711,7 +711,10 @@ caps {
 @media all and (max-width:520px) {
   .nobr br { display: none;} }
 
-
+@media all and (max-width:520px) {
+  .desktop-only {display: none} }
+@media all and (min-width:521px) {
+  .mobile-only {display: none} }
 
 /*   g u i l l e m e t   */
 
