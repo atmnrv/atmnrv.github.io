@@ -9,138 +9,134 @@
   <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
   <link rel="stylesheet" type="text/css" media="all" href="fonts.css" />
   <script type="text/javascript" src="js/functions.js"></script>
+  <style type="text/css">
+
+  div#content { padding-top: 0; padding-bottom: 0; }
+  div#content { margin-left: 13.5rem; }
+  .mobile-only { display: none; }
+
+  @media all and (max-width:520px) {
+    div#content { margin: 1.5rem; margin-top: 0; padding: 0; }
+      .mobile-only { display: block; }
+  }
+  #front-cover {
+      position: absolute;
+      top: -5rem;
+      left : 2rem;
+      font-family: advocate-c41;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      line-height: 120%;
+      mix-blend-mode: darken;
+  }
+
+  #front-cover-inner {
+      position: fixed;
+  }
+
+  @media all and (max-width:520px) {
+      #front-cover { display: none; }
+  }
+
+  #front-cover p { margin-bottom: 0.5rem;}
+  a:after { content: none; }
+
+  h1.toc-topic {
+  font-size: 110%;
+  font-style: normal;
+  font-weight: bolder;
+  }
+
+  h1.toc-topic a {
+  display: inline-block;
+  width: 100%;
+  }
+
+  h1.toc-topic + h1.toc-topic {
+  margin-top: 1.25rem;
+  }
+
+  ul.toc {
+  font-size: 105%;
+  column-count: 2;
+  column-gap: 2em;
+
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  }
+
+  ul.toc + h1.toc-topic {
+  margin-top: .75rem; /* 1.75rem; */
+  }
+
+  @media all and (max-width:520px) {
+  ul.toc {
+  column-count: 1;
+  column-gap: 2em;
+
+  font-size: 120%;
+  }
+  }
+
+  ul.toc li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+  list-style-type: none;
+  }
+
+  ul.toc li:before {
+  content: none;
+  }
+
+  .toc li a{
+  display: block;
+  }
+
+  .toc:after {
+  content: none;
+  }
+
+  #toc-marker:hover {
+  border-radius: inherit; }
+
+  a#toc-marker:after {
+  content: none;
+  }
+
+  #intro {margin-bottom: 2rem;}
+
+  a.default:after {
+      position: relative;
+      content: "\FEFF°";
+      margin-left: 0.10em;
+      font-size: 90%;
+      top: -0.10em;
+      color: #933;
+      font-feature-settings: "caps";
+      font-variant-numeric: normal;
+  }
+
+  a.enfr:hover {
+      background: none}
+  </style>
 
   <title>CV</title>
 </head>
 <body id="body">
 
 <div id="content">
-
 <div id="doc">
-<style type="text/css">
-
-div#content { padding-top: 0; padding-bottom: 0; }
-div#content { margin-left: 13.5rem; }
-.mobile-only { display: none; }
-
-@media all and (max-width:520px) {
-  div#content { margin: 1.5rem; margin-top: 0; padding: 0; }
-    .mobile-only { display: block; }
-}
-#front-cover {
-    position: absolute;
-    top: -5rem;
-    left : 2rem;
-    font-family: advocate-c41;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    line-height: 120%;
-    mix-blend-mode: darken;
-}
-
-#front-cover-inner {
-    position: fixed;
-}
-
-@media all and (max-width:520px) {
-    #front-cover { display: none; }
-}
-
-#front-cover p { margin-bottom: 0.5rem;}
-a:after { content: none; }
-
-h1.toc-topic {
-font-size: 110%;
-font-style: normal;
-font-weight: bolder;
-}
-
-h1.toc-topic a {
-display: inline-block;
-width: 100%;
-}
-
-h1.toc-topic + h1.toc-topic {
-margin-top: 1.25rem;
-}
-
-ul.toc {
-font-size: 105%;
-column-count: 2;
-column-gap: 2em;
-
-margin-left: 0.5rem;
-margin-top: 0.5rem;
-margin-bottom: 1rem;
-}
-
-ul.toc + h1.toc-topic {
-margin-top: .75rem; /* 1.75rem; */
-}
-
-@media all and (max-width:520px) {
-ul.toc {
-column-count: 1;
-column-gap: 2em;
-
-font-size: 120%;
-}
-}
-
-ul.toc li {
-margin: 0;
-padding: 0;
-margin-bottom: 0.6em;
-line-height: 1.2;
-list-style-type: none;
-}
-
-ul.toc li:before {
-content: none;
-}
-
-.toc li a{
-display: block;
-}
-
-.toc:after {
-content: none;
-}
-
-#toc-marker:hover {
-border-radius: inherit; }
-
-a#toc-marker:after {
-content: none;
-}
-
-#intro {margin-bottom: 2rem;}
-
-a.default:after {
-    position: relative;
-    content: "\FEFF°";
-    margin-left: 0.10em;
-    font-size: 90%;
-    top: -0.10em;
-    color: #933;
-    font-feature-settings: "caps";
-    font-variant-numeric: normal;
-}
-
-a.enfr:hover {
-    background: none}
-</style>
-
   <!--<p class="mobile-only" style="font-family: libesans-semcon; font-weight: 400; letter-spacing: .16rem; text-transform: uppercase; font-size: 1.1rem; margin-top: 0.5rem; margin-bottom: 0.5rem; line-height: 1;"><a href="how-to-pay-for-this-book.html">le fruit dans la bouteille</span></a></p>-->
-  <aside class="desktop-only"><p style="position: relative; top: 1.4rem; left: ; font-family: scalasans-caps; text-transform: lowercase; text-align: center; font-size: 105%"><span style="color: #bbbbbb"><a href="en/index.html" class="enfr">en</a><span style="font-size: 55%">&nbsp;</span>|</span><span style="font-size: 55%">&nbsp;</span>fr</p></aside>
   <!--<p style="border-top:solid black 0.35rem; background-color: black; color: #667; font-family: scalasans-caps; text-transform: lowercase; text-align: center">en / fr</p> -->
+  <aside class="desktop-only"><p style="position: relative; top: 1.4rem; left: ; font-family: scalasans-caps; text-transform: lowercase; text-align: center; font-size: 105%"><span style="color: #bbbbbb"><a href="en/index.html" class="enfr">en</a><span style="font-size: 55%">&nbsp;</span>|</span><span style="font-size: 55%">&nbsp;</span>fr</p></aside>
   <p class="mobile-only" style="margin-bottom: 0rem; position: relative; down: 1.4rem; left: ; font-family: scalasans-caps; text-transform: lowercase; text-align: left; font-size: 105%; color: #bbbbbb"><a href="en/index.html" class="enfr">en</a><span style="font-size: 55%">&nbsp;</span>|<span style="font-size: 55%">&nbsp;</span><span style="color: #667">fr</p>
   <p id="toc-marker" name="toc" style="border-top:solid black 0.35rem"></p>
-
   <p>La tra&shy;di&shy;tion veut que l’on con&shy;struise une chaise com&shy;me on con&shy;struit une ca&shy;thé&shy;drale, c’est-à-dire en soi&shy;gnant toute par&shy;tie qui ne se voit pas exac&shy;tement aus&shy;si par&shy;fai&shy;te&shy;ment que ce qu’on voit. Je se&shy;rais bien in&shy;ca&shy;pa&shy;ble de dire com&shy;ment éri&shy;ger une chaise&nbsp;; mais pour ce qui est de mon ouv&shy;rage, le prin&shy;cipe des ca&shy;thé&shy;drales est respecté.</p>
   <p>Cet ouvrage est le pro&shy;lon&shy;ge&shy;ment de mon tra&shy;vail ty&shy;po&shy;gra&shy;phi&shy;que. Une ex&shy;pé&shy;ri&shy;ence dont l’am&shy;bi&shy;tion est de pro&shy;po&shy;ser à l’écran la qua&shy;lité de lec&shy;ture <em>a mi&shy;ni&shy;ma</em> de mon ca&shy;ta&shy;logue imprimé.</p>
   <p>J’ai réu&shy;ni à l’oc&shy;ca&shy;sion quel&shy;ques pièces dans <a href="introduction.html" class="default">un en&shy;sem&shy;ble court</a> et pro&shy;pice à la lec&shy;ture. En&shy;fin, pour ceux qui pré&shy;fè&shy;rent les ima&shy;ges, j’ai pris soin d’in&shy;clure un cha&shy;pitre <a href="beauxarts.html" class="xref">beaux-arts</a>, qui don&shy;ne&shy;ra un aper&shy;çu hors champ ty&shy;po&shy;gra&shy;phi&shy;que de mon tra&shy;vail. C’est le beau geste.</p>
-
   <h1 class="toc-topic"><a href="introduction.html" class="toc">Introduction</a></h1>
   <h1 class="toc-topic"><a href="typographie.html" class="toc">Typographie</a></h1>
     <ul class="toc" style="column-count: 1; column-gap: 2em;">
