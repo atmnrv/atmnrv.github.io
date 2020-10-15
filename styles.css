@@ -729,7 +729,7 @@ sops { margin-right: 0.37em; }
 sopl { margin-left: -0.37em; }
 /* à l'anglaise : dolly */
 dopsen, sopsen { display: initial; }
-dopsen { margin-right:  ; }
-doplen { margin-left:   ; }
+dopsen { margin-right: 0.41em; }
+doplen { margin-left: -0.41em; }
 sopsen { margin-right:  ; }
 soplen { margin-left:   ; }
