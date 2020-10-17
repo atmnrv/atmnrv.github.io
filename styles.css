@@ -733,3 +733,78 @@ dopsen { margin-right: 0.41em; }
 doplen { margin-left: -0.41em; }
 sopsen { margin-right:  ; }
 soplen { margin-left:   ; }
+
+
+/*   C H E C K B O X   */
+
+/* The container */
+.checkcon {
+  display: block;
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: ;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkcon input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  height: 1.2vh;
+  width: 1.2vh;
+  border: 0.05rem solid black;
+}
+/* On mouse-over, add a grey background color */
+.checkcon:hover input ~ .checkmark {
+  background-color: ;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkcon input:checked ~ .checkmark {
+  background-color: #ffffff;
+  border: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkcon input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkcon .checkmark:after {
+  left: -0.3rem;
+  top: -0.6rem;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: ;/*0 1px 1px 0;*/
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  content:"☚";
+}
+
+.strikethrough:checked + span{
+  text-decoration:line-through
+}
