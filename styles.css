@@ -834,7 +834,7 @@ aside.segment {
 
 @media all and (max-width:520px) {
     .segment p {
-    display: ;
+    display: none;
     font-style: italic;
     font-size: 95%;
     padding: 0;
@@ -859,7 +859,8 @@ label.margin-toggle:not(.sidenote-number) {
     left: 1rem;
     clear: both;
     width: 95%;/*95%;*/
-    margin: 0.7rem 2.5rem 0.7rem 0.5rem;     /*margin: 1rem 2.5%;*/
+    margin: 0.7rem 0rem 0.7rem 0.5rem;     /*margin: 1rem 2.5%;*/
+    padding-right: 2.5rem;
     vertical-align: baseline;
     position: relative;
 }
