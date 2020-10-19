@@ -823,7 +823,8 @@ aside.segment {
 .segment p {
     color: #000000;
     font-family: dolly;
-    font-size: 90%;
+    font-style: italic;
+    font-size: 85%;
 }
 
 @media all and (min-width:521px) {
@@ -836,7 +837,7 @@ aside.segment {
     .segment p {
     display: none;
     font-style: italic;
-    font-size: 95%;
+    font-size: 80%;
     padding: 0;
     width: 100%;   /*width: 90%;*/
     border: none;
