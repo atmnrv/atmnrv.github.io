@@ -310,7 +310,7 @@ a:active { color: #777; }
 
 a:after {
     position: relative;
-    content: "\FEFF°";
+    content: "\FEFF°"; /*Unicode Character 'ZERO WIDTH NO-BREAK SPACE' (U+FEFF)*/
     margin-left: 0.10em;
     font-size: 90%;
     top: -0.10em;
@@ -318,6 +318,8 @@ a:after {
     font-feature-settings: "caps";
     font-variant-numeric: normal;
 }
+
+a.none:after { content: none; } /* addendum */
 
 div > a:after, a.xref:after,
 a.sample-document:after, p.image a:after {  /* mod */
@@ -807,4 +809,75 @@ soplen { margin-left:   ; }
 
 .strikethrough:checked + span{
   text-decoration:line-through
+}
+
+
+/*   d e c l i n e   a n d   f a l l   o f   t h e   */
+
+/* sujet du paragraphe */
+
+aside.segment {
+  margin-bottom: 0.35rem;
+}
+
+.segment p {
+    color: #000000;
+    font-family: dolly;
+    font-size: 90%;
+}
+
+@media all and (min-width:521px) {
+    .segment p {
+    padding-top: 0.07em;
+    }
+}
+
+@media all and (max-width:520px) {
+    .segment p {
+    display: ;
+    font-style: italic;
+    font-size: 95%;
+    padding: 0;
+    width: 100%;   /*width: 90%;*/
+    border: none;
+    border-left: none;
+    }
+}
+
+/* notes marginales internes */
+
+input.margin-toggle {
+    display: none;
+}
+label.margin-toggle:not(.sidenote-number) {
+    display: inline; }
+    .marginnote {
+    display: none; }
+    .margin-toggle:checked + .marginnote {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;/*95%;*/
+    margin: 0.7rem 2.5rem 0.7rem 0.5rem;     /*margin: 1rem 2.5%;*/
+    vertical-align: baseline;
+    position: relative;
+}
+label {
+    cursor: pointer;
+}
+label.margin-toggle:after {
+    position: relative;
+    content: "\FEFF°";
+    margin-left: -0.1em;
+    font-size: 90%;
+    top: -0.10em;
+    color: #933;
+    font-feature-settings: "caps";
+    font-variant-numeric: normal;
+}
+
+.marginnote {
+    font-family: scalasans;
+    font-size: 95%;
 }
