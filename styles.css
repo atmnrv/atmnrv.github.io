@@ -310,7 +310,7 @@ a:active { color: #777; }
 
 a:after {
     position: relative;
-    content: "\FEFF°"; /*Unicode Character 'ZERO WIDTH NO-BREAK SPACE' (U+FEFF)*/
+    content: "\FEFF°"; /*Unicode Character 'ZERO WIDTH NO-BREAK SPACE' (U+FEFF)  &#65279; */
     margin-left: 0.10em;
     font-size: 90%;
     top: -0.10em;
