@@ -857,11 +857,12 @@ label.margin-toggle:not(.sidenote-number) {
     .margin-toggle:checked + .marginnote {
     display: block;
     float: left;
-    left: 1rem;
+    left: ;
     clear: both;
     width: 95%;/*95%;*/
-    margin: 0.7rem 0rem 0.7rem 0.5rem;     /*margin: 1rem 2.5%;*/
-    padding-right: 2.5rem;
+    margin: 0.7rem 4rem 0.7rem 0rem;     /*margin: 1rem 2.5%;*/
+    padding-left: 2.5rem;
+    padding-right: 2rem;
     vertical-align: baseline;
     position: relative;
 }
