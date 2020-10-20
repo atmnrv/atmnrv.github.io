@@ -888,6 +888,7 @@ label.margin-toggle:after {
     color: #933;
     font-feature-settings: "caps";
     font-variant-numeric: normal;
+    overflow-x:  visible;
 }
 
 .marginnote {
