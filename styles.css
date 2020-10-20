@@ -865,9 +865,20 @@ label.margin-toggle:not(.sidenote-number) {
     vertical-align: baseline;
     position: relative;
 }
+
 label {
     cursor: pointer;
 }
+
+label:hover {
+    background: #fbf3f3; /* #fbf3f3; */
+    transition-property: background;
+    transition-duration: 0.2s;
+
+    border-radius: 8px;
+}
+label:active { color: #777; }
+
 label.margin-toggle:after {
     position: relative;
     content: "\FEFF°";
@@ -881,5 +892,7 @@ label.margin-toggle:after {
 
 .marginnote {
     font-family: scalasans;
+    text-align: justify;
     font-size: 95%;
+    line-height: 1.26rem;
 }
