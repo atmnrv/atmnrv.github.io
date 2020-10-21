@@ -862,7 +862,8 @@ label.margin-toggle:not(.sidenote-number) {
     width: 95%;/*95%;*/
     margin: 0.7rem 4rem 0.7rem 0rem;     /*margin: 1rem 2.5%;*/
     padding-left: 2.5rem;
-    padding-right: 2rem;
+    padding-right: 1.5rem;
+    /*padding-right: 2rem;*/
     vertical-align: baseline;
     position: relative;
 }
@@ -895,6 +896,9 @@ label.margin-toggle:after {
 .marginnote {
     font-family: scalasans;
     text-align: justify;
+    text-justify: inter-word;
     font-size: 95%;
     line-height: 1.26rem;
+    word-spacing: 0em; /*0.05em;*/
+    letter-spacing: ;
 }
