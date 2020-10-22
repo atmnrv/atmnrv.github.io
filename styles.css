@@ -861,8 +861,8 @@ label.margin-toggle:not(.sidenote-number) {
     clear: both;
     width: 95%;/*95%;*/
     margin: 0.7rem 4rem 0.7rem 0rem;     /*margin: 1rem 2.5%;*/
-    padding-left: 2.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2.5rem; /*2.5rem;*/
+    padding-right: 1rem; /*1.5rem;*/
     /*padding-right: 2rem;*/
     vertical-align: baseline;
     position: relative;
@@ -899,6 +899,6 @@ label.margin-toggle:after {
     text-justify: inter-word;
     font-size: 95%;
     line-height: 1.26rem;
-    word-spacing: 0em; /*0.05em;*/
+    word-spacing: -0.05em; /*0.05em;*/
     letter-spacing: ;
 }
