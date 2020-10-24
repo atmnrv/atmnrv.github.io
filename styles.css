@@ -535,7 +535,7 @@ a.nav:after {
 }
 
 #top:hover {
-    /* border-top-color: #fcf6f6;*/
+    border-top-color: #fcf6f6;
     cursor: default;
 }
 
