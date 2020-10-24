@@ -528,6 +528,31 @@ a.nav:after {
     position: fixed;
 }
 
+/* addendum */
+#top {
+    top: 0;
+    border-top: 1rem solid white;
+}
+
+#top:hover {
+    /* border-top-color: #fcf6f6;*/
+    cursor: default;
+}
+
+.top {
+    margin-top: -3rem;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    z-index: -1000;
+    transition-property: border-color;
+    transition-duration: 0.2s;
+
+    border: solid 0px grey;
+    position: absolute;
+}
 
 /*   T A B L E   D E   N A V I G A T I O N   ( iter_navigator)   */
 
