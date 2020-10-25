@@ -9,7 +9,65 @@
   <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
   <link rel="stylesheet" type="text/css" media="all" href="fonts.css" />
   <script type="text/javascript" src="js/functions.js"></script>
-  <style>.toc:after {content: none;} ul.children li:before { content: none; } ul.children li { margin-left: 0.5rem; } </style>
+  <style>
+  h1.toc-topic {
+  font-size: 110%;
+  font-style: normal;
+  font-weight: bolder;
+  }
+
+  h1.toc-topic a {
+  display: inline-block;
+  width: 100%;
+  }
+
+  h1.toc-topic + h1.toc-topic {
+  margin-top: 1.25rem;
+  }
+
+  ul.toc {
+  font-size: 105%;
+  column-count: 2;
+  column-gap: 2em;
+
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  }
+
+  ul.toc + h1.toc-topic {
+  margin-top: .75rem; /* 1.75rem; */
+  }
+
+  @media all and (max-width:520px) {
+      ul.toc {
+      column-count: 1;
+      column-gap: 2em;
+
+      font-size: 120%;
+      }
+  }
+
+  ul.toc li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+  list-style-type: none;
+  }
+
+  ul.toc li:before {
+  content: none;
+  }
+
+  .toc li a{
+  display: block;
+  }
+
+  .toc:after {
+  content: none;
+  }
+  </style>
 
   <title>Lectures | CV</title>
 </head>
@@ -21,11 +79,16 @@
   <titre></titre>
   <!-- <titre class="court" style="font-style: normal; font-weight: bold; font-size: 125%">Typographie</titre>-->
 
-  <p>Voici la section où je mes essais de compositions d’ouvrages écrits par d’autres—et bien souvent plus brillants que moi.</p>
-  <p>L’œil distrait ne percevra probablement pas les variations subtiles entre les propositions. Aucune sélection thématique ici. L’éventail des textes va d’économie politique, théâtre, poésie, roman, histoire… Chaque extrait exploite une mise-en-page </p>
-  <p>Je ne saurais que recommander de lire et découvrir les ouvrages présentés ici.</p>
+  <p>Cet ouvrage est le pro­­lon­­ge­­ment de mon tra­vail ty­­po­­gra­­phi­que. Une ex­­pé­ri­ence dont l’am­­bi­­tion est de pro­­po­­ser à l’écran la qua­­lité de lec­­ture <em>a mi­­ni­­ma</em> de mon ca­­ta­­logue imprimé.</p>
+  <p>Voici l’espace où je pro­pose quel­ques so­lu­tions de mises-en-page (<em>nota&nbsp;bene</em> le sin­gu­lier) pour la lec­ture sur écran. Cha­que pro­po­si­tion prend en compte les be­soins du lec­teur selon le for­mat du sup­port et le genre du texte.</p>
+  <p>La maquette est une étape es­sen­tielle dans la fa­bri­ca­tion d’un livre. Une mau­vaise ma­quette ne brouille pas seule­ment le mes­sage, elle nuit à l’ex­pé­rience du lec­teur. Or, la mise-en-pages d’un ou­vrage est la pré­ro­ga­tive de l’édi­teur. Ce n’est pas pour dire que le tra­vail est mau­vais ; l’édi­tion tra­di­tion­nelle est en­core le mo­dèle de ré­fé­rence en ma­tière de com­po­si­tion, (elle ne le sera peut-être pas tou­jours), mais les dé­ci­sions sont prises pour des rai­sons pra­tiques—éco­no­miques, mais pas seule­ment—et dé­pas­sent bien sou­vent la vo­lonté des auteurs.
+
+  <p>L’édition nu­mé­rique est une op­por­tu­ni­té pour les au­teurs de s’ap­pro­prier la com­po­sante vi­suelle de leurs textes.</p>
+
   <div class="gap" style="height:1em"></div>
-    <ul class="children" style="font-size: 100%">
+
+  <h1 class="toc-topic">Lectures</h1>
+    <ul class="toc" style="column-count: 1; column-gap: 2em;">
     <li><a href="gibbon.html" class="toc"><op>The history of the decline and fall of the Roman Empire</op></a></li>
     <li><a href="musil.html" class="toc"><op>Der Mann ohne Eigenschaften</op></a></li>
     <li><a href="bastiat.html" class="toc"><op>Ce qu’on voit et ce qu’on ne voit pas</op></a></li>
@@ -35,19 +98,21 @@
     <li><op style="color: #bbbbbb">Trattato di sociologia generale</op></li>
     <li><a href="carbonara.html" class="toc"><op>Ricetta degli spaghetti alla carbonara</op></a></li>
     </ul>
+
   <div class="gap" style="height:1em"></div><ul class="children"></ul>
-  </div>
+
+</div>
 
 
 
 
 <a class="nav" href="lectureoptimale.html"><div id="prev" class="side"></div></a>
-<a class="nav" href="bastiat.html"><div id="next" class="side"></div></a>
+<a class="nav" href="gibbon.html"><div id="next" class="side"></div></a>
 
 <div id="navigator" class=""><div id="navtable">
 <div><a class="box-link" href="lectureoptimale.html"><span class="arrow">←</span>&nbsp;la lecture en basse résolution</a></div>
 <div class="center"><a class="box-link" href=".">table</a></div>
-<div><a class="box-link" href="bastiat.html">la vitre cassée&nbsp;<span class="arrow">→</span></a></div></div></div>
+<div><a class="box-link" href="gibbon.html">the decline and fall of <br>the roman empire&nbsp;<span class="arrow">→</span></a></div></div></div>
 
 
 </body>

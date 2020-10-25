@@ -673,6 +673,7 @@ a.nav:after {
 #navtable li:first-child .box-link {
     padding-right: 1em;
 }
+
 #navtable li:last-child .box-link {
     padding-left: 1em;
 }
