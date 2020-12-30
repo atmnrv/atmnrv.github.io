@@ -338,7 +338,7 @@ image-caption {
 img {                            /*  original est img, et non p img */
     width: 100%;
     filter: grayscale(100%);
-    filter: gray;
+    /*filter: gray;*/
     transition: all 300ms ease;
 }
 
@@ -346,7 +346,7 @@ img:hover {                      /* idem */
     background: none;
     outline: 0px solid gray;
     filter: none;
-    cursor: default;
+    /*cursor: default;*/
 }
 
 aside img {
