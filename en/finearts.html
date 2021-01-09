@@ -10,22 +10,25 @@
   <link rel="stylesheet" type="text/css" media="all" href="../fonts.css" />
   <script type="text/javascript" src="../js/functions.js"></script>
 
+  <link href="../js/zooom.css" rel="stylesheet">
+  <script type="text/javascript" src="../js/zooom.js"></script>
+
   <title>Fine Arts | CV</title>
 </head>
 <body id="body">
 
 <div id="content">
   <groupe-titre id="cena"><titre>Ultima cena <span style="font-size: 80%; line-height: 1.25; font-weight: normal; font-style: italic">(extract)</span></titre><sous-titre>Studies for a lithographic composition<span style="font-size: 55%">&nbsp;</span>; <br>mixed media, 120&nbsp;×&nbsp;120<span style="font-size: 55%">&nbsp;</span>mm.</sous-titre></groupe-titre>
-  <p class="image"><a href="../images/cena.jpg" class="sample-document"><img src="../images/cena.jpg"/></a></p>
+  <p class="image"><img src="../images/cena.jpg"/></p>
   <div class="gap" style="height:6em"></div><ul class="children"></ul>
-  <groupe-titre id="estampes"><titre class="nobr">Une vie de baleine<br> <span style="font-size: 80%; line-height: 1.25; font-weight: normal; font-style: italic">(extract)</span></titre><sous-titre>Set of glass prints<span style="font-size: 55%">&nbsp;</span> <br>edited on Smyth-sewn Ingres 80<span style="font-size: 55%">&nbsp;</span>g, 121&nbsp;×&nbsp;174<span style="font-size: 55%">&nbsp;</span>mm.</sous-titre></groupe-titre>
-  <p class="image"><a href="../images/estampes.jpg" class="sample-document"><img src="../images/estampes.jpg"/></a></p>
+  <groupe-titre id="estampes"><titre class="nobr">Story of a sperm whale<br> <span style="font-size: 80%; line-height: 1.25; font-weight: normal; font-style: italic">(extract)</span></titre><sous-titre>Set of glass prints<span style="font-size: 55%">&nbsp;</span> <br>edited on Smyth-sewn Ingres 80<span style="font-size: 55%">&nbsp;</span>g, 121&nbsp;×&nbsp;174<span style="font-size: 55%">&nbsp;</span>mm.</sous-titre></groupe-titre>
+  <p class="image"><img src="../images/estampes.jpg"/></p>
   <div class="gap" style="height:6em"></div><ul class="children"></ul>
   <groupe-titre id="bistro"><titre>Bistro République <span style="font-size: 80%; line-height: 1.25; font-weight: normal; font-style: italic">(extract)</span></titre><sous-titre>Sketchbook<span style="font-size: 55%">&nbsp;</span>; <br>black pencil,<span class="nobr"><br></span> Japanese binding, 104&nbsp;×&nbsp;150<span style="font-size: 55%">&nbsp;</span>mm.</sous-titre></groupe-titre>
-  <p class="image"><a href="../images/bistro.jpg" class="sample-document"><img src="../images/bistro.jpg"/></a></p>
+  <p class="image"><img src="../images/bistro.jpg"/></p>
   <div class="gap" style="height:6em"></div><ul class="children"></ul>
   <groupe-titre id="abc"><titre>untitled <span style="font-size: 80%; line-height: 1.25; font-weight: normal; font-style: italic">(extract)</span></titre><sous-titre>Abecedarium sketchbook<span style="font-size: 55%">&nbsp;</span>; <br>black pen,<span class="nobr"></span> leporello, 95&nbsp;×&nbsp;148<span style="font-size: 55%">&nbsp;</span>mm.</sous-titre></groupe-titre>
-  <p class="image"><a href="../images/abc.jpg" class="sample-document"><img src="../images/abc.jpg"/></a></p>
+  <p class="image"><img src="../images/abc.jpg"/></p>
   <div class="gap" style="height:4em"></div><ul class="children"></ul>
   </div>
 
@@ -37,6 +40,15 @@
 <div class="center"><a class="box-link" href=".">table</a></div>
 <div><a class="box-link" href="../lectureminuscule.html">la lecture minuscule&nbsp;<span class="arrow">→</span></a></div></div></div>
 
-
+<script>
+  window.addEventListener('load', function () {
+    new Zooom({
+      zooomElement: 'img',
+      zooomWrap: 'zooom-wrap',
+      zooomImg: 'zooom-img',
+      zooomOverlay: 'zooom-overlay'
+    });
+  })
+</script>
 </body>
 </html>
