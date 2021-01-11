@@ -845,21 +845,26 @@ soplen { margin-left:   ; }
 /* mais au cas où : <label for="mn-blue-links" class="trumargin-toggle">&#8853;</label><input type="checkbox" id="mn-blue-links" class="trumargin-toggle"/><span class="trumarginnote">contenu de la note</span> */
 
 .trumarginnote {
-    display: block;
-    text-align: right;
-    float: left;
-    position: relative;
-    margin-right: -60%;
-    top: 0.15rem;
-    left: -9.479rem;
-    width: calc(2.5rem * 3);
-    font-variant-numeric: normal;
-
     font-family: dolly;
     font-style: italic;
     font-size: 85%;
     letter-spacing: 0.015em;
     color: #000000;
+
+    text-align: right;
+    display: block;
+    float: left;
+    position: relative;
+    margin-right: -60%;
+    margin-left: ; /*2.5rem;*/
+    margin-bottom: ;
+    top: 0.15rem;
+    left: -9.479rem;
+    width: calc(2.5rem * 3);
+    text-align: right;
+    list-style-type: none;
+    clear: both;
+    font-variant-numeric: normal;
 }
 
 @media all and (min-width:1200px) {
