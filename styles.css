@@ -332,7 +332,16 @@ a.sample-document:after, p.image a:after {  /* mod */
 image-caption {
     display: block;
     font-family: scalasans; /*"concourse-c4";*/
-    text-transform: lowercase;
+    /*text-transform: lowercase;*/
+
+    font-style: ;
+    font-size: 0.85rem;
+    line-height: 2; /*1.4*/
+    color: #667;
+    /*letter-spacing: 0.015em;*/
+    hyphens: none;
+    font-feature-settings: normal;
+
 }
 
 img {                            /*  original est img, et non p img */
@@ -938,7 +947,7 @@ label.margin-toggle:not(.sidenote-number) {
     clear: both;
     width: 95%;/*95%;*/
     margin: 0.7rem 4rem 0.7rem 0rem;     /*margin: 1rem 2.5%;*/
-    padding-left: 2.5rem; /*2.5rem;*/
+    padding-left: 2rem; /*2.5rem;*/
     padding-right: 1rem; /*1.5rem;*/
     /*padding-right: 2rem;*/
     vertical-align: baseline;
@@ -961,13 +970,13 @@ label:active { color: #777; }
 label.margin-toggle:after {
     position: relative;
     content: "\FEFF°";
-    margin-left: -0.1em;
+    margin-left: 0.10em;
     font-size: 90%;
     top: -0.10em;
     color: #933;
     font-feature-settings: "caps";
     font-variant-numeric: normal;
-    overflow-x:  visible;
+    /*overflow-x:  visible;*/
 }
 
 .marginnote {
