@@ -1,0 +1,242 @@
+/*   O N I   */
+
+#oni-a, #oni-the, .oni-the {font-family: oni;}
+
+#oni-a p+p, #oni-the p+p, #oni-a div, #oni-the div {
+    text-indent: 1rem;
+}
+#oni-a p, #oni-the p {
+    margin-bottom: 0rem;
+}
+#oni-a div, #oni-the div {
+    margin-top: 0.5rem;
+    font-size: 92%;
+}
+
+/*   c o l o n n e   g a u c h e   */
+
+#oni-a {
+    text-align: justify;
+    letter-spacing: ;
+    word-spacing: -0.06rem;
+    font-size: 69%;
+    hyphens: auto;
+}
+#oni-a:first-letter {
+    float: left;
+    font-size: 5em;
+    line-height: 0.2em;
+    padding-top: 0.48em;
+    padding-right: 0.16em;
+    padding-left: 0.26em;
+    padding-bottom: 0.27em;
+}
+
+@media all and (max-width: 520px) {
+    #oni-a {
+    font-size: 44%;
+    hyphens: auto;
+    }
+    #oni-a:first-letter {
+    float: left;
+    font-size: 5em;
+    line-height: 0.2em;
+    padding-top: 0.5em;
+    padding-right: 0.16em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    }
+}
+
+/*   c o l o n n e   d r o i t e   */
+
+#oni-the {
+    text-align: left;
+    font-size: 69%;
+    hyphens: auto;
+}
+.oni-the {
+    float: left;
+    font-size: 3.8em;
+    line-height: 0.2em;
+    padding-top: 0.6em;
+    padding-right: 0.12em;
+    padding-left: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+@media all and (max-width: 520px) {
+    #oni-the {
+    font-size: 44%;
+    hyphens: auto;
+    }
+    .oni-the {
+    float: left;
+    font-size: 3.8em;
+    line-height: 0.2em;
+    padding-top: 0.6em;
+    padding-right: 0.16em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    }
+}
+
+/*   O N I - m i n ot   */
+
+#oniminot-a, #oniminot-the, .oniminot-the {font-family: oni-minot;}
+
+#oniminot-a p+p, #oniminot-the p+p, #oniminot-a div, #oniminot-the div  {
+    text-indent: 1rem;
+}
+#oniminot-a p, #oniminot-the p {
+    margin-bottom: 0rem;
+}
+#oniminot-a div, #oniminot-the div {
+    margin-top: 0.5rem;
+    font-size: 92%;
+}
+@media all and (max-width: 520px) {
+    #oniminot {
+    margin-top: 2.26em;
+    }
+}
+
+/*   c o l o n n e   g a u c h e   */
+
+#oniminot-a {
+    text-align: justify;
+    letter-spacing: ;
+    word-spacing: -0.06rem;
+    font-size: 69%; /*52%;*/
+    hyphens: manual;
+}
+#oniminot-a:first-letter {
+    float: left;
+    font-size: 5em;
+    line-height: 0.2em;
+    padding-top: 0.44em;
+    padding-right: 0.16em;
+    padding-left: 0.16em;
+    padding-bottom: 0.1em;
+}
+
+@media all and (max-width: 520px) {
+    #oniminot-a {
+    font-size: 44%;
+    hyphens: manual;
+    }
+    #oniminot-a:first-letter {
+    float: left;
+    font-size: 5em;
+    line-height: 0.2em;
+    padding-top: 0.44em;
+    padding-right: 0.16em;
+    padding-left: 0.2em;
+    padding-bottom: 0.21em;
+    }
+}
+
+/*   c o l o n n e   d r o i t e   */
+
+#oniminot-the {
+    text-align: left;
+    font-size: 69%;
+    hyphens: auto;
+}
+.oniminot-the {
+    float: left;
+    font-size: 3.8em;
+    line-height: 0.2em;
+    padding-top: 0.6em;
+    padding-right: 0.12em;
+    padding-left: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+@media all and (max-width: 520px) {
+    #oniminot-the {
+    font-size: 44%;
+    hyphens: auto;
+    }
+    .oniminot-the {
+    float: left;
+    font-size: 3.8em;
+    line-height: 0.2em;
+    padding-top: 0.6em;
+    padding-right: 0.18em;
+    padding-left: 0.18em;
+    padding-bottom: 0.3em;
+    transform: translateY(0.15rem);
+    }
+}
+
+/*   d o u b l e   c o l o n n e   */
+
+* {
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.column {
+    flex: 50%;
+    padding: 1.2em;
+}
+@media screen and (max-width: 520px) {
+    .row {
+    flex-direction: row;
+    padding-left: ;
+    padding-right: ;
+    }
+    .column#oni-a {
+    padding-top: 1.2em;
+    padding-left: 2.4em;
+    padding-right: 1.2em;
+    padding-bottom: 1.2em;
+    }
+    .column#oni-the {
+    padding-top: 1.2em;
+    padding-left: 1.2em;
+    padding-right: 2.4em;
+    padding-bottom: 1.2em;
+    }
+    .column#oniminot-a {
+    padding-top: 1.2em;
+    padding-left: 2.4em;
+    padding-right: 1.2em;
+    padding-bottom: 1.2em;
+    }
+    .column#oniminot-the {
+    padding-top: 1.2em;
+    padding-left: 1.2em;
+    padding-right: 2.4em;
+    padding-bottom: 1.2em;
+    }
+}
+
+/* a n n e x e */
+
+aside.onia p {
+    vertical-align: +3em
+}
+aside.onia p:first-child {
+    margin-top: 0.5rem;
+}
+aside.onia p:last-child {
+    margin-top: -0.5rem;
+}
+.onia p img {
+    padding-top: none;
+    padding-left: 4rem;
+    padding-right: none;
+    padding-bottom: none;
+}
+@media all and (max-width:520px) {
+    aside.onia p:first-child { margin-top: 2rem; }
+    aside.onia p:last-child { margin-top: +0.5rem; }
+    .onia p img { padding-top: none; padding-left: 4rem; padding-right: 1rem; padding-bottom: none; }
+}
+.comp {
+    margin: 2em 4em;
+}

@@ -40,13 +40,28 @@ div#content {                       /* wraps both main and subnavigation */
     }
 }
 
+/*
+/*  titre {
+/*    display: block;
+/*    font-family: libesans-semcon; font-weight: 400; letter-spacing: 0.1em; /* "advocate-c41" */
+/*    font-size: 2.3rem;
+/*    text-transform: none; /*uppercase;*/
+/*    font-style: normal;
+/*    line-height: 1.1;
+/*    margin-top: 1rem;
+/*    margin-bottom: 2rem;
+/*    border-top: 1px solid #333;
+/*    padding-top: 0.02em;
+/*    hyphens: none;
+}*/
+
 titre {
     display: block;
-    font-family: libesans-semcon; font-weight: 400; letter-spacing: 0.1em; /* "advocate-c41" */
-    font-size: 2.3rem;
-    text-transform: none; /*uppercase;*/
-    font-style: normal;
-    line-height: 1.1;
+    font-family: din;          /* "advocate-c41" */
+    letter-spacing: 0.025em;
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 1.4;
     margin-top: 1rem;
     margin-bottom: 2rem;
     border-top: 1px solid #333;
@@ -945,10 +960,10 @@ label.margin-toggle:not(.sidenote-number) {
     float: left;
     left: ;
     clear: both;
-    width: 95%;/*95%;*/
-    margin: 0.7rem 4rem 0.7rem 0rem;     /*margin: 1rem 2.5%;*/
+    width: 84%;/*95%;*/
+    margin: 0.7rem 0rem 0.7rem 0rem;     /*margin: 1rem 2.5%;*/
     padding-left: 2rem; /*2.5rem;*/
-    padding-right: 1rem; /*1.5rem;*/
+    padding-right: 2.5rem; /*1.5rem;*/
     /*padding-right: 2rem;*/
     vertical-align: baseline;
     position: relative;
