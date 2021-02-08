@@ -197,7 +197,7 @@ groupe-titre, aside {
     text-align: left; }
 
     aside {                        /* custom */
-    background: #010101;
+    background: #1d1c1e;
     padding: 0.3rem 0.5rem;
     width: 95%; /*    width: 90%;*/
     border: 1px solid #fff894;
@@ -205,7 +205,7 @@ groupe-titre, aside {
     }
 
     aside p.image {         /* necessary?*/             /* custom */
-    background: #010101;
+    background: #1d1c1e;
     padding: 0.3rem 0.5rem;
     width: 90%;
     border: none;
