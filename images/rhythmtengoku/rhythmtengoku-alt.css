@@ -1170,7 +1170,7 @@ font-family: 'auto1';
 font-style: normal;
 font-weight: normal;
 text-rendering: optimizeLegibility;
-src: url('core/woffs/Auto1-Regular.woff') format('woff');
+src: url('../../core/woffs/Auto1-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -1178,14 +1178,14 @@ font-family: 'auto1';
 font-style: italic;
 font-weight: normal;
 text-rendering: optimizeLegibility;
-src: url('core/woffs/Auto1-Italic.woff') format('woff');
+src: url('../../core/woffs/Auto1-Italic.woff') format('woff');
 }
 @font-face {
 font-family: 'auto1-caps';
 font-style: normal;
 font-weight: bold;
 text-rendering: optimizeLegibility;
-src: url('core/woffs/Auto1-BoldSmCp.woff') format('woff');
+src: url('../../core/woffs/Auto1-BoldSmCp.woff') format('woff');
 }
 
 /* groupe-titre img*/
@@ -1229,7 +1229,7 @@ ruby { font-size: 75%; font-family: "Hiragino Sans W6","Helvetica Neue",Helvetic
 p.caveat {
     font-family: scalasans;
     margin-bottom: 2em;
-    text-align: ;
+    text-align: justify;
     font-style: italic;
 }
 lector:before { content: "caveat lector"; font-family: scalasans-caps; font-weight: bold; font-style: normal; line-height: 0; padding-right: 0.5rem;}
