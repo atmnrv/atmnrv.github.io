@@ -230,7 +230,6 @@ aside p {
     line-height: 1.4;
     color: #667;
     letter-spacing: 0.015em;
-    color: #fff894;
     hyphens: auto;
     font-feature-settings: normal;
 }
@@ -1017,8 +1016,8 @@ label.margin-toggle:not(.sidenote-number) {
     margin-bottom: 0.8rem;                     /*margin-bottom: 0.8rem;*/                                             /*1.5rem;*/
     padding: 0.52rem 1rem calc(1rem / 2) 1rem;
 
-    border-top: 1px solid #333; /*1px solid #ccc;*/
-    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;    /*1px solid #ccc;*/
+    border-bottom: 1px solid #333;  /*1px solid #ccc;*/
     vertical-align: baseline;
     position: relative;
 }
@@ -1057,7 +1056,7 @@ label.margin-toggle:after {
     line-height: ;
     word-spacing: -0.05em; /*0.05em;*/
     letter-spacing: ;
-    color: #fff894;
+    color: white;
 }
 
 /* Z O O O O O O O M */
@@ -1163,105 +1162,10 @@ romnum {
     text-transform: lowercase;
     font-family: dolly-caps; }
 
-/* RHYTHM TENGOKU */
-
-@font-face {
-font-family: 'auto1';
-font-style: normal;
-font-weight: normal;
-text-rendering: optimizeLegibility;
-src: url('../../core/woffs/Auto1-Regular.woff') format('woff');
-}
-
-@font-face {
-font-family: 'auto1';
-font-style: italic;
-font-weight: normal;
-text-rendering: optimizeLegibility;
-src: url('../../core/woffs/Auto1-Italic.woff') format('woff');
-}
-@font-face {
-font-family: 'auto1-caps';
-font-style: normal;
-font-weight: bold;
-text-rendering: optimizeLegibility;
-src: url('../../core/woffs/Auto1-BoldSmCp.woff') format('woff');
-}
-
-/* groupe-titre img*/
-
-    .row {
-        display: -ms-flexbox; /* IE10 */
-        display: flex;
-        -ms-flex-wrap: wrap; /* IE10 */
-        flex-wrap: wrap;
-        padding: ;
-        padding-left: 0;
-        margin-top: 1rem;
-        margin-bottom: 0.5em;
-    }
-    /* Create four equal columns that sits next to each other */
-    .column {
-        -ms-flex: 100%; /* IE10 */
-        flex: 100%;
-        max-width: 100%;
-        padding: ;
-    }
-    .column img {
-        margin-bottom: 1em;
-        vertical-align: middle;
-        width: 100%;
-    }
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width:520px) {
-        .column {
-            -ms-flex: 25%; /* IE10 */
-            flex: 25%;
-            max-width: 25%;
-        }
-        .column img {
-            margin-bottom: 0;
-        }
-    }
-
 ruby { font-size: 75%; font-family: "Hiragino Sans W6","Helvetica Neue",Helvetica,sans-serif;}
 
-p.caveat {
-    font-family: scalasans;
-    margin-bottom: 2em;
-    text-align: justify;
-    font-style: italic;
-}
-lector:before { content: "caveat lector"; font-family: scalasans-caps; font-weight: bold; font-style: normal; line-height: 0; padding-right: 0.5rem;}
 
-p { font-family: auto1; }
-h1 {font-family: dolly; font-weight: bold; margin-top: 0.8em; margin-bottom: 0.2em; text-align: ; color: white; display: none;}
-#xs {display: none;}
-
-cap { line-height: 0em; font-family: ; text-transform: ; }
-dol {font-family: dolly; font-weight: bold; font-style: normal;}
-dopsen, sopsen { display: initial; }
-doplen { margin-left: -0.404em; }
-dopsen { margin-left: 0.404em; }
-.myFunction:hover { cursor: pointer; }
-.myFunction:active { color: #777; }
-div.selection {
-    padding: 0em 0em 0em 1.5em;
-    border: 0px solid #ccc;
-    border-left: 3px solid #333;
-    margin-bottom: 2em; }
-div.selection > p {font-size: 95%;}
-stage-name {
-    text-transform: uppercase;
-    font-family: scalasans;
-    font-weight: bold;
-    line-height: 0rem;
-    padding-right: 0.3rem; }
-div.selection > img {margin-bottom: 0.25em;}
-@media all and (min-width:521px) {
-    div.selection > img {display: none} }
-aside img:hover { cursor: zoom-in;}
-
+/*   m o d e   n u i t   */
 
 body { background-color: #1e1d20; color: white; }
 #top { border-top: 1rem solid rgb(30, 29, 32); }
@@ -1272,4 +1176,16 @@ body { background-color: #1e1d20; color: white; }
 #prev:hover { border-left: 1rem solid #313030; }
 #next:hover { border-right: 1rem solid #313030; }
 
-p.caveat, aside p {color: #fff894 !important;}
+
+titre.commentaire { border-bottom: 1px solid white; }
+aside p { color: #fff894; } /*color: #999;*/ /*color: #666;*/
+
+p.caveat {color: #fff894 !important;}
+p.caveat {
+    font-family: scalasans;
+    margin-bottom: 2em;
+    text-align: justify;
+    font-style: italic;
+}
+
+lector:before { content: "caveat lector"; font-family: scalasans-caps; font-weight: bold; font-style: normal; line-height: 0; padding-right: 0.5rem;}
