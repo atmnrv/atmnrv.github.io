@@ -5,11 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
 
-  <link rel="icon" type="image/png" href="favicon.svg">
-  <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
-  <link rel="stylesheet" type="text/css" media="all" href="fonts.css" />
-  <script type="text/javascript" src="js/functions.js"></script>
-  <style>.toc:after {content: none;} ul.children li:before { content: none; } ul.children li { margin-left: 0.5rem; } </style>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
+  <style>
+
+  titre + p {
+      font-size: 100%;
+  }
+
+  h1.toc-topic {
+  font-size: 110%;
+  font-style: normal;
+  font-weight: bolder;
+  }
+
+  h1.toc-topic a {
+  display: inline-block;
+  width: 100%;
+  }
+
+  h1.toc-topic + h1.toc-topic {
+  margin-top: 1.25rem;
+  }
+
+  ul.toc {
+  font-size: 105%;
+  column-count: 2;
+  column-gap: 2em;
+
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  }
+
+  ul.toc + h1.toc-topic {
+  margin-top: .75rem; /* 1.75rem; */
+  }
+
+  @media all and (max-width:520px) {
+      ul.toc {
+      column-count: 1;
+      column-gap: 2em;
+
+      font-size: 120%;
+      }
+  }
+
+  ul.toc li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+  list-style-type: none;
+  }
+
+  ul.toc li:before {
+  content: none;
+  }
+
+  .toc li a{
+  display: block;
+  }
+
+  .toc:after {
+  content: none;
+  }
+  </style>
 
   <title>Typographie | CV</title>
 </head>
@@ -18,36 +82,30 @@
 <div id="content">
   <a class="nav" href="."><div style="position: relative; z-index: 100"><div id="top" class="top"></div></div></a>
 
-  <titre></titre>
-  <!-- <titre class="court" style="font-style: normal; font-weight: bold; font-size: 125%">Typographie</titre>-->
-
-  <!-- <p>La ty&shy;po&shy;gra&shy;phie est l’in&shy;ter&shy;ac&shy;tion entre le si&shy;gne et le texte. Con&shy;trai&shy;re&shy;ment à <a href="lectureminuscule.html#meilleuretypographie">une con&shy;cep&shy;tion cou&shy;rante,</a> les po&shy;lices pré&shy;sen&shy;tées dans ces pages ont été des&shy;si&shy;nées pour être vi&shy;si&shy;bles et pour l’être bien.</p> -->
-  <div><p><a href="milou.html" class="xref">Milou</a> est un ca&shy;rac&shy;tère de ti&shy;tra&shy;ge pour ap&shy;pren&shy;dre à lire, dont la par&shy;ti&shy;cu&shy;la&shy;ri&shy;té est d’être uni&shy;ca&shy;mé&shy;rale. C’est un ca&shy;rac&shy;tère gé&shy;né&shy;reux, vo&shy;lon&shy;tai&shy;re&shy;ment ar&shy;ti&shy;cu&shy;lé, pour la com&shy;po&shy;si&shy;tion de cour&shy;tes phrases.</p>
-  <p><a href="oni.html" class="xref">Oni</a>, à l’in&shy;ver&shy;se, est une fa&shy;mille de ca&shy;rac&shy;tè&shy;res pour la lec&shy;ture pro&shy;lon&shy;gée dans un en&shy;vi&shy;ron&shy;ne&shy;ment en basse ré&shy;so&shy;lu&shy;tion. Elle puise ses in&shy;fluen&shy;ces au&shy;tant dans l’écri&shy;ture bri&shy;sée que dans le style clas&shy;sique des didones.</p></div>
+  <titre>Typographie</titre>
+  <p class="image"><img style="filter: none; pointer-events: none" src="images/typographie.svg"></p>
+  <p><a href="milou.html" class="xref">Milou</a> est un ca&shy;rac&shy;tère de ti&shy;tra&shy;ge pour ap&shy;pren&shy;dre à lire, dont la par&shy;ti&shy;cu&shy;la&shy;ri&shy;té est d’être uni&shy;ca&shy;mé&shy;rale. C’est un ca&shy;rac&shy;tère gé&shy;né&shy;reux, vo&shy;lon&shy;tai&shy;re&shy;ment ar&shy;ti&shy;cu&shy;lé, pour la com&shy;po&shy;si&shy;tion de cour&shy;tes phrases.</p>
+  <p><a href="oni.html" class="xref">Oni</a>, à l’in&shy;ver&shy;se, est une fa&shy;mille de ca&shy;rac&shy;tè&shy;res pour la lec&shy;ture pro&shy;lon&shy;gée dans un en&shy;vi&shy;ron&shy;ne&shy;ment en basse ré&shy;so&shy;lu&shy;tion. Elle puise ses in&shy;fluen&shy;ces au&shy;tant dans l’écri&shy;ture bri&shy;sée que dans le style clas&shy;sique des didones.</p>
   <div class="gap" style="height:1em"></div>
-  <div><p><span style="font-size: 95%; font-weight: bold">Typographie</span></p>
-    <ul class="children" style="font-size: 100%">
+
+    <ul class="children">
     <li><a href="milou.html" class="xref">Milou</a></li>
-    <li><a href="oni.html" class="xref">Oni</a> + <a href="oni-minot.html" class="xref">Oni-minot</a></li></ul>
-  <p><span style="font-size: 95%; font-weight: bold">Annexes</span></p>
-    <ul class="children" style="font-size: 100%">
-    <li><a href="lectureminuscule.html" class="toc"><op>Quelle fonte pour apprendre à lire<span style="font-size: 55%">&nbsp;</span>?</op></a></li>
-    <li><a href="lectureoptimale.html" class="toc"><op>Le confort de lecture en (très) basse résolution</op></a></li></ul>
-  </div>
+    <li><a href="oni.html" class="xref">Oni</a></li>
+    <li><a href="oni-minot.html" class="xref">Oni-minot</a></li>
+    <li><a href="lectureminuscule.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps; padding-right: 0.5em;">appendice.</span><op>La police pour apprendre à lire</op></a></li>
+    <li><a href="lectureoptimale.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps; padding-right: 0.5em;">appendice.</span><op>Le confort de lecture en basse résolution</op></a></li></ul>
+
   <div class="gap" style="height:1em"></div><ul class="children"></ul>
   </div>
 
+  <a class="nav" href="graphisme.html"><div id="prev" class="side"></div></a>
+  <a class="nav" href="bibliographie.html"><div id="next" class="side"></div></a>
+
+  <div id="navigator" class=""><div id="navtable">
+  <div><a class="box-link" href="graphisme.html"><span class="arrow">←</span>&nbsp;graphisme</a></div>
+  <div class="center"><a class="box-link" href=".">table</a></div>
+  <div><a class="box-link" href="bibliographie.html">bibliographie&nbsp;<span class="arrow">→</span></a></div></div></div>
 
 
-
-<a class="nav" href="introduction.html"><div id="prev" class="side"></div></a>
-<a class="nav" href="milou.html"><div id="next" class="side"></div></a>
-
-<div id="navigator" class=""><div id="navtable">
-<div><a class="box-link" href="introduction.html"><span class="arrow">←</span>&nbsp;introduction</a></div>
-<div class="center"><a class="box-link" href=".">table</a></div>
-<div><a class="box-link" href="milou.html">milou&nbsp;<span class="arrow">→</span></a></div></div></div>
-
-
-</body>
-</html>
+  </body>
+  </html>

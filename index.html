@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
 
-  <link rel="icon" type="image/png" href="favicon.svg">
-  <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
-  <link rel="stylesheet" type="text/css" media="all" href="fonts.css" />
-  <script type="text/javascript" src="js/functions.js"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
   <style type="text/css">
 
       div#content { padding-top: 0; padding-bottom: 0; }
@@ -31,9 +32,7 @@
           mix-blend-mode: darken;
       }
 
-      #front-cover-inner {
-          position: fixed;
-      }
+      #front-cover-inner { position: fixed; }
 
       @media all and (max-width:520px) {
           #front-cover { display: none; }
@@ -102,20 +101,17 @@
 
       a#toc-marker:after { content: none; }
 
-      #intro { margin-bottom: 2rem; }
-
-      a.default:after {
-          position: relative;
-          content: "\FEFF°";
-          margin-left: 0.10em;
-          font-size: 90%;
-          top: -0.10em;
-          color: #933;
-          font-feature-settings: "caps";
-          font-variant-numeric: normal;
+      p.intro { margin-bottom: 1.5em; text-align: ;}
+      p.intro:first-line {font-family: dolly-caps; text-transform: lowercase; }
+      #support {
+          text-align: justify;
+          height: 1em;
       }
-
-      a.enfr:hover { background: none }
+      #support:after {
+          content: '';
+          display: inline-block;
+          width: 100%;
+      }
   </style>
 
   <title>CV</title>
@@ -124,50 +120,52 @@
 
 <div id="content">
 <div id="doc">
-  <!--<p class="mobile-only" style="font-family: libesans-semcon; font-weight: 400; letter-spacing: .16rem; text-transform: uppercase; font-size: 1.1rem; margin-top: 0.5rem; margin-bottom: 0.5rem; line-height: 1;"><a href="how-to-pay-for-this-book.html">le fruit dans la bouteille</span></a></p>-->
-  <!--<p style="border-top:solid black 0.35rem; background-color: black; color: #667; font-family: scalasans-caps; text-transform: lowercase; text-align: center">en / fr</p> -->
-  <aside class="desktop-only"><p style="position: relative; top: 1.4rem; left: ; font-family: scalasans-caps; text-transform: lowercase; text-align: center; font-size: 105%"><a href="en/index.html" class="enfr">en</a><span style="font-size: 55%">&nbsp;</span><span style="color: #bbbbbb">|<span style="font-size: 55%">&nbsp;</span>fr</span></p></aside>
-  <p class="mobile-only" style="margin-bottom: 0rem; position: relative; down: 1.4rem; left: ; font-family: scalasans-caps; text-transform: lowercase; text-align: left; font-size: 105%; color: #bbbbbb"><a href="en/index.html" class="enfr">en</a><span style="font-size: 55%">&nbsp;</span>|<span style="font-size: 55%">&nbsp;</span><span style="color: #667">fr</p>
   <p id="toc-marker" name="toc" style="border-top:solid black 0.35rem"></p>
-  <p>Cet ouvrage est le pro­lon­ge­ment de mon tra­vail ty­po­gra­phi­que. Il était ques­tion de pen­ser sé­rieu­se­ment la toile com­me pla­te­forme de pu­bli­ca­tion, et de pro­po­ser à l’écran la qua­lité de lec­ture <em>a mi­ni­ma</em> de mon ca­ta­logue imprimé.</p>
-  <p>J’ai réu­ni à l’oc­ca­sion lec­tures et pro­duc­tion per­son­nelle dans <a href="introduction.html" class="default">un en­sem­ble court</a> et pro­pice à la lec­ture. En­fin, pour ceux qui pré­fè­rent les ima­ges, j’ai pris soin de con­clure par un cha­pitre <a href="beauxarts.html" class="xref">beaux-arts</a>, qui don­ne­ra un aper­çu hors champ ty­po­gra­phi­que de mon tra­vail.</p>
+  <p class="intro">cet ouvrage est le prolongement logique de mon tra­vail typo­gra­phi­que. <strong style="color: #933">¶</strong>&nbsp;Il était ques­tion de pen­ser sé­rieu­se­ment la toile com­me pla­te­forme de pu­bli­ca­tion, et de pro­po­ser à l’écran la qua­lité de lec­ture <em>a mi­ni­ma</em> de mon ca­ta­logue im­pri­mé. <strong style="color: #933">¶</strong> J’ai réu­ni à l’oc­ca­sion lec­tures et pro­duc­tion per­son­nelle dans also, there is <a href="" style="color: #933" class="xref">English-friendly</a> version pending, et pro­pice à la lec­ture. <strong style="color: #933">¶</strong>&nbsp;En­fin, pour ceux qui pré­fè­rent les ima­ges, j’ai pris soin de con­clure par un cha­pitre <a href="beauxarts.html" class="xref">beaux-arts</a>, qui don­ne­ra un aper­çu plus large de mon travail.</p>
   <h1 class="toc-topic"><a href="introduction.html" class="toc">Introduction</a></h1>
-
-  <h1 class="toc-topic"><a href="lectures.html" class="toc">Bibliographie</a></h1>
-  <ul class="toc" style="column-count: 1; column-gap: 2em;">
-  <li><a href="gibbon.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Edward Gibbon</span>, <br><span style="visibility: hidden">–</span><op>The history of the decline and fall of the Roman Empire</op></a></li>
-  <li><a href="bastiat.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Frédéric Bastiat</span>, <br><span style="visibility: hidden">–</span><op>Ce qu’on voit et ce qu’on ne voit pas</op></a></li>
-  <li><a href="musil.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Robert Musil</span>, <br><span style="visibility: hidden">–</span><op>Der Mann ohne Eigenschaften</op></a></li>
-  <li><a href="laclos.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Pierre Choderlos de Laclos</span>, <br><span style="visibility: hidden">–</span><op>Les liaisons dangereuses</op></a></li>
-  <li><a href="marivaux.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Marivaux</span>, <br><span style="visibility: hidden">–</span><op>La double inconstance</op></a></li>
-  <li><a href="parny.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Évariste de Parny</span>, <br><span style="visibility: hidden">–</span><op>La guerre des dieux</op></a></li>
-  <li><a href="sonnets.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Elizabeth Barrett Browning</span>, <br><span style="visibility: hidden">–</span><op>Sonnets from the Portuguese</op></a></li>
-  <li><a href="carbonara.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Sonia Peronaci</span>, <br><span style="visibility: hidden">–</span><op>Ricetta degli spaghetti alla carbonara</op></a></li>
-  <li style="color: #bbbbbb"><span style="text-transform: lowercase; font-family: dolly-caps">Vilfredo Pareto</span>, <br><span style="visibility: hidden">–</span><op>Trattato di sociologia generale</op></li>
-  <li style="color: #bbbbbb"><span style="text-transform: lowercase; font-family: dolly-caps">Steve Jackson / Ian Livingstone</span>, <br><span style="visibility: hidden">–</span><op>Un livre dont vous êtes le héros</op></li>
-  </ul>
-
-  <h1 class="toc-topic"><a href="milou.html" class="toc">Typographie</a></h1>
-  <ul class="toc" style="column-count: 1; column-gap: 2em;">
-  <li><a href="milou.html" class="toc">Milou</a></li>
-  <li><a href="oni.html" class="toc">Oni</a></li></ul>
-
-  <h1 class="toc-topic"><a href="lectureminuscule.html" class="toc">Annexes</a></h1>
-  <ul class="toc" style="column-count: 1; column-gap: 2em;">
-  <li><a href="lectureminuscule.html" class="toc"><em>Quelle fonte pour apprendre à lire<span style="font-size: 55%">&nbsp;</span>?</em></a></li>
-  <li><a href="lectureoptimale.html" class="toc"><em>Le confort de lecture en (très) basse résolution</em></a></li>
-  <li style="color: #bbbbbb"><em>Le sort des escaliers, ou l’avenir de la lecture numérique</em></li></ul>
-
-
-  <h1 class="toc-topic"><a href="illettrisme.html" class="toc">Graphisme</a></h1>
+  <h1 class="toc-topic"><a href="graphisme.html" class="toc">Graphisme</a></h1>
+  <h1 class="toc-topic"><a href="typographie.html" class="toc">Typographie</a></h1>
+    <ul class="toc" style="column-count: 1">
+    <li><a href="milou.html" class="toc">Milou</a></li>
+    <li><a href="oni.html" class="toc">Oni + Oni-minot</a></li></ul>
+  <h1 class="toc-topic"><a href="typographie.html" class="toc">Appendice</a></h1>
+    <ul class="toc" style="column-count: 1">
+    <li><a href="lectureminuscule.html" class="toc">La police pour apprendre à lire</em></a></li>
+    <li><a href="lectureoptimale.html" class="toc">Le confort de lecture en basse résolution</em></a></li></ul>
+  <h1 class="toc-topic"><a href="bibliographie.html" class="toc">Bibliographie</a></h1>
+    <ul class="toc" style="column-count: 1">
+    <li><a href="rozan.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Charles Rozan</span>, <br><span style="visibility: hidden">–</span><op>Petites ignorances de la conversation</op></a></li>
+    <li><a href="bastiat.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Frédéric Bastiat</span>, <br><span style="visibility: hidden">–</span><op>Ce qu’on voit et ce qu’on ne voit pas</op></a></li>
+    <li><a href="gibbon.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Edward Gibbon</span>, <br><span style="visibility: hidden">–</span><op>The history of the decline and fall of the Roman Empire</op></a></li>
+    <li><a href="musil.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Robert Musil</span>, <br><span style="visibility: hidden">–</span><op>Der Mann ohne Eigenschaften</op></a></li>
+    <li><a href="laclos.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Choderlos de Laclos</span>, <br><span style="visibility: hidden">–</span><op>Les liaisons dangereuses</op></a></li>
+    <li><a href="marivaux.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Marivaux</span>, <br><span style="visibility: hidden">–</span><op>La double inconstance</op></a></li>
+    <li><a href="parny.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Évariste de Parny</span>, <br><span style="visibility: hidden">–</span><op>La guerre des dieux</op></a></li>
+    <li><a href="browning.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Elizabeth Barrett Browning</span>, <br><span style="visibility: hidden">–</span><op>Sonnets from the Portuguese</op></a></li>
+    <li><a href="carbonara.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">Sonia Peronaci</span>, <br><span style="visibility: hidden">–</span><op>Ricetta degli spaghetti alla carbonara</op></a></li>
+    <li style="color: #bbbbbb"><a href="rhythmtengoku.html" class="toc"><span style="text-transform: lowercase; font-family: dolly-caps">hardcore gaming 101</span>, <br><span style="visibility: hidden">–</span><op>Rhythm tengoku</op></a></li>
+    <li style="color: #bbbbbb"><span style="text-transform: lowercase; font-family: dolly-caps">Vilfredo Pareto</span>, <br><span style="visibility: hidden">–</span><op>Trattato di sociologia generale</op></li>
+    <li style="color: #bbbbbb"><span style="text-transform: lowercase; font-family: dolly-caps">Steve Jackson / Ian Livingstone</span>, <br><span style="visibility: hidden">–</span><op>Un livre dont vous êtes le héros</op></li></ul>
   <h1 class="toc-topic"><a href="beauxarts.html" class="toc">Beaux-arts</a></h1>
 
 
-<!--  <p><sig style="margin-top: 4rem; margin-bottom: 1rem">—mathieu drans<br><span style="text-decoration: line-through">9 SEP 2020<br>1 OCT 2020</span><br>19 OCT 2020</sig></p>-->
-  <p><sig style="margin-top: 4rem; margin-bottom: 1rem"><span style="text-decoration: line-through">21 NOV 2020</span><br>15 DEC 2020</sig></p>
+
+
+
+<!--  <p><sig style="margin-top: 4rem; margin-bottom: 1rem"><span style="text-decoration: line-through">9 SEP 2020<br>1 OCT 2020</span><br>19 OCT 2020</sig></p>-->
+  <p><sig style="margin-top: 1rem; margin-bottom: 1rem;"><strike>21 NOV 2020<br>15 DEC 2020</strike><br>20 JAN 2021</sig></p>
 
 </div>
-  <div class="gap" style="height:4em"></div><ul class="children"></ul>
+    <p id="support" style="border-top:solid black 0.35rem;
+    margin-top: 2.5rem;
+    padding-top: 0.35rem;
+    font-family: din;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1;
+    font-variant-numeric: ;
+    font-feature-settings: 'case' 1;"><a href="mailto:mW0eCcOc@protonmail.com">contact atmnrv.github.io</a></p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
   </div>
 
 <a class="nav" href="."><div id="prev" class="side"></div></a>

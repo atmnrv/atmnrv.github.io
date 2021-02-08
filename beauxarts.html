@@ -6,55 +6,166 @@
   <meta name="format-detection" content="telephone=no">
 
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
-  <link rel="stylesheet" type="text/css" media="all" href="fonts.css" />
-  <script type="text/javascript" src="js/functions.js"></script>
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <script type="text/javascript" src="core/zooooooom.js"></script>
 
-  <link href="js/zooom.css" rel="stylesheet">
-  <script type="text/javascript" src="js/zooom.js"></script>
+  <style>
+
+  titre + p {
+      font-size: 100%;
+  }
+
+  h1.toc-topic {
+  font-size: 110%;
+  font-style: normal;
+  font-weight: bolder;
+  }
+
+  h1.toc-topic a {
+  display: inline-block;
+  width: 100%;
+  }
+
+  h1.toc-topic + h1.toc-topic {
+  margin-top: 1.25rem;
+  }
+
+  ul.toc {
+  font-size: 105%;
+  column-count: 2;
+  column-gap: 2em;
+
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  }
+
+  ul.toc + h1.toc-topic {
+  margin-top: .75rem; /* 1.75rem; */
+  }
+
+  @media all and (max-width:520px) {
+      ul.toc {
+      column-count: 1;
+      column-gap: 2em;
+
+      font-size: 120%;
+      }
+  }
+
+  ul.toc li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+  list-style-type: none;
+  }
+
+  ul.toc li:before {
+  content: none;
+  }
+
+  .toc li a{
+  display: block;
+  }
+
+  .toc:after {
+  content: none;
+  }
+
+  @media all and (min-width:521px) {
+      image-caption { display: none; }
+      image-caption.un { display: ; }
+      aside.un { display: ;­ }
+  }
+
+  @media all and (max-width:520px) {
+      aside { display: none;­ }
+  }
+  .ud {
+      text-transform: lowercase;
+      font-family: dolly-caps;
+      vertical-align: 0.09em;
+      line-height: 0em;
+
+      display: inline-block;
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+  }
+  </style>
 
   <title>Beaux-Arts | CV</title>
 </head>
 <body id="body">
 
-<div id="content">
+<div id="content" style="padding-bottom: ;">
   <a class="nav" href="."><div style="position: relative; z-index: 100"><div id="top" class="top"></div></div></a>
 
-  <groupe-titre id="cena"><titre>Ultima cena</titre><sous-titre>Études de composition lithographique</sous-titre></groupe-titre>
-  <p class="image"><img src="images/cena.jpg"/>
-    <image-caption>Technique mixte, 120&nbsp;×&nbsp;120<span style="font-size: 55%">&nbsp;</span>mm.</image-caption></p>
-  <div class="gap" style="height:6em"></div><ul class="children"></ul>
-  <groupe-titre id="estampes"><titre class="nobr">Vie de Baleine<br></titre><sous-titre>Estampes sur verre</sous-titre></groupe-titre>
-  <p class="image"><img src="images/estampes.jpg"/>
-  <image-caption>Ingres 80<span style="font-size: 55%">&nbsp;</span>g, reliure cabriolet, 40 pages, 121&nbsp;×&nbsp;174<span style="font-size: 55%">&nbsp;</span>mm.</image-caption></p>
-  <div class="gap" style="height:6em"></div><ul class="children"></ul>
-  <groupe-titre id="bistro"><titre>Bistro République</titre><sous-titre>Carnet de croquis</sous-titre></groupe-titre>
-  <p class="image"><img src="images/bistro.jpg"/>
-    <image-caption>Grain fin 90<span style="font-size: 55%">&nbsp;</span>g, reliure japonaise, 32 pages, 104&nbsp;×&nbsp;150<span style="font-size: 55%">&nbsp;</span>mm.</image-caption></p>
-  <div class="gap" style="height:6em"></div><ul class="children"></ul>
-  <groupe-titre id="abc"><titre>Le petit inventaire du musée de la chasse</titre><sous-titre>Carnet de croquis en forme d’abécédaire</sous-titre></groupe-titre>
-  <p class="image"><img src="images/abc.jpg"/>
-  <image-caption>Exemplaire unique, leporello, 95&nbsp;×&nbsp;148<span style="font-size: 55%">&nbsp;</span>mm.</image-caption></p>
-  <div class="gap" style="height:4em"></div><ul class="children"></ul>
+  <titre>Beaux-Arts</titre>
+  <aside class="un"><p><em>Les Préraphaélites</em><br>tableau nº<span style="font-size: 55%">&nbsp;</span>4, 124&nbsp;×&nbsp;57<span style="font-size: 55%">&nbsp;</span>cm.</p></aside>
+  <p class="image"><img src="images/prera4.jpg"/><image-caption class="un"><em>Les Préraphaélites</em>, tableau nº<span style="font-size: 55%">&nbsp;</span>4, 124&nbsp;×&nbsp;57<span style="font-size: 55%">&nbsp;</span>cm.</image-caption></p>
+  <p>Il y a deux sortes d’artistes<span style="font-size: 75%">&nbsp;</span>: ceux qui chiadent le titre, com­men­cent là, y pas­sent des heures et po­sent des­sus une forme en équi­li­bre<span style="font-size: 75%">&nbsp;</span>; et ceux qui s’en mo­quent. Selon ce qu’on pense, on dira qu’un titre oriente, pré­cise ou per­turbe, la lec­ture d’une œuvre<span style="font-size: 75%">&nbsp;</span>; et qu’il faut s’en réjouir, sinon s’en désoler.
+  <p>Pour parler un peu de moi, je conterai une espèce où un titre eût influencé <em>en mal</em>, c’est-à-dire qui aurait fonctionné à emploi contraire de l’intention de son auteur, une pièce qui n’en portait aucun—ne serait-ce qu’en lui assignant un sens de lecture (qu’elle n’avait pas non plus). J’avais décidé de publier une série de planches dans un format qui produirait une lecture analogue à celle du ciel qu’on fouille pour y trouver dans les nuages une forme familière. Une lecture circulaire, attentive au détail avant l’ensemble. <span class="ud"></span>
+  <p>La solution la plus élégante fut d’inclure à l’ouvrage, petit volume d’une douzaine de pages, un billet-avertissement sur une feuille volante qui avait cela de commode, en plus de n’être pas dépendant de la reliure, de pouvoir servir de marque-page.</p>
+
+  <p>qui juxtapose els vignettes <em>Sans cul ni tête.</em> Une lecture libre, donc<span style="font-size: 75%">&nbsp;</span>; qui comme tout événement sans début ni fin, et par cet aspect plus proche de l’infini que d’une anthologie, eût pour autre effet d’égarer les lecteurs e ne pas gagner le regard du lecteur se perdre aux yeux du lecteur et de lui faire manquer ce que je l’invitais pourtant à voir.
+
+  <p>  reproduirait l’esprit dans lequel elles avaient été produites. livre, eût pour autre effet d’égarer les lecteurs e ne pas gagner le regard du lecteur se perdre aux yeux du lecteur et de lui faire manquer ce que je l’invitais pourtant à voir.
+
+  <p>pour éviter au lecteur de se disperser dans l’infini et de manquer ce que je l’invitais pourtant à voir
+  <p>qui n’eût pour effet que de perdre le lecteur autant que ce que j’invitais à voir</p>
+  <p>point de fixation  présenter // que produirait la contemplation des nuages</p>
+  <p>glisser un indice pour capter l’attention comme un papier sur la surface de l’eau</p>
+  <p>La solution la plus élégante (et il y en avait d’autres<span style="font-size: 55%">&nbsp;</span>!) fut d’inclure à l’ouvrage, petit volume d’une douzaine de pages, un billet-avertissement sur une feuille volante qui avait cela de commode, en plus de n’être pas dépendant de la reliure, de pouvoir servir de marque-page.</p>
+  <p>veiller à ce que influence</p>
+  <p>Commodité marchande ou pas, le problème du sens de lecture ne se pose plus <em>ici</em>. </p>
+  <p>le texte gênerait presque la lecture des images</p>
+  <p>le texte en gênerait presque la lecture /// à rebours // sens contraire // revolving</p>
+  <aside><p><em>Ultima Cena</em><br>études lithographique, 120&nbsp;×&nbsp;120<span style="font-size: 55%">&nbsp;</span>mm.</p></aside>
+  <p class="image"><img src="images/cena.jpg"/><image-caption><em>Ultima Cena</em>, études de composition lithographique, 120&nbsp;×&nbsp;120<span style="font-size: 55%">&nbsp;</span>mm.</p></image-caption></p>
+  <aside><p><em>Vie de Baleine</em><br> 40 pages, 121&nbsp;×&nbsp;174<span style="font-size: 55%">&nbsp;</span>mm.</p></aside>
+  <p class="image"><img src="images/estampes.jpg"/><image-caption><em>Vie de Baleine</em>, 40 pages, 121&nbsp;×&nbsp;174<span style="font-size: 55%">&nbsp;</span>mm.</image-caption></p>
+  <aside><p><em>Éloquences</em><br>32 pages, 104&nbsp;×&nbsp;150<span style="font-size: 55%">&nbsp;</span>mm.</p></aside>
+  <p class="image"><img src="images/eloquences.jpg"/><image-caption><em>Éloquences</em>, 32 pages, 104&nbsp;×&nbsp;150<span style="font-size: 55%">&nbsp;</span>mm.</image-caption></p>
+  <aside style="padding-top: 4em;"><p><em>Manfred, ou<br> Le Diable au Corps</em><br>détail,<br>20&nbsp;×&nbsp;24<span style="font-size: 55%">&nbsp;</span>cm.</p></aside>
+  <p class="image" style="padding-top: 1em;"><img src="images/manfred.jpg"/><image-caption><em>Manfred, ou Le Diable au Corps</em>, détail, 20&nbsp;×&nbsp;24<span style="font-size: 55%">&nbsp;</span>cm.</image-caption></p>
+
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
   </div>
 
-<a class="nav" href="illettrisme.html"><div id="prev" class="side"></div></a>
-<a class="nav" href="."><div id="next" class="side"></div></a>
+  <a class="nav" href="bibliographie.html"><div id="prev" class="side"></div></a>
+  <a class="nav" href="."><div id="next" class="side"></div></a>
 
-<div id="navigator" class=""><div id="navtable">
-<div><a class="box-link" href="illettrisme.html"><span class="arrow">←</span>&nbsp;de l<span style="line-height: 1; vertical-align: -0.15em;">’</span>illettrisme</a></div>
-<div class="center"><a class="box-link" href=".">table</a></div>
-<div><a class="box-link" href=".">retour à la case départ&nbsp;<span class="arrow">→</span></a></div></div></div>
+  <div id="navigator" class=""><div id="navtable">
+  <div><a class="box-link" href="bibliographie.html"><span class="arrow">←</span>&nbsp;bibliographie</a></div>
+  <div class="center"><a class="box-link" href=".">table</a></div>
+  <div><a class="box-link" href=".">retour à la case départ&nbsp;<span class="arrow">→</span></a></div></div></div>
 
-<script>
-  window.addEventListener('load', function () {
-    new Zooom({
-      zooomElement: 'img',
-      zooomWrap: 'zooom-wrap',
-      zooomImg: 'zooom-img',
-      zooomOverlay: 'zooom-overlay'
-    });
-  })
-</script>
+  <script>
+    window.addEventListener('load', function () {
+      new Zooom({
+        zooomElement: 'img',
+        zooomWrap: 'zooom-wrap',
+        zooomImg: 'zooom-img',
+        zooomOverlay: 'zooom-overlay'
+      });
+    })
+  </script>
+<style>
+div.point {
+	background-color: red ;
+	border-radius: 20px 20px 20px 20px ;
+	box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.4 ) ;
+	height: 20px ;
+	position: absolute ;
+	transform: translateX( -11px ) translateY( -11px ) ;
+		-ms-transform: translateX( -11px ) translateY( -11px ) ;
+		-webkit-transform: translateX( -11px ) translateY( -11px ) ;
+	width: 20px ;
+}
+</style>
+
 </body>
 </html>
