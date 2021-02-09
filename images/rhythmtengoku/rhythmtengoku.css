@@ -598,29 +598,28 @@ a.nav:after {
 }
 
 /* addendum */
+@media all and (max-width:520px) {
 #top {
-    top: 0;
-    border-top: 1rem solid white;
+    top: -1.5rem; /* ??? */
+    margin: 0 1.5rem;
+    }
 }
-
-#top:hover {
-    border-top-color: #fcf6f6;
-    cursor: default;
-}
-
-.top {
-    margin-top: -3rem;
-
+#top {
+    border-top: 0.7rem solid white; /* same as index page*/
+    position: absolute;
+    margin-left: 12rem;
+    margin-right: 2.5rem;
     top: 0;
     left: 0;
     right: 0;
-    height: 3rem;
-    z-index: -1000;
+    height: 2rem; /*3rem;*/
+    z-index: 1000;
     transition-property: border-color;
     transition-duration: 0.2s;
-
-    border: solid 0px grey;
-    position: absolute;
+}
+#top:hover {
+    border-top-color: #fcf6f6;
+    cursor: default;
 }
 
 /*   T A B L E   D E   N A V I G A T I O N   ( iter_navigator)   */
