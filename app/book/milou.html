@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+      @font-face {
+      font-family: 'milou';
+      font-style: normal;
+      font-weight: normal;
+      text-rendering: optimizeLegibility;
+      src: url('data:application/font-woff;charset=utf-8;base64,d09GRk9UVE8AAB2gAA0AAAAAJzQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAABMAAAFNgAABgd1POQ/kRTSUcAABYIAAAACAAAAAgAAAABR0RFRgAAFhAAAAA4AAAARgMiA5BHUE9TAAAWSAAAAqoAAAVKvKfLp0dTVUIAABj0AAAAEAAAABAAGQAMT1MvMgAAGQQAAABIAAAAYDGX7MZjbWFwAAAZTAAAAfsAAAQCjfuYUmhlYWQAABtIAAAANgAAADYaGfsaaGhlYQAAG4AAAAAgAAAAJAdAA3xobXR4AAAboAAAAPcAAAH4FDQYLW1heHAAAByYAAAABgAAAAYAflAAbmFtZQAAHKAAAADrAAABrE58vehwb3N0AAAdjAAAABMAAAAg/58AMnicfVgJWBRXtq7qorqaW20FaAuBdrpAjRuyuMUluAU1LjEaNcEFd0BxRRSQVdCmoTeWRkBQFFFRwhKQgIKoiXGiROMSEyUuwTFOJk6M0cTxFLkkmVttknnvfe+b+miqblXdW+ec+//3/PfQlIuKomlaMyt6/aa4WZOV60FyX0rup5L7MXIvF+yuZXr/1tH7N4/ezM3ezDYWAl6CT9yP9kYveVCIdHzJ8y/9/EeOnjIrbmN0MDlenCY7T5NetCYprWHBw6Y6T8GvrdiyNTI2esu6wKGrA4e+Exm7JXrTRt+hgaSb0wpfYgaxI4umaIp6zZt6iaJ6UJSepgSK0lLUBIpKo6idFJVCU5MoSkNRa2gqgaLMFHWZonZR1EWKuqCiPqOoKyoqn6JuUNR1FXWbojpU1N8o6isV1deLyqGoOoqqVlENFNVEUcdUVAtFNauoHRTVh6ISKcpAUTxFudK0maG2UFQhRdspKo+iLBRN+qaRoFHPKKB+pn6hfiMxY2iW5mhXmqd70C/R7rSOHkT70wF0ED2UHk6PpEfRY+hX6XH0BHoSHUpPoWfRC+h1tJm20o10E32cvkzfov+h0qoElZvqHZVZdUB1UHVYdURVpapW1areUzWoGlVNqjbVadUHqrOqc6pLqs9VtxmK0TNDmNeYFcwqJpJZzUQz65gNzCZmM7OFiWOsjJ3JZfKZAqaQKWZKmD1MGbOfOcAcZA4zR5gqppqpZd5jGphGpok5zrQwJ5lTzBnmQ+Yj5nPmhgvvEuASwYaq/dT91P3Vg9RD1IHqKvU99X31A+7LNwG1Fp38sA1cmujbd8v2NracOlVynPk7xIlTD9+N/FJ/98umf+RJeX+NObXyvbIPY8qW7tLYt2+3b9evW7cjbbM0dukbA98bqoFpq8Xqyn1tme/vLd6zp6isKL1wuyNVE9wwfs6r+tQUe26qZLKbbFn2suz9ueXFmqGPReOevdl79aV7cvJKpK2mLREx+vVbW6qypTxTfrYjS3P9uVhxOHP7ASlze0ZG+s6svMzczNz8QktxinKVk2nTzJ8m2vfuK9lnzk63pxUbk7KTrEl5Guj9vZiRtyM3I1dTUpSdkSvh/kPEbLPNZpZy7BaLXRK62wV8RcDvCq+hN9F8NAtNR2FoDApHS9FstBLh7PJ4uhMCGdjR1SLiwF9aIFAtTEML0Dw0E72BFqMZ6C20EK1Br6Ml6B0UifAM4wh0OxnlI/onCGV+ur1euQWh4D4CyW6pCH/gko6EfAQfkNc2kJPL4saIkyePHTvZFnFs8eJVEYsMQhz6GDbAABpM4MuQfxtEPBJ8YSQZZQAOhZHYF4/EoXgAJ2xCm9CbXQgC6Wv9EAM1XWH+CHuPF/2QMAp9CUcZeN7lnolGIRisNAq73AMQrpAPkJFcEujzxMDzXX3EldyiYxFtxIa21qiGcLvBiIQVaAXaoLx3/Io1oZSYKXeJ//ulooqDe+ryNFe4vhlz3xzhg4dgUfzzqWRELwY1CGSUK8chtBTJPbvcxfStW5LXmDSvcz8Vnrtw3+d9ri8Kr49sNRuw0XPr75eC/DpEEPc/6fqV+XkcRIgw4JdfFW8noYloHBqPXkVj0VQ0BU1GE5Av2oeCkRCFVqMI9DYagB7Cr4VIGEBiAr8GkPb78OsgNBxdg0CPJgh4qx96CwJ0P65F8kIXO3ra2N4pPYN5ou5RNNqCwJgqvoKkGIR/5HRtAysxA36G8zlI2IzkZpHctKBYxB39xoY2I1ggvnjhFWSIQRy89s0g5EA/kc9ch4AJ/dA4CNK1JiFdYjyC1Z2irjn6vyEsgIEMBWEBBGEB/x1h/4nBpD+j8If7b3Z5QQgNIRDCQEjX+hT0GpJfJ+ijO8iMj3jx6xnTdcMothHE9UWLj0WclPDXnv+j1T32fjL6+O8w4DmZgstyGnMZHolyGgzoTlNjhwseoFxzwjj5FbkX3SZ7M7Csa4SI2XMrMQ+e8YOH/DChHdwuYLenNwf+EzzLVwKP2bkHwZvFolrAHI76+Sv6WS0DKlgn7scBX+B+wPYpT/RyZBZZHI78fFux0bHx4ObDW45m5Zoc2XkaQlSzTbLYLDabT2aByZFZ8PaddTcSv7PkWvMsuRq7Jcfuk8OZrXaLzZBdw5oPWCsqfGwHbOX2clueNdeWp8nnbDYr6W3nHJ+WXzrYbrNb7Ta7xpaTb8k25JcePn34dG2Ltz03J8eea7fZ7HbyTDkMZnNOrtWnuLS4dHdJvmKcw+GwFhkdxvx0W6YRq7B6PO67DgcljjKNKHpF84d7cLGWudf1WMw3OjLzjbtTi1OKUzTWnCyz3UC8sFh8iENmu8WelZNtz6pbcmjB4QX5KV6WnJxMi4/NbCUPK+ZUTMmfqTFzFivpYMjkbCZrls1kj7fF2+I0W61bzXGG7LWsxWI1232yObMl2+xjybKaLFlJQWvGhI3L3GkyZu4koSOHwW6zmC36bJPJmJW1ZePmzRu3GI227fmZDmORzZFfXuYF7LMvoN9+CCi6Z7qf2LkOgsZDX6wCdaYj3WLMNBqt6Q6jRlkm41D3GGXR/Lvwz1Rw7xtfFy/7AwPTgfXog+BtCMAIhurSOuT7Yvd9CJSfcufray+2V0W/ExE1f4wBM5yu7Cf7qaWY8em7KnJWbGpBfoohW23ErmzGodrtDXoY+OUDGAu9Zt8aUy7p9l08cOzMZz7g8/IF3AdL2HUeHmsQRjmx16Jgb6GCPZfzEViAngn+/k8mfAw9LuIeT276fwc9968EAatmlYGexe5qIQSFoHs4GVQPwfuVeBgHNPmxybs83gU97gne/tAX5kLfYOLAl75wHieLsBDYozC4fdWpdfulmjBf4zv6FZjPa7JIlqJ9JaW7NGm1DaZ6ve7GRFCDWzt4FWTvzymQ9rx31FRkzrHsMudnHgJ3r4LURFuqftPybfPjJF3HB5Wx73yItXqsxWg67jXj8JLG9ZKuZWLo5k3LsiPNq8vnfJao0d2auGT7grULfLAeJlt/MJBuw+SH4okj712+Url65byY1aHTY2vOGmK7vcSa7DOWIxbSxfc4qGwrZ2MhP3bOcMdJyVJaVlGYrxFSS+TmEsizqnGygwNvBN7lWi3c6Cm3i0d11HZF9XBEj+mo3kQmDafGEgG2iYqlkogiyyfS6wBVQzVTZ6gL1DXqFnWfekg9oYB+qhqpClXdVj1neGYY0+Kidxnl8rrLSpdYlx0ut9gh7Di2nP1WHay2qb/mRnPTuCJuD1fOtXF3NQM0MZoqTYvmmivrOsF1q2uxa63rR643kYYsam+gJJSBstC76Bi6hJ6iZ+g33pX34v/C+/H9+VH8TH4Vv5qP4eN4E5/HF/CV/Lv8Mf4cf5W/znfwf+Of8lir0rprfbSDtMO147RTtHO1YdoI7WZtqjZDa9MWa/dpj2qPadu0f9Ve1t7U3tM+1P5QHi83J/C5aHltdLPEd0AgT3LxosUREYt4CPyINK/VRc0qkHCqhf10d1PtJb0AgSxeruaHoz5oEeLNGTvMO/QxySW1dgniOJAw04R5zAevGTbbsBtdrkyaJOGYFOy3Ag/y4QcjQTQjXxzI8mIa4q+lggbTwAbFH42HjOffgBtvRcLeMnNhtWTde8dxxMBfIFQD3Q8/gMB3ehJSNeNANR8cunTyqpiyWt6jAfwhCvz5z1OhB9yDHjxZ753agz/XeQA88gw8uH3x9QE7/2aXO1EK/PzStoTzel6hAvsQvIbHwyRC4f7wkh+okwsIG/oQ0HkFEcUxH3zHgL+uIw+uKGwI/6kFfC5trVl/QDq4dm0pHqbHPlGlVbtLSsvypMyK5p3H9QpzDD9cAY3kMJeU+pSUVVQadNfd9hRmGfOlQ+DBFqQmW5MJFxLfJlz4fPkHi2ZUjtZjX//XsMcblYuPbZR0J8rf2rY4YoHP7JqoC8kG3Re+YYmLNs/3GfLtaphnsHWNEdur14UtiN70Juk/Z3ZU5ekztTUXJazujhSPZu+3njNfNF/JL4/TOHZa07J8Vs9LCTIQqzAVsa/+4O7iPQ5JGOJUAyRsc/uhwcS/3Im7kG72xNFIN2FiILnyHYh0uaRH59KnhjUQIo5EQ5FBl/MBBMiniL6K8kxDQihydEmDERzp7itmIHmYMosa8ACPp4+hxzAEyURlnC5Gf/uh7rM6w5S2O6sf6cHQ2f64XsI9j7O6tDmxKxJm6qevqrmULB2Re3KQWYh738F++ulvJUYvlRqWzSiZqicQih46W9qNrh3cNl7CUUbsv5RACH55LOpOB09eGqoA4FxnBXjkGggIWPFc6fvvXtBfrXfCNVlNrPzT/klEfcE4grrn6lACX2Ej2onmIOdQuek7EH5F7mtDQc7IgHc/NJXY//MyhOkuL6ImIcpT1+2H+uD5ou7nl5G8UoFaL8VVmoiqLh6CmSY4Iu5Bdy9XnmozLDx1NeaOHvzuOf3tdZyds1XxdtKKps40SdarwUicvUucHTM9ZuFC6dSiKZUh+r1IgioYLd5qnD/MLkVww0xRs0P0IyOvfe9UabKv51VCQ4eEU9QXS4/VXdYLNXjHp1+cqwS3oHh5OngQfRcM/R7ovmqCwyLWtWMOxGjD4qntkRV7KqylWd4HMwtTE31ik9I3RSYc3r3TsGAhG3mkPums/sZHdZ+0L6qfk5SSlZku6R5X17MO9SqkIGUYgcJOggkFHAo2Bv4esgy0Ee0iASTBewEUfi6CuTI9GF3DZ8QXy4Tu2YuFQyCPPpJpK+rAi0Xds5dRAlqG1uQgCMf/crblGSZEck0AhEGwrg2sqSL0aO88lCfN2nci/Bs9uH1M6CvpUkxDWAiWm3AwrlWPj5k6de6yuqt2A9zEAbiWG7+xCJELp3KtI8LUlwjpGVn/GfdOHqq6evWjpjWTDfgLcq+au1V59fqHJ9ZMzlZuBIPS89EaYLEf1s4aFWsynE9Y1hasx+6zh221SLo7OY9YIQiVId2T5QgOw1hR9+3LqCYV3KATePoS9IYl4M/UPBdDPnywAnz0MPLuRXAFAxaqsKZQGlEYU1jtc7By//WO1tioasP9R2zb0jF1WEOSr+8iLOBe9zfAS0nSo+1V2VE+0WtTZgYsq26NNAjbUUcJ6pBPiL/sJmaf5cKrWqMe6KHXo+9gKjELpr4KavzyiLmrFsUYdI/sHawJ14jAtJ65e7f2bb+BEUtDJoad+kYZp6kEQUWm+KC1vvWohM9CYNduHMjljGd1d9pi5zaS9ax/CFbjqXjqd/7gJTXJ08U7rWGYCQ5bOHnMqhOP/1X34V1JeJIKnoTrGvjMibkAMEKg7gTsTxW/Ptd4+pCk22Yez5KxW3AgfqBu2RB+Yrge9xrcD08jixuechur4WVDmzxf/PzMzCDMhC8YMzr67L8ev//X286xRYJbDq6TsYmi2kmG3tZBdgbKzpPL7mB1JxYcPrfqaz30u0M0xxSYNuhH3GtE+NIlGyR4wAHfzYm3G+cM8oueN3ps+Blg/nHm4ueSgHPJYu/d5ZNArA7xuAoheATh97dfkFX9YfvHTyX5VxzQ/TW3Ki5lU5wprzDOKck82O2HqjPa9Le6fhN1T1rrj51ojaoPD4+KCl9aH9EqCbrZ6Qor0hVapA9EPPZOhd6Yi5enggcNAtnTHFF2TR4PCTix+lbEZ5f3Fzr2GhxkK2BW70iLM6XoYzY6GiXIJVZ5kIiuyOaWhb29LGyDJoQTEtByRBLsIiQ4IdZBxiT8ZuB6qrgK4SEPSI6aIwm+zh1XPAQucv7pvg1GMIPstp75IdzY4Y+ET/EOMBDH6Sr5CgNZieKilKi1S/UxcQWFKZJJnYR7sYkHG41N+rbmwkPVUv3R2rNVtyBK/soLB6txD/wL7gG/sHgS2bp4EJ0wmizx3uBtTaBJSg5kqp0Ofts9mmTl0S+86ODqDpS/e6AiM6XEkKuuApbdvym8fK4eu8ybhjlpFCc8JaSMIrvDjg5PhYbqW01XPzt7fM1ks0LDIIWGJx5tIDQ0YPdJhHlE+xHmYbIrfGp60fEE2VZui0eCsvaCjcR5LcJu0CQq66QdGXhfYugg8MW+EOTRQeb5ah461HrzQOlOU4HhIhhYXX3FhgRHtH5CmJPYVxViPyV9JoA33Uf5RCADyZ5Qw3U0Xbv20fE1U4hlN8h++kfu+03ggn2xx5TgeAN0KfUQTujwRXSlfI+p9IRJauCJeO+Bx7IQqsYR0ARzoJDFIer+2NCffBnPVMPbeC9L5g0QQWIHQeJIZdo6SSC7mxVtw+mekFszUpAy0+D71YUnDdI6hGeBa38YIfFNcEj8vfHioWEdknilpqFUGax/FDXWrEfXiV0dysY6yRP6c9dvkoDEshCixlFwB5bBRhZPVeMwHM3K65VtNyeA982Pv2+SsPgp+0bC6tUz9aNXXXz27MSpjvbaqNn7JdB9wj6LHHMWu+nxSKzBDJ7MZyPY4anose5mLrPLfRBKsxKsngY3ulmOZuRd4CbiajVJa5+yQHe/Q2apkMOV+GMWa+RoTtiGYMg3mWgbev5NADpJ7K2STzGwxZNYCfPlZhYPVmO3bg6zMsfisWrBTxEffkhwhmYU4T8N02AyYQ6NR+5Fe5RA9GpWkm28kmybO9Ml2UsNO4rwXzqxr2K1C6bx6/wGokBflFq2ErQMISJWyXLp/CjULrsx7UQoPFebkRBL0gm/BV3ndSmJiHcgIhKdxQ0nBtv4/6eUw5NVRqncnIEkBuqclRucpFRuEhHHB5HvkOQhk6AFI15JZUEklQUpqWxFEeKv/1Fh4VOJeUsaIltaGhpaWiIbliyJjFxiEMR0xCsCPZeY/AQvi4eNhIjnwBW7gujBK6WLF0UMA78DCUPRSMQXowfnqk/VGvj/U6rixdD+yCmFhAKkOMQ7sY/I1tVb4Qvv63R1H+I7r92bwv6k7qvI/XFq/s96D0+UVH8U6pTwz9XKtdDZOOvlQVFTRih6he+SChHfXFvb3Bxdu3x5dPRyvkNuErubXmRdHs/AvIJWHBjPPy0gDoM3+TaSJyTwsDVVdFotKSMTO3mS5VfUXSVJnm8ASXRqDf5pCHum+kTlTT3/e/Z5xCu4v0Sgz+NpJBvSMIp3gpQmIPVokt/DAcQvZyWT/zczYI4jAAAAAQAAAAB4nCXG0Q2AIBAE0bn7M7EXoSG0DAHp3UnYl02GAE72ksNfBEVJpdm3kofX7kqGgslnL8UPmswGs3icnZS9bxNBEMXf3fnj7IBJTIgJjh0wnd3ky0mqxJEQRURBQUWHBBUoQYgCJakQoqZElJSpqUHKvwAlomIbhLC1De6O380ZxwpISGT1btY7O/PezO5GgaSylrSr8MbNW3dUeXTv6Z6uKMe6kkSp/3QeKHz44MmeKvadZTn1Z9+AfaFiUI4+K4heW9x13dZd3deBXuh9kAuqweXgJeNV8Jb5u7Ad9sK98Hu0Gz2LnrM3GwfZYJcN5qFqyVDzSZ/ZPLM6s7xKuqA5OGugzmrD+NNd9eSbKsqxVk68GqCZfNAiaOFta0YdsIx/BayCNbCP/xA7o5jvedRXsQtkbWKvgVYy0BK2C9bBBtgEW2Ab9MCOZRoqGmn2WsAG5KuojiavAiiCGJTRU8XOgjnmNWxa4dUx4xcYPVo9Wj1aPVo9CjwKPAo8CjwKPAo8CjwKPHX4cdc8Z5F1zdGLIX0Y2krf+tgGHdCwfhVAWn3JeuesAzXrwDFxx6e66FKbbwekHTnby3936Nh6nTd9qY60S23QAVPoi9GAB9tKPdgOWAYrYBWsgUOwOFZeHKn/rXwWzKU3w27ACRWcUMGACgZkdeOs/1fBiVVQG7E72Puwu9GZOtgHxt5KPsLg/sLgYHAwOBgcDA4GB4ODwVn2qXFdadbJehb5nZ1G32pJa+D1GV/W1+wdZH3NzjjkzeRU4GXGZI7sThY1TQ0lzTNm6HdDVf4jbOqStrSjpo4YLSIf24t+o0/Ex/rjLxkmX88sxXRIicMzxPaTn+muif0/Tn/Z7/5EbKCLdgem0VTlDS5z6quceFfr2kDdlrbVQ9/RqKYc1cSMvEUExFRZW2CExK7h7RKVt5pyVlMezzmLLI4iS5YpjSxYZED1TSLb3JEsS3EiS0H7jIgbeKjiL86ZvJgAAAABAAAACgAMAA4AAAAAAAB4nGNgYbJi/MLAysDC1MUUwcDA4A2hGeMYjBh1GJBAAwODOjJfAQgYDgBpfWad/woMSUzvGH4pADWC5JiUmFVBShiYAPnNCnN4nJ2SSU8UQRiGn24YRBEXRMURpFUEVxAQl9GRxWUElNV9GRARUXHnAGL8Fd41xoMXbsaDJ0PIhJuJ4aAnJ0rmF6iJUVK+3bTjQCAkVOet/qq+1Juq73uANDzZ+Vi4I18ry1tn2N4Gv/3MbMOeM5M60qatdvCQRzxgM4VsYsMcZxw2ar7vr+5ynAgnqKeBRk5yiiaaaaGVNto5zRnOco7zXOAil7jMFaL+ySKphHQCZLCITBazhCyWks0ylrOCleSwilxWs4a15LGOIOtVhYKUu1yTuunxVxWUU8keLy5jL1XsYz8HCXGIsPaqOUwNtYqOUMdRjk171wCDfrSVYs1P5qnd0Ky79+in04s62K25lJ3sYhvb53Hr4gZX6eU6t7hNHzdn5A+wxY/ukG4l9K/RF/B2stWTUr0zrBpHecwLXjPMG94ywigf+MoE3/nJH6vcardj9mcny8l1Cpxip8yYpEOJ6hRWdaK6/3+H93KI8UUOCTn8kkNb0iHPd7DMD/PN86kEE5PGzVMzZvrNiOLnbsK0SI1SJkx2TD6L98WDEK+PR5IMh0QRngZS3v1SeqV7wDtpXPqUzH30/zO5dQldCJcLo7FTfesSLd3qXY+62KveTfVwUDxWqCZDorFKPLo0htSnKRoRjdXqYZ1odFl0efnHiZj5CzahfAMAAAEAAAABAAAbd514Xw889QADA+gAAAAA2r3XCgAAAADcluCn/9j/EgPWA3cAAAADAAIAAAAAAAB4nGNgZGBg1vmvwJDEwvz/xv9bzNcZgCIooA4AlmIGwnicY/zB4M8AAr8YGBjlGRiYqhnUmGYx+DKFMWgBaS2mIgYtxu0MCkxdDPJMsxl8GZ2A2Or/A6ZaIO3IEML8GqgWKM5UB1bvC9LDeAqsX5FxA4MMUM6DKZVBDqjOg6mJQZqpnEGOSYNBm7GeIQMF+zGYMBUwODP+YLCDYjcg9gPiaYzqDDYwzCQOwcwvGOxBbmRhBtoLcjMyLoK4G4aBbg5hdPp/A0o/BuLXYPciY5A7kTEdwgCr28NQ3Q5xP6rbgWGyAqQWGAa+4DB7zmDIeAgYhocY/EFxCApLhgngWGVg6gfiKUB3PmTQY74M1APEIH8AANolaCcAAABQAAB+AAB4nHWQzYrCMBSFT239Gxh1tq7qC0jSjQPZSXVlXJTBpeCilEKxUO1rzQOIz+ETuPAxPKl3EAdMSPjuyXdDCIAhTvDghodes7vRQpfVg31MaD04YKqE2/jEt3CH/kK4z+4Vu7ygz2SEtXALA2yFfcxRCAfMf4XbGOMs3GF+EXbWVfgLH7jZvCjr0MZJmtXFrtqk1SEv96GeKqWMaU5tbCIVKbNczbT+819E0WwMi5zvKVEjJMdIkCJjVWCHChtWFQ50SuxpaEz5C24azmev6zSImEfN2ZL/MKOt/znv73v13PphcqSd3gHrqjw8AHicY2BmAIP/cxiMGLAAACqDAdEA') format('woff');
+      }
+
+      [dark="true"] img.svg { filter: invert(1) opacity(0.8)}
+      p.type-specimen {
+          border: 1px solid var(--btw);
+          margin-top: 3rem;
+          }
+      p.type-specimen + p {
+          text-align: center;
+          }
+      a.specimen,
+      [dark="true"] a.specimen {
+          font-family: 'ScalaSans';
+          font-feature-settings: "smcp";
+          text-transform: lowercase;
+          letter-spacing: 0;
+          padding: 0.35em 0.5em 0.45em;
+          border-radius: 1em;
+          background: var(--txt);
+          color: var(--bkg);
+          }
+      a.type-specimen:after,
+      a.specimen:after { content: none; }
+      a.type-specimen:hover { background: none; cursor: zoom-in; }
+      a.specimen:hover { background: rgb(240, 26, 44); }
+      a.specimen:active { background: var(--act); color: white !important;}
+      [dark="true"] a.specimen:not(:hover) { color: var(--bkg); }
+      [dark="true"] a.specimen:hover { color: var(--txt); }
+
+     [wide] .notforwide {
+        display: none !important;
+      }
+      [wide] .forwide {
+        display: block !important;
+      }
+
+ 
+     
+br.forwide {
+        display: none;
+      }
+      [wide] br.forwide {
+        display: block;
+      }
+    </style>
+  <style>
+    html:not([wide]) title-block.dsktp {
+        position: initial;
+        margin-left: -9rem;
+      }
+  </style>
+  
+<style>
+title-block.absolute {
+  position: relative;
+  margin-left: -12rem;
+  margin-left: -11.45rem;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+title-block.sticky {
+  position: sticky;
+  margin-left: -9.5rem;
+  top: 3.2rem;
+  border-top: none;
+  /* padding-top: 0.5rem;
+  padding-top: 5px;
+  padding-top: 0.1em; */
+}
+.sticky topic {
+  /* font-family: display;
+  font-family: "Avocado 14";
+  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 210%;
+  line-height: 0.8; */
+  /* margin-bottom: 0.67em;
+  margin-bottom: 0.4em; */
+}
+html:not([wide]) title-block.sticky:hover {
+  opacity: 1 !important;
+  transition-duration: .2s !important;
+  transition-property: opacity;
+}
+@media all and (max-width:520px) {
+  title-block.absolute {
+  display: none;
+}
+title-block.sticky {
+  display: none;
+}
+}
+
+[wide] title-block.absolute {
+  margin-left: 0;
+}
+[wide] title-block.sticky {
+  position: revert;
+  margin-left:0;
+  text-align: right;
+  font-size: 345%;
+  font-size: 200%;
+  /* min-height: 36rem; */
+  margin-bottom: 10rem;
+  margin-bottom: 5rem;
+}
+
+@media not all and (max-width:520px) {
+  html:not([wide]) #bullet {
+  display: none;
+  }
+  html:not([wide]) title-block.sticky {
+  background: var(--bkg);
+  }
+}
+
+[wide] short-rule {
+  font-size: 83%;
+}
+    </style>
+
+  <title>Milou | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="typographie.html">­</a>
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>Milou</topic>
+    <short-rule>La police à roulettes</span></short-rule>
+    <p class="dsktp type-specimen notforwide"><a href="images/milou+specimen.html" class="type-specimen"><img class="svg" src="images/milou+specimen.svg"></a></p>
+  <p class="dsktp notforwide"><a href="images/milou+specimen.html" class="specimen">specimen</a></p>
+  </title-block>
+
+  <title-block class="mobil"><topic>Milou</topic><short-rule>La police à roulettes</short-rule>
+  <p class="dsktp type-specimen notforwide"><a href="images/milou+specimen.html" class="type-specimen"><img class="svg" src="images/milou+specimen.svg"></a></p>
+  <p class="dsktp notforwide"><a href="images/milou+specimen.html" class="specimen">specimen</a></p></title-block>
+  <style>
+
+    table {
+      cursor: help;
+      text-align: center;
+      width: 100%;
+      height: 20rem;
+      border: none;
+
+      font-family: milou;
+      color:var(--btp);
+      /* font-size: 0.35rem; */ /*white-space: nowrap; overflow-x: hidden; */
+      margin-bottom: 5rem;
+      }
+    [dark="true"] table {color: var(--txt);}
+    table *::selection { background: transparent; }
+    #m1 {font-size: 2.989rem;}
+    @media all and (max-width:520px) {
+      table {height: 60vh; margin-bottom: 4rem;}
+      #m1 {font-size: 12vw;}
+      }
+    </style>
+  <table onclick="scribbler()" contenteditable="false">
+    <script>
+
+      function getRandomSentence() {
+        var index = Math.floor(Math.random() * (sentences.length));
+        return sentences[index];
+      }
+
+      function scribbler() {
+        let milou = document.getElementById('m1');
+        milou.innerHTML = (getRandomSentence());
+      }
+
+      var sentences= [
+          '<span class="mobil" style="font-size: 80%">a quick brown…</span><span class="dsktp">a quick brown…</span>',
+          '<span class="mobil" style="font-size: 68%">…over the lazy&nbsp;dog</span><span class="dsktp" style="font-size: 90%">…over the lazy&nbsp;dog</span>',
+          'ail + saumon',
+          'antarctique',
+          'arbiter of <br>poor taste',
+          'article disponible',
+          'bankrupcy',
+          'barbier',
+          /* 'beau manoir', */
+          'bevölkerung',
+          'blanc',
+          'bœuf',
+          '<span class="mobil" style="font-size: 85%">bruit du temps</span><span class="dsktp">bruit du temps</span>',
+          'brut',
+          'cam­briolage',
+          'ca­briole',
+          'cauldron',
+          /* 'chiro­practeur', */
+          'clubbing',
+          'coal burner',
+          'contenu disponible',
+          'contre­forme',
+          'cowboy',
+          'cruciforme',
+          '<span class="mobil" style="font-size: 90%">douche froide</span><span class="dsktp">douche froide</span>',
+          'driver',
+          /* 'einziges wort', */
+          'finger-licking',
+          'filtre (à&nbsp;café)',
+          'fruit mûr',
+          'golf',
+          'hameçon',
+          'highbrow',
+          'huître diploïde',
+          'industrial design',
+          'ink black',
+          /* 'ja oder nein', */
+          '<span style="color: rgb(188, 54, 38); letter-spacing: 0.02em;">japon</span>',
+          'jargon',
+          /* 'a journey', */
+          'justice',
+          '<span class="mobil" style="font-size: 95%">juxta­position</span><span class="dsktp">juxta­position</span>',
+          'konfetti',
+          'lackey',
+          'lorem ipsum',
+          'maison',
+          'middle­brow',
+          'mini-jupe',
+          'mis au point',
+          /* 'mink oil', */
+          '<span class="mobil" style="font-size: 95%">moto­cyclette</span><span class="dsktp">moto­cyclette</span>',
+          'music-hall',
+          'musique',
+          'naturlich',
+          /* 'no clubbing', */
+          'nocturne',
+          /* 'noir', */
+          'object identifier',
+          'l<span style="letter-spacing:-0.2rem">’</span>œuvre au&nbsp;noir',
+          /* 'oie blanche', */
+          'opéra',
+          /* 'oui / non', */
+          'papillon',
+          'parachute',
+          'pétanque',
+          'pluie',
+          /* 'più usato', */
+          /* 'point final.', */
+          /* 'poil', */
+          'point.',
+          'pop music',
+          'punch-cutter',
+          'punch-drunk',
+          'pyrex',
+          'quadrangle',
+          'schweizerin',
+          'tigre',
+          'tin man',
+          '<span class="mobil" style="font-size: 90%">toilette intime</span><span class="dsktp">toilette intime</span>',
+          'triangle',
+          'trampoline',
+          'trompe-l<span style="letter-spacing:-0.2rem">’</span>œil',
+          /* '“fined”', */
+          /* '“unquoted”', */
+          'vicarious',
+          'voiture',
+          'waltz-in',
+          'yearling',
+          
+          /* 'propria dell<span style="letter-spacing:-0.1rem">’</span>aritmetica', */
+  
+  
+          /* 'weißes fleisch', */
+          'fleisch',
+  
+            'tragédies',
+            '<span class="mobil" style="font-size: 90%">ein­schließlich</span><span class="dsktp">ein­schließlich</span>',
+
+          ];
+      </script>
+  <tbody><tr><td id="m1"><script>document.write(getRandomSentence());</script></td></tr></tbody>
+  </table>
+
+  
+  <div>
+    <p class="mobil forwide" style="text-align:center; margin-bottom: 2.4em;"><a href="images/milou+specimen.html" class="specimen">specimen</a></p>
+  </div>
+
+  
+  <div class="btw"><div class="btw-title">à propos</div>
+    <ul><li><p>Milou est un un <em>caractère de titrage</em>. Il est in­adap­té à la com­po­si­tion des corps. Les lettres ont été des&shy;sinées pour di&shy;ri&shy;ger l’œil vers les points de re&shy;con&shy;nais&shy;sance des ca&shy;rac&shy;tères. Or, en plus de pro&shy;duire une vi&shy;bra&shy;tion per&shy;tur&shy;bante, cet ef&shy;fet se perd dans une taille de corps trop petite.</p></li>
+    <li><p>Milou est une mi&shy;nus&shy;cule uni&shy;ca&shy;mé&shy;rale, c’est-à-dire qu’il ne compte aucune capitale.</p>
+    </div>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  </div>
+
+<a class="nav" href="oni-minot.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="houdini.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="oni-minot.html"><span class="arrow">←</span>&nbsp;oni-minot</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="typographie.html">chapitre</a></div>
+<div><a class="box-link" href="houdini.html">houdini&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+  const toggleMenu2 = function(e) {
+const element = document.querySelector(".sticky")
+    , menu = document.querySelector("#menu")
+    , body = document.querySelector("body");
+
+// click anychere on page
+if (body.classList.contains("menu_open")
+&& e.target.id === "content") {
+  body.classList.toggle("menu_open");
+  setTimeout(function() {
+    menu.style.visibility = "hidden";
+  }, 600);
+}
+
+if (e.target === element || e.target.parentNode === element) {
+  body.classList.toggle("menu_open");
+  if (body.classList.contains("menu_open")) {
+    menu.style.visibility = "visible";
+  } else {
+    setTimeout(function() {
+      menu.style.visibility = "hidden";
+    }, 600);
+  }
+}
+};
+document.addEventListener("click", toggleMenu2);
+
+</script>
+</body>
+</html>
+

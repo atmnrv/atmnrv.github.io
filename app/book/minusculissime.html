@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <script type="text/javascript" src="core/zooom.js"></script>
+
+  <style>
+
+    /*   d o u b l e   c o l o n n e   */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        margin-bottom: 0.5em;
+        padding-left: 0;
+        }
+    .column {
+        flex: 20%;
+        max-width: 100%;
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+        }
+    .column img {
+        margin-bottom: 1em;
+        vertical-align: middle;
+        width: 100%;
+        }
+    @media all and (max-width:520px) {
+        .row {
+        margin-top: 1.6rem;
+        }}
+
+
+/*
+    .zooom-wrap {
+        width: calc(100vw - 2.5rem * 2);
+        }
+    @media all and (max-width:520px) {
+        .zooom-wrap {
+        width: calc(100vw - 1.5rem * 2);
+        }} */
+        p, pp {hyphens: auto; -webkit-hyphens: auto;}
+        [wide] br.dsktp {
+          display: none;
+        }
+
+    </style>
+
+  <title>Le plus petit caractère mondial | @mnrv</title>
+</head>
+<body id="body">
+  <div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="typographie.html">­</a>
+<div id="content" lang="fr">
+  <topic class="article" id="lightswitch">Le plus petit caractère mondial</topic>
+  <p>Oni est une fa­mille de ca­rac­tères conçue et op­ti­mi­sée pour le confort de lec­ture en (très) basse ré­so­lu­tion.</p>
+  <div class="subhead" id="union"><a href="#union">L’union de la carpe et du lapin</a></div>
+  <p>Il existe un adage, te­nace chez les typo­graphes, se­lon le­quel les lettres bri­sées, dites <first-use>­go­thiques</first-use>, et les <first-use>­didones</first-use> se­raient pro­pre­ment illi­sibles ; et que par consé­quent, celles-ci de­vaient être évi­tées au­tant que pos­sible. Les deux écri­tures étaient les pro­duits (de con­traintes) de leurs temps, et quoique l’on de­vine sans peine qu’elles satis­fis­sent les be­soins de leurs contem­po­rains, ces derniers ayant dis­pa­ru, on ne trou­ve­ra plus per­sonne pour les <nobr>pleurer.</nobr></p>
+  <aside><p style="margin-bottom: 0;"><img class="svg" src="images/oni/fraktur.svg" alt=""></p><p>Justus E. Walbaum <br class="dsktp">(1768–1837)</p></aside>
+  <p>L’écri­ture go­thique crût sur le cours du par­che­min à l’ombre des scrip­to­ria : les moines s’épar­gnaient l’œil et la plume en noir­cis­sant les lettres à me­sure qu’ils contrac­taient leur écri­ture pour éco­no­mi­ser les pages. C’est au­dit pro­ces­sus qu’elle doit son ap­pel­la­tion anglo­phone, <nobr><first-use>blackletter</first-use>.</nobr></p>
+  <aside><p style="margin-bottom: 0;"><img class="svg" src="images/oni/didone.svg" alt=""></p><p>Firmin Didot <br class="dsktp">(1764–1836)</p></aside>
+  <p>L’his­toire de la didone est toute autre. Com­plice de la rup­ture clas­sique et des impri­meurs dans une ère d’opulence et d’in­no­va­tion qu’elle cris­tal­lise, elle ser­vit de pré­texte pour éprou­ver de poin­çons—tou­jours plus fins—les encres et les pa­piers—tou­jours plus fins—et les paires d’yeux, pour le plus grand bon­heur des <nobr>opticiens.</nobr></p>
+  <p>Voici donc deux fa­milles typo­gra­phiques, qui n’ont rien d’autre en com­mun qu’une <span class="un"><span class="note-src">mau­vaise ré­pu­ta­tion,</span><span class=note role=note><pp>L’écri­ture go­thique <strong>n’est pas</strong> illi­sible ; elle est sim­ple­ment pas­sée de mode—dis­pa­rue de­puis si long­temps du pay­sage litté­raire occi­den­tal qu’elle s’en est rendu étrangère.</pp>
+  <pp>Consé­quence des typo­graphes ral­liant la ten­dance, le goût de l’époque pour l’épure néo-clas­sique, les co­lonnes ro­maines et l’im­pri­me­rie méca­nique,  le des­sin ra­tion­nel de la didone ins­pire la mo­der­ni­té et pré­fi­gure la ré­vo­lu­tion industrielle.</pp>
+  <pp>À côté de cela, la go­thique fait l’ef­fet in­verse : elle rap­pelle l’Église, ses moines, un temps où l’on écri­vait en­core et à la main et à la bougie… Au­tre­ment dit, le Moyen Âge.</pp>
+  <pp>Est-ce à dire que la didone a chas­sé la go­thique ? <strong>Non</strong>. La didone est un idéal (le ratio­na­lisme) que la tech­nique a ren­du pos­sible. Or, ni le ratio­na­lisme, ni la tech­nique ne furent à l’ori­gine du dé­clas­se­ment de l’écri­ture go­thique. D’une part, le ratio­na­lisme typo­gra­phique n’était pas à son pre­mier essai ; c’est, en ef­fet, la ri­tour­nelle des des­si­na­teurs de types que de par­ve­nir à une ma­trice géo­mé­tri­que­ment par­faite pour la construc­tion d’un al­pha­bet. D’autre part, les formes capi­tales de l’al­pha­bet latin (dont la go­thique est une ma­ni­fes­ta­tion) pro­viennent de la <em>ca­pi­ta­lis mo­nu­men­ta­lis</em>, qui est déjà le pro­duit du ratio­na­lisme ro­main. En outre, si la tech­nique avait dû ex­pul­ser l’usage des lettres bri­sées, elle l’au­rait fait avant, la didone n’étant pas son suc­ces­seur im­mé­diat. Si la didone est res­pon­sable d’une chose, ce n’est rien de moins que d’avoir ré­veil­lé la gothique.</pp>
+  <pp>La didone re­pré­sente le ca­rac­tère fran­çais aux yeux du monde, son élé­gance, sa fri­vo­li­té, et le triomphe des idéaux philoso­phiques et mo­raux qui s’em­pa­re­raient pro­gres­si­ve­ment de l’Eu­rope du <c2sc>XIX</c2sc><e>e</e> ; aus­si son usage est très for­te­ment lié à l’Em­pire et au règne de Na­po­léon. L’inva­sion des États ger­ma­niques par ce der­nier provo­qua la ré­ac­tion na­tio­na­liste alle­mande bien­tôt in­car­née dans la <em>Frak­tur</em>, et la ty­po­gra­phie de­vînt le petit théâtre im­pro­vi­sé de la riva­li­té fran­co-allemande.</pp>
+  <pp>C’est une autre si­mi­li­tude des deux fa­milles : leur ca­rac­tère na­tio­nal ; elles furent por­tées dans un contexte de guerre cultu­relle, et dé­fen­dues pour de mau­vaises rai­sons, c’est-à-dire pour des rai­sons extrin­sèques à la typographie.</pp>
+  <pp>La didone survivra à la dé­faite de l’Em­pe­reur en conser­vant le charme<dops></dops><dopl> « Paris–place</dopl> Ven­dôme » de ses beaux jours. Elle fait tou­jours la cou­ver­ture des ma­ga­zines (<em>Vogue</em>, <em>Har­per’s Ba­zaar</em>, <em>L’Of­fi­ciel</em>, <em>Va­nity Fair</em>…) ; mais par conscience de ses ca­rences, on ne lui de­mande heu­reu­se­ment plus de cou­rir les livres. Elle connaît néan­moins un re­tour hégé­mo­nique de­puis les an­nées 1980 dans les pu­bli­ca­tions ma­thé­ma­tiques par l’in­ter­mé­diaire des pro­grammes Tex.</pp>
+  <pp>La frak­tur s’ef­fon­dre­ra comme un werther sous les dé­combres du na­tio­na­lisme allemand.</pp></span></span> et qui de­vien­draient pour­tant l’ins­pi­ra­tion na­tu­relle d’Oni, po­lice conçue pour le confort de lecture.</p>
+  <div class="subhead" id="policedecaractere"><a href="#policedecaractere">Une police de caractère</a></div>
+  <p>La bonne lec­ture d’un ca­rac­tère de­mande rythme et contraste : deux qua­li­tés héri­tées du tra­cé ma­nuel. C’est pour­quoi l’on peut lire mon écri­ture ; c’est pour­quoi l’on peut lire la vôtre.</p>
+  <p>C’est pour­quoi l’on peut lire Oni.</p>
+  <p>Conscient de l’obs­ta­cle au­quel je se­rais iné­vi­ta­ble­ment confron­té, j’ai construit une fa­mille de ca­rac­tères sur la base du rythme et du contraste—avant toute vo­lon­té quel­conque de vrai­sem­blance des ca­rac­tères. Rai­son pour la­quelle je trou­vai sa pre­mière in­spi­ra­tion dans l’écri­ture manuelle.</p>
+  <p>Par contrainte com­mune—l’éco­no­mie d’es­pace—, je trou­vai sa pre­mière in­fluence dans la calli­gra­phie gothique.</p>
+  <aside><p>L’in­fluence calli­gra­phique est d’avan­tage sen­sible sur le « grand » Oni, en rai­son de la taille de son œil.</p></aside>
+  <p>La calli­gra­phie, litté­ra­le­ment la <em>belle écri­ture</em>, est<dops></dops><dopl> « l’art</dopl> de bien for­mer les lettres ». À la ques­tion de sa­voir si Oni et le mi­not sont de beaux types, j’ai­me­rais ré­pondre que <em>oui</em>, mais c’est avant tout une af­faire de goût et fina­le­ment d’as­sez peu d’im­por­tance—la beau­té est sub­jec­tive, (n’es­t-ce pas ?). En re­vanche, la bonne lec­ture d’un ca­rac­tère l’est beau­coup moins ; c’est même une don­née par­fai­te­ment quan­ti­fiable. Or, même en très grand, alors donc qu’il de­vient moins con­fortable de le lire, Oni reste harmonieux.</p>
+  <div class="specimen">
+    <style>
+      #h0 {
+          font-family: oni-minot;
+          color: var(--txt);
+          letter-spacing: 0;
+          text-align: left;
+          white-space: nowrap;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          user-select: none;
+          -webkit-user-select: none;
+          cursor: default ;
+          padding-left: 1rem;
+          width: calc(100% - 2.36rem);
+          }
+      #h0:hover { cursor: pointer;}
+      #h1 { font-size: 7.86rem; margin-left: -0.5rem; line-height: 1.4; height: 9rem; }
+      @media all and (max-width:520px) {
+          #h0 { width: calc(100% - 2.2rem); }
+          #h1 { white-space: nowrap; overflow-x: hidden; overflow-y: hidden;}
+          #h1 { font-size: 31vw; }
+          }
+      </style>
+    <script>
+      function getRandomSentence() {
+        var index = Math.floor(Math.random() * (sentences.length));
+        return sentences[index];
+      }
+      function scribble() {
+        var source = document.getElementById("h1");
+        source.innerHTML = (getRandomSentence());
+      }
+      var sentences = [
+        'quick brown fox jumps over the lazy dog…',
+        'low-resolution-oriented typeface',
+        'consistent and uniform high-contrast glyphes / ligatures',
+        'this page intentionally left blank',
+        'midnight cowboy looking for a day job and a motorcycle',
+        'black-cauldron mixture for the mass',
+        'monthly subscription to the herald for less than a quarter',
+        'you cannot watch a movie on your telephone, geT real !',
+        'lost art of making children by the dozen',
+        'who’s the man behind the door ?',
+        'dracula !? so, it was him after all…',
+        'all hail the King, baby !',
+        'What’s the story ?',
+        'you’re a woman, I’m a machine',
+        'thespian feat of an ignoramus',
+        'five o’clock already…',
+        'superhot conductor',
+        '&#xe019;rio the punch',
+        'sort of a jazz-fusion kind of thing',
+        'hyper-sexual Prozac pop',
+        'unisex swimsuit',
+
+        'minuscule pour le corps de texte',
+        'contenu disponible tout de suite',
+        'aujourd’hui dans le &#xe009;onde (diplomatique) […].',
+        'les conseils de lecture de notre équipe sportive du dimanche',
+        'point de plus-que-parfait du subjonctif',
+        'le tour du monde en quatre-vingt jours',
+        'Oh ! le bel ornithorynque que voilà…',
+        'l’histoire de la relation franco-allemande en cinq minutes chrononmètre',
+        'les jeunes femmes revenaient de la ferme pleines d’espoir jusqu’au pont du Jura',
+        'philantropie de l’ouvrier charpentier',
+        'carambolage et cambriolage ne font pas bon ménage',
+        'je me suis fait tout petit devant une poupée qui dit "maman" quand on la touche',
+        'tout petit',
+        'rendez-vous en l’an mil sept cent quatre-vingt-neuf',
+        'invitation à souper pour samedi soir',
+        'cyberespace non-fumeur',
+        'une petite maison bleue dans la prairie',
+        'si la cathédrale…',
+        'on connait la chanson…',
+        'la symphonie fantastique',
+        'le bruit du temps',
+        'toilette intime',
+        'falbala et rintintin à &#xe018;onolulu',
+        'tournevis cruciforme',
+        'livraison à domicile',
+        'contreforme',
+        'vers l’infinitif et au-delà !',
+        'point final.',
+        'mi-cuisson',
+        'mi-figue, mi-raisin',
+        'Mezon Ikkoku ( Juliette, je t’aime)',
+        'cheval de course',
+        'synallagmatique et léonine',
+        'preuve du pudding',
+        'accord parental souhaitable',
+
+        'unruhe. hab keine angst—Ich werde dir helfen…',
+        'ich befürchte, dass keiner von ihren ein einziges wort deutsch spricht',
+        'wir sehen uns später !',
+        'un’espressione chi fa la musica delle parole',
+      ];
+    </script>
+  <div id="h0" onclick="scribble()" contenteditable="false" style="cursor: help;"><div id="h1"><script>document.write(getRandomSentence());</script></div></div>
+  <p><image-caption>Oni-minot, 136 points.</image-caption></p>
+  </div>
+  <p>En res­se­rant leur écri­ture, les moines avaient dé­mon­tré la rela­tion étroite qui lie la taille d’un ca­rac­tère et la noir­ceur né­ces­saire à sa lec­ture. Sui­vant leurs en­seigne­ments, je mas­sai les noirs sur le corps rigide des lettres, fai­sant cir­cu­ler au­tour d’elles les vides jus­qu’à l’ob­te­n­tion d’un <em>gris typo­gra­phique</em> homogène.</p>
+  <p>Ce­pen­dant, il y a entre la calli­gra­phie go­thique et Oni une diffé­rence de na­ture : Oni est une fa­mille de ca­rac­tères nu­mé­rique. La tra­jec­toire des moines était théo­ri­que­ment in­finie ; ils au­raient pu res­se­rer en­core leur écri­ture, et en­core—tail­ler des plumes plus fines, di­luer les encres et in­sis­ter qu’on les lût à la loupe… Oni était déjà au mini­mum de sa taille, au pixel près. Plus de contrac­tion pos­sible sans dé­former les caractères.</p>
+  <div class="subhead" id="times"><a href="#times">les petites polices</a></div>
+  <aside><p>Les polices non nu­mé­riques sont sou­mises à des con­traintes phy­siques : poro­si­té du papier, vis­co­sité de l’encre, qua­lité du poinçon, pouvoir de ré­so­lu­tion de l’ob­ser­vateur, etc.</p></aside>
+  <p>C’est une dis­tinc­tion né­ces­saire qu’il me faut pré­ci­ser avant de pour­suivre : les pe­tites po­lices, ni les pe­tites écri­tures ne sont des ca­rac­tères de basse ré­so­lu­tion. Au contraire, les nuances de leurs des­sins, pré­cieuses sur le pa­pier, contribuent au bruit que gé­nèrent ce type de ca­rac­tères dès lors qu’ils sont af­fi­chés sur des écrans en basse définition.</p>
+  <p>Le Times New Ro­man est un exemple de po­lice conçue pour être lue en pe­tits ca­rac­tères. Com­man­dé par le jour­nal épo­nyme pour des rai­sons écono­miques au dé­but de la Dé­pres­sion, il est au­jourd’hui diffi­cile de dis­cer­ner s’il doit son suc­cès à ses ver­tus ou à son omni­pré­sence. C’est un ca­rac­tère étroit, par­ti­cu­liè­re­ment en gras, son ita­lique est atroce ; mais dans les co­lonnes d’un jour­nal, il brille par sa clareté. En basse ré­so­lu­tion, son ren­du n’est pas su­pé­rieur à celui de n’im­porte quelle autre fonte.</p>
+  <p class="image"><div style="padding: 1rem 5rem"><img class="svg" src="images/oni/times.svg"/></div><image-caption><run-in>de haut en bas</run-in> Times New Roman et Oni sur une bande de 80 px.</image-caption></p>
+  <p>Il y a une li­mite physio­logique à ce que l’œil est ca­pable de lire, et une li­mite à la quan­ti­té d’ef­fort qu’un lec­teur con­sent à four­nir à son loi­sir. Aus­si, la véri­table contrainte du Times New Roman, comme celle de l’écri­ture ma­nus­crite go­thique, était l’ob­ser­va­teur. C’est toute la diffé­rence avec une po­lice de basse ré­so­lu­tion, dont la contrainte fon­da­men­tale réside dans son support.</p>
+  <div class="subhead" id="fontchar21"><a href="#fontchar21">les polices numériques primitives</a></div>
+  <p>Les po­lices de basse ré­so­lu­tion sont au moins aus­si nom­breuses que les po­lices op­ti­mi­sées pour les pe­tits ca­rac­tères, mais pour les sou­cis de la dé­mons­tra­tion, je m’en tien­drai à la po­lice sys­tème du mi­cro-or­di­na­teur Apple&nbsp;II.</p>
+  <p class="image"><div style="padding: 1rem"><img class="svg zooom comp" src="images/oni/comp.png"/></div><image-caption><run-in>de gauche à droite</run-in> FontChar21, Oni  et Oni-minot comparés à pixel égal.</image-caption></p>
+  <p>Je n’ai rien de mau­vais à dire de FontChar21 : c’est une po­lice mer­veil­leuse et éton­nam­ment plai­sante à lire, quoique le court échan­til­lon ci­-des­sus suf­fit à con­sta­ter les fai­blesses du ca­rac­tère sur une lec­ture au long court. Elle souffre beau­coup d’être une po­lice à chasse fixe (chaque glyphe est de lar­geur iden­tique) : elle manque cruel­le­ment de frappe et de contraste<nnbsp>­</nnbsp>; les blancs sont trop forts ; et trous et lé­zardes grèvent la lecture. Mais ce n’est pas son pre­mier défaut.</p>
+  <p>Au­rai­t-elle été pro­por­tion­nelle que cela n’y a au­rait rien fait. Les po­lices nu­mé­riques les plus pri­mi­tives, à l’ins­tar des po­lices bit­map, ne sont pas telle­ment des po­lices de basse ré­so­lu­tion. Aus­si rudi­men­taires fussent les pre­miers ordi­na­teurs per­son­nels, leurs écrans étant lar­ge­ment ca­pables d’af­fi­cher de grands ca­rac­tères. Il était, en outre, pos­sible d’ex­ploi­ter la tech­no­lo­gie ca­tho­dique et de sub­divi­ser les pixels en trois com­po­santes chro­ma­tiques (rouge, vert et bleu) pour af­fi­ner le ren­du typographique. FontChar21 n’est ni la plus grande ni la plus dé­tail­lée des fontes bit­map, il n’en reste pas moins qu’à com­pa­rai­son à pixel égal avec Oni et Oni-mi­not, elle passe pour une géante.</p>
+  <div class="subhead" id="soupassement"><a href="#soupassement">le soupassement</a></div>
+  <aside class="dsktp"><p style="margin-bottom: 1em;"><img class="svg" src="images/oni/ambiguite.svg" alt=""></p><p><fig>1</fig> Les points de re­con­nais­sance op­tique sont ma­jo­ritai­re­ment ré­par­tis sur la par­tie haute des ca­rac­tères ro­mains.</p></aside>
+  <aside class="mobil"><p style="margin-bottom: 0; padding: 1rem;"><img class="svg" src="images/oni/ambiguite.svg" alt=""></p><p><fig>1</fig> Les points de re­con­nais­sance op­tique sont ma­jo­ritai­re­ment ré­par­tis sur la par­tie haute des ca­rac­tères ro­mains.</p></aside>
+  <aside class="dsktp"><p style="margin-bottom: 0;"><img class="svg" src="images/oni/fraktur2.svg" alt=""></p><p><fig>2</fig> As­sez sem­blable à la règle des tiers au ciné­ma, le re­gard se pose natu­rel­le­ment sur la ligne d’<i>x</i>.</p></aside>
+  <aside class="mobil"><p style="margin-bottom: 0; padding: 1rem;"><img class="svg" src="images/oni/fraktur2.svg" alt=""></p><p><fig>2</fig> As­sez sem­blable à la règle des tiers au ciné­ma, le re­gard se pose natu­rel­le­ment sur la ligne d’<i>x</i>.</p></aside>
+  <p>La dé­ci­sion de faire d’Oni une fa­mille de ca­rac­tères cur­sive se jus­ti­fiait par l’uni­ver­sa­lité du tra­cé ma­nuel. En fon­dant les ca­rac­tères sur la base com­mune de votre écri­ture et de la mienne, je fa­vo­ri­sais une lec­ture sur le rythme des lettres plu­tôt que sur leurs formes. Je m’au­to­ri­sais éga­le­ment une plus grande li­ber­té plas­tique des carac­tères.</p>
+  <p>Ce der­nier point est es­sen­tiel puisqu’avant d’adop­ter sa forme dé­fi­ni­tive, il fut né­ces­saire de ré­duire Oni—que je ju­geais trop grand—, tout en évi­tant les dé­for­ma­tions énoncées plus haut.</p>
+  <p>Je dé­ci­dai d’éli­mi­ner com­plè­te­ment la par­tie <dops></dops><dopl> « inu­tile »</dopl> à la base des ca­rac­tères (&nbsp;<em>fig. 1</em>&nbsp;). J’évi­tais ainsi l’ac­cu­mu­la­tion d’encre en pa­quet sur les points de jonc­tion, iné­vi­table à cette échelle, tout en des­si­nant un<dops></dops><dopl> « rail</dopl> op­tique » sur la ligne de pied.</p>
+  <!-- <div class="dsktp"><div style="padding: 1rem 6rem; margin-bottom: 0.5rem;"><img class="svg" src="images/oni/ambiguite.svg"/></div><image-caption><fig>1</fig> Les points de re­con­nais­sance op­tique sont ma­jo­ritai­re­ment ré­par­tis sur la par­tie haute des ca­rac­tères ro­mains.</image-caption></div> -->
+  <!-- <div class="mobil"><div style="padding: 1rem 3rem; margin-bottom: 0.5rem;"><img class="svg" src="images/oni/ambiguite.svg"/></div><image-caption><fig>1</fig> Les points de re­con­nais­sance op­tique sont ma­jo­ritai­re­ment ré­par­tis sur la par­tie haute des ca­rac­tères ro­mains.</image-caption></div> -->
+  <p>En fait de sa­cri­fice, ce que je per­dais à la base des ca­rac­tères je dé­pla­çais à <em>hau­teur d’</em>x—où se pose natu­rel­le­ment le re­gard du lec­teur (&nbsp;<em>fig. 2</em>&nbsp;). J’augmentai également les formes descendantes.</p>
+  <!-- <div class="dsktp"><div style="margin-top: -1rem; padding: 0rem 6rem"><img class="svg" src="images/oni/fraktur2.svg"/></div><image-caption><fig>2</fig> As­sez sem­blable à la règle des tiers au ciné­ma, le re­gard se pose natu­rel­le­ment sur la ligne d’<i>x</i>.</image-caption></div> -->
+  <!-- <div class="mobil"><div style="margin-top: -1rem; padding: 0rem 3rem"><img class="svg" src="images/oni/fraktur2.svg"/></div><image-caption><fig>2</fig> As­sez sem­blable à la règle des tiers au ciné­ma, le re­gard se pose natu­rel­le­ment sur la ligne d’<i>x</i>.</image-caption></div> -->
+  <p>La der­nière as­tuce aura été de pour­suivre l’ap­proche ico­no­claste des didones, qui n’exis­tèrent que pour dé­pas­ser les contraintes. Je m’ins­pi­rais de leur fort contraste pour le pousser à son maxi­mum. Les ca­rac­tères te­nant de­puis l’in­té­rieur par le vide in­terne de leurs contre­formes, les dé­liés—<em>tou­jours plus fins</em>—ne se­raient plus que sug­gé­rés, lais­sant le cer­veau re­lier les points, à la ma­nière d’une illu­sion d’optique.</p>
+  <p style="text-align: center; margin-top: 2rem;"><span style="font-family: Oni; font-size: 200%;">consistent and uniform</span>
+  <image-caption style="margin-top: 1rem;">Oni, 33 points.</image-caption></p>            
+  <div class="subhead" id="conclusion"><a href="#conclusion">le plus petit caractère mondial</a></div>
+  <p>Lorsque j’en­tre­pris la créa­tion d’Oni. Il n’exis­tait, à ma connais­sance, au­cune po­lice de ca­rac­tères op­ti­mi­sée pour la lec­ture en (très) basse ré­so­lu­tion, et la den­si­té de pixels crois­sante de nos dis­po­si­tifs sem­blait dé­cou­ra­ger dé­fi­niti­ve­ment les initiatives.</p>
+  <p>On trouve bien des ca­rac­tères qui feignent par leur es­thé­tique les contraintes des pro­ces­seurs 8 bits, mais ce sont avant tout des pro­duc­tions fan­tai­sistes, inac­cep­tables pour une lec­ture prolongée. </p>
+  <p>En­ten­du que les pe­tites po­lices, ni les po­lices bit­map ne sau­raient (mal­gré les appa­rences) être des réfé­rences, je trou­vais une pa­ren­té moins évi­dente chez les lettres bri­sées et les didones. Des­­cen­­dance im­pro­bable de deux fa­milles que tout op­pose, Oni s’in­crit, l’es­pace d’un clin d’œil à l’adresse des typo­graphes, dans la longue his­toire de l’écri­ture de­puis la plume jusqu’à l’écran ; tout nou­veau qu’il soit, il reste un ca­rac­tère fa­mi­lier et ac­ces­sible. Grand public.</p>
+  <p>Oni est livré en deux tailles : <a href="oni.html" class="xref">Oni</a> et <a href="oni-minot.html" class="xref">Oni‑minot</a>.</p>
+  <p>J’ai des­si­né Oni pour ré­pondre aux contraintes d’affi­chage des pro­thèses réti­niennes artifi­cielles. Soit qu’il était trop grand, soit que les élec­tro­des qui com­posent ces pro­thèses étaient en trop petit nombre pour l’em­ployer conve­na­ble­ment, je lui des­si­nai un compa­gnon : Oni‑minot, le plus petit ca­rac­tère au monde.</p>
+  <p>À ce jour, la tech­no­lo­gie des pro­thèses réti­niennes est en­core trop jeune pour se prê­ter sé­rieu­se­ment aux loisirs de la lec­ture. Il ne fait pas de toute que les inno­va­tions pro­chaines ten­dront à rendre Oni obso­lète ; il n’en reste pas moins que le be­soin ac­tuel jus­ti­fiait am­ple­ment une fonte, (et même deux).</p>
+   
+  <!--   
+  <p>J’ai pour habitude de célébrer mes réussites, il me faut avouer, sans bouder mon plaisir, que la technologie des prothèse rétiniennes artificielles est à ce jour trop jeune pour se prêter sérieusement à la lecture.</p>
+  <p>À la vérité, la technologie est à ce jour trop jeune pour se prêter sérieusement à la lecture.</p>
+  <p>C'est à cet égard plus une consolation qu’un tutre de gloire</p>
+<p>Et quoi que l’on puisse arguer que les innovations technologiques tendraient à <strike>remplacer ces dispositifs le caractère obsolète</strike>, le besoin actuel justifiait amplement une fonte, (et même deux). J’ai dessiné Oni en réponse aux contraintes d’affichage des électrodes d’une prothèse rétinienne artificielle. Dans les faits, soit qu’Oni-minot est trop grand, soit que la rOni-minot est encore trop grand, mais la résolution des prothèses est à ce jour encore trop faible pour se prêter sérieusement à la lecture. actuelle des prothèse  pour se prêter sérieusement à la lecture. C’est donc une victoire en demi-teinte. Ou bien sont-ce les prothèses qui sont trop petites</p>
+  <p>mais la grâtification est mince puisque j’ai rater mon objectif. En effet les électrodes d'une prothese rétinienne artificielles le caractères est encore trop grand</p>
+  <p>le titr de plus petit caractère ; c’est en fait une consolation de n’avoir réussi pleinement mon obhectif. J’ai dessiné Oni pour répondre aux contraintes d’affichage des électrodes d’une prothèse rétinienne artificielle, mais celles-ci sont encore trop rudimentaire pour se prêter réellement à la lecture. </p>
+<p>Les électrodes d’une prothèse rétinienne artificielle sont un exemple de dispositif basse résolution.
+    <p>Et bien qu’il soit techniquement possible de le lire la technologie est trop fraîche pour la considérer sérieusemetn pour la lecture</p> 
+    <p> Il semble clair que ces types de dispositif soient condamnés sur le long terme. 
+<p>Il faut se réjouir de l’obsolence prochaine des contraintes de densité d’æffichage</p>
+          <p>En attendant, il y a <a class="xref" href="oni.html">Oni</a> et <a class="xref" href="oni-minot.html">Oni-minot</a>.</p>
+          <p>Et quoi que l’on puisse arguer que les innovations technologiques tendraient à remplacer ces dispositifs le caractère obsolète, le besoin actuel justifiait amplement une fonte, (et même deux).</p>
+        -->
+          <p style="text-align: center; margin-top: 2rem;"><span style="font-family: Oni-minot; font-size: 200%;">thank you anyway !</span>
+            <image-caption style="margin-top: 1rem;">Oni-minot, 33 points.</image-caption></p>  
+   
+
+            <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="houdini.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="minuscule.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="houdini.html"><span class="arrow">←</span>&nbsp;houdini</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="typographie.html">chapitre</a></div>
+<div><a class="box-link" href="minuscule.html">La police montée sur des roulettes&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+    window.addEventListener('load', function () {
+      new Zooom({
+        zooomElement: 'img.zooom',
+        zooomWrap: 'zooom-wrap',
+        zooomImg: 'zooom-img',
+        zooomOverlay: 'zooom-overlay'
+      });
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/Bookerly.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
+  <style>
+    div.entry p {margin-bottom: 0; text-align: justify;}
+    div.entry p + p {text-indent: 1.6em;}
+    .subhead {margin-bottom: 1em; text-align: center; font-size: 120%; font-weight: normal; margin-top: 0; padding-top: calc(3.66rem + 2rem - 2rem); margin-bottom: 2.8rem;}
+        
+    hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 3.8rem;
+
+        /* margin-top: 4rem; */
+        /* margin-bottom: 1.4em; */
+        }
+    greek {
+        font-family: bookerly;
+        font-size: 93%;
+        line-height: 0;
+
+        position: relative;
+        display: inline;
+        }
+
+
+ 
+
+    /* #navtable > div + div { border-left: none; border-top: none;} */
+    .subhead > a:hover:before {
+    position: relative;
+    color: var(--act);
+    font-weight: normal;
+    content: "# ";
+    margin-right: 0.10em;
+    top: -0.08em;
+    font-size: 90%;
+    visibility: hidden;
+    }
+    #content > p > c2sc {font-family: dolly-caps;}
+    #opa:hover {opacity: 1 !important; transition-duration: 0.2s !important; transition-property: opacity;}
+
+
+
+
+
+      .quote {
+        /* background-position: 0 0em; */
+        /* background-size:  0.425em; */
+        /* background-image: url("images/dbll.svg"); */
+          background: 0 -0.025em / 0.54rem 1rem url("images/dblr.svg");
+          background: -0.32em 0em / 1em 1em url("images/dblr.svg");
+          
+
+          background-repeat: no-repeat;
+          /* justification ferrée uniq. / therefore to use in combination w/ div.entry */
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
+          margin-left: 0;
+          padding-left: 0.6em;
+          }
+
+
+      [dark="true"] .quote {
+          background-image: url("images/dbl_alt.svg");
+          }
+       .quote span:first-of-type {
+          margin-left: -0.18em;
+          } 
+          .quote span:first-of-type::before {
+  content: "“";
+  background: var(--bkg);
+  /* margin-left: -0.8em;
+  padding-right: 0.1em;
+  padding-right: 0.2em;
+  padding-left: 0.2em; */
+  margin-left: -0.45em;
+padding-right: 0.01em;
+padding-left: 0.01em;
+  color: var(--txt);
+}
+
+      .side.note { font-style: initial;}
+      @media not all and (max-width:520px) {
+          .side.note {
+          display: -webkit-box !important;
+          -webkit-box-orient: vertical;
+          line-clamp: 3 !important;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+
+          padding-right: 0.4em;
+          margin-right: -0.4em;
+          letter-spacing: -0.015em ;
+        }
+          .side.note.visible {
+          -webkit-line-clamp: initial;
+          /* text-align: justify; */
+          }
+          .side.note:not(.visible) pp {
+          display: none;
+          }
+          
+      .note-src:hover + .side.note {
+          background: var(--a);
+          transition-property: background;
+          transition-duration: 0.2s;
+          border-radius: 8px;
+          }
+      /* [dark="true"] .note-src:hover + .side.note {
+          color: var(--bkg);
+          padding-right: 0.4em;
+          margin-right: -0.4em;
+          } */
+          [dark="true"] .side.note:hover {
+          transition-property: color;
+          transition-duration: 0.2s;
+          color: mistyrose;
+          }
+          }
+
+      .side.note.visible {display: block;}
+
+      /* alternative dark note theme */
+      
+      [dark="true"] .on:hover > .note-src, [dark="true"] .un:hover > .note-src {
+          color: mistyrose;
+          background: none;
+          transition-property: color;
+          transition-duration: 0.2s;
+  
+          padding-left: 0em;
+          margin-left: 0em;
+          
+          }
+      @media not all and (max-width:520px) {
+          [dark="true"] .note-src:hover + .side.note {
+          background: none;
+          color: mistyrose;
+          }}
+
+      [dark="true"] .on:active > *,
+      [dark="true"] .un:active > * { 
+          transition-property: color;
+          transition-duration: 0.2s !important;
+          }
+      [dark="true"] .on:not(:active) > *,
+      [dark="true"] .un:not(:active) > * { 
+          transition-property: color;
+          transition-duration: 0.2s !important;
+          }
+
+
+
+          /* [dark="true"] .side.note {color: mistyrose} */
+          p {text-align: justify; }
+          .side.note  pp {
+          margin-top: 1em;
+          }
+      @media all and (max-width:520px)  {
+          blockquote .side.note {  margin-left: -1rem; width: calc(100% - 1rem);}}
+      @media not all and (max-width:520px)  {
+          blockquote .side.note { margin-left: -13rem; }}
+      @media all and (min-width:1200px) {
+          blockquote .side.note { margin-left: -15rem; }}
+
+
+          @media not all and (max-width:520px)  {
+.side.note { letter-spacing:normal !important ; }}
+    </style>
+
+<style>
+
+</style>
+
+  <title>On mur­der con­sid­ered as one of the fine arts | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content" lang="en-US">
+  <topic class="commentary">On mur­der <by style="font-family: Scalasans; font-style: italic; text-transform: none; font-size: 50%; letter-spacing: 0.04em;">by&nbsp;Thomas&nbsp;De&nbsp;Quincey</by></topic>
+  <div class="gap" style="height: 2rem"></div><ul class="children"></ul>
+  <div class="subhead">On Mur­der <br>Con­sid­ered as One of the&nbsp;Fine&nbsp;Arts</div>
+  <p  style="font-style: italic; text-align: center;"><span class="on"><span class="note-src">To the Ed­i­tor of Black­wood’s Mag­a­zine</span><span class="note">Wil­liam Black­wood (1776–1834) ed­it­ed <em>Black­wood’s Mag­a­zine</em> from 1817 to 1834, but the mag­a­zine also had a fic­tive edi­tor, ‘Chris­to­pher North’, who was most of­ten per­son­at­ed by John Wil­son (1785–1854), vo­lu­mi­nous <em>Black­wood’s</em> con­trib­u­tor and Pro­fes­sor of Mor­al Phi­los­o­phy in the Uni­ver­sity of Edin­burgh, 1820–51. De&nbsp;Q. un­doubt­edly had both Black­wood and Wil­son in mind when he ad­dressed him­self to the ed­i­tor of <em>Black­wood’s</em> (see Rob­ert Mor­ri­son, ‘John Wil­son and the edi­tor­ship of <em>Black­wood’s Mag­a­zine</em>’, Notes and Que­ries, 46/1 <nobr>(1999), 48–50)</nobr>.</span></span></p>
+  <div class="entry">
+  <p style="font-family: dolly-caps; /* margin-top: 1.4rem; */ margin-bottom: 0.4rem;">Sir,</p>
+  <p><!-- <p style="text-align: left !important;"> -->We have all heard of a <span class="on"><span class="note-src">So­ci­ety for the Pro­mo­tion of Vice,</span><span class="note">De&nbsp;Q. prob­a­bly par­o­dies the So­ci­ety for Pro­mot­ing Chris­tian Knowl­edge, found­ed by Thom­as Bray (1656–1730) in 1698 to en­cour­age the dis­tri­bu­tion of Chris­ti­an lit­er­a­ture and coun­ter­act the growth of vice and immorality.</span></span> of the <span class="on"><span class="note-src">Hell-­Fire Club,</span><span class="note">The first of sev­er­al ear­ly eight­eenth-cen­tury Hell-­Fire Clubs is re­put­ed to have been found­ed around 1720 by Phil­ip, duke of Whar­ton (1698–1731). These in­for­mal aris­to­crat­ic groups were al­leg­ed­ly de­vot­ed to drink, sac­ri­lege, and sex­u­al ex­cess, and were bom­bas­ti­cally con­demned in the anon­y­mous <em>Hell-­Fire-­Club : Kept by a So­ci­ety of Blas­phem­ers… With the King’s Or­der in Coun­cil, for Sup­press­ing Im­mor­al­ity and Prophane­ness</em> (Lon­don, 1721). Sir Fran­cis Dash­wood (1708–81) found­ed a sim­i­lar but bet­ter-­known Club around 1750.</span></span> &c. At Bright­on I think it was that <span class="on"><span class="note-src">a So­ci­ety was formed for the Sup­pres­sion of Vir­tue.</span><span class="note">De&nbsp;Q. par­o­dies the So­ci­ety for the Sup­pres­sion of Vice, found­ed in 1802 by Wil­liam Wilber­force (1759–1833), ab­oli­tion­ist and politician.</span></span> That So­ci­ety was it­self sup­pressed—but I am sor­ry to say that an­oth­er ex­ists in Lon­don, of a char­ac­ter still more atro­cious. In ten­den­cy, it may be de­nom­i­nat­ed a So­ci­ety for the En­cour­age­ment of Mur­der ; but, ac­cord­ing to their own deli­cate <span class="on"><span class="note-src"><greek>ευφημισμὸς</greek>,</span><span class="note">‘eu­phe­mism’.</span></span> it is styled—The So­ci­ety of Con­nois­seurs in Mur­der. They pro­fess to be cu­ri­ous in hom­i­cide ; ama­teurs and dil­et­tan­ti in the var­i­ous modes of blood­shed ; and, in short, Mur­der-­Fan­ci­ers. Every fresh atroc­ity of that class, which the po­lice an­nals of Eu­rope bring up, they meet and crit­i­cise as they would a pic­ture, stat­ue, or oth­er work of art. But I need not trou­ble my­self with any at­tempt to de­scribe the spir­it of their pro­ceed­ings, as you will col­lect <em>that</em> much bet­ter from one of the Month­ly Lec­tures read be­fore the So­ci­ety last year. This has fall­en into my hands acci­den­tal­ly, in spite of all the vigi­lance exer­cised to keep their trans­ac­tions from the pub­lic eye. The pub­li­ca­tion of it will alarm them ; and my pur­pose is that it should. For I would much rath­er put them down qui­et­ly, by an ap­peal to pub­lic opin­ion through you, than by such an ex­po­sure of names as would fol­low an ap­peal to <span class="on"><span class="note-src">Bow-street ;</span><span class="note">The chief mag­is­te­rial busi­ness of Lon­don was for many years car­ried on in the Bow Street Po­lice Court. Its of­ficers were pop­u­lar­ly known as the ‘Bow-Street Run­ners’, the first Lon­don po­lice force. In 1829, two years af­ter De&nbsp;Q. pub­lished this ar­ti­cle, the ‘Run­ners’ were offi­cial­ly re­placed by the Met­ro­pol­i­tan Po­lice.</span></span> which last ap­peal, how­ev­er, if this should fail, I must posi­tive­ly re­sort to. For it is scan­dal­ous that such things should go on in a Chris­tian land. Even in a hea­then land, the pub­lic tol­er­a­tion of mur­der was felt by a Chris­tian writ­er to be the most cry­ing re­proach of the pub­lic mor­als. This writ­er was <span class="on"><span class="note-src">Lactan­ti­us ;</span><span class="note">Lactan­tius (<em>c.</em>&nbsp;ad&nbsp;240–c.320), North Af­ri­can Chris­tian apo­lo­gist and one of the most re­print­ed of the Lat­in Church Fa­thers. De&nbsp;Q. quotes from Lactan­ti­us, ‘Epit­o­me 58’ in <em>Epit­o­me Div­inar­um In­sti­tu­tio­num</em>, ed. Eber­hared Heck and An­tonie Wlosok (Stutt­gart, 1994), 91. De&nbsp;Q. dis­torts the quo­ta­tion in a num­ber of ways, in­clud­ing the omis­sion of the open­ing ques­tion (‘What is as hor­rid, as foul as the mur­der of a man?’) and the trans­la­tion of ‘vo­lup­tas’ (‘pleas­ure’ or ‘de­light’) as ‘de­mands of taste’.</span></span> and with his words, as sin­gu­lar­ly ap­pli­ca­ble to the pres­ent oc­ca­sion, I shall con­clude :—<span class="quote"><span>Quid</span> tam hor­ri­bile,</span>” says he, <span class="quote"><span>tam</span> tetrum, quam hom­i­nis tru­ci­da­tio? Ideo sever­is­si­mis leg­i­bus vita nos­tra mu­ni­tur ; ideo bel­la exe­cra­bilia sunt. In­ven­it tamen con­sue­tu­do qua­tenus hom­i­cidi­um sine bel­lo ac sine leg­i­bus fa­ci­at : et hoc sibi vo­lup­tas quod scelus vin­di­cav­it. Quod si in­ter­esse hom­i­cidio sce­leris con­scien­tia est,—et ei­dem faci­nori spec­ta­tor ob­stric­t­us est cui et ad­mis­sor ; ergo et in his glad­ia­to­rum cae­d­i­b­us non mi­nus cru­o­re pro­fundi­tur qui spec­tat, quam ille qui fac­it : nec potest esse im­mu­nis à san­guine qui volu­it ef­fun­di ; aut vid­eri non in­ter­fe­cisse, qui in­ter­fec­tori et fa­vit et prœ­mi­um pos­tu­lavit.”</span> “Hu­man life,” says he, <span class="quote"><soan>is</soan> guard­ed by laws of the ut­ter­most rig­our, yet cus­tom has de­vised a mode of evad­ing them in be­half of mur­der ; and the de­mands of taste (vo­lup­tas) are now be­come the same as those of aban­doned guilt.”</span> Let the So­ci­ety of Gen­tle­men Ama­teurs con­sid­er this ; and let me call their es­pe­cial at­ten­tion to the last sen­tence, which is so weighty, that I shall at­tempt to con­vey it in Eng­lish :—<span class="quote"><span>Now,</span> if mere­ly to be pres­ent at a mur­der fas­tens on a man the char­ac­ter of an ac­com­plice,—if bare­ly to be a spec­ta­tor in­volves us in one com­mon guilt with the per­pe­tra­tor ; it fol­lows of ne­ces­si­ty, that, in these mur­ders of the am­phi­the­a­tre, the hand which in­flicts the fa­tal blow is not more deep­ly im­brued in blood than his who sits and looks on ; nei­ther can <em>he</em> be clear of blood who has coun­te­nanced its shed­ding ; nor that man seem oth­er than a par­tic­i­pa­tor in mur­der who gives his ap­plause to the mur­der­er, and calls for priz­es in his be­half.”</span> The <span class="on"><span class="note-src"><em>prœ­mi­a pos­tu­lavit</em></span><span class="note">‘he has de­mand­ed rewards’.</span></span> I have not yet heard charged upon the Gen­tle­men Ama­teurs of Lon­don, though un­doubt­edly their pro­ceed­ings tend to that ; but the <span class="on"><span class="note-src"><em>in­ter­fec­tori fa­vit</em></span><span class="note">‘he has shown fa­vour to the kill­er’.</span></span> is im­plied in the very ti­tle of this as­so­ci­a­tion, and ex­pressed in every line of the lec­ture which I send you.—I am, &c.</p>
+  </div>
+  <cite style="text-align: right; margin-left: 0;"><span class="on"><span class="note-src">X.Y.Z.</span><span class="note" style="text-transform: none;">One of De&nbsp;Q.’s favourite signatures.</span></span></cite>
+  <div class="gap" style="height: 1em"></div>
+  <div class="entry">
+  <p>(<span class="on"><span class="note-src"><em>Note of the Edi­tor.</em></span><span class="note">The note is al­most cer­tain­ly the ad­di­tion of ei­ther Wil­liam Black­wood or John Wil­son, and seems to have been in­sert­ed with­out De&nbsp;Q.’s consent.</span></span>—We thank our corre­spond­ent for his com­mu­ni­ca­tion, and also for the quo­ta­tion from Lactan­ti­us, which is very per­ti­nent to his view of the case ; our own, we con­fess, is dif­fer­ent. We can­not sup­pose the lec­tur­er to be in ear­nest, any more than <span class="on"><span class="note-src">Eras­mus in his Praise of Fol­ly,</span><span class="note">De­sid­e­r­ius Eras­mus of Rot­ter­dam (1469– 1536), the great­est of the Re­nais­sance hu­man­ists, sati­rized the­o­lo­gi­ans and wide­ly prac­tised reli­gious ob­ser­vanc­es in his cele­brat­ed <i>Mo­ri­ae en­co­mi­um</i>, or <i>Praise of Fol­ly</i> (1509).</span></span> or <span class="on"><span class="note-src">Dean Swift in his pro­pos­al for eat­ing chil­dren.</span><span class="note">Jona­than Swift (1667–1745), An­glo-Irish au­thor and Dean of St Paul’s, Dub­lin. In ‘A Mod­est Pro­posal’ (1729), Swift sa­tir­i­cal­ly sug­gest­ed eat­ing the chil­dren of the Irish poor.</span></span> How­ev­er, ei­ther on his view or on ours, it is equal­ly fit that the lec­ture should be made public.)
+  </div>
+  <div class="gap" style="height: 1em"></div>
+  <div class="gap" style="height: 1em"></div>
+  <div style="font-family: dolly-caps; text-transform: lowercase; text-align: center; font-size: 100%; margin-bottom: 1em;">Lecture</div>  
+  <div class="entry">
+  <p><span style="font-family: dolly-caps; /* margin-top: 1.4rem; */ margin-bottom: 0.4rem;">Gen­tle­men</span>,—I have had the hon­our to be ap­point­ed by your com­mit­tee to the try­ing task of read­ing the <span class="on"><span class="note-src">Wil­liams’</span><span class="note">For John Wil­liams, see above, p. 166.</span></span> Lec­ture on Mur­der, con­sid­ered as one of the Fine Arts—a task which might be easy enough three or four cen­tu­ries ago, when the art was lit­tle un­der­stood, and few great mod­els had been ex­hib­it­ed ; but in this age, when mas­ter­piec­es of ex­cel­lence have been exe­cut­ed by pro­fes­sion­al men, it must be evi­dent, that in the style of criti­cism ap­plied to them, the pub­lic will look for some­thing of a corre­spond­ing im­prove­ment. Prac­tice and the­o­ry must ad­vance <span class="on"><span class="note-src"><em>pari pas­su</em>.</span><span class="note">‘at an equal pace’.</span></span> Peo­ple be­gin to see that some­thing more goes to the com­po­si­tion of a fine mur­der than two block­heads to kill and be killed—a knife—a purse—and a dark lane. De­sign, gen­tle­men, group­ing, light and shade, po­et­ry, senti­ment, are now deemed in­dis­pen­sa­ble to at­tempts of this na­ture. Mr Wil­liams has ex­alt­ed the ide­al of mur­der to all of us; and to me, there­fore, in par­ticu­lar, has deep­ened the ar­du­ous­ness of my task. <span class="on"><span class="note-src">Like Aeschy­lus or Mil­ton in po­et­ry, like Mi­chael An­ge­lo</span><span class="note">Aeschy­lus (525–456 <c2sc>bc</c2sc>), Greek tra­ge­di­an. Mi­chel­an­gelo (1475–1564), Ital­ian paint­er, sculp­tor, ar­chi­tect, and poet.</span></span> in paint­ing, he has car­ried his art to a point of co­los­sal sub­lim­ity; and, as Mr Wordsworth ob­serves, has in a man­ner <span class="on"><span class="note-src">“cre­at­ed the taste by which he is to be en­joyed.”</span><span class="note">Wil­liam Wordsworth (1770–1850) de­clared in his ‘Es­say, Sup­ple­men­tary to the Pref­ace’ (1815) that ‘every au­thor, as far as he is great and at the same time orig­i­nal, has had the task of cre­at­ing the taste by which he is to be en­joyed’ (The Prose Works of Wil­liam Wordsworth, ed. W. J. B. Owen and Jane Smy­s­er, 3 vols. (Ox­ford, 1974), iii. 80; Wordsworth’s italics).</span></span> To sketch the his­to­ry of the art, and to ex­am­ine its prin­ci­ples crit­i­­i­cal­ly, now re­mains as a duty for the con­nois­seur, and for judg­es of quite an­oth­er stamp from his <span class="on"><span class="note-src">Maj­es­ty’s Judg­es of Assize.</span><span class="note">High Court judg­es who pre­sid­ed in coun­ty crim­i­nal and civ­il cases.</span></span></p>
+  <p>Be­fore I be­gin, let me say a word or two to cer­tain prigs, who af­fect to speak of our so­ci­ety as if it were in some de­gree im­mor­al in its ten­den­cy. Im­mor­al!—God bless my soul, gen­tle­men, what is it that peo­ple mean? I am for mo­ral­ity, and al­ways shall be, and for vir­tue and all that ; and I do af­firm, and al­ways shall, (let what will come of it,) that mur­der is an im­prop­er line of con­duct—high­ly im­prop­er ; and I do not stick to as­sert, that any man who deals in mur­der, must have very in­cor­rect ways of think­ing, and tru­ly in­ac­cu­rate prin­ci­ples ; and so far from aid­ing and abet­ting him by point­ing out his vic­tim’s hid­ing-place, <span class="on"><span class="note-src">as a great mor­al­ist</span><span class="note">Kant—who car­ried his de­mands of un­con­di­tion­al ve­rac­ity to so ex­trav­a­gant a length as to af­firm, that, if a man were to see an in­no­cent per­son es­cape from a mur­der­er, it would be his duty, on be­ing ques­tioned by the mur­der­er, to tell the truth, and to point out the re­treat of the in­no­cent per­son, un­der any cer­tain­ty of caus­ing mur­der. Lest this doc­trine should be sup­posed to have es­caped him in any heat of dis­pute, on be­ing taxed with it by a cele­brat­ed French writ­er, he sol­emn­ly reaf­firmed it, with his rea­sons.<pp>In 1797 the Fran­co-Swiss nov­el­ist and po­lit­i­cal writ­er Ben­ja­min Con­stant (1767–1830) ac­cused the Ger­man phi­los­o­pher Im­ma­nuel Kant (1724–1804) of go­ing ‘so far as to main­tain that it would be a crime to lie to a mur­der­er who asked us wheth­er a friend of ours whom he is pur­su­ing had tak­en ref­uge in our house’. Kant ad­mit­ted that ‘I ac­tu­ally said this some­where or oth­er, though I can­not now re­call where’, and then reaf­firmed his view in <em>On the Sup­posed Right to Lie from Phi­lan­thro­py</em> (1797), in which he states that ‘if you have by a lie pre­vent­ed some­one just now bent on mur­der from com­mit­ting the deed, then you are le­gal­ly ac­count­a­ble for all the con­se­quenc­es that might arise from it. But if you have kept strict­ly to the truth, then pub­lic jus­tice can hold noth­ing against you, what­ev­er the un­fore­seen conse­quenc­es might be’ (see Kant, <em>Prac­ti­cal Phi­los­o­phy</em>, ed. Mary J. Gre­gor (Cam­bridge, 1996), 611–12). Kant, how­ev­er, did not ar­gue that one should ‘point out [the] vic­tim’s hid­ing-place’ (as De&nbsp;Q.’s lec­tur­er claims).</pp></span></span> of Ger­ma­ny de­clared it to be every good man’s duty to do, I would sub­scribe one shil­ling and six­pence to have him ap­pre­hend­ed, which is more by eight­een-pence than the most emi­nent mor­al­ists have sub­scribed for that pur­pose. But what then? <span class="on"><span class="note-src">Everything in this world has two han­dles.</span><span class="note">De&nbsp;Q. bor­rows from Lau­rence Sterne, <em>The Life and Opin­ions of Tris­tram Shan­dy, Gen­tle­man</em>, ed. Ian Camp­bell Ross (Ox­ford, 1998), 83 : ‘Every thing in this world, con­tin­ued my fa­ther, (fill­ing a fresh pipe)—every thing in this earth­ly world, my dear broth­er <em>Toby</em>, has two han­dles.’</span></span> Mur­der, for in­stance, may be laid hold of by its mor­al han­dle, (as it gen­er­ally is in the pul­pit, and at the <span class="on"><span class="note-src">Old Bai­ley ;</span><span class="note">The Cen­tral Crim­i­nal Court in Lon­don.</span></span>) and <em>that</em>, I con­fess, is its weak side ; or it may also be treat­ed <em>aes­thet­i­cal­ly</em>, as the Ger­mans call it, that is, in re­la­tion to good taste.</p>
+  <p>To il­lus­trate this, I will urge the au­thor­ity of three emi­nent per­sons, viz. S. T. Col­er­idge, Ar­is­tot­le, and <span class="on"><span class="note-src">Mr How­ship</span><span class="note">John How­ship (1781–1841), Eng­lish sur­geon and au­thor.</span></span> the sur­geon. To be­gin with S.T.C.—One night, many years ago, I was drink­ing tea with him in Bern­ers’ Street, (which, by the way, for a short street, <span class="on"><span class="note-src">has been un­com­mon­ly fruit­ful in men of ge­ni­us.)</span><span class="note">Sam­uel Tay­lor <nobr>Col­er­idge</nobr> (1772–1834) lived with his friends John and Mary Mor­gan at 71 Bern­ers St., Lon­don, from 1812 to 1813. Oth­er ‘men of ge­ni­us’ who lived in Bern­ers St. in­clude the ar­chi­tect Sir Wil­liam Cham­bers (1726–96) and the paint­ers John Opie (1761–1807) and <nobr>Hen­ry</nobr> Fuse­li (1741–1825).</span></span> Oth­ers were there be­sides my­self ; and amidst some car­nal con­sid­er­a­tions of tea and toast, we were all im­bib­ing a dis­ser­ta­tion on <span class="on"><span class="note-src">Ploti­nus from the at­tic lips</span><span class="note">Ploti­nus (205–70), Pla­ton­ist phi­los­o­pher. ‘At­tic’ is ‘of or per­tain­ing to At­ti­ca, or to its cap­i­tal Ath­ens’; thus, ‘marked by sim­ple and re­fined ele­gance, pure, classical’ (<span style="font-feature-settings: 'c2sc';">OED</span>).</span></span> of S.T.C. Sud­den­ly a cry arose of “<em>Fire—fire!</em>”—upon which all of us, mas­ter and dis­ci­ples, Pla­to and <span class="on"><span class="note-src"><greek>ὁι περί τον Πλάτωνα</greek>,</span><span class="note">‘those around <nobr>Pla­to</nobr>’.</span></span> rushed out, ea­ger, for <span class="on"><span class="note-src">the spec­ta­cle.</span><span class="note">De&nbsp;Q. in­vokes John Wil­son, ‘Noct­es Am­bro­si­anae (XIV)’ in <em>Black­wood’s Mag­a­zine</em>, 15 (April 1824), 382: ‘I call this a very pass­a­ble fire. … I fear the block­heads will be throw­ing wa­ter upon the fire, and de­stroy­ing the ef­fect. Mr Am­bro­se, step over the way, and re­port pro­gress.’ Re­veal­ing­ly, Wil­son then pro­ceeds to a dis­cus- sion of John Thurtell. Cf. Wil­liam Ha­zlitt, ‘Mr Kean’s Iago’ in <em>The Com­plete Works of Wil­liam Ha­zlitt</em>, ed. P. P. Howe, 21 vols. (Lon­don, 1930–4), v. 213 : Shake­speare ‘knew that the love of pow­er … was nat­u­ral to man. … Why do we al­ways read the ac­counts in the news­pa­pers, of dread­ful fires and shock­ing mur­ders, but for the same rea­son?’</span></span> The fire was in Ox­ford Street, at a pi­ano-­forte mak­er’s ; and, as it prom­ised to be a con­fla­gra­tion of mer­it, I was sor­ry that my en­gage­ments forced me away from Mr Col­er­idge’s par­ty be­fore mat­ters were come to a cri­sis. Some days af­ter, meet­ing with my Pla­ton­ic host, I re­mind­ed him of the case, and begged to know how that very prom­is­ing ex­hi­bi­tion had ter­mi­nat­ed. “Oh, sir,” said he, “it turned out so ill, that we damned it unani­­i­mous­ly.” Now, does any man sup­pose that Mr Col­er­idge,—who, for all he is too fat to be a per­son of ac­tive vir­tue, is un­doubt­edly a wor­thy Chris­tian,—that this good S.T.C., I say, was an in­cen­di­ary, or ca­pa­ble of wish­ing any ill to the poor man and his pi­ano-­fortes (many of them, doubt­less, with the <span class="on"><span class="note-src">ad­di­tion­al keys</span><span class="note">The first five and a half oc­tave pi­ano ap­peared in the late eight­eenth cen­tu­ry, and by the ear­ly nine­teenth cen­tu­ry pi­ano key­boards reached six and a half oc­taves.</span></span>)? On the con­tra­ry, I know him to be that sort of man that I durst stake my life upon it he would have worked an en­gine in a case of ne­ces­si­ty, al­though rath­er of the fat­test for such fiery tri­als of his vir­tue. But how stood the case? Vir­tue was in no re­quest. On the ar­riv­al of the fire-engines, <span class="on"><span class="note-src">mo­ral­ity had de­volved whol­ly on the in­sur­ance of­fice.</span><span class="note">Fire bri­gades were em­ployed by the in­sur­ance com­pa­nies, and re­spond­ed only to fires at prem­ises in­sured by their own com­pa­nies. The gov­ern­ment was not in­volved in fire-­fight­ing un­til 1865.</span></span> This be­ing the case, he had a right to grat­ify his taste. He had left his tea. Was he to have noth­ing in return?</p>
+  <p>I con­tend that the most vir­tu­ous man, un­der the prem­ises stat­ed, was en­ti­tled to make a lux­u­ry of the fire, and to hiss it, as he would any oth­er per­for­mance that raised ex­pec­ta­tions in the pub­lic mind, which after­wards it disap­point­ed. Again, to cite an­oth­er great au­thor­ity, what says the Sta­gy­r­ite? He (in the Fifth Book, I think it is, of his Meta­phys­ics,) de­scribes what he calls <greek>χλεπτὴν τέλειον</greek>, <em>i.e.</em> a <span class="on"><span class="note-src"><em>per­fect thief</em> ;</span><span class="note">Ar­is­tot­le (384–322 <c2sc>bc</c2sc>) was born in Sta­gi­ra and known as the ‘Sta­gir­ite’. In his Meta­phys­ics, v. xvi, he de­fines ‘ex­cel­lence’ as that which ‘can­not be sur­passed rela­tive to its ge­nus … trans­fer­ring it to the case of bad things, we speak of a com­plete scan­dal­mon­ger and a com­plete thief—as in­deed we even call them good : a good thief and a good scan­dal­mon­ger’.</span></span> and, as to Mr How­ship, in a work of his on In­di­ges­tion, he makes no scru­ple to talk with ad­mi­ra­tion of a cer­tain ul­cer which he had seen, and which he styles <span class="on"><span class="note-src">“a beau­ti­ful ul­cer.”</span><span class="note">De&nbsp;Q. al­most cer­tain­ly has in mind How­ship, <em>Prac­ti­cal Re­marks upon In­di­ges­tion</em> (Lon­don, 1825), 155: ‘Ex­ter­nal to the cav­i­ty … was now seen, quite dis­tinct from the fine in­ject­ed mem­brane, the sec­tion of a small white soft tu­mor. … The con­trast was beau­ti­ful, the nat­u­ral struc­ture well in­ject­ed, that of the tu­mor not in­ject­ed at all’.</span></span> Now will any man pre­tend, that, ab­stract­edly con­sid­ered, a thief could ap­pear to Ar­is­tot­le a per­fect char­ac­ter, or that Mr How­ship could be en­am­oured of an ul­cer? Ar­is­tot­le, it is well known, was him­self so very mor­al a char­ac­ter, that, not con­tent with writ­ing his <span class="on"><span class="note-src">Nichomachéan Eth­ics, in one vol­ume oc­ta­vo, he also wrote an­oth­er sys­tem, called <em>Mag­na Mor­al­ia</em>, or Big Eth­ics.</span><span class="note">Ar­is­tot­le’s <em>Nico­ma­chean Eth­ics</em> was ded­i­cat­ed to or ed­it­ed by his son, Nichoma­chus. The au­thor­ship of the <em>Mag­na Mor­alia</em> is un­cer­tain : it may have been writ­ten by Ar­is­tot­le, or it may have been com­piled from his lec­tures by one of his stu­dents af­ter his death.</span></span> Now, it is im­pos­si­ble that a man who com­pos­es any eth­ics at all, big or lit­tle, should ad­mire a thief <em>per se</em>, and, as to Mr How­ship, it is well known that he makes war upon all ul­cers ; and, with­out suf­fer­ing him­self to be se­duced by their charms, en­deav­ours to ban­ish them from the coun­ty of Mid­dle­sex. But the truth is, that, how­ev­er ob­jec­tion­able per se, yet, rela­tive­ly to oth­ers of their class, both a thief and an ul­cer may have in­finite de­grees of mer­it. They are both im­per­fec­tions, it is true ; but to be im­per­fect be­ing their es­sence, the very great­ness of their im­per­fec­tion be­comes their per­fec­tion. <span class="on"><span class="note-src"><em>Spar­tam nac­tus es, hanc ex­or­na</em>.</span><span class="note">Adapt­ed from Cice­ro, Let­ters to At­ti­cus, iv. vi. 2, which it­self quotes Eu­ri­pi­d­es, Frag­ments, 723: ‘Spar­ta is your por­tion: em­bel­lish it!’</span></span> A thief like <span class="on"><span class="note-src">Au­tol­y­cus or Mr Bar­ring­ton,</span><span class="note">Au­tol­y­cus is the thief and rogue in Shake­speare’s <em>The Win­ter’s Tale</em>. George Bar­ring­ton (1755–1804) was an Irish ad­ven­tur­er and no­to­ri­ous pick­pock­et.</span></span> and a grim <span class="on"><span class="note-src">phage­dae­nic ul­cer,</span><span class="note">‘spread­ing ul­cer’ (<span style="font-feature-settings: 'c2sc';">OED</span>).</span></span> su­perb­ly de­fined, and run­ning reg­u­lar­ly through all its nat­u­ral stag­es, may no less just­ly be re­gard­ed as ide­als af­ter <em>their</em> kind, than the most fault­less moss-rose amongst flow­ers, in its pro­gress from bud to <span class="on"><span class="note-src">“bright con­sum­mate flow­er” ;</span><span class="note">Mil­ton, <em>Par­a­dise Lost</em>, v. 481.</span></span> or, amongst hu­man flow­ers, the most mag­nif­i­cent young fe­male, ap­par­elled in the pomp of wom­an­hood. And thus not only the ide­al of an ink­stand may be im­agined, (<span class="on"><span class="note-src">as Mr Col­er­idge demon­strat­ed in his cele­brat­ed corre­spond­ence with Mr Black­wood,</span><span class="note">Col­er­idge, ‘Se­lec­tion from Mr Col- eridge’s Lit­er­ary Corre­spond­ence with Friends, and Men of Let­ters’, <em>Black­wood’s Mag­a­zine</em>, 10 (1821), 256 : ‘What qual­i­ties and prop­er­ties would you wish to have com­bined in an ink-­stand? … The un­ion of these <em>de­sid­er­ata</em> will be <em>your ide­al</em> of an ink-­stand.’</span></span>) in which, by the way, there is not so much, be­cause an ink­stand is a laud­a­ble sort of thing, and a val­u­a­ble mem­ber of so­ci­e­ty ; but even im­per­fec­tion it­self may have its ide­al or per­fect state.</p>
+  <p>Re­al­ly, gen­tle­men, I beg par­don for so much phi­los­o­phy at one time, and now, let me ap­ply it. When a mur­der is in the <span class="on"><span class="note-src">pau­lo-post-­fu­tu­rum</span><span class="note">A gram­mat­ical term re­fer­ring to the verb form used for an event that is about to hap­pen.</span></span> tense, and a ru­mour of it comes to our ears, by all means let us treat it mor­al­ly. But sup­pose it over and done, and that you can say of it, <span class="on"><span class="note-src"><greek>Τετέλεςαι</greek>, or (in that ada­man­tine mo­los­sus of Me­dea) <greek>εἴργασαι</greek> ;</span><span class="note">Re­spec­tive­ly, ‘it is com­plet­ed’ and ‘it is done’. A mo­los­sus is ‘a met­ri­cal foot con­sist­ing of three long syl­la­bles’ (<span style="font-feature-settings: 'c2sc';">OED</span>). De&nbsp;Q.’s ref­er­ence seems to be to <em>Me­dea</em>, a Greek trag­e­dy by Eu­ri­pi­des (<em>c.</em>485–406 <c2sc>bc</c2sc>). But the word <greek>εἴργασαι</greek> does not ap­pear in the play. De&nbsp;Q. prob­a­bly has in mind Eu­ri­pi­d­es, <em>Hecu­ba</em>, 1122.</span></span> sup­pose the poor mur­dered man to be out of his pain, and the ras­cal that did it off like a shot, no­body knows whith­er ; sup­pose, last­ly, that we have done our best, by put­ting out our legs to trip up the fel­low in his flight, but all to no pur­pose—<span class="on"><span class="note-src">“abi­it, eva­sit,”</span><span class="note">Cice­ro, <em>In Catil­inam</em>, ii. <c2sc>I</c2sc>: ‘Abi­it, ex­ces­sit, eva­sit, erupit’ (‘He has gone, left us, got away, bro­ken out’).</span></span> &c.—why, then, I say, what’s the use of any more vir­tue? Enough has been giv­en to mo­ral­ity ; now comes the turn of Taste and the Fine Arts. A sad thing it was, no doubt, very sad ; but <em>we</em> can’t mend it. There­fore let us make the best of a bad mat­ter ; and, as it is im­pos­sible to ham­mer any­thing out of it for mor­al pur­pos­es, let us treat it aes­thet­i­cal­ly, and see if it will turn to ac­count in that way. Such is the log­ic of a sen­si­ble man, and what fol­lows? We dry up our tears, and have the sat­is­fac­tion per­haps to dis­cov­er, that a trans­ac­tion, which, mor­ally con­sid­ered, was shock­ing, and with­out a leg to stand upon, when tried by prin­ci­ples of Taste, turns out to be a very mer­i­to­ri­ous perfor­mance. Thus all the world is pleased ; the old prov­erb is jus­ti­fied, that it is an ill wind which blows no­body good; the ama­teur, from look­ing bil­ious and sulky, by too close an at­ten­tion to vir­tue, be­gins to pick up his crumbs, and gen­er­al hi­lar­ity pre­vails. Vir­tue has had her day ; and hence­for­ward, <span class="on"><span class="note-src"><em>Ver­tu</em></span><span class="note">Var­i­ant of ‘Vir­tu’, ‘a knowl­edge of, or in­ter­est in, the fine arts’ (<span style="font-feature-settings: 'c2sc';">OED</span>).</span> and Con­nois­seur­ship have leave to pro­vide for them­selves. Upon this prin­ci­ple, gen­tle­men, I pro­pose to guide your stud­ies, <span class="on"><span class="note-src">from Cain to Mr Thurtell.</span><span class="note">Cain was the first~born son of Adam and Eve, and mur­dered his broth­er Abel (Gen­e­sis <nobr>4: 1-16)</nobr>. John Thurtell (1794–1824) be­lieved his fel­low gam­bler Wil­liam Weare had cheat­ed him of £300 and, af­ter en­tic­ing Weare into the coun­try, he mur­dered him. Thurtell’s tri­al and exe­cu­tion at­tract­ed enor­mous at­ten­tion, in­clud­ing Wil­liam Mag­inn, ‘The Lament for Thurtell’ in <em>Black­wood’s Mag­a­zine</em>, 15 (Jan­u­ary 1824), 101 : ‘What if, af­ter swal­low­ing brains and blood, he ate pork chops like tur­tle, | Sure, don’t we swal­low any­thing? Alas! for Whig Jack Thurtell’.</span></span> Through this great gal­lery of mur­der, there­fore, to­geth­er let us wan­der hand in hand, in de­light­ed ad­mi­ra­tion, while I en­deav­our to point your at­ten­tion to the ob­jects of prof­it­a­ble criticism.</p>  
+  </div>
+  <p style="text-align: center; line-height: 1; pointer-events: none;">*&nbsp;&nbsp;&nbsp;*<br>*</p>
+  <div class="gap" style="height: 1em"></div>
+  <div class="entry">
+  <p>The first mur­der is fa­mil­iar to you all. As the in­ven­tor of mur­der, and <span class="on"><span class="note-src">the fa­ther of the art,</span><span class="note">De&nbsp;Q. par­o­dies Pierce Egan (1772–1849), sport­ing writ­er, whose <em>Box­ia­na</em> (1812) opens with a live­ly sur­vey of ‘the ori­gin, rise, and pro­gress of pu­gi­lism in Eng­land’, and pon­ders ‘wheth­er our first par­ent, Adam, had any pre­ten­sions to this art’ (Egan, <em>Box­ia­na</em>, ed. Scott No­ble (To­ron­to, 1997), 1).</span></span> Cain must have been a man of first-rate ge­ni­us. All the Cains were men of ge­ni­us. <span class="on"><span class="note-src">Tu­bal Cain</span><span class="note">Eve ‘also bare-­Cain, Tu­bal an in­struc­tor of every ar­tif­i­cer in brass and iron’ (Gen­e­sis <nobr>4:22</nobr>).</span></span> in­vent­ed tubes, I think, or some such thing. But, what­ev­er were the orig­i­nal­ity and ge­ni­us of the art­ist, every art was then in its in­fan­cy ; and the works must be criti­cised with a rec­ol­lec­tion of that fact. Even Tu­bal’s work would prob­a­bly be lit­tle ap­proved at this day <span class="on"><span class="note-src">in Shef­field ;</span><span class="note">Shef­field, in south York­shire, was in the 19<e>th</e> cen­tu­ry the world cen­tre of high-grade steel man­u­fac­ture.</span></span> and there­fore of Cain (Cain sen­ior, I mean,) it is no dis­par­age­ment to say, that his per­for­mance was but so so. Mil­ton, how­ev­er, is sup­posed to have thought dif­fer­ent­ly. By his way of re­lat­ing the case, it should seem to have been rath­er a pet mur­der with him, for he re­touch­es it with an ap­par­ent anx­i­ety for its pic­tur­esque <nobr>ef­fect :—</nobr></p>
+  <blockquote>
+  <v>Where­at he inly raged ; and, as they talk’d,</v>
+  <v>Smote him into the mid­riff with a stone</v>
+  <v>That beat out life : he fell ; and, dead­ly pale,</v>
+  <v>Groan’d out his soul with gush­ing blood ef­fus’d.</v>
+  <p style="display: block; text-align: right; font-size: inherit; margin-top: 0.4em; text-indent: 0;">—<span class="on"><span class="note-src"><em>Par. Lost</em>, B. XI.</span><span class="note">Milton, <em>Paradise Lost</em>, <c2sc>xi.</c2sc> 444–7.</span></span></p>  
+  </blockquote></p>
+  <p>Upon this, Rich­ard­son the paint­er, who had an eye for ef­fect, re­marks as fol­lows, in his Notes on Par­a­dise Lost, p. 497 :—“It has been thought,” says he, <span class="quote"><span>that</span> Cain beat (as the com­mon say­ing is,) the breath out of his broth­er’s body with a great stone ; <span class="on"><span class="note-src">Mil­ton gives in to this, with the ad­di­tion, how­ev­er, of a large wound.”</span><span class="note">Jona­than Rich­ard­son (1667–1745), por­trait paint­er, <em>Ex­plan­a­tory Notes and Re­marks on Par­a­dise Lost</em> (1734), 497.</span></span></span> In this place it was a judi­cious ad­di­tion ; for the rude­ness of the weap­on, un­less raised and en­riched by a warm, san­gui­nary col­our­ing, has too much of the na­ked air of the sav­age school ; as if the deed were per­pe­trat­ed by a <span class="on"><span class="note-src">Polypheme</span><span class="note">in Hom­er’s <em>Od­ys­seus</em>, Polyphemus is the most fa­mous of a race of sav­age, one-eyed gi­ants known as Cy­clo­pes. In Book IX Od­ys­seus nar­row­ly es­capes be­ing killed and eat­en by Polyphemus.</span></span> with­out sci­ence, pre­med­i­ta­tion, or any­thing but a mut­ton bone. How­ev­er, I am chief­ly pleased with the im­prove­ment, as it im­plies that Mil­ton was an ama­teur. As to Shak­speare, there nev­er was a bet­ter ; as his de­scrip­tion of the mur­dered <span class="on"><span class="note-src">Duke of Glouces­ter, in Hen­ry VI.,</span><span class="note">Shake­speare, <em>Henry VI</em>, <c2sc>iii.</c2sc> ii.</span></span> of <span class="on"><span class="note-src">Dun­can’s, Ban­quo’s,</span><span class="note">Shake­speare, <em>Macbeth</em>, <c2sc>ii.</c2sc> ii and <em>Macbeth</em>, <c2sc>iii.</c2sc> iii.</span></span> &c. suffi­cient­ly proves.</p>
+  <p>The foun­da­tion of the art hav­ing been once laid, it is pit­i­a­ble to see how it slum­bered with­out im­prove­ment for ages. In fact, I shall now be obliged to leap over all mur­ders, sa­cred and pro­fane, as ut­ter­ly un­wor­thy of no­tice, un­til long af­ter the Chris­tian era. Greece, even in <span class="on"><span class="note-src">the age of Peri­cles,</span><span class="note">Per­i­cles (<em>c.</em>495–429 <c2sc>bc</c2sc>), Atheni­an states­man, led Greece dur­ing an age of great po­lit­i­cal and cul­tur­al achievement.</span></span> pro­duced no mur­der of the slight­est mer­it ; and Rome had too lit­tle orig­i­nal­ity of ge­ni­us in any of the arts to suc­ceed, where her mod­el failed her. In fact, the Lat­in lan­guage sinks un­der the very idea of mur­der. “The man was mur­dered ;”—how will this sound in Lat­in? <span class="on"><span class="note-src"><em>In­ter­fec­tus est, in­ter­emp­tus est</em></span><span class="note">‘He was killed, he was de­stroyed’</span></span>—which sim­ply ex­press­es a hom­i­cide ; and hence the Chris­tian Lat­i­n­ity of the mid­dle ages was obliged to in­tro­duce a new word, such as the fee­ble­ness of clas­sic con­cep­tions nev­er as­cend­ed to. <span class="on"><span class="note-src"><em>Mur­dra­tus est</em>,</span><span class="note">De&nbsp;Q. play­ful­ly Lat­i­niz­es Ger­man stems : ‘He was murdered’.</span></span> says the sub­lim­er dia­lect of Goth­ic ages. Mean­time, the Jew­ish school of mur­der kept alive what­ev­er was yet known in the art, and grad­u­ally trans­ferred it to the West­ern World. In­deed the Jew­ish school was al­ways re­spect­a­ble, even in the dark ages, as the case of Hugh of Lin­coln shows, which was hon­oured with the ap­pro­ba­tion of Chau­cer, on oc­ca­sion of an­oth­er per­for­mance from the same school, <span class="on"><span class="note-src">which he puts into the mouth of the Lady Abbess.</span><span class="note">In Geof­frey Chau­cer’s <em>Can­ter­bury Tales</em>, the Pri­or­ess (not ‘Ab­bess’) re­lates the sto­ry of a choir­boy in Asia who was mur­dered by Jews. At the end of the tale she lik­ens him to Hugh of Lin­coln (1245–55), a leg­end­ary Eng­lish child mar­tyr whose al­leged mur­der by Jews be­came a fo­cal point of me­di­e­val anti‑Semitism.</span></span></p>
+  <p>Re­cur­ring, how­ev­er, for one mo­ment to clas­si­cal an­tiq­ui­ty, I can­not but think that <span class="on"><span class="note-src">Cat­iline, Clodi­us, and some of that co­te­rie, would have made first-rate art­ists ; and it is on all ac­counts to be re­gret­ted, that the prig­gism of Cice­ro</span><span class="note">Cice­ro (106–43 <c2sc>bc</c2sc>), states­man, law­yer, schol­ar, and writ­er, was also the great­est Ro­man ora­tor. Cat­iline (<em>c.</em>108–62 <c2sc>bc</c2sc>), aris­to­crat and dema­gogue, plot­ted to over­throw the Ro­man re­pub­lic and mur­der its lead­ing citi­zens, in­clud­ing Cice­ro. He was de­nounced by Cice­ro in the Sen­ate and died in bat­tle short­ly there­af­ter. Clodi­us (<em>c.</em>93–52 <c2sc>bc</c2sc>), pol­i­ti­cian and thug, was a bit­ter ene­my of Cice­ro.</span></span> robbed his coun­try of the only chance she had for dis­tinc­tion in this line. As the <em>sub­ject</em> of a mur­der, no per­son could have an­swered bet­ter than him­self. Lord! how he would have howled with pan­ic, if he had heard <span class="on"><span class="note-src">Ce­the­gus</span><span class="note">Ce­the­gus was the most dan­ger­ous of Cat­iline’s as­so­ci­ates and un­der­took to mur­der Cice­ro. He was exe­cut­ed by or­der of the Sen­ate.</span></span> un­der his bed. It would have been tru­ly di­vert­ing to have lis­tened to him ; and sat­is­fied I am, gen­tle­men, that he would have pre­ferred the <span class="on"><span class="note-src">utile of creep­ing into a clos­et, or even into a <em>clo­a­ca</em>, to the <em>hon­es­tum</em></span><span class="note">De&nbsp;Q. means the use­ful (‘utile’) as op­posed to the hon­our­a­ble (‘hon­es­tum’) thing. A ‘clo­a­ca’ is a ‘sew­er’.</span></span> of fac­ing the bold art­ist.</p>
+  <p>To come now to the dark ages—(by which we, that speak with pre­ci­sion, mean, <em>par excel­lence</em>, the tenth cen­tu­ry, and the times im­me­di­ately be­fore and af­ter)—these ages ought nat­u­ral­ly to be fa­vour­a­ble to the art of mur­der, as they were to church-ar­chi­tec­ture, to stained-glass, &c. ; and, ac­cord­ing­ly, about the lat­ter end of this pe­ri­od, there arose a great char­ac­ter in our art, I mean the Old Man of the Moun­tains. He was a shin­ing light, in­deed, and I need not tell you, that the very word <span class="on"><span class="note-src">“as­sas­sin”</span><span class="note">The ‘As­sas­sins’, whose name de­rives from the Ar­a­bic ‘Hash­shash’ (‘hash­ish smok­er’), were an Is­lam­ic sect dat­ing from the elev­enth cen­tu­ry, and infa­mous for their al­leged prac­tice of tak­ing hash­ish to in­duce ec­stat­ic vi­sions and then mur­der­ing their reli­gious ene­mies. Rashid ad-­Din (d.&nbsp;1192), lead­er of the Syr­i­an branch of the As­sas­sins, was known in the West as the Old Man of the Moun­tain.</span></span> is de­duced from him. So keen an ama­teur was he, that on one oc­ca­sion, when his own life was at­tempt­ed by a fa­vour­ite as­sas­sin, he was so much pleased with the tal­ent shown, that not­with­stand­ing the fail­ure of the art­ist, he cre- ated him a Duke upon the spot, with re­main­der to the fe­male line, and <span class="on"><span class="note-src">set­tled a pen­sion on him for three lives.</span><span class="note">The an­ec­dote has not been traced, and is prob­a­bly De&nbsp;Q.’s own apoc­ry­phal addition.</span></span> As­sas­si­na­tion is a branch of the art which de­mands a sep­a­rate no­tice ; and I shall de­vote an en­tire lec­ture to it. Mean­time, I shall only ob­serve how odd it is, that this branch of the art has flour­ished by fits. It nev­er rains, but it pours. Our own age can boast of some fine speci­mens ; and, about two cen­tu­ries ago, there was a most bril­liant con­stel­la­tion of mur­ders in this class. I need hard­ly say, that I al­lude es­pe­cial­ly to those five splen­did works,—the as­sas­si­na­tions of <span class="on"><span class="note-src">Wil­liam I. of Or­ange, of Hen­ry IV. of France,</span><span class="note">Wil­liam I, Prince of Or­ange (1533–84), lead­er of the Prot­es­tant Neth­er­lands in their re­volt against Span­ish rule, was shot dead by a fa­nat­i­cal Ro­man Catho­lic, Franc-Com­tois Balthasar Gérard. Hen­ri IV (1553–1610), first Bour­bon King of France, was stabbed to death by a de­ranged Ro­man Catho­lic, François Ra­vail­lac (1578–1610).</span></span> of the <span class="on"><span class="note-src">Duke of Buck­ing­ham, (which you will find ex­cel­lent­ly de­scribed in the let­ters pub­lished by Mr El­lis,</span><span class="note">George Vil­li­ers, 1st Duke of Buck­ing­ham (1592–1628), states­man and roy­al fa­vour­ite, was mur­dered in Ports­mouth by a dis­af­fect­ed na­val lieu­ten­ant, John Fel­ton (<em>c.1</em>595–1628). Sir Hen­ry El­lis (1777–1869), prin­ci­pal li­brar­ian of the Brit­ish Mu­se­um, pub­lished a let­ter ‘an­nounc­ing the As­sas­si­na­tion of the Duke of Buck­ing­ham’ in <em>Orig­i­nal let­ters, il­lus­tra­tive of Eng­lish His­to­ry</em>, 3 vols. (Lon­don, 1824), iii. 254–60: ‘the Duke of Buck­ing­ham … was by one Fel­ton … slaine at one blow, with a dag­ger-knife. In his stag­ger­ing he turn’d about, ut­ter­ing one­ly this word, “Villaine!”’</span></span> of the Brit­ish Mu­se­um,) of <span class="on"><span class="note-src">Gus­ta­vus Adol­phus, and of Wal­len­stein.</span><span class="note">Gus­ta­vus Adol­phus (1594–1632), king of Swe­den and cham­pi­on of the Prot­es­tant cause in the Thir­ty Years War, was not mur­dered, but died in bat­tle at Lützen. Al­bre­cht Wen­zel Eu­se­bi­us von Wal­len­stein (1583–1634), Bo­he­mi­an sol­dier and com­mand­er of the ar­mies of the Holy Ro­man Em­pire in the Thir­ty Years War, was stabbed to death by an Eng­lish mer­ce­nary, Wal­ter De­vere­ux.</span></span> The King of Swe­den’s as­sas­si­na­tion, by the by, is doubt­ed by many writ­ers, <span class="on"><span class="note-src">Harte amongst oth­ers ;</span><span class="note">De&nbsp;Q. re­fers to Wal­ter Harte (1709–74), mis- cel­la­ne­ous writ­er, <em>The His­to­ry of the Life of Gus­ta­vus Adol­phus, King of Swe­den</em> (1759). Harte’s ac­count does not tal­ly with De&nbsp;Q.’s : as Gus­ta­vus’s fol­low­ers ‘were pre­par­ing to re­treat, an Im­pe­rial cav­a­lier ad­vanced, unob­served … and hav­ing cried out, <em>Long have I fought thee</em>, tran­spierced his maj­es­ty with a pis­tol-ball through the body’ (Harte, <em>The His­to­ry of Gus­ta­vus Adol­phus</em>, 2 vols. (Lon­don, 1807), ii. 377)</span></span> but they are wrong. He was mur­dered ; and I con­sid­er his mur­der unique in its excel­lence ; for he was mur­dered at noon-­day, and on the field of bat­tle,—a fea­ture of orig­i­nal con­cep­tion, which oc­curs in no oth­er work of art that I re­mem­ber. In­deed, all of these as­sas­si­na­tions may be stud­ied with prof­it by the ad­vanced con­nois­seur. They are all of them <span class="on"><span class="note-src"><em>exem­p­laria</em>,</span><span class="note">‘mod­els’ or ‘examples’.</span></span> of which one may say,—
+  <blockquote><span class="on"><span class="note-src">Noc­turnâ ver­satâ manu, ver­sate di­urne ;</span><span class="note">Hor­ace, <em>Ars Po­et­i­ca</em>, 269 : ‘han­dle [them] by night, han­dle them by day’.</span></span></blockquote>
+  Es­pe­cial­ly noc­turnâ.</p>
+  <p>In these as­sas­si­na­tions of princ­es and states­men, there is noth­ing to ex­cite our won­der : im­por­tant chang­es of­ten de­pend on their deaths ; and, from the emi­nence on which they stand, they are pecu­li­ar­ly ex­posed to the aim of every art­ist who hap­pens to be pos­sessed by the crav­ing for sce­ni­cal ef­fect. But there is an­oth­er class of as­sas­sina­tions, which has pre­vailed from an ear­ly pe­ri­od of the seven­teenth cen­tu­ry, that re­al­ly <em>does</em> sur­prise me ; I mean the as­sas­si­na­tion of phi­los­ophers. For, gen­tle­men, it is a fact, that every phi­los­o­pher of emi­nence for the two last cen­tu­ries has ei­ther been mur­dered, or, at the least, been very near it ; inso­much, that if a man calls him­self a phi­los­o­pher, and nev­er had his life at­tempt­ed, rest as­sured there is noth­ing in him ; and against <span class="on"><span class="note-src">Locke’s</span><span class="note">John Locke (1632–1704), phi­los­o­pher and au­thor of <em>An Es­say Con­cern­ing Hu­man Un­der­stand­ing</em> (1690), the sem­i­nal work of Brit­ish em­pir­i­cist phi­los­o­phy.</span></span> phi­los­o­phy in par­ticu­lar, I think it an un­an­swer­a­ble ob­jec­tion, (if we need­ed any) that, al­though he car­ried his throat about with him in this world for seven­ty-two years, no man ever con­de­scend­ed to cut it. As these cas­es of phi­los­o­phers are not much known, and are gen­er­ally good and well com­posed in their cir­cum­stanc­es, I shall here read an ex­cur­sus on that sub­ject, chief­ly by way of show­ing my own <nobr>learn­ing.</nobr></p>
+
+    </div>
+  
+  
+  
+
+
+
+
+  
+  
+  
+  <cite>Thomas De Quincey, <in>On murder</in>, <en>1827</en>.</p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="rozan.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="crockford.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="rozan.html"><span class="arrow">←</span>&nbsp;petites ignorances <span class="desktop-only"><br><span style="visibility: hidden"><span class="arrow">←</span>&nbsp;</span></span>de la conversation</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="crockford.html">How JavaScript Works&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+/* let atliens = document.querySelectorAll(".side.note");
+for (var i = 0; i < atliens.length; i++) {
+    atliens[i].setAttribute("onclick", "myFunction()");
+  } */
+//
+function toggleFullNote(event) {
+ 
+  if (event.target.classList.contains('note', 'inside')) {
+    event.target.classList.toggle('visible');
+    if (event.target.style.display == "block") {
+      event.target.style.display = "none";
+    } else {
+      event.target.style.display = "block";
+    }
+  }
+  if (event.target.parentNode.classList.contains('note', 'inside')) {
+    event.target.parentNode.classList.toggle('visible');
+    if (event.target.parentNode.style.display == "block") {
+      event.target.parentNode.style.display = "none";
+    } else {
+      event.target.parentNode.style.display = "block";
+    }
+  }
+  if (event.target.parentNode.classList.contains('note-src')) {
+    if (event.target.parentNode.nextElementSibling.style.display == "block") {
+      event.target.parentNode.nextElementSibling.style.display = "none";
+    } else {
+      event.target.parentNode.nextElementSibling.style.display = "block";
+    }
+  }
+
+  if (event.target.classList.contains('note-src')
+  && event.target.nextElementSibling.classList.contains('side', 'note')){
+    event.target.nextElementSibling.classList.toggle('visible');
+  }
+  if (event.target.parentNode.classList.contains('note-src')
+  && event.target.parentNode.nextElementSibling.classList.contains('side', 'note')){
+      event.target.parentNode.nextElementSibling.classList.toggle('visible');
+  }
+}
+  // if (event.target && event.target.classList.contains('inside', 'note')) {
+  //   if (! event.target.classList.contains('visible')) {
+  //     event.target.classList.add('visible');
+  //   } else {
+  //     event.target.classList.remove('visible');
+  //   }
+  // }
+  // if (event.target && event.target.parentNode.classList.contains('inside', 'note')) {
+  //   if (! event.target.parentNode.classList.contains('visible')) {
+  //     event.target.parentNode.classList.add('visible');
+  //   } else {
+  //     event.target.parentNode.classList.remove('visible');
+  //   }
+  // }
+  // if (event.target && event.target.className == 'note-src') {
+  //   if (! event.target.nextElementSibling.classList.contains('visible')) {
+  //     event.target.nextElementSibling.classList.add('visible');
+  //   } else {
+  //     event.target.nextElementSibling.classList.remove('visible');
+  //   }
+  // }
+  // if (event.target && event.target.parentNode.className == 'note-src') {
+  //   if (! event.target.parentNode.nextElementSibling.classList.contains('visible')) {
+  //     event.target.parentNode.nextElementSibling.classList.add('visible');
+  //   } else {
+  //     event.target.parentNode.nextElementSibling.classList.remove('visible');
+  //   }
+  // }
+// }
+document.addEventListener('click', toggleFullNote);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
+  <style>
+    div#content { padding-top: 0; padding-bottom: 0; }
+    div#content { margin-left: 13.5rem; }
+    @media all and (max-width:520px) {
+        div#content { margin: 1.5rem; margin-top: 0; padding: 0; }}
+    #toc-marker {border-top: solid var(--txt) 0.35rem}
+    h1.toc-topic {
+        font-size: 110%;
+        font-style: normal;
+        font-weight: bolder;
+        }
+    h1.toc-topic + h1.toc-topic { margin-top: 1.25rem; }
+    ul.toc + h1.toc-topic { margin-top: .75rem; /* 1.75rem; */ }
+    ul.toc {
+        font-size: 105%;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        margin-left: 0.5rem;
+        column-count: 2;
+        column-gap: 2em;
+        }
+    @media all and (max-width:520px) {
+        ul.toc {
+        font-size: 120%;
+        column-count: 1;
+        }}
+    ul.toc li:before { content: none; }
+    ul.toc li {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0.6em;
+        line-height: 1.2;
+        list-style-type: none;
+        }
+    a:after { content: none; }
+    h1.toc-topic a { display: inline-block; width: 100%; }
+    .toc-topic a {
+        padding-left: 0.1em !important;
+        margin-left: -0.1em !important;
+        padding-right: 0.1em !important;
+        margin-right: -0.1em !important;
+        }
+    .toc li a {
+        display: block;
+        padding-left: 0.2em;
+        margin-left: -0.2em;
+        padding-right: 0.2em;
+        margin-right: -0.2em;
+        }
+    ex, ax { font-family: dolly-caps; text-transform: lowercase; }
+    ex:after { content: ","; }
+    ax:after { content: "."; }
+    ex + in, ax + in { display:block; font-style: italic; margin-left: 0.5rem; margin-left: 0.1em;}
+    #contactme {
+        font-family: 'display';
+        font-size: 1.4rem; /* 1.3rem; */
+        text-align: center;
+        line-height: 1;
+        text-transform: uppercase;
+        font-feature-settings: 'case' 1;
+        margin-top: 2.5rem;
+        border-top:solid var(--txt) 0.35rem;
+        padding-top: 0.35rem;
+        }
+    #contactme a { display: block; }
+    [dark="true"] #contactme a:hover { color: var(--sp); background: none; }
+    
+    [dark="true"] a.xref { padding-left: 0.1em; margin-left: -0.1em; padding-right: 0.1em; margin-right: -0.1em; }  /* addendum */
+    
+    #index {margin-bottom: 1.5em;}
+    #index:first-line {font-family: dolly-caps; text-transform: lowercase;}
+   
+    .spp {color: var(--sp);}
+    [dark="true"] a.xref:hover {color: var(--bkg);}
+    strong {font-weight: inherit; color: var(--sp)}
+    a:hover strong {color: var(--bkg) !important}
+    .konami {display: none}
+
+    </style>
+
+  <style>
+    #lightswitch {
+        position: fixed;
+        top: 5rem;
+        left: 4rem;
+        z-index: 999;
+        height: 4rem;
+        width:4rem;
+        border-radius: 50%;
+        background: #2a2a24; /*#feffcb;*/
+
+        }
+    @media all and (max-width:520px) {
+        #lightswitch {
+        top: unset;
+        bottom: 3.5rem;
+        left: unset;
+        right: 3rem;
+      /* left: -1.75rem; */
+        height: 2.8rem;
+        width: 2.8rem;
+        opacity: 0.80 !important;
+        }
+        #lightswitch:hover {
+        
+        opacity: 0.80 !important;
+        }}
+    [dark="true"] #lightswitch { background: mistyrose; }
+    #lightswitch:hover { cursor: pointer; }
+    #lightswitch:active { background: var(--act) !important; opacity: .75 !important; }
+    
+    @media all and (max-width: 520px) {
+      .desktop-only {
+        display: none;
+      }
+    }
+
+
+    </style>
+    <style>
+  @media not all and (max-width: 520px) {
+body.menu_open div#content {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0rem 2.5rem 18rem 12rem !important;
+}}
+
+#front-cover {
+  position: absolute;
+  /* top: 5rem; */
+  /* top: 30vh; */
+  /* top: 20vh; */
+  /* left: 2rem; */
+  /* left: 1rem; */
+  top: 2.5rem;
+  left: 2.5rem;
+  font-family: "Avocado 14";
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-size: 100%;
+  font-size: 172%;
+  line-height: 100%;
+  letter-spacing: 0.02rem;
+  mix-blend-mode: darken;
+
+
+  color: var(--txt);
+}
+#front-cover p {
+  margin-bottom: 0;
+}
+
+#titre {
+  /* margin-bottom: 0.4em !important; */
+}
+#soustitre {
+font-family: dolly;
+font-style: italic;
+text-transform: none;
+font-size: 70%;
+
+vertical-align: -8rem;
+display: initial;
+position: relative;
+position: fixed;
+top: calc(20vh + 8rem);
+}
+#soustitres {
+font-family: dolly;
+font-style: italic;
+text-transform: none;
+font-size: 70%;
+
+vertical-align: -8rem;
+display: initial;
+position: relative;
+position: fixed;
+top: 11rem;
+
+}
+@media all and (max-width:520px) {
+  #soustitre {
+    display: none;
+  }
+}
+[wide] #soustitre {
+    display: none;
+  }
+
+
+#front-cover-inner {
+  position: fixed;
+  width: 10rem;
+  width: 11rem;
+  width: 8rem;
+  /* background: rgb(246, 246, 246); */
+
+  border-bottom: solid var(--txt) 0.35rem;
+  padding-bottom: 0.35rem;
+  /* letter-spacing: 0.02em; */
+  padding-bottom: 0.5em;
+}
+
+
+@media not all and (max-width:520px) {
+[wide] #front-cover {
+  position: relative;
+  left: 0;
+  top: 0;
+
+  /* font-size: 6.8rem; */
+  /* line-height: 0.81em; */
+  /* text-transform: lowercase; */
+}
+[wide] #front-cover-inner {
+  position: relative;
+  width: 100%;
+}
+}
+@media all and (max-width:520px) {
+#front-cover {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+#front-cover-inner {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media not all and (max-width: 520px) {
+[wide] div#content {
+  padding-top: 0;
+}
+}
+
+
+#front-cover #titre .version, 
+#front-cover #titre .pleinepage,
+#front-cover #titre .pleinepageclair,
+#front-cover #titre .versionmobile,
+#front-cover #titre .nocturne,
+#front-cover #titre .dede,
+/* #front-cover #titre .dela, */
+#front-cover #titre .esper {
+  /* color: #00000012; */
+  opacity: 0.2;
+}
+
+[wide] #front-cover #titre .version,
+[wide] #front-cover #titre .pleinepage,
+[dark] #front-cover #titre .version,
+[dark]  #front-cover #titre .nocturne,
+[dark] #front-cover #titre .dede,
+[dark][wide] #front-cover #titre .esper{
+  color: var(--txt);
+  opacity: 1;
+}
+
+@media all and (max-width:520px) {
+#front-cover #titre .version,
+#front-cover #titre .versionmobile,
+#front-cover #titre .dede,
+[dark] #front-cover #titre .esper {
+  color: var(--txt);
+  opacity: 1;
+}
+#front-cover #titre .pleinepage {
+  /* color: #00000012 !important; */
+  opacity: 0.2;
+}
+[wide] #front-cover #titre .pleinepageclair {
+  opacity: 1
+}
+}
+
+@media not all and (max-width:520px) {
+[wide] #front-cover #titre .pleinpage,
+html:not([dark])[wide] #front-cover #titre .pleinepageclair {
+  color: var(--txt);
+}
+}
+
+#front-cover #titre .pleinepage:hover,
+#front-cover #titre .nocturne:hover {
+    cursor: pointer;
+}
+
+[wide] br.dsktp {
+  display: none;
+}
+@media all and (max-width:520px) {
+  br.dsktp {
+  display: none;
+}
+#toc-marker {
+  display: none;
+}
+#front-cover-inner {
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+}
+
+@media not all and (max-width:520px) {
+html:not([wide]) br.mbl {
+  display: none;
+}
+}
+
+[wide] #toc-marker {
+  display: none;
+}
+[wide] #front-cover-inner {
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+/* [wide] br.mbl {
+  display: none;
+} */
+    </style>
+
+  <title>@mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu" style="display:none"><div class="gap" style="height:1em"></div><ul class="children"></ul><div><p id="titre">Une maquette numérique du livre</p><h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Quelle différence quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur les roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI Design</a></h1><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p><div class="gap" style="height:1em"></div><ul class="children"></ul></div></div><div id="bullet" style="display:none;"></div>
+<!-- <div id="bullet" style="display:none"></div> -->
+<div id="content">
+  <div id="doc">
+
+  <p id="toc-marker" name="toc"></p>
+  <p class="mobil" style="height: 2em;"></p>
+
+  <!-- <div id="lightswitch"></div> -->
+  <!-- <p id="index" style="text-align: justify;"><span style="letter-spacing: 0.05em;">Q</span><span style="letter-spacing: 0.05em;">u</span>and on com­pose sa vi­trine, on ne manque pas d’y ex­po­ser quelque chose ; faute de quoi ce n’est plus la vi­trine qu’on re­garde, mais la mon­ture. <span class="sp">¶&nbsp;</span>Alors que j’avais com­men­cé le pré­sent ou­vrage dans une en­tre­prise pra­tique et confi­den­tielle—plus proche du ter­rain de jeu que du lieu d’ex­po­si­tion—, je fis un peu de place pour y mieux ac­cueil­lir les visi­teurs. <span class="sp">¶&nbsp;</span>Très vite, je l’aug­men­tai ; et l’ou­vrage de­vînt ce qu’il est au­jourd’hui : à mi-che­min entre la tri­bune et l’ate­lier, la vi­trine en cours de mon tra­vail typo­gra­phique. Un es­pace de lec­ture. <span class="sp">¶&nbsp;</span>En­fin, pour ceux qui pré­fèrent les images, j’ai pris soin de conclure par un cha­pitre <a class="xref" href="beaux-arts.html">beaux-arts</a>, qui don­ne­ra un aper­çu hors champ typo­gra­phique de mon tra­vail. <span class="spp" style="font-family: ScalaSans; font-size: 120%; line-height: 0;">☞</span>&nbsp;(<a href="#" class="xref spp" onclick="notify('oh so sorry, Still pending…', 1500)"> English~friendly </a>). -->
+
+<!--  <div class="gap" style="height:8em"></div>
+ -->
+ <!-- <div>Maquette à lire de long en large et dans le noir</div> -->
+
+<style>
+  @media not all and (max-width:520px) {
+  html:not([wide]) #ind {
+  position: fixed;
+  }
+  }
+
+  #ind topic {
+    font-family: display;
+    font-family: "Avocado 14";
+    text-transform: lowercase;
+    font-weight: normal;
+    font-size: 210%;
+    line-height: 0.8;
+    margin-bottom: 0.67em;
+    margin-bottom: 0.4em;
+  }
+</style>
+
+<title-block id="ind" style="display:none">
+  <topic>Version pleine page de mobile & nocturne de la maquette pour le livre numérique</topic>
+  <short-rule>2nd Edition</short-rule>
+</title-block>
+
+ <!-- <h1 class="konami toc-topic" style="color: #bbbbbb" class="toc-topic"><a href="#">Introduction</a></h1>
+  <ul class="toc">
+    <li class="konami"><a href="introduction.html">[introduction]</a></li>
+    <li class="konami"><a>[mode d’emploi]</a></li>
+    <li class="konami"><a>[carnet de bord]</a></li>
+    <li class="konami"><a>[“Qui suis-je ?”]</a></li>
+    <li class="konami"><a>[me contacter]</a></li>
+    <li class="konami"><a>[puce à marquer les pages]</a></li>
+    <li class="konami"><a>[system preferences]</a></li>
+    <li class="konami"><a>[english version]</a></li>
+    <li class="konami"><a>[pseudo-masthead]</a></li>
+    </ul> -->
+    <!-- <h1 class="toc-topic"><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></h1> -->
+    <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1>
+    <!-- <ul class="toc" style="column-count: 1;"> -->
+      <!-- <li><a href="commentlirecelivre.html">Comment lire ce livre</a></li> -->
+      <!-- <li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li> -->
+      <!-- <li><a style="cursor: pointer;" class="" onclick="notify('oh so sorry, Still pending…', 2000)">I wish there were an English-friendly version of this book, where is it?</a></li> -->
+    <!-- </ul> -->
+  <h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1>
+  <ul class="toc" style="column-count: 1;">
+    <li><a href="graphisme.html">Où est la différence… quand on ne sait pas lire ?</a></li>
+  </ul>
+  <h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1>
+  <ul class="toc" style="column-count: 1;">
+    <li><a href="oni.html">Oni + Oni-minot</a></li>
+    <li><a href="milou.html">Milou</a></li>
+    <li><a href="houdini.html">Houdini</a></li>
+  </ul>
+  <h1 class="toc-topic"><a href="ui.html">UX·UI Design</a></h1>
+  <ul class="toc" style="column-count: 1;">
+    <li><a href="../colors">Technicouleur !</a></li>
+  </ul>
+  <h1 class="konami toc-topic" style="color: #bbbbbb" class="toc-topic"><aa href="#">Codage</aa></h1>
+  <h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1>
+  <ul class="toc">
+    <li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li>
+    <li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li>
+    <li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li>
+    <li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li>
+    <li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript works</in></a></li>
+    <li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li>
+    <li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li>
+    <li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li>
+    <li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li>
+    <li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li>
+    <li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li>
+    <li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li>
+    <li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li>
+    <li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li>
+    <li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li>
+    <!-- <li style="color: #bbbbbb"><a href="peronaci.html"><ex>Sonia Peronaci</ex><in>Ricetta degli spaghetti alla carbonara</in></a></li> -->
+    <li style="color: #bbbbbb"><a href="musil.html"><ex>Robert Musil</ex><in>Der Mann ohne Eigenschaften</in></a></li>
+    <li style="color: #bbbbbb"><a href="browning.html"><ex>Elizabeth B. Browning</ex><in>Sonnets from the Portuguese</in></a></li>
+    <li style="color: #bbbbbb"><a href="byrne.html"><ex>Oliver Byrne</ex><in>The first six books of the elements of Euclid</in></a></li>
+    <li style="color: #bbbbbb"><ex>Steve Jackson / <br class="dsktp">Ian Livingstone</ex><in style="font-size:99%">Un livre dont vous êtes le héros</in></li>
+    <li style="color: #bbbbbb"><ex>Evan Ratlif</ex><in>The mastermind</in></li>
+
+  </ul>
+
+  <h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1>
+  <h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1>
+  <ul class="toc" style="column-count: 1;">
+    <!-- <li><a href="commentlirecelivre.html">Comment lire ce livre</a></li> -->
+    <li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li>
+    <li><a href="minusculissime.html">Le plus petit caractère mondial</a></li>
+    <li><a href="minuscule.html">La police sur les roulettes</a></li>
+    <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Préface à la première édition)</aa></li>
+    <li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li>
+    </ul>
+  <ul class="toc">
+    <li class="konami"><a href="trouville.html"><strong>Trouville-sur-Mer</strong></a></li>
+    </ul>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  <p id="contactme"><a href="mailto:mdrans@proton.me">@mnrv.github.io</a></p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  </div>
+</div>
+
+<a class="nav" href="."><div id="prev" class="side"></div></a>
+<a class="nav" href="graphisme.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" style="display: none;"><a class="navtop" href="bibliographie.html" style="display: none;">­</a></div>
+<script>
+  window.addEventListener("load", function() {
+    console.log("beforeif");
+    if (document.querySelector("html[wide]")) {
+      console.log("afterif");
+
+      document.querySelector("html[wide]").removeAttribute("wide");
+      localStorage.setItem("userPreferencesForMargin", "true");
+    }
+  })
+</script>
+
+</body>
+</html>

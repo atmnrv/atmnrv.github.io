@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
+  <style>
+    div.id hr {
+      border: none;
+      width:10%;
+      height: 0px;
+      margin: auto;
+      margin-top: 2.8rem;
+    }
+    div.id > div:nth-child(2) {
+      font-family: dolly-caps;
+      text-transform: lowercase;
+      text-align: center;
+      font-size: 120%;
+      margin-bottom: calc(1.4em - 1px);
+      padding-top: 1.4em;
+    }
+    div.id > div:nth-child(3) {
+      text-align: center;
+      font-style: italic;
+      font-size: 105%;
+      margin-bottom: 2em;
+      letter-spacing: 0.05rem;
+    }
+    div.id > div:nth-child(3) i {
+      font-style: normal;
+    }
+    div.id a {
+      display: block;
+    }
+    div.id a:hover {
+      background: none;
+      color: var(--txt);
+    }
+
+    body {
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+    :root {
+      --con:#fbfbfb;
+      --ddd: #ddd;
+      --ccc:#07a;
+      --cbg: rgb(244, 244, 244);
+      --c1:#afafaf;
+    }
+    [dark="true"] {
+      --con:#222222;
+      --ddd: var(--btw);
+      --ccc:#ffd9d9;
+      --cbg: none;/* #313030; *//* rgb(112, 109, 109) */;
+      --c1: #bcc9c9;
+      /* --c1: var(--o); */
+    }
+
+    /* * {box-sizing: border-box;} */
+    .highlight-container {
+      position: relative;
+    }
+
+    .copy-button {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: .75rem;
+      margin: 0.5rem;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 0.15s;
+
+      cursor: pointer;
+    }
+
+    [dark="true"] .copy-button img { filter: invert(1);}
+
+    .highlight-container:hover > .copy-button {
+      opacity: 0.3;
+      transition-property: opacity;
+      transition-duration: 0.15s;
+    }
+
+    .highlight-container:hover > .copy-button:hover {
+      opacity: 0.6;
+      transition-property: opacity;
+      transition-duration: 0.15s;
+    }
+
+    code {
+      font-size: 90%;
+      background: /* var(--con); */ var(--cbg); /* #fbfbfb */
+      padding: 0.1em 0.1em 0 0.1em;
+      transition-property: background;
+      transition-duration: 0.1s;
+      transition-property: none;
+    }
+    code:not(.xe) { color:var(--ccc)}
+    code em { font-family: dolly; font-size: 0.95rem;}
+    .mycode { font-style: italic; font-size: 85%; padding-right: 0.1rem; word-break: keep-all; }
+    .highlight {
+      background: var(--con);
+      padding: 0.5rem;
+      border-top: 1px solid var(--ddd);
+      border-bottom: 1px solid var(--ddd);
+      margin-bottom: 1.2rem;
+
+      overflow-x:scroll;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .highlight::-webkit-scrollbar {
+      display: none;
+    }
+
+    .highlight .linenos {
+      display: none;
+      text-align: center;
+      color: gray;
+      width: 50px;
+      position: absolute;
+      left: -50px;
+    }
+
+    pre, code {
+      font-family: /* 'Menlo',  *//* SF Mono, */ Consolas, Courier, monospace;
+    }
+    .highlight pre {
+      font-size: 0.75rem;
+      /* font-size: 0.72rem; */
+      line-height: 1.35;
+      line-height: 1.5;
+      margin-right: 1rem;
+      /* white-space:pre-wrap ; */
+      /* word-break: break-word; */
+      /* overflow-wrap: break-word; */
+    }
+
+    .c1 {color: var(--c1); /* float: right; */}
+    h1 + div.highlight pre {
+      font-size: 67%;
+    }
+
+    table.quick {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    table.quick * {
+      width: auto;
+    }
+
+    .quick th {
+      font-weight: normal;
+      /* text-transform: uppercase;
+      font-size: 70%; */
+      font-size: 85%;
+      letter-spacing: 0.1em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      padding-left: 0.5rem;
+      text-align: left;
+    }
+
+    .quick th + th {
+      padding-left: 0.95rem;
+    }
+
+    .quick tr:first-of-type {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .quick tr:first-of-type th {
+      padding-bottom: 0.2em;
+    }
+  </style>
+  <style>
+    p, td {
+      hyphens: auto; 
+      -webkit-hyphens: auto;
+    }
+
+    code {
+      hyphens: none;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+    }
+
+    c2sc {
+      text-transform: lowercase;
+      font-family: dolly-caps;
+    }
+
+    .un {
+      font-feature-settings: "lnum";
+      font-family: dolly-caps;
+      text-transform: lowercase;
+    }
+
+    blockquote {
+      padding-left: 45% !important;
+    }
+
+    div.id:not(:first-of-type) hr { 
+      height: 1px !important; 
+      margin-top: 4rem; 
+      top: -1px; 
+      position: relative;
+    }
+  </style>
+
+  <title>How Java­Script Works | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content" lang="en-US">
+ <topic class="commentary">How Java­Script Works <span style="font-family: Scalasans; font-style: italic; text-transform: none; font-size: 50%; letter-spacing: 0.04em;">by&nbsp;David&nbsp;Crockford</span></topic>
+  <div class="id" id="6"><hr><div><a href="#6">Chapitre 6</a></div><div>How booleans work</div></div>
+
+  <blockquote style="padding-left: 44%; padding-left: 33.33%; padding-right: 0rem;"><p>Truth is truth. You can’t have opinions about truth.</p><cite style="text-transform: lowercase; margin-left: 0;">Peter Schickele</cite></blockquote>
+  <!-- <div class="gap" style="height:2em"></div><ul class="children"></ul> -->
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  <p>The boolean type was named after George Boole, an English mathematician who developed a system of algebraic logic. Claude Shannon adapted Booles’s system for the design of digital circuits. That is why we call computer circuits <em>logic</em>.</p>
+  <p>The boolean type contains only two values, <code>true</code> and <code>false</code>. Bool­e­an values are usually generated by the comparison operators ; manipulated by the logical operators ; and consumed by the ternary operator and the condition part of the <code>if</code>, <code>do</code>, <code>for</code>, and <code>while</code> <nobr>statements</nobr>.</p>
+  <p>The <code>typeof</code> operator returns <code>"boolean"</code> when its operand is <code>true</code> or <code>false</code>.</p>
+  <div class="subhead" id="relationaloperators"><a href="#relationaloperators">Relational Operators</a></div>
+  <p>
+    <style>
+      .ala tr td:first-of-type {padding-left: 0em; width: 66%;}
+    </style>
+    <table class="ala">
+      <tbody>
+        <tr><td><code>{</code> <span class="mycode">equal sign equal sign equal sign</span></td><td>equal</td></tr>
+        <tr><td><code>!==</code> <span class="mycode">exclamation point equal sign equal sign</span></td><td>not equal</td></tr>
+        <tr><td><code><</code> <span class="mycode">less than</span></td><td>less than</td></tr>
+        <tr><td><code><=</code> <span class="mycode">less than equal sign</span></td><td>less than or equal</td></tr>
+        <tr><td><code>></code> <span class="mycode">greater than</span></td><td>greater than</td></tr>
+        <tr><td><code>>=</code> <span class="mycode">greater than equal sign</span></td><td>greater than or equal</td></tr>
+      </tbody>
+    </table>
+  </p>
+  <p>It is deeply unfortunate that the equality operator is <code>===</code> <span class="mycode">equal sign equal sign equal sign</span> and not <code>=</code> <span class="mycode">equal sign</span>. It is even more unfortunate that the not equal operator is <code>!==</code> <span class="mycode">exclamation point equal sign equal sign</span> and not <code>≠</code> <span class="mycode">not equal sign</span>. All of these operators do pretty much what you would expect, except there is also plenty of nonsense. Here are some examples of nonsense :</p>   
+  <div class="highlight-container"><div id="code_bba" form="false" decode="exclude" style="font-size:0;width:0;height:0">undefined < null<br/>undefined > null<br/>undefined === null<br/><br/>Nan === NaN<br/>Nan !== NaN<br/><br/>"11" < "2"<br/>"2" < 5<br/>5 < "11"<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></div></td><td class="code"><div class="source"><pre>
+undefined < null                        <span class="c1">// false</span>
+undefined > null                        <span class="c1">// false</span>
+undefined === null                      <span class="c1">// false</span>
+
+Nan === NaN                             <span class="c1">// false</span>
+Nan !== NaN                             <span class="c1">// true</span>
+
+"11" < "2"                              <span class="c1">// true</span>
+"2" < 5                                 <span class="c1">// true</span>
+5 < "11"                                <span class="c1">// true</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bba" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p><code>===</code> <span class="mycode">equal sign equal sign equal sign</span> and <code>!==</code> <span class="mycode">exclamation point equal sign equal sign</span> generally do the right thing except when both operands are <code>NaN</code>. <code>===</code> <span class="mycode">equal sign equal sign equal sign</span> and <code>!==</code> <span class="mycode">exclamation point equal sign equal sign</span> can be used to determine if a value is null or undefined or any value other than <code>NaN</code>. To test if <em>x</em> is <code>NaN</code>, always use <code>Number.isNaN(<em>x</em>)</code>.</p>
+  <p><code>===</code> <span class="mycode">equal sign equal sign equal sign</span> should not be used to test for the completion of a loop unless the induction variable is in the safe integer range. Even then, it is safer to use <code>>=</code> <span class="mycode">greater than equal sign</span>.</p>
+  <p><code><</code> <span class="mycode">less than</span> and <code><=</code><span class="mycode">less than equal sign</span> and <code>>=</code> <span class="mycode">greater than</span> and <code>>=</code> <span class="mycode">greater than equal sign</span> generally do the right thing when both operands are strings or when both operands are numbers. In most other cases, the result is nonsense. Avoid mixing types when doing comparisons. Java­Script does not prohibit mixing types in that way, so you need to bring your own discipline.</p>
+  <p>Java­Script also has some comparison operators that are even less reliable. I recommend never using <code>==</code> <span class="mycode">equal sign equal sign</span> (and <code>!=</code> <span class="mycode">exclamation point equal sign</span>). They do type coersion before doing the comparison, and so are likely to produce false positives (and false negatives). Always use <code>===</code> <span class="mycode">equal sign equal sign equal sign</span> (and <code>!==</code> <span class="mycode">exclamation point equal sign equal sign</span>) instead. Always.</p>
+  <div class="subhead" id="boolish"><a href="#boolish">Boolish</a></div>
+  <p>Java­Script has a lovely boolean type but does not make good use of it. These are the positions in a program where the booleans do the most good :</p>
+  <ul class="nomargin">
+    <li><p>the condition position of an <code>if</code> statement</p></li>
+    <li><p>the condition position of a <code>while</code> statement</p></li>
+    <li><p>the condition position of a <code>for</code> statement</p></li>
+    <li><p>the condition position of a <code>do</code> statement</p></li>
+    <li><p>the operand of the <code>!</code> <span class="mycode">exclamation point</span> operator</p></li>
+    <li><p>both operands of the <code>&&</code> <span class="mycode">ampersand ampersand</span> operator</p></li>
+    <li><p>both operands of the <code>||</code> <span class="mycode">vertical bar vertical bar</span>operator</p></li>
+    <li><p>the first operand of the <code>?</code> <span class="mycode">questionmark</span> <code>:</code> <span class="mycode">colon</span> ternary operator</p></li>
+    <li><p>the return value of the function argument to the <code>Array</code> methods <code>filter</code>, <code>find</code>, <code>findIndex</code>, <code>indexOf</code></p></li>
+  </ul>
+  <p>In a well designed language, only boolean values would be allowed in those positions. Java­Script instead allows any type in all of those positions.All values in the language are members of the boolish type. All values in the boolish type are either truthy or falsy.</p>
+  <p>The falsy values are</p>
+  <style>
+    ul.nomargin li:not(:last-of-type) {
+      margin-bottom: -0.8em;
+    }
+  </style>
+  <ul class="nomargin">
+    <li><p><code>false</code></p></li>
+    <li><p><code>null</code></p></li>
+    <li><p><code>undefined</code></p></li>
+    <li><p><code>""</code> (the empty string)</p></li>
+    <li><p><code>0</code></p></li>
+    <li><p><code>NaN</code></p></li>
+  </ul>
+  <p>All other values are truthy, including empty objects, empty arrays, and strings that might look falsy, like <code>"false"</code> and <code>"0"</code>.</p>
+  <p>The falsy values often act like <code>false</code>, but most of them are not, strictly speaking, <code>false</code>. The truthy values often act like <code>true</code>, but most of them are not <code>true</code>. This boolishness was a mistake, but it was not an accident. It was done intentionally in order to permit idioms of the C language in Java­Script.
+  <p>C is an inadequately typed language. It uses a single value to represent <code>0</code>, <code>FALSE</code>, <code>NULL</code>, end of string, and other things. They are all the same to C. So in the condition position of an if statement, C is looking to see if the expression is <code>0</code> or not. There is a style of C programming that exploits that by making the conditions terse.</p>
+  <p>Java­Script has a sound boolean type, but boolishness tosses much of the value away. A condition should be either <code>true</code> or <code>false</code>. Any other value should be an error, ideally a compile time error. That is not the case in Java­Script. Conditional expressions can be as terse and cryptic as in C. Values that accidentally fall into condition position are not flagged as errors. Instead, they can send the program off in unexpected directions. The Java language requires that conditions be booleans, and so eliminates a class of errors. I wish that Java­Script had done that too.</p>
+  <p>I recommend that you write programs as though Java­Script had been designed correctly. Use booleans in all conditions. If you write in the style of a better language, you will write better programs.</p>
+  <div class="subhead" id="logicaloperators"><a href="#logicaloperators">Logical Operators</a></div>
+  <p>The logical operators are also subject to boolishness.</p>
+  <p>
+    <style>
+      .alb td { vertical-align: top; }
+      .alb tr td:first-of-type {width: 35%;}
+      .alb tr td:nth-of-type(2) {width: 19%;}
+      .alb tr td:nth-of-type(3) {font-size: 95%;}
+      /* .alb tr td:first-of-type {padding-left: 0em; width: 66%;} */
+    </style>
+    <table class="alb">
+      <tbody>
+        <tr><td><code>!</code> <span class="mycode">exclamation point</span></td><td>logical not</td><td>If the operand is truthy then the result is <code>false</code>. If the operand is falsy then the result is <code>true</code>.</td></tr>
+        <tr><td><code>&&</code> <span class="mycode">ampersand ampersand</span></td><td>logical and</td><td>If the first operand is falsy, then the result is the first operandand the second operand is not evaluated. If the first operand is truthy, then the result is the second <nobr>operand</nobr>.</td></tr>
+        <tr><td><code>||</code> <span class="mycode">vertical bar vertical bar</span></td><td>logical or</td><td>If the first operand is truthy, then the result is the first operand and the second operand is not evaluated. If the first operand is falsy, then the result is the second <nobr>operand</nobr>.</td></tr>
+      </tbody>
+    </table>
+  </p>
+  <div class="subhead" id="not"><a href="#not">Not !</a></div>
+  <p>Logical expressions can get complicated. There are formal transformations that can simplify them. Unfortunately, boolishness and <code>NaN</code> can cause formal transformations to produce errors.</p>
+  <p>It is usually wise to simplify double negatives. In a logical system, 
+  <div class="highlight-container"><div id="code_bbb" form="false" decode="exclude" style="font-size:0;width:0;height:0">!!p === p<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1</pre></div></td><td class="code"><div class="source"><pre>
+!!p === p</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbb" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>That is only true in Java­Script when <code>p</code> is a boolean. If <code>p</code> is of any other type, then <code>!!p</code> is equal to <code>Boolean(p)</code>, not necessarily <code>p</code>.</p>
+  <p>Some of the comparison operators have opposites, so <code><</code> is the opposite of <code>>=</code>,and <code>></code> is the opposite of <code><=</code>. So it should be possible to simplify <code>!(a < b)</code> as <code>a >= b</code> because</p>
+  <div class="highlight-container"><div id="code_bbc" form="false" decode="exclude" style="font-size:0;width:0;height:0">!(a === b) === (a !== b)<br/>!(a <=  b) === (a >   b)<br/>!(a >   b) === (a <=  b)<br/>!(a >=  b) === (a <   b)<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4</pre></div></td><td class="code"><div class="source"><pre>
+!(a === b) === (a !== b)
+!(a <=  b) === (a >   b)
+!(a >   b) === (a <=  b)
+!(a >=  b) === (a <   b)</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbc" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>If either <code>a</code> or <code>b</code> is <code>NaN</code>, then the code transformation fails. This is because comparing any number to <code>NaN</code> produces a result of <code>false</code>, regardless of the comparison operator. So,</p>
+  <div class="highlight-container"><div id="code_bbd" form="false" decode="exclude" style="font-size:0;width:0;height:0">7 < NaN<br/>NaN < 7<br/>!(7 < NaN) === 7 >= NaN<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+7 < NaN                                 <span class="c1">// false</span>
+NaN < 7                                 <span class="c1">// false</span>
+!(7 < NaN) === 7 >= NaN                 <span class="c1">// false</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbd" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>It might make sense if <code>NaN</code> were smaller than all other numbers or if comparing a number to <code>NaN</code> would raise an exception. Java­Script instead implements nonsense. The only meaningful operation on <code>NaN</code> is <code>Number.isNaN(NaN)</code>. Avoid <code>NaN</code> in all other contexts.</p>
+  <p>The De Morgan Laws can be helpful in simplfying logical expressions. I use them frequently :</p>
+  <div class="highlight-container"><div id="code_bbe" form="false" decode="exclude" style="font-size:0;width:0;height:0">!(p && q) === !p || !q<br/>!(p || q) === !p && !q<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2</pre></div></td><td class="code"><div class="source"><pre>
+!(p && q) === !p || !q
+!(p || q) === !p && !q</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbe" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The laws are sound in Java­Script as long as <code>p</code> and <code>q</code> were not corrupted with nonsense. Boolish calues should be avoided. Use booleans <nobr>instead</nobr>.</p>
+ 
+  <div class="id" id="7"><hr><div><a href="#7">Chapitre 7</a></div><div>How arrays work</div></div>
+  <blockquote style="padding-left: 44%; padding-left: 33.33%; padding-right: 0rem;"><p>Everything is numbered here.<br>The monster is zero.</p><cite style="text-transform: lowercase; margin-left: 0;">The Controller of Planet X</cite></blockquote>
+  <!-- <div class="gap" style="height:2em"></div><ul class="children"></ul> -->
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  <p>The array is the most venerable data structure. An array is a contiguous section of memory, divided into equal size chunks, each associated with and quickly accessed with an integer. Java­Script failed to include arrays in its first release. That omission was barely noticed because Java­Script’s objects are so powerful. Ignoring performance issues, objects can do everything that arrays can do.</p>
+  <p>That is still the case. Any string can be used to index into an array. Java­Script’s arrays are really objects. In today’s Java­Script, arrays slightly differ from objects in four ways :</p>
+  <ul>
+    <li><p>Arrays have a magical length property. An array’s length is not necessarily the number of elements in the array. It is instead the highest integer ordinal plus <code>1</code>. This supports the pretense that Java­Script’s arrays are truly arrays, allowing a Java­Script array to be processed using the same archaic <code>for</code> statement that you might find in a half century old C program.</p></li>
+    <li><p>Arrays inherit from <code>Array.prototype</code> which contains a much better collection of methods than <code>Object.prototype</code>.</p></li>
+    <li><p>Arrays are produced using array literals, not objec tliterals. Array literals are syntactically muchs impler : <code>[</code> <span class="mycode">left bracket</span> and <code>]</code> <span class="mycode">right bracket</span> surrounding zero or more expressions separated with <code>,</code> <span class="mycode">comma</span>.</p></li>
+    <li><p><code>JSON</code> treats arrays and objects very differently even though Java­Script mostly treats them as the same.</p></li>
+  </ul>
+  <p>Java­Script is itself confused about arrays. When given an array, the <code>typeof</code> operator returns the string <code>"object"</code>, which is obviously wrong. You should instead use the <code>Array.isArray(<em>value</em>)</code> function to determine if a <em>value</em> is an array.</p>
+  <div class="highlight-container"><div id="code_bbf" form="false" decode="exclude" style="font-size:0;width:0;height:0">const what_is_it = new Array(1000);<br/>typeof what_is_it<br/>Array.isArray(what_is_it)<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+const what_is_it = new Array(1000);
+typeof what_is_it                       <span class="c1">// "object"</span>
+Array.isArray(what_is_it)               <span class="c1">// true</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbf" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Since the invention of counting, people have started numbering with whatever word they used to indicate <code>1</code>. In the mid 1960s, a small but influential group of programmers determined that we should instead be starting with <code>0</code>. Today virtually all programmers begin numbering with <code>0</code>. The rest of humanity, including most of the mathematicians, still start with <code>1</code>. Mathematicians usually label the origin as <code>0</code>, but most label the first member of an ordered set as <code>1</code>. How they do this is still a mystery.</p>
+  <p>There is an efficiency argument for starting at <code>0</code>, but it is so weak as to be worthless. Similary, there is a correctness argument that says that starting at <code>0</code> causes fewer off-by-wun errors, but that is also suspect. It seems that there should be a good reason for why programmers count differently than every wun else. Perhaps wun day we will discover why.</p>
+  <p>The place where this affects Java­Script is in the numbering of the elements of arrays, and to a lesser extent, in the numbering of the characters in a string. The idea that arrays should be processed wun element at a time goes back at least as far as <c2sc>FORTRAN</c2sc>. A more modern idea is to process arrays functionally. This simplifies code by eliminating explicit loop management and it creates the potential for distributing the work over multiple processors.</p>
+  <p>A well written program in a well designed language should not care if arrays start at <code>0</code> or <code>1</code>. I would not accuse Java­Script of being a well designed language, but it is a significant improvement over <c2sc>FORTRAN</c2sc>, and in fact, by stepping away from the <c2sc>FORTRAN</c2sc> model, we do not usually need to care about how the elements are numbered.</p>
+  <p>Sometimes we do need to care. The word <em>first</em> becomes problematic because of its association with <em>wun</em> so instead I use <em>zeroth</em>. It makes my origin clear.</p>
+  <p>
+    <style>
+      .alc td { vertical-align: top; }
+      .alc tr td:first-of-type {width: 2.5em;}
+      .alc tr td:nth-of-type(2) {width: 4em;}
+      /* .alb tr td:first-of-type {padding-left: 0em; width: 66%;} */
+    </style>
+    <table class="alc">
+      <tbody>
+        <tr><td><code>[0]</code></td><td><em>zeroth</em></td><td><em>0th</em></td></tr>
+        <tr><td><code>[1]</code></td><td><em>wunth</em></td><td><em>1th</em></td></tr>
+        <tr><td><code>[2]</code></td><td><em>twoth</em></td><td><em>2th</em></td></tr>
+        <tr><td><code>[3]</code></td><td><em>threeth</em></td><td><em>3th</em></td></tr>
+      </tbody>
+    </table>
+  </p>
+  <p>Moving on from those, <em>fourth</em>, <em>fifth</em>, and <em>sixth</em> seem ambiguous, but by the time we have counted past the smallest integers, it should be clear what the origin was.</p>
+  <div class="subhead" id="initialization"><a href="#initialization">Initialization</a></div>
+  <p>There are two ways to make a new array.</p>
+  <ul class="nomargin">
+    <li><p>array literal</p></li>
+    <li><p><code>new Array(<em>integer</em>)</code></p></li>
+  </ul>
+  <div class="highlight-container"><div id="code_bbg" form="false" decode="exclude" style="font-size:0;width:0;height:0">let my_little_array = new Array(10).fill(0);<br/>let same_thing = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];<br/><br/>my_little_array === same_thing<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4</pre></div></td><td class="code"><div class="source"><pre>
+let my_little_array = new Array(10).fill(0);
+<span class="c1">// my_little_array is [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span>
+let same_thing = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+my_little_array === same_thing          <span class="c1">// false</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbg" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Note that <code>my_little_array</code> and <code>same_thing</code> are exactly the same. They are also two separate, unique values. Unlike strings, but like objects, identical arrays are only equal if they are actually the same array.
+  <div class="subhead" id="stacksandqueues"><a href="#stacksandqueues">Stacks and Queues</a></div>
+  <p>Arrays have methods that act on an array as a stack. The <code>pop</code> method removes and returns the last element of the array. The <code>push</code> method appends a new element to the array.</p>
+  <p>Stacks are often used in interpreters and calculators.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="source"><pre>
+function make_binary_op(func) {
+  return function (my_little_array) {
+    let wunth = my_little_array.pop();
+    let zeroth = my_little_array.pop();
+    my_little_array.push(func(zeroth, wunth));
+    return my_little_array;
+  };
+}
+
+let addop = make_binary_op(function (zeroth, wunth) {
+  return zeroth + wunth;
+});
+
+let mulop = make_binary_op(function (zeroth, wunth) {
+  return zeroth * wunth;
+});
+
+let my_little_stack = [];
+<span class="c1">// my_little_stack is []</span>
+my_little_stack.push(3); 
+<span class="c1">// my_little_stack is [3]</span>
+my_little_stack.push(5); 
+<span class="c1">// my_little_stack is [3, 5]</span>
+my_little_stack.push(7); 
+<span class="c1">// my_little_stack is [3, 5, 7]</span>
+mulop(my_little_stack);  
+<span class="c1">// my_little_stack is [3, 35]</span>
+addop(my_little_stack);  
+<span class="c1">// my_little_stack is [38]</span>
+let answer = my_little_stack.pop();
+<span class="c1">// my_little_stack is [], answer is 38</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The <code>shift</code> method is similar to the <code>pop</code> method, except that it removes and returns the zeroth element instead of the last. The weirdly named <code>unshift</code> method is like <code>push</code> except that it prepends the new element at the front of the array, not at the end. The <code>shift</code> and <code>unshift</code> methods can be much slower than <code>pop</code> and <code>push</code>, especially if the array is large. Using <code>shift</code> and <code>push</code> together makes a queue, where you append new items to the back and ultimately harvest them from the <nobr>front</nobr>.</p>
+  <div class="subhead" id="searching"><a href="#searching">Searching</a></div>
+  <p>Java­Script provides methods for searching thru an array. The <code>indexOf</code> method takes a value that it compares to each of the elements of the array starting at the beginning. If your value matches an element, it stops its search and returns the ordinal of the <nobr>element</nobr>.</p>
+  <p>If it fails to find a match, it returns <code>-1</code>. Note that this is a type error that is waiting to happen because <code>-1</code> is a number, much like every other number. If you use the return value of <code>indexOf</code> without first explicitly checking for <code>-1</code>, then the computation it contributes to could go wrong without warning. Java­Script has many bottom values. Wun of those should have been used <nobr>instead</nobr>.</p>
+  <p>The <code>lastIndexOf</code> function is similar to <code>indexOf</code> except that it starts at the end of the array and searches backward. It also uses <code>-1</code> as the failure code.</p>
+  <p>The <code>includes</code> function is similar to <code>indexOf</code> except that it returns true if the value is found, and <code>false</code> if it is not found.</p>
+  <div class="subhead" id="reducing"><a href="#reducing">Reducing</a></div>
+  <p>The <code>reduce</code> method reduces an array to a single value. It takes a function that takes two arguments. The <code>reduce</code> method calls that function with pairs of values, over and over again, until there is just a single value that is the result.</p>
+  <p>There are two ways to design a <code>reduce</code> method. Wun way is to have it call the function for every element of the array. An initial value must be provided to get things started.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="source"><pre>
+function add(reduction, element) { 
+  return reduction + element;
+}
+
+let my_little_array = [3, 5, 7, 11];
+
+let total = my_little_array.reduce(add, 0);
+<span class="c1">// total is 26</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>For each element, the reduction value is passed to <code>add</code>, along with the current array element. We explicitly pass in the <code>0</code> which is the initial reduction value. The <code>add</code> function sees</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4</pre></div></td><td class="code"><div class="source"><pre>
+(0, 3)                                   <span class="c1">// 3</span>
+(3, 5)                                   <span class="c1">// 8</span>
+(8, 7)                                   <span class="c1">// 15</span>
+(15, 11)                                 <span class="c1">// 26</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Each value that <code>add</code> returns becomes the reduction on the next call to <code>add</code>.</p>
+  <p>The initial reduction will not always be <code>0</code>. If we pass a multiply function to <code>reduce</code>, then the initial reduction should be <code>1</code>. If we pass <code>Math.max</code> to <code>reduce</code>, the initial reduction should be <code>-Infinity</code>. This creates a hazard : You need to be careful in selecting the initial reduction value.</p>
+  <p>The other way to design reduce is to not require an initial reduction value. Instead, the function is called wun less time. The first time it is called, it receives the zeroth and wunth elements. The zeroth element becomes the initial reduction value.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1</pre></div></td><td class="code"><div class="source"><pre>
+total = my_little_array.reduce(add);     <span class="c1">// 26</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+<p>Now the <code>add</code> function sees</p>
+<div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+(0, 3)                                   <span class="c1">// 8</span>
+(3, 5)                                   <span class="c1">// 15</span>
+(8, 7)                                   <span class="c1">// 26</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The function is called wun fewer time, and there is no error possible in selecting the wrong initial reduction value.</p>
+  <p>The thing that Java­Script did that is kind of brilliant is that its <code>reduce</code> method works either way. If you pass in the initial reduction value, then the function is called for every element. If you do not pass in an initial reduction value, then your function is not called for the zeroth element. Instead, the first element is used as the initial reduction value. So both of the examples above of <code>reduce</code> add work.</p>
+  <p>The <code>reduceRight</code> function works the same way, except that it begins at the end of the array. I wish it had been named <code>reduce_reverse</code>.
+  <p>I used <code>reduce</code> to compute the check digit of the ISBN number of this book.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="source"><pre>
+function isbn_13_check_digit(isbn_12) {
+  const string_of_digits = isbn_12.replace(/-/g, "");
+  if (string_of_digits.length === 12) {
+    const check = string_of_digits.split("").reduce(
+      function (reduction, digit, digit_nr) {
+        return reduction + (
+          digit_nr % 2 === 0
+          ? Number(digit)
+          : Number(digit) * 3
+        );
+      },
+      0
+    ) % 10;
+    return (
+      check > 0
+      ?10-check
+      : check
+    );
+  }
+}
+isbn_13_check_digit("978-1-94-981500")   <span class="c1">// 9</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <div class="subhead" id="iterating"><a href="#iterating">Iterating</a></div>
+  <p>Wun of the most common operations on arrays is to do something to each element. Historically this was done with the for statement. Java­Script offers a more modern approach.</p>
+  <p>The <code>forEach</code> method takes an array and a function. It calls that function for each element of the array. The function can have three parameters : <code>element</code>, <code>element_nr</code>, and <code>array</code>. The <code>element</code> parameter is an element of the array. The <code>element_nr</code> parameter is the ordinal of the element, which can be handy if there is another array in the computation and you need to coordinate. The <code>array</code> parameter was a mistake and should not be there. It is an invitation to modify the array that is being processed, which is usually a bad thing.</p>
+  <p>Unfortunately, there is not a method that can process the array in the reverse order (like <code>reduceRight</code> can). There is a <code>reverse</code> method that could be called first, but <code>reverse</code> is a destructive method that cannot be used on frozen arrays.</p>
+  <p>The <code>forEach</code> method ignores the return value of the function it calls. Interesting methods can be made by paying attention to the return value.</p>
+  <style>
+    div.ccr p {
+      text-indent: -2.5rem;
+      padding-left: 2.5rem;
+    }
+  </style>
+  <div class="ccr">
+    <p>The <code>every</code> method looks at the return value. If it is falsy, the <code>every</code> method stops processing and returns <code>false</code>. If it is truthy, the <code>every</code> method continues processing. If the <code>every</code> method reaches the end of the array, it returns <code>true</code>.</p>
+    <p>The <code>some</code> method is so similar to the <code>every</code> method that it isn’t clear why it should even be in the language. If the function’s return value is truthy, the <code>some</code> method stops processing and returns true. If it is falsy, the <code>some</code> method continues processing. If the <code>some</code> method reaches the end of the array, it returns <code>false</code>.</p>
+    <p>The <code>find</code> method is like the <code>some</code> method, except that instead of returning <code>true</code> or <code>false</code>, it returns the element that was being processed when the function returned something truthy.</p>
+    <p>The <code>findIndex</code> method is like the <code>find</code> method, except that instead of returning the element, it returns the ordinal of the element that was being processed when the function returned something truthy.</p>
+    <p>The <code>filter</code> method is also like the <code>find</code> method, except it always processes to the end, and it returns an array collecting all of the elements for which the function returned a truthy value. So <code>find</code> returns the first match. The <code>filter</code> method returns all of the matches.</p>
+    <p>The <code>map</code> method is like the <code>forEach</code> method, except that it collects all of the return values and returns them in a new array. The <code>map</code> method is an ideal way of doing transformations by creating a new array that is a refinement or amplification of the original.</p>
+  </div>
+  <p>These methods are a better way of processing arrays without resorting to <code>for</code> loops. But the set of methods is incomplete.</p>
+  <p><code>forEach</code> and <code>find</code> are able to exit early. (The exiting forms of <code>forEach</code> are <code>every</code> and <code>some</code>.) <code>map</code>, <code>reduce</code>, and <code>filter</code> do not have the option of exiting early.</p>
+  <p>The <code>reduce</code> method has the option of working backwards with <code>reduceRight</code>, but <code>forEach</code>, <code>map</code>, <code>filter</code>, and <code>find</code> do not have the option of working backwards.</p>
+  <p>These omissions are used as justification for not abolishing the <code>for</code> statement.</p>
+  
+  <div class="subhead" id="sorting"><a href="#sorting">Sorting</a></div>
+  <p>Java­Script has a <code>sort</code> method. Unfortunately, it has some problems.</p>
+  <p>It sorts in place, modifying the array it sorts. That means it is not lpossible to sort a frozen array, and it is not safe to sort a shared array.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+let my_little_array = ["unicorns", "rainbows", "butterflies", "monsters"];
+my_little_array.sort();
+<span class="c1">// my_little_array is ["butterflies", "monsters", "rainbows", "unicorns"]</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Its default comparison function wants to arrange values as strings, even if they are numbers. For example,</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+let my_little_array = [11, 2, 23, 13, 3, 5, 17, 7, 29, 19];
+my_little_array.sort();
+<span class="c1">// my_little_array is [11, 13, 17, 19, 2, 23, 29, 5, 3, 7]</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>That isn’t just terribly inefficient, it is also terribly wrong. Fortunately, we can mitigate this by passing a comparison function to <code>sort</code>. The function is given two elements. It is expected to return a negative number if the first element should come first, a positive number if the second element should come first, or a zero if the comparison function can not tell.</p>
+  <p>This comparison function could sort an array of numbers correctly (as long as all of the elements are finite numbers) :</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+function compare(first, second) {
+  return first - second;
+}</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>If you want to compare numbers that are not finite (like <code>NaN</code> and <code>Infinity</code>) then your compare function will have to work harder.</p>
+  <p>Next on the list of problems with the <code>sort</code> function is the lack of stability. A sort is stable if elements that are equalish (your compare function return szero) retain their original relative order. Java­Script does not guarantee stability. This is not a concern when sorting an array of strings or an array of numbers. It can be a concern when sorting an array of objects or an array of arrays. A complex sort might want to sort by las tname, and when last names are the same, sort by first name. Wun way to do that would be to first sort by first name, and then sort again by last name. But that does not work because the sort is not stable, and the information added by the first name sort may be lost.</p>
+  <p>We can mitigate that by using a more complex comparison function. To make that easier, we make a factory that makes comparison functions.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1</pre></div></td><td class="code"><div class="source"><pre>
+function refine(collection, path) {</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Take an array or object and a path in the form of an array of strings, and return the value at the end of the path. If there is no value, return undefined.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></div></td><td class="code"><div class="source"><pre>
+  return path.reduce(
+    function (refinement, element) {
+      try {
+        return refinement[element];
+      } catch (ignore) {}
+    };
+    collection
+  );
+}
+
+function by(...keys) {</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>This factory creates a comparison function to help in sorting an array of objects or an array of arrays. The arguments are wun or more strings or integers that will identify the properties or elements to compare. If the first argument sees a tie, then try the second, and then the third…</p>
+  <p>Convert each key into an array of strings.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+  const paths = keys.map(function (element) {
+    return element.toString().split(".");
+  });</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Compare each pair of values until finding a mismatch. If there is no mismatch then the two values are equal.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></div></td><td class="code"><div class="source"><pre>
+  return function compare(first, second) {
+    let first_value;
+    let second_value;
+    if (paths.every(function (path) {
+      first_value = refine(first, path);
+      second_value = refine(second, path);
+      return first_value === second_value;
+    })) {
+      return 0;
+    }</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>If the two values are of the same type, then we can compare the two values. If the types are not the same, then we need some policy to cope with the weirdness. Our simple policy here is to compare the names of the types, so boolean < number < string < undefined. (It might be better to fail instead of sorting disagreeable types.)</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></div></td><td class="code"><div class="source"><pre>
+  return (
+    (
+      typeof first_value === typeof second_value
+      ? first_value < second_value
+      : typeof first_value < typeof second_value
+    )
+    ? -1
+    : 1
+  );
+  };
+}</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Example :</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="source"><pre>
+let people = [
+  {first: "Frank", last: "Farkel"},
+  {first: "Fanny", last: "Farkel"},
+  {first: "Sparkle", last: "Farkel"},
+  {first: "Charcoal", last: "Farkel"},
+  {first: "Mark", last: "Farkel"},
+  {first: "Simon", last: "Farkel"},
+  {first: "Gar", last: "Farkel"},
+  {first: "Ferd", last: "Berfel"}
+]
+
+people.sort(by("last", "first"));
+
+  return (
+    (
+      typeof first_value === typeof second_value
+      ? first_value < second_value
+      : typeof first_value < typeof second_value
+    )
+    ? -1
+    : 1
+  );
+  };
+}
+<span class="c1">
+//  [
+//    {first: "Ferd", last: "Berfel"},
+//    {first: "Charcoal", last: "Farkel"},
+//    {first: "Fanny", last: "Farkel"},
+//    {first: "Frank", last: "Farkel"},
+//    {first: "Gar", last: "Farkel"},
+//    {first: "Mark", last: "Farkel"},
+//    {first: "Simon", last: "Farkel"},
+//    {first: "Sparkle", last: "Farkel"}
+// ]</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <div class="subhead" id="potpourri"><a href="#potpourri">Potpourri</a></div>
+  <p>The <code>concat</code> method takes two or more arrays and concatenates them together to make a new array.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4</pre></div></td><td class="code"><div class="source"><pre>
+let part_zero = ["unicorns", "rainbows"];
+let part_wun = ["butterflies", "monsters"];
+let whole = part_zero.concat(part_wun);
+<span class="c1">// whole is ["unicorns", "rainbows", "butterflies", "monsters"]</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The <code>join</code> method takes an array of strings and a separator string. It makes a big string that combines everything. Use an empty string as the separator if you don’t want separation. This is the inverse of the string <code>split</code> method.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2</pre></div></td><td class="code"><div class="source"><pre>
+let string = whole.join(" & ");
+<span class="c1">// string is "unicorns & rainbows & butterflies & monsters"</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The <code>reverse</code> method moves the elements around in an array so that they are in the opposite order. This is destructive, like the <code>sort</code> function.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2</pre></div></td><td class="code"><div class="source"><pre>
+whole.reverse();
+<span class="c1">// whole is ["monsters", "butterflies", "rainbows", "unicorns"]</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The <code>slice</code> method can make a copy of an array, or a copy of a part of an array. The zeroth parameter determines at what ordinal to start. The wunth parameter is the zeroth parameter plus the number of elements to copy. If the wunth parameter is omitted, all of the remaining elements are copied.</p>
+  <div class="highlight-container"><div id="code_bbh" form="false" decode="exclude" style="font-size:0;width:0;height:0">function make_binary_op(func) {<br/> return function (my_little_array) {<br/>  let wunth = my_little_array.pop();<br/>  let zeroth = my_little_array.pop();<br/>  my_little_array.push(func(zeroth, wunth));<br/>  return my_little_array;<br/> };<br/>}<br/><br/>let addop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth + wunth;<br/>});<br/><br/>let mulop = make_binary_op(function (zeroth, wunth) {<br/> return zeroth * wunth;<br/>});<br/><br/>let my_little_stack = [];<br/>my_little_stack.push(3);<br/>my_little_stack.push(5);<br/>my_little_stack.push(7);<br/>mulop(my_little_stack);<br/>addop(my_little_stack);<br/>let answer = my_little_stack.pop();<br/></div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="source"><pre>
+let element_nr = whole.indexOf("butterflies");
+let good_parts;
+if (element_nr !== -1) {
+  good_parts = whole.slice(element_nr);
+}
+<span class="c1">// good_parts is ["butterflies", "rainbows", "unicorns"]</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_bbh" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <div class="subhead" id="pureandimpure"><a href="#pureandimpure">Pure and impure</a></div>
+  <p>Some of the array methods are pure, not changing their inputs. Some of them are not.Some of them should have been pure, bur are not. Some by their nature can not be pure, but are still valuable.</p>
+  <p>When coping with the pure/impure duality, it is important to know what is pure and what is not.</p>
+  <!-- <p style="letter-spacing: 0.1em;">Pure methods :</p> -->
+  <p><strong>Pure methods</strong> :</p>
+  <p>
+    <!-- <p style="padding-left: 2.5rem;"> -->
+      <code>concat</code><br>
+      <code>every</code><br>
+      <code>filter</code><br>
+      <code>find</code><br>
+      <code>findIndex</code><br>
+      <code>forEach</code><br>
+      <code>indexOf</code><br>
+      <code>join</code><br>
+      <code>lastIndexOf</code><br>
+      <code>map</code><br>
+      <code>reduce</code><br>
+      <code>reduceRight</code><br>
+      <code>slice</code><br>
+      <code>some</code>
+    </p>
+    <p><strong>Impure methods</strong> :</p>
+    <!-- <p style="letter-spacing: 0.1em;">Impure methods :</p> -->
+    <!-- <p>Impure methods :</p> -->
+  
+    <p>
+    <!-- <p style="padding-left: 2.5rem;"> -->
+      <code>fill</code><br>
+      <code>pop</code><br>
+      <code>push</code><br>
+      <code>shift</code><br>
+      <code>splice</code><br>
+      <code>unshift</code>
+    </p>
+    <p><strong>Impure methods that should have been pure</strong> :</p>
+    <!-- <p style="letter-spacing: 0.1em;">Impure methods that should have been pure :</p> -->
+    <!-- <p>Impure methods that should have been pure :</p> -->
+  
+    <p>
+    <!-- <p style="padding-left: 2.5rem;"> -->
+      <code>reverse</code><br>
+      <code>sort</code>
+    </p>
+
+    <div class="id" id="8"><hr><div><a href="#8">Chapitre 8</a></div><div>How objects work</div></div>
+    <blockquote style="padding-left: 44%; padding-left: 33.33%; padding-right: 0rem;"><p>Have grat­i­tude for the things you’re dis­­card­­ing. By giv­ing grati­tude, you’re giv­ing clo­sure to the rela­tion­ship with that ob­ject, and by do­ing so, it be­comes a lot eas­i­er to let go.</p><cite style="text-transform: lowercase; margin-left: 0;">Marie Kondo</cite></blockquote>
+    <!-- <div class="gap" style="height:2em"></div><ul class="children"></ul> -->
+    <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  
+    <p>Java­Script over­loads the word <em>object</em>. This is a lan­guage in which every­thing (ex­cept the two bot­tom val­ues, <code>null</code> and <code>undefined</code>) is an ob­ject. But usu­ally, es­pe­cially in this chap­ter, ob­ject means some­thing more specific.</p>
+    <p>Java­Script’s pri­mary data struc­ture is called <em>object</em>. An ob­ject is a con­tainer of prop­er­ties (or mem­bers). Each prop­erty has a name and a val­ue. The name is a string. The val­ue can be of any type. In oth­er lan­guag­es, this type of ob­ject might be called a hash ta­ble, map, re­cord, struct, as­so­cia­tive ar­ray, dic­tion­ary, or in some very rude lan­guag­es, a dict.</p>
+    <p>A new ob­ject can be cre­ated with an ob­ject lit­eral. An ob­ject lit­eral cre­ates a val­ue that can be stored in a vari­able or ob­ject or ar­ray, or passed to a func­tion, or re­turned from a func­tion.</p>
+    <p>An ob­ject lit­eral is de­lim­ited by <code>{</code> <span class="mycode">left brace</span> and <code>}</code> <span class="mycode">right brace</span>. Nes­tled in­side can be zero or more prop­er­ties, sep­a­rated with <code>,</code> <span class="mycode">comma</span>. A prop­erty can be :</p>
+    <ul>
+      <li>A string fol­lowed by <code>:</code> <span class="mycode">colon</span> fol­lowed by an ex­pres­sion. The prop­erty’s name is the string. The prop­erty’s val­ue is the val­ue of the expression.</li>
+      <li>A name fol­lowed by <code>:</code> <span class="mycode">colon</span> fol­lowed by an ex­pres­sion. The prop­erty’s name is the name con­vert­ed into a string. The prop­erty’s val­ue is the val­ue of the expression.</li>
+      <li>A name. The prop­erty’s name is the name con­vert­ed into a string. The prop­erty’s val­ue is the val­ue of the vari­able or pa­ram­eter hav­ing the same name.</li>
+      <li>A name fol­lowed by a pa­ram­eter list wrapped in <code>(</code> <span class="mycode">left par­en</span> and <code>)</code> <span class="mycode">right par­en</span> fol­lowed by a func­tion body wrapped in <code>{</code> <span class="mycode">left brace</span> and <code>}</code> <span class="mycode">right brace</span>. This is a con­trac­tion for a name fol­lowed by a co­lon fol­lowed by a func­tion ex­pres­sion. This al­lows fo­r omit­ting <code>: func​tion</code> which, giv­en the loss of clar­ity, hard­ly seems worth it.
+      </li>
+    </ul>
+    <p>So, for example,</p>
+    <div class="highlight-container">
+      <div id="code_80" form="false" decode="exclude" style="font-size:0;width:0;height:0">let bar = "a long rod or rigid piece of wood or metal";<br/>let my_little_object = {<br/>  "0/0": 0,<br/>  foo: bar,<br/>  bar,<br/>  my_little_method() {<br/>    return "So small.";<br/>  }<br/>};</div>
+      <div class="highlight" form="false">
+      <table class="sourcetable">
+      <tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="source"><pre>
+let bar = "a long rod or rigid piece of wood or metal";
+let my_little_object = {
+    "0/0": 0,
+    foo: bar,
+    bar,
+    my_little_method() {
+        return "So small.";
+    }
+};</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_80" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+    <p>We can ac­cess a prop­erty of an ob­ject by us­ing the dot no­ta­tion with a name.</p>
+    <div class="highlight-container"><div id="code_81" form="false" decode="exclude" style="font-size:0;width:0;height:0">my_little_object.foo === my_little_object.bar</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="source">
+    <pre>my_little_object.foo === my_little_object.bar  <span class="c1">// true</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_81" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+    <p>We can also ac­cess a prop­erty of an ob­ject us­ing the brack­et no­ta­tion. We can use the brack­et no­ta­tion to ac­cess a prop­erty whose name is not a val­id iden­ti­fier. We can also use the brack­et no­ta­tion to ac­cess com­puted prop­erty names. The ex­pres­sion in the brack­ets is eval­u­ated and con­vert­ed into a string if necessary.</p>
+    <div class="highlight-container"><div id="code_82" form="false" decode="exclude" style="font-size:0;width:0;height:0">my_little_object["0/0"] === 0</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="source">
+    <pre>my_little_object["0/0"] === 0            <span class="c1">// true</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_82" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+    <p>If we ask for a name with the dot or the brack­et that can­not be found in the ob­ject, then the bot­tom val­ue un­de­fined is pro­vided in­stead. Ask­ing for a non­ex­is­tent or miss­ing prop­erty is not con­sid­ered an er­ror. It is a nor­mal op­er­a­tion that pro­duces undefined.</p>
+    <div class="highlight-container"><div id="code_83" form="false" decode="exclude" style="font-size:0;width:0;height:0">my_little_object.rainbow<br/>my_little_object[0]</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2</pre></div></td><td class="code"><div class="source"><pre>
+my_little_object.rainbow                 <span class="c1">// undefined</span>
+my_little_object[0]                      <span class="c1">// undefined</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_83" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>New prop­er­ties may be add­ed to an ob­ject by as­sign­ment. The val­ues of ex­ist­ing prop­er­ties may also be re­placed by assignment.</p>
+  <div class="highlight-container"><div id="code_84" form="false" decode="exclude" style="font-size:0;width:0;height:0">my_little_object.age = 39;<br/>my_little_object.foo = "slightly frilly or fancy";</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2</pre></div></td><td class="code"><div class="source"><pre>
+my_little_object.age = 39;
+my_little_object.foo = "slightly frilly or fancy";</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_84" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>I rec­om­mend not stor­ing un­de­fined in ob­jects. Ja­vaS­cript al­lows it, and cor­rectly gives back the un­de­fined val­ue, but it is the same un­de­fined that means that the prop­erty is miss­ing. This is a source of con­fu­sion that can eas­ily be avoid­ed. I wish that stor­ing un­de­fined would cause the prop­erty to be re­moved, but it does not. A prop­erty can be re­moved by the de­lete operator.</p>
+  <div class="highlight-container"><div id="code_85" form="false" decode="exclude" style="font-size:0;width:0;height:0">delete my_little_object["0/0"];</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="source">
+  <pre>delete my_little_object["0/0"];</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_85" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Sophisticated data struc­tures can be built out of ob­jects be­cause ref­er­ences to ob­jects can be stored in ob­jects. All sorts of graphs and cy­clic struc­tures can be con­struct­ed. There is no lim­it on the depth of nest­ing, but don’t go crazy.</p>
+  <p>When the <code>typeof</code> op­er­­era­tor is giv­en an ob­ject, it gives the string <code>"object"</code>.</p>
+  <div class="highlight-container"><div id="code_86" form="false" decode="exclude" style="font-size:0;width:0;height:0">typeof my_little_object === "object"</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="source">
+  <pre>typeof my_little_object === "object"     <span class="c1">// true</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_86" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <div class="subhead" id="case"><a href="#case">Case</a></div>
+  <p>The match­ing of keys is case sen­si­tive. So <code class="xe">my​_​little​_​object​.​cat</code> is not the same prop­erty as <code class="xe">my​_​little​_​object​.​Cat</code> or <code class="xe">my​_​little​_​object​.​CAT</code>. The <code>===</code> op­er­a­tor deter­mines the string match­ing of prop­erty names.</p>
+  <div class="subhead" id="copy"><a href="#case">Copy</a></div>
+  <p>The <code>Object.­as­sign</code> func­tion can copy the prop­er ties from an ob­ject to an­oth­er. You can make a copy of an ob­ject by as­sign­ing to an emp­ty object.</p>
+  <div class="highlight-container">
+  <div id="code_87" form="false" decode="exclude" style="font-size:0;width:0;height:0">let my_copy = Object.assign({}, my_little_object);<br/>my_copy.bar<br/>my_copy.age<br/>my_copy.age += 1;<br/>my_copy.age<br/>delete my_copy.age;<br/>my_copy.age</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="source"><pre>
+let my_copy = Object.assign({}, my_little_object);
+my_copy.bar  <span class="c1">// "a long rod or rigid piece of wood or metal"</span>
+my_copy.age                              <span class="c1">// 39</span>
+my_copy.age += 1;   
+my_copy.age                              <span class="c1">// 40</span>
+delete my_copy.age;
+my_copy.age                              <span class="c1">// undefined</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_87" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>An ob­ject can be as­signed ma­te­rial from many ob­jects. In this way, a com­plex ob­ject can be con­struct­ed by the as­sem­bling of ma­te­rial from sim­pler objects.</p>
+  <div class="subhead" id="inheritance"><a href="#inheritance">inheritance</a></div>
+  <p>In Ja­vaS­cript, an ob­ject can be made that in­her­its from an­other ob­ject. This is a very dif­fer­ent style of in­her­i­tance than is prac­ticed in lan­guag­es that have tight­ly cou­pled pro­gram­matic struc­tures like class­es. In Ja­vaS­cript, it is the data that is cou­pled, which can sig­nif­i­cantly re­duce the brit­tle­ness that can seize an ap­pli­ca­tion architecture.</p>
+  <p><code>Object.­create(<em>prototype</em>)</code> takes an ex­ist­ing ob­ject and re­turns a new ob­ject that in­her­its from the ex­ist­ing ob­ject. The ex­ist­ing ob­ject is the new ob­ject’s <em>pro­to­type</em>. Any ob­ject can be the pro­to­type of a new ob­ject. An ob­ject that in­her­its from a pro­to­type can also be the pro­to­type of new­er ob­jects. There is no lim­it on the length of a pro­to­type chain, but it is wise to keep them short.</p>
+  <p>If there is an at­tempt to ac­cess a miss­ing prop­erty, be­fore re­turn­ing <code>un­de­fined</code>, the sys­tem first goes to the pro­to­type, and then its pro­to­type, and so on. If a same named prop­erty is found in the pro­to­type chain, then that is giv­en as though it had been found in the ob­ject of interest.</p>
+  <p>When as­sign­ing to an ob­ject, only the top-most ob­ject is changed. No chang­es are made to ob­jects on the pro­to­type chain.</p>
+  <div class="highlight-container"><div id="code_88" form="false" decode="exclude" style="font-size:0;width:0;height:0">let my_clone = Object.create(my_little_object);<br/>my_clone.bar<br/>my_clone.age<br/>my_clone.age += 1;<br/>my_clone.age<br/>delete my_clone.age;<br/>my_clone.age</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="source"><pre>
+let my_clone = Object.create(my_little_object);
+my_clone.bar  <span class="c1">// "a long rod or rigid piece of wood or metal"</span>
+my_clone.age                             <span class="c1">// 39</span>
+my_clone.age += 1;
+my_clone.age                             <span class="c1">// 40</span>
+delete my_clone.age;
+my_clone.age                             <span class="c1">// 39</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_88" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The most pop­u­lar use of pro­to­types is as a place to store func­tions. Ja­vaS­cript it­self does this. When an ob­ject is made with an ob­ject lit­eral, that ob­ject in­her­its from <code>Object​.​prototype</code>. Sim­i­larly, ar­rays in­herit meth­ods from <code>Array​.​prototype</code>. Num­bers in­herit meth­ods from <code>Number​.​prototype</code>. Strings in­herit meth­ods from <code>String​.​prototype</code>. Even func­tions in­herit meth­ods from <code>Function​.​prototype</code>. The ar­ray and string meth­ods are pret­ty use­ful, but the meth­ods in <code>Object​.​prototype</code> are most­ly useless.</p>
+  <p>Be­cause we have in­her­i­tance, we now have two types of prop­er­ties : <em>own</em> prop­er­ties that live in the top-most ob­ject, and <em>in­her­ited</em> prop­er­ties that live in the pro­to­type chain. Most of the time they work just the same. Some­times you need to know if the prop­erty is tru­ly the ob­ject’s own. Most ob­jects in­herit a <code>has​Own​Property​(<em>string</em>)</code> func­tion, but un­for­tu­nately, it has a reli­abil­ity haz­ard. It takes a <em>string</em> and re­turns <code>true</code> if the ob­ject con­tains a prop­erty with that name <em>and</em> if the prop­erty is not in­her­ited. Un­for­tu­nately, if the ob­ject has a prop­erty named <code>has​Own​Property</code>, it will be called in­stead of the <code>Object​.​proto​type​.​has​Own​Property</code> meth­od. That could cause a fail­ure or oth­er con­fu­sion. It would have been bet­ter had <code>has​Own​Property</code> been an op­er­a­tor so that the state of an ob­ject could not cause the call to <code>has​Own​Property</code> to fail. It would have been even bet­ter still if there were no in­her­ited prop­er­ties, which would make this trou­ble some meth­od unnecessary.</p>
+  <div class="highlight-container"><div id="code_88a" form="false" decode="exclude" style="font-size:0;width:0;height:0">my_little_object.hasOwnProperty("bar")<br/>my_copy.hasOwnProperty("bar")<br/>my_clone.hasOwnProperty("bar")<br/>my_clone.hasOwnProperty = 7;<br/>my_clone.hasOwnProperty("bar")</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="source"><pre>
+my_little_object.hasOwnProperty("bar")   <span class="c1">// true</span>
+my_copy.hasOwnProperty("bar")            <span class="c1">// true</span>
+my_clone.hasOwnProperty("bar")           <span class="c1">// false</span>
+my_clone.hasOwnProperty = 7;
+my_clone.hasOwnProperty("bar")           <span class="c1">// EXCEPTION!</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_88a" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>If you have a prop­erty named <code>has​Own​Property</code>, then you can not use the in­her­ited <code>has​Own​Property</code> meth­od. You will be call­ing the own prop­erty instead.</p>
+  <p><code>Object.​prototype.​toString</code> shares the same fail­ure risk. But even when it works, it is a disappointment.</p>
+  <div class="highlight-container"><div id="code_89" form="false" decode="exclude" style="font-size:0;width:0;height:0">my_clone.toString</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="source"><pre>my_clone.toString  <span class="c1">// "[object Object]"</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_89" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>You don’t need to be told that your ob­ject is an ob­ject. You prob­ably al­ready knew that.­ You want to be shown what it con­tains. If y­ou want to con­vert an ob­ject into a string, <code>JSON.​strin­gify</code> does a much bet­ter job.</p>
+  <p>The ad­van­tage of <code>Object​.​create​(<em>prototype</em>)</code> over <code>Object​.​assign​(​Object​.​​create​({})</code>, <em>prot­op­type</em>) is that less mem­ory is used. In most cas­es, the sav­ings are not sig­nif­i­cant. Pro­to­types can add weird­ness with­out add­ing much benefit.</p>
+  <p>There is also a prob­lem with unin­tended inheri­tance. You might want to use an ob­ject as you would use a hash ta­ble, but the ob­ject in­her­its names like <code>"to​String"</code>, <code>"con​struct​or"</code>, and oth­er names that might be im­ple­men­ta­tion de­pen­dent. These could po­ten­tially be con­fused with your properties.</p>
+  <p>For­tu­nately, <code>Object.​create​(null)</code> makes an ob­ject that in­her­its noth­ing. There is no con­fu­sion over in­her­ited prop­er­ties or unin­tende­d in­heri­tance. There is noth­ing in the ob­ject ex­cept what you ex­plic­itly put into it. I am now mak­ing fre­quent use of <code>Object.create(null)</code>.</p>
+  <div class="subhead" id="keys"><a href="#keys">Keys</a></div>
+  <p>The <code>Object​.​­keys​(<em>object</em>)</code> func­tion can take all of the names of the own (but not in­her­ited)­ prop­er­ties in an <em>ob­ject</em> and re­turn them as an ar­ray of strings. This al­lows you to use the ar­ray meth­ods to pro­cess the prop­er­ties of an object.</p>
+  <p>The strings in the ar­ray will be in the or­der in which they were in­sert­ed. If you need them in a dif­fer­ent or­der, you can use the Ar­ray sort method.</p>
+  <div class="subhead" id="freeze"><a href="#freeze">Freeze</a></div>
+  <p><code>Object​.​­freeze​(<em>object</em>)</code> can take an <em>ob­ject</em> and freeze it, mak­ing it im­mu­table. Im­mu­ta­bil­ity can lead to more reli­able sys­tems. Wun­ce an ob­ject is con­struct­ed to your lik­ing, it can be­froz­en, which guar­an­tees that it can­not be dam­aged or tam­pered with. This is not a deep freeze.­Only the top lev­el ob­ject is frozen.</p>
+  <p>Im­mu­table ob­jects might some­day have valu­able per­for­mance char­ac­ter­is­tics. If it is known that an ob­ject can nev­er change, then a pow­er­ful set of opti­mi­za­tions be­come avail­able to the lan­guage implementation.</p>
+  <p>Im­mu­table ob­jects have ex­cel­lent se­cu­rity prop­er­ties. This is im­por­tant be­cause cur­rent in­dus­try prac­tices en­cour­age the in­stal­la­tion of un­trust­worthy code into our sys­tems. Im­mu­ta­bil­ity might some­day help that to be­come a safe prac­tice. With im­mu­ta­bil­ity, we can give ob­jects good in­ter­faces with which to de­fend themselves.</p>
+  <p><code>Object​.​­freeze​(<em>object</em>)</code> and the <code>const</code> state­ment do two very dif­fer­ent things. <code>Ob­ject​.​­freeze</code> op­er­ates on val­ues. <code>const</code> op­er­ates on vari­ables. If you put a mu­table ob­ject in a <code>const</code> vari­able, you can still mu­tate the ob­ject, but you can­not re­place the ob­ject with a dif­fer­­­ent ­value. If you put an im­mu­table ob­ject in an­or­di­nary vari­able, you can not change the ob­ject, but you can as­sign a dif­fer­ent val­ue to the variable.</p>
+  <div class="highlight-container"><div id="code_90" form="false" decode="exclude" style="font-size:0;width:0;height:0">Object.freeze(my_copy);<br/>const my_little_constant = my_little_object;<br/><br/>my_little_constant.foo = 7;<br/>my_little_constant = 7;<br/>my_copy.foo = 7;<br/>my_copy = 7;</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="source"><pre>
+Object.freeze(my_copy);
+const my_little_constant = my_little_object;
+
+my_little_constant.foo = 7;              <span class="c1">// allowed</span>
+my_little_constant = 7;                  <span class="c1">// SYNTAX ERROR!</span>
+my_copy.foo = 7;                         <span class="c1">// EXCEPTION!</span>
+my_copy = 7;                             <span class="c1">// allowed</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_90" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <div class="subhead" id="prototypes"><a href="#prototypes">Prototypes and Freezing Do Not Mix</a></div>
+  <p>Wun use of pro­to­types is the crea­tion of light cop­ies of ob­jects. We might have an ob­ject full of data. We want an­oth­er ob­ject that is the same but with wun of the prop­er­ties changed. We can do that with <code>Ob­ject​.​create</code>, as we have seen. This will save some time on the crea­tion of the new ob­ject, but the re­triev­al of the prop­er­ties might cost a lit­tle more be­cause of look­ing thru the pro­to­type chain.</p>
+  <p>Un­for­tu­nate­ly, this does not work if the pro­to­type is fro­zen. If a prop­er­ty in a pro­to­type is im­muta­ble, then the in­stanc­es can not have their own ver­sions of that prop­er­ty. In some func­tion­al pro­gram­ming styles we want all ob­jects to be fro­zen for the reli­a­bil­ity ben­e­fits that come from im­mu­ta­bil­ity. So in­stead of mak­ing a copy to re­al­ize a change,it would have been nice if we could make an in­stance that in­her­its from the fro­zen pro­to­type, up­date the in­stance, and then freeze the in­stance. But that just does not work. Up­dat­ing the in­stance rais­es an ex­cep­tion. It also slows down the in­ser­tion of new prop­er­ties in gen­er­al. When­ev­er a new prop­er­ty is in­sert­ed, the whole pro­to­type chain must be searched for that key to de­ter­mine that there is not an im­muta­ble prop­er­ty in an an­ces­tor. This search can be avoid­ed by us­ing <code>Object​.​­cre­ate​(null)</code> to make your objects.</p>
+  <div class="subhead" id="weakmap"><a href="#weakmap">WeakMap</a></div>
+  <p>Wun of the de­sign er­rors in JavaS­cript is that the names of prop­er­ties in ob­jects must be strings. There are situa­tions when you want to use an ob­ject or an ar­ray as a key. Un­for­tu­nately, Ja­vaS­cript ob­jects do the wrong thing in that case, con­vert­ing the key ob­ject into a key string us­ing the <code>to­String</code> meth­od, which we al­ready saw is a disappointment.</p>
+  <p>In­stead of giv­ing us an ob­ject that works cor­rectly for all keys, JavaS­cript gives us a sec­ond type of ob­ject called a Weak­Map that al­lows ob­jects as keys, but not strings, and with a com­plete­ly dif­fer­ent interface.</p>
+  <table class="quick fast" form="false" id="a_VqzD7">
+    <tbody>
+        <style>
+        .fast td { padding: 0.4rem 0.5rem 0.2rem 0.5rem;}
+        .fast td + td { padding-left: 1rem;}
+        /* .fast td      {padding: 0.7rem 1rem 0.5rem 0.5rem !important;} */
+        /* .fast td + td {padding: 0.7rem 0.5rem 0.5rem 1rem !important;} */
+        .fast td pre {font-size: 0.75rem; line-height: 1.35; white-space:pre-wrap ; word-break: break-word; overflow-wrap: break-word;}</style>
+        <tr><th style="width: 52%;">Object</th><th style="width: auto;">WeakMap</th></tr>
+        <tr><td hyphens="none"><pre>object = Object.create(null);</pre></td><td hyphens="none"><pre>weakmap = new WeakMap();</pre></td></tr>
+        <tr><td hyphens="none"><pre>object[key]</pre></td><td hyphens="none"><pre>weakmap.get(key)</pre></td></tr>
+        <tr><td hyphens="none"><pre>object[key] = value;</pre></td><td hyphens="none"><pre>weakmap.set(key, value);</pre></td></tr>
+        <tr><td hyphens="none"><pre>delete object[key];</pre></td><td hyphens="none"><pre>weakmap.delete(key);</pre></td></tr></tbody></table>
+  <p>It does not make sense that these two things which do the same thing are so syn­tac­ti­cally dif­fer­ent.­It also does not make sense that these two things are not wun thing. In­stead of a thing that al­lows only strings as keys and an­other thing that al­lows only ob­jects as keys, there should have been a sin­gle thing that al­lows strings and ob­jects as keys.</p>
+  <p>In spite of that, <code>Weak­Map</code> is bril­liant. Here are two ex­am­ples of its use.</p>
+  <p>We want to put a se­cret prop­erty on an ob­ject. In or­der to ac­cess the se­cret prop­erty, you need ac­cess to the ob­ject and to the se­cret key. You can not ac­cess the prop­erty un­less you have both. We can do this with a <code>Weak­Map</code>. We treat the <code>Weak­Map</code> as the se­cret key.</p>
+  <div class="highlight-container"><div id="code_91" form="false" decode="exclude" style="font-size:0;width:0;height:0">const secret_key = new WeakMap();<br/>secret_key.set(object, secret);<br/><br/>secret = secret_key.get(object);</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4</pre></div></td><td class="code"><div class="source"><pre>
+const secret_key = new WeakMap();
+secret_key.set(object, secret);
+
+secret = secret_key.get(object);</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_91" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+<p>You must have ac­cess to both the ob­ject and the se­cret key in or­der to re­cover the se­cret. A nice thing about this tech­nique is that we can ef­fec­tively add se­cret prop­er­ties to fro­zen objects.</p>
+<p>We want to be able to give an ob­ject to some code that might do some­thing use­ful for us, like cat­a­log it or store it for lat­er re­triev­al, but we do not want to also give that code the ca­pa­bil­ity to al­ter the ob­ject or call any of its meth­ods.­In the real world, we want to al­low a va­let to park the car, but not emp­ty the glove box and trunk or sell the car. The hon­or sys­tem can work for peo­ple in the real world, but not for code in a com­puter network.</p>
+<p>So we make a de­vice called a <em>seal­er</em>. We give an ob­ject to a seal­er and it re­turns a box that can not be opened. That box can be giv­en to a va­let. To re­cover the orig­i­nal ob­ject, give the box to the match­ing <em>un­seal­er</em>. We can eas­ily make these func­tions us­ing <code>WeakMap</code>.</p>
+
+<div class="highlight-container"><div id="code_92" form="false" decode="exclude" style="font-size:0;width:0;height:0">function sealer_factory() {<br/>  const weakmap = new WeakMap();<br/>  return {<br/>    sealer(object) {<br/>      const box = Object.freeze(Object.create(null));<br/>      weakmap.set(box, object);<br/>      return box;<br/>    },<br/>    unsealer(box) {<br/>      return weakmap.get(box);<br/>    }<br/>  };<br/>}</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="source"><pre>
+function sealer_factory() {
+    const weakmap = new WeakMap();
+    return {
+        sealer(object) {
+            const box = Object.freeze(Object.create(null));
+            weakmap.set(box, object);
+            return box;
+        },
+        unsealer(box) {
+            return weakmap.get(box);
+        }
+    };
+}</pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_92" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The <code>weak­Map</code> does not al­low in­spec­tion of its con­tents. You can not get a val­ue from it un­less you also hold the key. Weak­Map in­ter­acts well with Ja­vaS­cript’s gar­bage col­lec­tor. If there are no cop­ies of a key still in exis­tence, then that key’s prop­erty in the weak­map is au­to­mat­i­cally de­leted. This can help avoid mem­ory leaks.</p>
+  <p>Ja­vaS­cript also has a sim­i­lar thing called Map, but Map does not have the se­cu­rity and mem­ory leak pro­tec­tion that Weak­Map has. And whilst Weak­Map is a ter­rible name, Map is even more con­fus­ing. It has no con­nec­tion to the Ar­ray <code>map</code> meth­od, and it could be con­fused with a car­tog­ra­phy func­tion. That is why I do not rec­om­mend Map. But I like Weak­Map and the Ar­ray <code>map</code> function.</p>
+  <p>Ja­vaS­cript has a thing called Sym­bol that can do wun of the things that Weak­Map can do. I do not rec­om­mend Sym­bol be­cause it is un­nec­es­sary. I am look­ing to sim­plify by elim­i­nat­ing the ex­ces­sive fea­tures that I don’t need.</p>
+
+
+  <div class="id" id="9"><hr><div><a href="#9">Chapitre 9</a></div><div>How strings work</div></div>
+  <blockquote style="padding-left: 44%; padding-left: 33.33%; padding-right: 0rem;"><p>Not fair ! Not fair ! It isn’t fair, my precious, is it, to ask us what it’s got in its nasty little pocketses ?</p><cite style="text-transform: lowercase; margin-left: 0;">Gollum</cite></blockquote>
+  <!-- <div class="gap" style="height:2em"></div><ul class="children"></ul> -->
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  <p>Computers are good at manipulating bit patterns. Humans are not. Strings bridge the gap between computers and humans. The mapping of characters onto integers was wun of the important advances in the development of digital computers. It was the first important step forward in the development of user interfaces.</p>
+  <p>We do not know why we call this type <em>string</em>. Why do we not call it <em>text</em> instead ? No wun knows. A Java­Script string does not resemble a piece of string. We can talk about a string of characters, but we can as easily talk about a <em>string of statements</em>, or a <em>string of bits</em>, or even a <em>string of failures</em>. In the real world, we do not concatenate strings. We tie strings.</p>
+  <div class="subhead" id="foundation"><a href="#foundation">Foundation</a></div>
+  <p>A string is an immutable array of 16 bit unsigned integers ranging from <code>0</code> thru <code>65535</code>. A string may be made with the <code>String.fromCharCode</code> function, which takes any number of numbers. The elements of a string can be accessed with <code>charCodeAt</code>. Elements may not be changed because strings are always frozen. Strings, like arrays, have a <code>length</code> property.</p>
+  <div class="highlight-container"><div id="code_92" form="false" decode="exclude" style="font-size:0;width:0;height:0">function sealer_factory() {<br/>  const weakmap = new WeakMap();<br/>  return {<br/>    sealer(object) {<br/>      const box = Object.freeze(Object.create(null));<br/>      weakmap.set(box, object);<br/>      return box;<br/>    },<br/>    unsealer(box) {<br/>      return weakmap.get(box);<br/>    }<br/>  };<br/>}</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="source"><pre>
+const my_little_array = [99, 111, 114, 110];
+const my_little_string = String.fromCharCode(...my_little_array);
+my_little_string.charCodeAt(0) === 99    <span class="c1">// true</span>
+my_little_string.length                  <span class="c1">// 4</span>
+typeof my_little_string                  <span class="c1">// "string"</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_92" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+<p>The bracket notation can be used to obtainin dividual values from a string, but it does not deliver a number as an array would. Instead it returns a new string with a <code>length</code> of <code>1</code> whose content is the number.</p>
+<div class="highlight-container"><div id="code_92" form="false" decode="exclude" style="font-size:0;width:0;height:0">function sealer_factory() {<br/>  const weakmap = new WeakMap();<br/>  return {<br/>    sealer(object) {<br/>      const box = Object.freeze(Object.create(null));<br/>      weakmap.set(box, object);<br/>      return box;<br/>    },<br/>    unsealer(box) {<br/>      return weakmap.get(box);<br/>    }<br/>  };<br/>}</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2</pre></div></td><td class="code"><div class="source"><pre>
+my_little_string[0] === my_little_array[0]      <span class="c1">// false</span>
+my_little_string[0] === String.fromCharCode(99) <span class="c1">// true</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_92" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p><code>String.prototype</code> contains methods that act on strings. The <code>concat</code> and <code>slice</code> methods work very much like the array methods. But the <code>indexOf</code> method works very differently. The argument to <code>indexOf</code> is a string, not a number. It attempts to match all of the elements in the argument in sequence with elements in the first string.</p>
+  <div class="highlight-container"><div id="code_92" form="false" decode="exclude" style="font-size:0;width:0;height:0">function sealer_factory() {<br/>  const weakmap = new WeakMap();<br/>  return {<br/>    sealer(object) {<br/>      const box = Object.freeze(Object.create(null));<br/>      weakmap.set(box, object);<br/>      return box;<br/>    },<br/>    unsealer(box) {<br/>      return weakmap.get(box);<br/>    }<br/>  };<br/>}</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2</pre></div></td><td class="code"><div class="source"><pre>
+my_little_string.indexOf(String.fromCharCode(111, 114))  <span class="c1">// 1</span>
+my_little_string.indexOf(String.fromCharCode(111, 110))  <span class="c1">// -1</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_92" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>Strings containing similar contents are considered to be equal by the <code>===</code> operator. Similar arrays are only equal when they are the same array.</p>
+  <div class="highlight-container"><div id="code_92" form="false" decode="exclude" style="font-size:0;width:0;height:0">function sealer_factory() {<br/>  const weakmap = new WeakMap();<br/>  return {<br/>    sealer(object) {<br/>      const box = Object.freeze(Object.create(null));<br/>      weakmap.set(box, object);<br/>      return box;<br/>    },<br/>    unsealer(box) {<br/>      return weakmap.get(box);<br/>    }<br/>  };<br/>}</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3</pre></div></td><td class="code"><div class="source"><pre>
+my_little_array === my_little_array      <span class="c1">// true</span>
+my_little_array === [99, 111, 114, 110]  <span class="c1">//false</span>
+my_little_string === String.fromCharCode(99, 111, 114, 110) <span class="c1">// true</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_92" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>The equality of strings is a very powerful feature. It eliminates the need for a symbol type because similar strings are considered to be the same object. This is not true in lesser languages like Java.</p>
+  <div class="subhead" id="unicode"><a href="#unicode">Unicode</a></div>
+  <p>Java­Script allows all 65536 of the 16 bit patterns as elements of strings. However, the usual practice is to consider each element to be a character, and the Unicode standard determines the encoding of characters. Java­Script has a lot of syntactic and methodic support for Unicode. The Unicode standard declares that some codes are not characters and should not be used. Java­Script does not care. It allows all 16 bit codes. If you intended to have your systems interact with systems that are written in lesser languages, then you should not abuse Unicode.</p>
+  <p>String literals are written by surrounding zero or more Unicode characters with <code>"</code> <span class="mycode">double quote</span>. (<code>'</code> <span class="mycode">single quote</span> can also be used, but is not recommended because it is unnecessary.) Each character is represented as a 16 bit element.</p>
+  <p>The <code>+</code> <span class="mycode">plus sign</span> operator is used to do concatenation. We have already seen that <code>+</code> is also used to do addition. If you intend to do concatenation, then you need to assure that at least wun of the operands is a string. Wun way to do that is to make wun of the operands a string literal. Another way is to pass a value to the <code>String</code> function.</p>
+  <div class="highlight-container"><div id="code_92" form="false" decode="exclude" style="font-size:0;width:0;height:0">function sealer_factory() {<br/>  const weakmap = new WeakMap();<br/>  return {<br/>    sealer(object) {<br/>      const box = Object.freeze(Object.create(null));<br/>      weakmap.set(box, object);<br/>      return box;<br/>    },<br/>    unsealer(box) {<br/>      return weakmap.get(box);<br/>    }<br/>  };<br/>}</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="source"><pre>
+my_little_string === "corn"              <span class="c1">// true</span>
+"uni" + my_little_string                 <span class="c1">// "Unicorn"</span>
+3+4                                      <span class="c1">// 7</span>
+String(3) + 4                            <span class="c1">// 34</span>
+3 + String(4)                            <span class="c1">// 34</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_92" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <p>A string literal must fit entirely on wun line. The <code>\</code> <span class="mycode">backslash</span> is used as an escapement character that allows for including <code>"</code> <span class="mycode">double quote</span>, <code>\</code> <span class="mycode">backslash</span>, and line break in string literals.</p>
+  <p>Brackets can be used to retrieve characters from a string. The representation of a characteris a string with a <code>length</code> of <code>1</code>. There is no character type. A charactercanbe represented as a number or a string.</p>
+  <p>Many languages do have a character type, and it is usually abbreviated as char, but there does not seem to be a standard pronounciation. I have heard it spoken as <em>car</em>, <em>care</em>, <em>chair</em>, <em>char</em>, and <em>share</em>.</p>
+  <p>All strings are frozen when they are created. Wunce made, a string can not be changed. Smaller pieces can be copied from strings. Each piece is a new string. New strings can be made by concatenating strings together.</p>
+  <div class="highlight-container"><div id="code_92" form="false" decode="exclude" style="font-size:0;width:0;height:0">function sealer_factory() {<br/>  const weakmap = new WeakMap();<br/>  return {<br/>    sealer(object) {<br/>      const box = Object.freeze(Object.create(null));<br/>      weakmap.set(box, object);<br/>      return box;<br/>    },<br/>    unsealer(box) {<br/>      return weakmap.get(box);<br/>    }<br/>  };<br/>}</div><div class="highlight" form="false"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="source"><pre>
+const mess = "monster";
+const the_four = "uni"
+                 + my_little_string
+                 + " rainbow butterfly "
+                 + mess;
+<span class="c1">// the_four is "unicorn rainbow butterfly monster"</span>
+
+const first = the_four.slice(0, 7);      <span class="c1">// first is "unicorn"</span>
+const last = the_four.slice(-7);         <span class="c1">// last is "monster"</span>
+const parts = the_four.split(" ");       <span class="c1">// part is [</span>
+                                         <span class="c1">//   "unicorn"</span>
+                                         <span class="c1">//   "rainbow"</span>
+                                         <span class="c1">//   "butterfly"</span>
+                                         <span class="c1">//   "monster"</span>
+                                         <span class="c1">// ]</span>
+parts[2][0] === "b"                      <span class="c1">// true</span>
+"*".repeat(5)                            <span class="c1">// "*****"</span>
+parts[1].padStart(10, "/")               <span class="c1">// "///rainbow"</span></pre></div></td></tr></tbody></table></div><div class="copy-button" form="false" onclick="notify('copied to clipboard', 1000)" data-clipboard-target="#code_92" data-clipboard-action="copy"><img src="images/download.svg" alt="copy to clipboard"></div></div>
+  <div class="subhead" id="moreunicode"><a href="#moreunicode">More Unicode</a></div>
+  <p>Unicode’s original goal was to represent all of the world’s living languages in 16 bits. Its charter later changed to represent all of the world’s languages in 21 bits. Unfortunately, Java­Script was designed during Unicode’s 16 bit phase.</p>
+  <p>Unicode takes Java­Script’s <em>character</em> and breaks it into two new terms : code unit and code point. A code unit is wun of those 16 bit characters. A code point is the number that corresponds to a character. A code point is formed from 1 or more code units.</p>
+  <p>Unicode defines 1,114,112 code points, divided into 17 planes of 65,536 code points. The original plane is now called the Basic Multilingual Plane (BMP). The remaining 16 planes are the supplementary planes. Java­Script can easily use the characters in theBMP because that is where a code point can be identified with a single code unit. The supplemental characters are more difficult.</p>
+  <p>Java­Script accesses the supplemental characters by use of surrogate pairs. A surrogate pair is formed by two special code units. There are 1024 high surrogate code units, and 1024 low surrogate code units. The high surrogate code units have lower codes than the low surrogate code units.</p>
+  <p>
+    <style>
+      .ald td { vertical-align: top; }
+      .ald tr td:first-of-type {width: 50%; padding-left: 2.5rem;}
+      .ald tr td:nth-of-type(2) {width: 50%; padding-left: 1rem;}
+      /* .alb tr td:first-of-type {padding-left: 0em; width: 66%;} */
+    </style>
+    <table class="ald">
+      <tbody>
+        <tr><td><code>0xD800 thru 0xDBFF</code></td><td>high surrogate code units</td></tr>
+        <tr><td><code>0xDC00 thru 0xDFFF</code></td><td>low surrogate code units</td></tr>
+      </tbody>
+    </table>
+  </p>
+  <p>When properly paired, each surrogate code unit contributes 10 bits to form a 20 bit offset, to which 65,536 is added to form the code point. (The addition was to eliminate confusion caused by having two different sequences of code units that could produce the same code point. I think this solution caused more confusion than it avoided. A simpler solution would have been to make it illegal to use a surrogate pair to represent a code point in the BMP. This would have yielded a 20 bit character set instead of a 21 bit character set.)</p>
+  <p>Consider the code point <span class="un">U+1F4A9</span> (or 128169 in decimal). We subtract 65,536 which yields 62,633 or <code>0xF4A9</code>. The high 10 bits are <code>0x03D</code>. The low 10 bits are <code>0x0A9</code>. We add <code>0xD800</code> to the high bits, and <code>0xDC00</code> to the low bits, and we get a surrogate pair. So Java­Script stores <span class="un">U+1F4A9</span> as <span class="un">U+D83D</span> <span class="un">U+DCA9</span>. From Java­Script’s point of view, <span class="un">U+1F4A9</span> is two 16 bit characters. It will display as a single character if the operating system is competent. Java­Script is mostly unaware of the supplemental planes, butit is not overtly hostile to them.</p>
+  <p>There are two ways to write the code point <span class="un">U+1F4A9</span> with escapement in a string literal.</p>
+
+
+
+
+
+
+
+
+  <cite>Douglas Crockford, <in>How Java­Script Works</in>, <en>2018</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="dequincey.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="wu.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="dequincey.html"><span class="arrow">←</span>&nbsp;On murder</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="wu.html">Journey to the West&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+  window.addEventListener("load", event => {
+    
+  
+    // sets up copy-to-clipboard buttons in code boxes
+    const clipboard = new Clipboard('.copy-button');
+    clipboard.on('success', e => console.log(e));
+    clipboard.on('error', e => console.log(e));
+  
+  });
+  
+</script>
+<script>
+  /*!
+ * clipboard.js v1.5.15
+ * https://zenorocha.github.io/clipboard.js
+ *
+ * Licensed MIT © Zeno Rocha
+ */
+!function(e) {
+    if ("object" == typeof exports && "undefined" != typeof module)
+        module.exports = e();
+    else if ("function" == typeof define && define.amd)
+        define([], e);
+    else {
+        var t;
+        t = "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self ? self : this, t.Clipboard = e()
+    }
+}(function() {
+    var e,
+        t,
+        n;
+    return function e(t, n, i) {
+        function o(a, c) {
+            if (!n[a]) {
+                if (!t[a]) {
+                    var l = "function" == typeof require && require;
+                    if (!c && l)
+                        return l(a, !0);
+                    if (r)
+                        return r(a, !0);
+                    var s = new Error("Cannot find module '" + a + "'");
+                    throw s.code = "MODULE_NOT_FOUND", s
+                }
+                var u = n[a] = {
+                    exports: {}
+                };
+                t[a][0].call(u.exports, function(e) {
+                    var n = t[a][1][e];
+                    return o(n ? n : e)
+                }, u, u.exports, e, t, n, i)
+            }
+            return n[a].exports
+        }
+        for (var r = "function" == typeof require && require, a = 0; a < i.length; a++)
+            o(i[a]);
+        return o
+    }({
+        1: [function(e, t, n) {
+            function i(e, t) {
+                for (; e && e !== document;) {
+                    if (e.matches(t))
+                        return e;
+                    e = e.parentNode
+                }
+            }
+            if (Element && !Element.prototype.matches) {
+                var o = Element.prototype;
+                o.matches = o.matchesSelector || o.mozMatchesSelector || o.msMatchesSelector || o.oMatchesSelector || o.webkitMatchesSelector
+            }
+            t.exports = i
+        }, {}],
+        2: [function(e, t, n) {
+            function i(e, t, n, i, r) {
+                var a = o.apply(this, arguments);
+                return e.addEventListener(n, a, r), {
+                    destroy: function() {
+                        e.removeEventListener(n, a, r)
+                    }
+                }
+            }
+            function o(e, t, n, i) {
+                return function(n) {
+                    n.delegateTarget = r(n.target, t), n.delegateTarget && i.call(e, n)
+                }
+            }
+            var r = e("./closest");
+            t.exports = i
+        }, {
+            "./closest": 1
+        }],
+        3: [function(e, t, n) {
+            n.node = function(e) {
+                return void 0 !== e && e instanceof HTMLElement && 1 === e.nodeType
+            }, n.nodeList = function(e) {
+                var t = Object.prototype.toString.call(e);
+                return void 0 !== e && ("[object NodeList]" === t || "[object HTMLCollection]" === t) && "length" in e && (0 === e.length || n.node(e[0]))
+            }, n.string = function(e) {
+                return "string" == typeof e || e instanceof String
+            }, n.fn = function(e) {
+                var t = Object.prototype.toString.call(e);
+                return "[object Function]" === t
+            }
+        }, {}],
+        4: [function(e, t, n) {
+            function i(e, t, n) {
+                if (!e && !t && !n)
+                    throw new Error("Missing required arguments");
+                if (!c.string(t))
+                    throw new TypeError("Second argument must be a String");
+                if (!c.fn(n))
+                    throw new TypeError("Third argument must be a Function");
+                if (c.node(e))
+                    return o(e, t, n);
+                if (c.nodeList(e))
+                    return r(e, t, n);
+                if (c.string(e))
+                    return a(e, t, n);
+                throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")
+            }
+            function o(e, t, n) {
+                return e.addEventListener(t, n), {
+                    destroy: function() {
+                        e.removeEventListener(t, n)
+                    }
+                }
+            }
+            function r(e, t, n) {
+                return Array.prototype.forEach.call(e, function(e) {
+                    e.addEventListener(t, n)
+                }), {
+                    destroy: function() {
+                        Array.prototype.forEach.call(e, function(e) {
+                            e.removeEventListener(t, n)
+                        })
+                    }
+                }
+            }
+            function a(e, t, n) {
+                return l(document.body, e, t, n)
+            }
+            var c = e("./is"),
+                l = e("delegate");
+            t.exports = i
+        }, {
+            "./is": 3,
+            delegate: 2
+        }],
+        5: [function(e, t, n) {
+            function i(e) {
+                var t;
+                if ("SELECT" === e.nodeName)
+                    e.focus(), t = e.value;
+                else if ("INPUT" === e.nodeName || "TEXTAREA" === e.nodeName)
+                    e.focus(), e.setSelectionRange(0, e.value.length), t = e.value;
+                else {
+                    e.hasAttribute("contenteditable") && e.focus();
+                    var n = window.getSelection(),
+                        i = document.createRange();
+                    i.selectNodeContents(e), n.removeAllRanges(), n.addRange(i), t = n.toString()
+                }
+                return t
+            }
+            t.exports = i
+        }, {}],
+        6: [function(e, t, n) {
+            function i() {}
+            i.prototype = {
+                on: function(e, t, n) {
+                    var i = this.e || (this.e = {});
+                    return (i[e] || (i[e] = [])).push({
+                        fn: t,
+                        ctx: n
+                    }), this
+                },
+                once: function(e, t, n) {
+                    function i() {
+                        o.off(e, i), t.apply(n, arguments)
+                    }
+                    var o = this;
+                    return i._ = t, this.on(e, i, n)
+                },
+                emit: function(e) {
+                    var t = [].slice.call(arguments, 1),
+                        n = ((this.e || (this.e = {}))[e] || []).slice(),
+                        i = 0,
+                        o = n.length;
+                    for (i; i < o; i++)
+                        n[i].fn.apply(n[i].ctx, t);
+                    return this
+                },
+                off: function(e, t) {
+                    var n = this.e || (this.e = {}),
+                        i = n[e],
+                        o = [];
+                    if (i && t)
+                        for (var r = 0, a = i.length; r < a; r++)
+                            i[r].fn !== t && i[r].fn._ !== t && o.push(i[r]);
+                    return o.length ? n[e] = o : delete n[e], this
+                }
+            }, t.exports = i
+        }, {}],
+        7: [function(t, n, i) {
+            !function(o, r) {
+                if ("function" == typeof e && e.amd)
+                    e(["module", "select"], r);
+                else if ("undefined" != typeof i)
+                    r(n, t("select"));
+                else {
+                    var a = {
+                        exports: {}
+                    };
+                    r(a, o.select), o.clipboardAction = a.exports
+                }
+            }(this, function(e, t) {
+                "use strict";
+                function n(e) {
+                    return e && e.__esModule ? e : {
+                        default: e
+                    }
+                }
+                function i(e, t) {
+                    if (!(e instanceof t))
+                        throw new TypeError("Cannot call a class as a function")
+                }
+                var o = n(t),
+                    r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    } : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    },
+                    a = function() {
+                        function e(e, t) {
+                            for (var n = 0; n < t.length; n++) {
+                                var i = t[n];
+                                i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
+                            }
+                        }
+                        return function(t, n, i) {
+                            return n && e(t.prototype, n), i && e(t, i), t
+                        }
+                    }(),
+                    c = function() {
+                        function e(t) {
+                            i(this, e), this.resolveOptions(t), this.initSelection()
+                        }
+                        return a(e, [{
+                            key: "resolveOptions",
+                            value: function e() {
+                                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                                this.action = t.action, this.emitter = t.emitter, this.target = t.target, this.text = t.text, this.trigger = t.trigger, this.selectedText = ""
+                            }
+                        }, {
+                            key: "initSelection",
+                            value: function e() {
+                                this.text ? this.selectFake() : this.target && this.selectTarget()
+                            }
+                        }, {
+                            key: "selectFake",
+                            value: function e() {
+                                var t = this,
+                                    n = "rtl" == document.documentElement.getAttribute("dir");
+                                this.removeFake(), this.fakeHandlerCallback = function() {
+                                    return t.removeFake()
+                                }, this.fakeHandler = document.body.addEventListener("click", this.fakeHandlerCallback) || !0, this.fakeElem = document.createElement("textarea"), this.fakeElem.style.fontSize = "12pt", this.fakeElem.style.border = "0", this.fakeElem.style.padding = "0", this.fakeElem.style.margin = "0", this.fakeElem.style.position = "absolute", this.fakeElem.style[n ? "right" : "left"] = "-9999px";
+                                var i = window.pageYOffset || document.documentElement.scrollTop;
+                                this.fakeElem.addEventListener("focus", window.scrollTo(0, i)), this.fakeElem.style.top = i + "px", this.fakeElem.setAttribute("readonly", ""), this.fakeElem.value = this.text, document.body.appendChild(this.fakeElem), this.selectedText = (0, o.default)(this.fakeElem), this.copyText()
+                            }
+                        }, {
+                            key: "removeFake",
+                            value: function e() {
+                                this.fakeHandler && (document.body.removeEventListener("click", this.fakeHandlerCallback), this.fakeHandler = null, this.fakeHandlerCallback = null), this.fakeElem && (document.body.removeChild(this.fakeElem), this.fakeElem = null)
+                            }
+                        }, {
+                            key: "selectTarget",
+                            value: function e() {
+                                this.selectedText = (0, o.default)(this.target), this.copyText()
+                            }
+                        }, {
+                            key: "copyText",
+                            value: function e() {
+                                var t = void 0;
+                                try {
+                                    t = document.execCommand(this.action)
+                                } catch (e) {
+                                    t = !1
+                                }
+                                this.handleResult(t)
+                            }
+                        }, {
+                            key: "handleResult",
+                            value: function e(t) {
+                                this.emitter.emit(t ? "success" : "error", {
+                                    action: this.action,
+                                    text: this.selectedText,
+                                    trigger: this.trigger,
+                                    clearSelection: this.clearSelection.bind(this)
+                                })
+                            }
+                        }, {
+                            key: "clearSelection",
+                            value: function e() {
+                                this.target && this.target.blur(), window.getSelection().removeAllRanges()
+                            }
+                        }, {
+                            key: "destroy",
+                            value: function e() {
+                                this.removeFake()
+                            }
+                        }, {
+                            key: "action",
+                            set: function e() {
+                                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "copy";
+                                if (this._action = t, "copy" !== this._action && "cut" !== this._action)
+                                    throw new Error('Invalid "action" value, use either "copy" or "cut"')
+                            },
+                            get: function e() {
+                                return this._action
+                            }
+                        }, {
+                            key: "target",
+                            set: function e(t) {
+                                if (void 0 !== t) {
+                                    if (!t || "object" !== ("undefined" == typeof t ? "undefined" : r(t)) || 1 !== t.nodeType)
+                                        throw new Error('Invalid "target" value, use a valid Element');
+                                    if ("copy" === this.action && t.hasAttribute("disabled"))
+                                        throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
+                                    if ("cut" === this.action && (t.hasAttribute("readonly") || t.hasAttribute("disabled")))
+                                        throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');
+                                    this._target = t
+                                }
+                            },
+                            get: function e() {
+                                return this._target
+                            }
+                        }]), e
+                    }();
+                e.exports = c
+            })
+        }, {
+            select: 5
+        }],
+        8: [function(t, n, i) {
+            !function(o, r) {
+                if ("function" == typeof e && e.amd)
+                    e(["module", "./clipboard-action", "tiny-emitter", "good-listener"], r);
+                else if ("undefined" != typeof i)
+                    r(n, t("./clipboard-action"), t("tiny-emitter"), t("good-listener"));
+                else {
+                    var a = {
+                        exports: {}
+                    };
+                    r(a, o.clipboardAction, o.tinyEmitter, o.goodListener), o.clipboard = a.exports
+                }
+            }(this, function(e, t, n, i) {
+                "use strict";
+                function o(e) {
+                    return e && e.__esModule ? e : {
+                        default: e
+                    }
+                }
+                function r(e, t) {
+                    if (!(e instanceof t))
+                        throw new TypeError("Cannot call a class as a function")
+                }
+                function a(e, t) {
+                    if (!e)
+                        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    return !t || "object" != typeof t && "function" != typeof t ? e : t
+                }
+                function c(e, t) {
+                    if ("function" != typeof t && null !== t)
+                        throw new TypeError("Super expression must either be null or a function, not " + typeof t);
+                    e.prototype = Object.create(t && t.prototype, {
+                        constructor: {
+                            value: e,
+                            enumerable: !1,
+                            writable: !0,
+                            configurable: !0
+                        }
+                    }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
+                }
+                function l(e, t) {
+                    var n = "data-clipboard-" + e;
+                    if (t.hasAttribute(n))
+                        return t.getAttribute(n)
+                }
+                var s = o(t),
+                    u = o(n),
+                    f = o(i),
+                    d = function() {
+                        function e(e, t) {
+                            for (var n = 0; n < t.length; n++) {
+                                var i = t[n];
+                                i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
+                            }
+                        }
+                        return function(t, n, i) {
+                            return n && e(t.prototype, n), i && e(t, i), t
+                        }
+                    }(),
+                    h = function(e) {
+                        function t(e, n) {
+                            r(this, t);
+                            var i = a(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this));
+                            return i.resolveOptions(n), i.listenClick(e), i
+                        }
+                        return c(t, e), d(t, [{
+                            key: "resolveOptions",
+                            value: function e() {
+                                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                                this.action = "function" == typeof t.action ? t.action : this.defaultAction, this.target = "function" == typeof t.target ? t.target : this.defaultTarget, this.text = "function" == typeof t.text ? t.text : this.defaultText
+                            }
+                        }, {
+                            key: "listenClick",
+                            value: function e(t) {
+                                var n = this;
+                                this.listener = (0, f.default)(t, "click", function(e) {
+                                    return n.onClick(e)
+                                })
+                            }
+                        }, {
+                            key: "onClick",
+                            value: function e(t) {
+                                var n = t.delegateTarget || t.currentTarget;
+                                this.clipboardAction && (this.clipboardAction = null), this.clipboardAction = new s.default({
+                                    action: this.action(n),
+                                    target: this.target(n),
+                                    text: this.text(n),
+                                    trigger: n,
+                                    emitter: this
+                                })
+                            }
+                        }, {
+                            key: "defaultAction",
+                            value: function e(t) {
+                                return l("action", t)
+                            }
+                        }, {
+                            key: "defaultTarget",
+                            value: function e(t) {
+                                var n = l("target", t);
+                                if (n)
+                                    return document.querySelector(n)
+                            }
+                        }, {
+                            key: "defaultText",
+                            value: function e(t) {
+                                return l("text", t)
+                            }
+                        }, {
+                            key: "destroy",
+                            value: function e() {
+                                this.listener.destroy(), this.clipboardAction && (this.clipboardAction.destroy(), this.clipboardAction = null)
+                            }
+                        }]), t
+                    }(u.default);
+                e.exports = h
+            })
+        }, {
+            "./clipboard-action": 7,
+            "good-listener": 4,
+            "tiny-emitter": 6
+        }]
+    }, {}, [8])(8)
+});
+
+
+</script>
+
+<script>
+  const hiLight = function() {
+    var a = document.querySelector(".note-src");
+    a.style.borderRadius = "8px";
+    a.style.background = "var(--a)";
+    if (localStorage.getItem("darkScheme") == "true")
+    a.style.color = "var(--bkg)";
+    setTimeout(function() {
+    a.style.transitionDuration = "2s";
+    a.style.background = null;
+    a.style.color = null;      
+  }, 2000);
+  setTimeout(function() {
+    a.style.borderRadius = null;
+    a.style.transitionDuration = null;
+    }, 3000);
+  }
+  window.addEventListener("load", hiLight);
+</script>
+
+</body>
+</html>

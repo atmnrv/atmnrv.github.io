@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'pseudolly';
+    src: url('pseudolly1.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+    font-family: 'pseudolly';
+    src: url('pseudolly2.woff2') format('woff2');
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
+
+  
+<style>
+    #content > p { margin-bottom: 0; text-align: justify }
+    #content > p + p { text-indent: 1.6em }
+    p > smcp { font-family: dolly-caps; }
+
+    div.volume {
+        font-family: dolly-caps; 
+        text-transform: lowercase;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.volume > div:nth-child(1) {
+        font-size: 130%;
+        margin-bottom: 0.66rem;
+        }
+    div.volume + div.id > hr { margin-top: 1.4em; }
+    div.id hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.id > div:nth-child(2) {
+        text-align: center;
+        font-size: 115%;
+        margin-bottom: 1.4em;
+        /* margin-bottom: 0.7em; */
+        }
+    div.id > div:nth-child(3) {
+        text-align: center;
+        font-style: italic;
+        font-size: 105%;
+        margin-bottom: 2em;
+        /* margin-bottom: 1.4em; */
+        letter-spacing: 0.05rem;
+        }
+
+        @media not all and (max-width:520px) { .note-src:hover + .side.note { background: var(--a);}}
+  </style>
+  <style>
+
+
+.side.note { font-style: initial;}
+      @media not all and (max-width:520px) {
+          .side.note {
+          display: -webkit-box !important;
+          -webkit-box-orient: vertical;
+          line-clamp: 3 !important;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+
+          padding-right: 0.4em;
+          margin-right: -0.4em;
+          letter-spacing: -0.015em ;
+        }
+          .side.note.visible {
+          -webkit-line-clamp: initial;
+          /* text-align: justify; */
+          }
+          .side.note:not(.visible) pp {
+          display: none;
+          }
+          
+      .note-src:hover + .side.note {
+          background: var(--a);
+          transition-property: background;
+          transition-duration: 0.2s;
+          border-radius: 8px;
+          }
+      /* [dark="true"] .note-src:hover + .side.note {
+          color: var(--bkg);
+          padding-right: 0.4em;
+          margin-right: -0.4em;
+          } */
+          [dark="true"] .side.note:hover {
+          transition-property: color;
+          transition-duration: 0.2s;
+          color: mistyrose;
+          }
+          }
+
+      .side.note.visible {display: block;}
+
+      /* alternative dark note theme */
+      
+      [dark="true"] .on:hover > .note-src, [dark="true"] .un:hover > .note-src {
+          color: mistyrose;
+          background: none;
+          transition-property: color;
+          transition-duration: 0.2s;
+  
+          padding-left: 0em;
+          margin-left: 0em;
+          
+          }
+      @media not all and (max-width:520px) {
+          [dark="true"] .note-src:hover + .side.note {
+          background: none;
+          color: mistyrose;
+          }}
+
+      [dark="true"] .on:active > *,
+      [dark="true"] .un:active > * { 
+          transition-property: color;
+          transition-duration: 0.2s !important;
+          }
+      [dark="true"] .on:not(:active) > *,
+      [dark="true"] .un:not(:active) > * { 
+          transition-property: color;
+          transition-duration: 0.2s !important;
+          }
+
+
+
+          /* [dark="true"] .side.note {color: mistyrose} */
+          p {text-align: justify; }
+          .side.note  pp {
+          margin-top: 1em;
+          }
+      @media all and (max-width:520px)  {
+          blockquote .side.note {  margin-left: -1rem; width: calc(100% - 1rem);}}
+      @media not all and (max-width:520px)  {
+          blockquote .side.note { margin-left: -13rem; }}
+      @media all and (min-width:1200px) {
+          blockquote .side.note { margin-left: -15rem; }}
+
+  </style>
+
+
+  <title>Journey to the West | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <!-- <topic id="lightswitch"  class="verlag"><div class="sur">Wu Cheng’en</div>Journey to the West</topic> -->
+  <topic class="commentary"><from id="lightswitch">Journey to the West </from><by id="lightswitch" style="font-family: Scalasans; font-style: italic; text-transform: none; font-size: 50%; letter-spacing: 0.04em;">by&nbsp;Wu&nbsp;Cheng’en</by></topic>
+  <div class="volume"><div><span style="writing-mode:vertical-rl; -ms-writing-mode:tb-rl;">西遊記</span></div></div>
+  <div class="id" id="75"><hr><div>75</div><div>Mind Monkey drills through the yin-yang body; <br>Demon lords return to the true great Way.</div></div>
+  <p><smcp>We</smcp> were tell­ing you about that Great Sage Sun, who walked in­side the cave to look left and right. He saw</p>
+  <div class="verse">
+    <v>A mound of skeletons,</v>
+    <v>A forest of dead bones;</v>
+    <v>Human hair packed together as blankets,</v>
+    <v>And human flesh trodden as dirt and dust;</v>
+    <v>Human tendons knotted on the trees</v>
+    <v>Were dried, parched, and shiny like silver.</v>
+    <v>In truth there were mountains of corpses and seas of blood;</v>
+    <v>Indeed the putrid stench was terrible!</v>
+    <v>The little fiends on the east</v>
+    <v>Gouged out flesh from living persons;</v>
+    <v>The brazen demons on the west</v>
+    <v>Boiled and cooked fresh human meat.</v>
+    <v>Only Handsome Monkey King had such heroic gall;</v>
+    <v>No other mortal would dare enter this door.</v>
+    </div>
+  <p>After a little while, he walked through the sec­ond-level door to look around in­side. Ah! What he saw in here was quite dif­fer­ent from the out­side; it was a place both quiet and ele­­egant, both hand­some and spa­cious. On the left and right were ex­otic grass and rare flow­ers; there were old pines and aged bam­boos front and back. He had to walk, how­ever, for an­other sev­en or eight miles be­fore he reached the third-level door, through which he stole a glance. In­side the door and sit­ting loft­ily on three high seats were three old fiends, who ap­peared most sav­age and hid­eous. The mid­dle one had</p>
+  <div class="verse">
+    <v>Teeth like files and saws,</v>
+    <v>A round head and a square face.</v>
+    <v>He had a voice like thunder</v>
+    <v>And flashing eyes like lightning.</v>
+    <v>His nose curled skyward;</v>
+    <v>His brows sprouted flames.</v>
+    <v>When he moved,</v>
+    <v>All other beasts trembled;</v>
+    <v>When he sat,</v>
+    <v>All demons shook and quivered.</v>
+    <v>This was the king of beasts,</v>
+    <v>The green-haired lion fiend.</v>
+    </div>
+  <p>The one to his left had</p>
+  <div class="verse">
+    <v>Phoenix eyes and golden pupils,</v>
+    <v>Yellow tusks and stubby legs,</v>
+    <v>Long nose and silver hair,</v>
+    <v>A head that seemed tail-like;</v>
+    <v>Knotted brows beneath his round forehead</v>
+    <v>And a huge, rugged torso.</v>
+    <v>He had a soft voice like a lissome beauty,</v>
+    <v>But his white face was a bull-head demon’s.</v>
+    <v>A brute of prolonged self-cultivation,</v>
+    <v>This was the yellow-tusked old elephant.</v>
+    </div>
+  <p>The one to his right hand</p>
+  <div class="verse">
+    <v>Golden wings and <span class="on"><span class=note-src>leviathan head,</span><span class="side note" role=note>Leviathan: this is the <em>gun</em> 鯤, which ac­cord­ing to the <em>Zhuang­zi</em> 莊子, book 1, is ca­pable of chang­ing into the roc.</span></span></v>
+    <v>Starlike pupils and leopard eyes.</v>
+    <v>He ruled the north, governed the south—</v>
+    <v>Fierce, strong, and courageous.</v>
+    <v>Coming alive he could fly and soar</v>
+    <v>While quails quaked and dragons dreaded.</v>
+    <v>When he shook his feathers,</v>
+    <v>All the birds went into hiding;</v>
+    <v>When he stretched his sharp claws,</v>
+    <v>All the fowl cowered in terror.</v>
+    <v>Able to reach a cloudy distance of ninety-thousand miles,</v>
+    <v>This was the great eagle-roc.</v>
+    </div>
+  <p>Be­low them stood some one hun­dred cap­tains, all in com­plete ar­mor and mili­tary rega­lia, and look­ing most truc­u­lent and fierce. When Pil­grim saw them, how­ever, he was filled with de­light. Not the least bit fright­ened, he marched through the door in big strides, and after he dropped his rat­tle, he lifted his head and said,<dopsen></dopsen><doplen> “Great</doplen> Kings.” Smil­ing broad­ly, the three old de­mons said,<dopsen></dopsen><doplen> “Lit­tle</doplen> Wind Cut­ter, have you re­turned?”<dopsen></dopsen><doplen> “I</doplen> have in­deed,” re­plied Pil­grim in a ring­ing voice.</p>
+  ­<p><doplen>“Have</doplen> you found out any­thing about Pil­grim Sun when you were on pa­trol in the mountain?”</p>
+  ­<p><doplen>“In</doplen> the pres­ence of the great kings,” re­plied Pil­grim,<dopsen></dopsen><doplen> “I</doplen> dare not speak.”</p>
+  ­<p><doplen>“Why</doplen> not?” asked the first old demon.</p>
+  ­<p><doplen>“By</doplen> the com­mand of the great kings,” said Pil­grim,<dopsen></dopsen><doplen> “I</doplen> went for­ward, beat­ing my rat­tle and shak­ing my bell. As I walked along, I sud­denly caught sight of a per­son squat­ting by a brook. Even then he looked like a trail­blaz­ing de­ity, and if he had stood up, he would have been un­doubt­edly over a hun­dred feet tall. Bail­ing some wa­ter from the brook, he was pol­ish­ing with it a huge pole on a rock. As he did so, he kept mum­bling to him­self that up till now, he hadn’t been able to show off the mag­ic pow­er of his pole. Once he had pol­ished the pole enough to make it glow, he said he would come and use it on the great kings. I knew he had to be that Pil­grim Sun, and that’s why I have re­turned to make my report.”</p>
+  <p>When that old de­mon heard these words, he per­spired pro­fuse­ly. Shak­ing all over, he said,<dopsen></dopsen><doplen> “Broth­ers,</doplen> I told you not to both­er the Tang Monk. His dis­ciple has such vast mag­ic pow­ers that he has al­ready made plans for us. Now he is pol­ish­ing his rod to beat us up. What shall we do?” Then he gave this or­der:<dopsen></dopsen><doplen> “Lit­tle</doplen> ones, sum­mon all the sol­diers out­side the cave to come in. Shut the door, and let those priests pass.”</p>
+  <p>One of the cap­tains who knew what had hap­pened said im­me­di­ately,<dopsen></dopsen><doplen> “Great</doplen> King, the little fiends guard­ing the door out­side have all scat­tered.”<dopsen></dopsen><doplen> “How</doplen> could they have all scat­tered?” asked the old de­mon.<dopsen></dopsen><doplen> “They</doplen> must have heard the bad news, too. Shut the door quick­ly! Shut the door quick­ly!” The vari­ous fiends hur­riedly banged the front and back doors shut and bolt­ed them.</p>
+  <p>Be­com­ing some­what alarmed, Pil­grim thought to him­self,<dopsen></dopsen><doplen> “Af­ter</doplen> they close the doors, they might ques­tion me on some other busi­ness in their house. If I can’t an­swer them, I will give my­self away. Won’t I be caught then? Let me scare them a little bit more, so that they’ll open the doors again for me to flee if I need to.” He there­fore went for­ward again and said,<dopsen></dopsen><doplen> “Great</doplen> Kings, that Pil­grim Sun said some­thing that’s even more dread­ful.”<dopsen></dopsen><doplen> “What</doplen> else did he say?” asked the old demon.</p>
+  <p>Pil­grim said,<dopsen></dopsen><doplen> “He</doplen> said that when he had caught hold of the three of you, he would skin the great great king, he would debone the sec­ond great king, and he would pull out the ten­dons of the third great king. If you shut your doors and re­fuse to go out, he is ca­pable of trans­for­ma­tions, you know. He may well change into a tiny fly, come in through a crack in the door, and seize all of us. What shall we do then?”</p>
+  ­<p><doplen>“Broth­ers,”</doplen> said the old de­mon,<dopsen></dopsen><doplen> “be</doplen> care­ful. There is hard­ly a fly in our cave. If you see a fly com­ing in here, it has to be that Pil­grim Sun.” Smil­ing to him­self, Pil­grim thought,<dopsen></dopsen><doplen> “I’ll</doplen> give him a fly to scare him a bit. Then he’ll open the doors.”
+  <p>The Great Sage stepped to one side and pulled off a piece of hair be­hind his head. Blow­ing a mouth­ful of im­mor­tal breath on it, he whis­pered,<dopsen></dopsen><doplen> “Change!”</doplen> and it at once changed into a gold-head­ed fly, which dart­ed up and flew smack into the face of the old de­mon.<dopsen></dopsen><doplen> “Broth­ers,</doplen> this is aw­ful!” cried a hor­ri­fied old de­mon.<dopsen></dopsen><doplen> “That</doplen> little some­thing has en­tered our door!” Those fiends, young and old, were so terri­fied that they took up pitch­forks and brooms to swat mad­ly at the fly.
+  <p>Un­able to con­tain him­self, our Great Sage broke into loud gig­gles, which, alas, he should have nev­er per­mit­ted him­self to do. For once he laughed, his orig­i­nal fea­tures also ap­peared. When the third old de­mon saw him, he leaped for­ward and grabbed him, cry­ing,<dopsen></dopsen><doplen> “El­der</doplen> Broth­ers, we were al­most fooled by him!”<dopsen></dopsen><doplen> “Who</doplen> is fool­ing whom?” asked the first old demon.
+  ­<p><doplen>“The</doplen> one who was speak­ing to us just now,” re­plied the third fiend,<dopsen></dopsen><doplen> “was</doplen> no Little Wind Cut­ter. He is Pil­grim Sun. He must have run into Little Wind Cut­ter, slain him some­how, and changed into his ap­pear­ance to de­ceive us here.” Great­ly shak­en, Pil­grim said to him­self,<dopsen></dopsen><doplen> “He</doplen> has rec­og­nized me!” Rub­bing his face hur­riedly with his hand to cor­rect his fea­tures, he said to those fiends,<dopsen></dopsen><doplen> “How</doplen> could I be Pil­grim Sun! I am the Little Wind Cut­ter. The great king has made a mistake.”
+  ­<p><doplen>“Broth­er,”</doplen> said the old de­mon, smil­ing,<dopsen></dopsen><doplen> “he</doplen> is Little Wind Cut­ter. For three times every day he an­swers my roll call. I know him.” Then he asked Pil­grim,<dopsen></dopsen><doplen> “Do</doplen> you have your name­plate?”<dopsen></dopsen><doplen> “I</doplen> do,” re­plied Pil­grim, and he took it out at once from in­side his clothes. More con­vinced than ever, the old fiend said,<dopsen></dopsen><doplen> “Broth­er,</doplen> don’t false­ly ac­cuse him.”
+  ­<p><doplen>“El­der</doplen> Broth­er,” said the third fiend,<dopsen></dopsen><doplen> “didn’t</doplen> you see him? He was gig­gling just now with his face half turned, and I saw for a mo­ment a thun­der god beak on him. When I grabbed him, he changed back im­me­di­ately into his pres­ent looks.” He then called out:<dopsen></dopsen><doplen> “Lit­tle</doplen> ones, bring me some ropes.” The cap­tains took out ropes im­me­di­ately. Wres­tling Pil­grim to the ground, the third fiend had him hog­tied be­fore they hitched up his clothes to ex­am­ine him. It be­came ap­par­ent at once that he was the Ban­Horse­Plague all right! Pil­grim, you see, was ca­pable of sev­en­ty-two kinds of trans­for­ma­tion. If it was a mat­ter of chang­ing into a fowl, a beast, a plant, a uten­sil, or an in­sect, his en­tire body could be trans­formed. But when he had to change into an­other per­son, only his face but not his body could be trans­formed. When they lifted up his clothes, there­fore, they saw a body full of brown fur, two red but­tocks, and a tail.
+  <p>When he saw this, the first old fiend said,<dopsen></dopsen><doplen> “Though</doplen> he may have the face of Little Wind Cut­ter, it’s the body of Pil­grim Sun. It’s he. Little ones, bring us some wine first, so that I may pres­ent to the third great king a cup of mer­it. Since we have caught Pil­grim Sun, there is no doubt that the Tang Monk will be the food of our mouths.”
+  ­<p><doplen>“Let’s</doplen> not drink wine just yet,” said the third fiend.<dopsen></dopsen><doplen> “Pil­grim</doplen> Sun is an ex­ceed­ingly slip­pery char­ac­ter, for he knows many ways of es­cape. I fear we may lose him. Tell the little ones to haul out our vase and put Pil­grim Sun in­side it. Then we can drink.”<dopsen></dopsen><doplen> “Ex­actly!</doplen> Ex­act­ly!” said the old de­mon, laugh­ing loud­ly. He at once sum­moned thir­ty-six little fiends to go to their weap­ons cham­ber and haul out the vase.
+  <p>How big was the vase, you ask? Why would it need thir­ty-six per­sons to carry it? Though it was no more than twen­ty-four inch­es tall, that vase was a trea­sure gov­erned by the dou­ble pri­mal forc­es of yin and yang. Its mag­ic reac­tions in­side were acti­vated by the sev­en jew­els, the eight tri­grams, and the twen­ty­four solar terms. Only thir­ty-six per­sons, a num­ber which corre­spond­ed to the num­ber of con­stel­la­tions in the Heav­enly La­dle group, would have suffi­cient strength to lift it up. In a little while, the little fiends had the trea­sure vase hauled out and set be­fore the third-level door. After they had un­packed it from its wrap­pings and re­moved the stop­per, they un­tied Pil­grim and stripped him na­ked. Then they car­ried him up to the mouth of the vase, and im­me­di­ately he was sucked in­side with a loud whoosh by the im­mor­tal breath of the vase. It was then cov­ered again with its stop­per, on top of which they add­ed a tape to seal it. Beck­on­ing his com­pan­ions to join him to drink, the old fiend said,<dopsen></dopsen><doplen> “Now</doplen> that this little ape has en­tered my trea­sure vase, he’d bet­ter not think of the road to the West any­more. If he ever want­ed to wor­ship Bud­dha and ac­quire scrip­tures, he might as well turn his back, take up the wheel of trans­mi­gra­tion, and seek Bud­dhist trea­sure in the next incarnation!”
+  <p>We tell you now about that Great Sage, who found the vase to be quite small for his body once he reached the in­side. He de­cid­ed, there­fore, to trans­form him­self into some­one small­er and squat in the mid­dle of the vase. Find­ing it to be quite cool after some time, he could not re­frain from chuck­ling to him­self and say­ing out loud,<dopsen></dopsen><doplen> “These</doplen> mon­ster-spir­its are bank­ing on their false rep­u­ta­tion! How could they tell peo­ple that once some­one was placed in­side the vase, he would change into pus and blood after one and three-quar­ter hours? If it’s cool like this, I can live here for sev­en or eight years with no trouble!”
+  <p>Alas! The Great Sage, you see, had no idea of how that trea­sure worked: if some­one who had been placed with­in it re­mained silent for a whole year, then it would re­main cool for all that time. But the mo­ment that per­son spoke, fire would ap­pear to burn him. Hard­ly had the Great Sage spo­ken, there­fore, when he saw that the en­tire vase was en­gulfed in flames. For­tu­nate­ly, he was not with­out abili­ties; sit­ting in the mid­dle, he made the fir­e-re­pel­lent mag­ic sign with his fin­gers and faced the flames calm­ly. After about half an hour, some forty snakes crawled out from every side and be­gan to bite him. Pil­grim stretched forth his hands, picked up the snakes, and with a vio­lent wrench tore them into eighty piec­es. In a little while, how­ever, three fire drag­ons emerged and had him en­cir­cled top and bottom.
+  <p>As the situ­a­tion was fast be­com­ing un­bear­able, Pil­grim was rath­er flus­tered, say­ing to him­self,<dopsen></dopsen><doplen> “I</doplen> can take care of other things, but these fire drag­ons are hard to deal with. If I don’t get out of here, the fire and the heat may over­whelm me after awhile. What then? I think I’d bet­ter push my way out by mak­ing my body big­ger.” Dear Great Sage! Mak­ing the mag­ic sign with his fin­gers and recit­ing a spell, he cried,<dopsen></dopsen><doplen> “Grow!”</doplen> At once his body reached the height of over a hun­dred feet, but the vase also grew in size with him. Re­vers­ing his mag­ic, he re­duced the size of his body, but the vase, too, grew small­er with him.
+  <p>Great­ly alarmed, Pil­grim said,<dopsen></dopsen><doplen> “Hard!</doplen> Hard! Hard! How could it grow big or small with me like that? What shall I do?” He had hard­ly fin­ished speak­ing when he felt some pain on his shanks. Rub­bing them hur­riedly with his hand, he found his shanks were turn­ing flac­cid be­cause of the fire. More and more anx­ious, he thought to him­self,<dopsen></dopsen><doplen> “What’s</doplen> to be­come of me? Even my shanks are weak­ened by the fire. I’ll be re­duced to a crip­ple!” He was hard­ly able to hold back his tears. Thus it was that
+  <div class="verse">
+    <v>He thought of Tripitaka, having met demons and woes;</v>
+    <v>He missed the sage monk, when beset by fatal ordeals.</v>
+    </div>
+  ­<p><doplen>“O</doplen> Mas­ter!” he cried.<dopsen></dopsen><doplen> “Since</doplen> that year when I em­braced the truth be­cause of the Bod­hisat­tva Guan­y­in’s per­sua­sion and was de­liv­ered from my Heav­en-sent ca­lam­ity, I suf­fered with you the trek through vari­ous moun­tains and sub­dued many fiends, in­clud­ing the bring­ing to sub­mis­sion of Eight Rules and Sha Monk. All my la­bor, all my bit­ter toil were done with the hope that we would reach the West to­geth­er and at­tain the right fruit. Little did I real­ize that I would meet such vi­cious de­mons to­day! Hav­ing been thrown in here by my mis­take, old Mon­key will lose his life, and you will be strand­ed half­way up the moun­tain, un­able to pro­ceed. Could it be that my past mis­deeds were what brought on my pres­ent or­deal?”
+  <p>As he grieved like that, he sud­denly thought to him­self,<dopsen></dopsen><doplen> “On</doplen> <span class="on"><span class=note-src>the Ser­pent Coil Moun­tain</span><span class="side note" role=note>See JW 1, chapter&nbsp;15.</span></span> that year, the Bod­hisat­tva gave me as a gift three life­-sav­ing hairs. I won­der if I still have them. Let me search for them.” He touched his whole body with his hands and found three hairs on the back of his neck to be espe­cially stiff. De­light­ed, he said to him­self,<dopsen></dopsen><doplen> “All</doplen> my hairs are quite soft, and only these three hap­pen to be stiff. They must be my life­sav­ers!”
+  <p>Clench­ing his teeth to en­dure the pain, he pulled off the hairs and blew on them a mouth­ful of im­mor­tal breath, cry­ing,<dopsen></dopsen><doplen> “Change!”</doplen> One of the hairs changed into a dia­mond drill, the sec­ond one into a strip of bam­boo, and the third into a piece of cot­ton rope. Bend­ing the strip into the shape of a bow, he tied the rope to both ends and used it to guide the drill to drill away at the bot­tom of the vase. After awhile, light fil­tered in through a small hole.<dopsen></dopsen><doplen> “Lucky!</doplen> Lucky!” he said, high­ly pleased.<dopsen></dopsen><doplen> “I</doplen> can get out now!” As he was about to use trans­for­ma­tion to es­cape, the vase sud­denly turned cool once more. Why, you ask? Once he drilled through the vase’s bot­tom, you see, the two forc­es of yin and yang leaked out.
+  <p>Dear Great Sage! He re­trieved his hairs and, shrink­ing the size of his body, changed into a mole crick­et, so deli­cate that it was no thick­er than a strand of whis­ker and no lon­ger than a piece of eye­brow hair. He crawled out of the hole, but in­stead of leav­ing, he flew di­rectly up to the old de­mon’s head and alight­ed on it. The old de­mon was drink­ing mer­rily when all of a sud­den, he put down his cup and said,<dopsen></dopsen><doplen> “Third</doplen> Young­er Broth­er, has Pil­grim Sun melt­ed?”<dopsen></dopsen><doplen> “It’s</doplen> about time, isn’t it?” said the third de­mon, smil­ing.
+  <p>The old de­mon gave the order for the vase to be brought up to the ta­ble, and those thir­ty-six little fiends im­me­di­ately went to haul it. When they dis­cov­ered, how­ever, that the vase had be­come very light, the terri­fied fiends cried,<dopsen></dopsen><doplen> “Great</doplen> Kings, the vase has turned light.”<dopsen></dopsen><doplen> “Non­sense!”</doplen> snapped the old de­mon.<dopsen></dopsen><doplen> “Our</doplen> trea­sure is the per­fect prod­uct of the dou­ble forc­es of yin and yang. How could it have turned light?” One of the more cou­ra­geous little fiends picked up the vase all by him­self and brought it near the ta­ble, say­ing,<dopsen></dopsen><doplen> “See</doplen> for your­self wheth­er it’s light­er or not.”
+  <p>Re­mov­ing the stop­per, the old de­mon peered in­side and, when he saw a speck of light com­ing from the bot­tom, he burst out,<dopsen></dopsen><doplen> “The</doplen> vase is emp­ty!” Un­able to con­tain him­self, the Great Sage shout­ed on his head,<dopsen></dopsen><doplen> “My</doplen> dear child! I’m gone!”<dopsen></dopsen><doplen> “He’s</doplen> gone! He’s gone!” cried the other fiends.<dopsen></dopsen><doplen> “Close</doplen> the doors! Close the doors!”
+  <p>With one shake of his body, Pil­grim re­trieved the clothes they took from him, and, chang­ing back into his orig­i­nal form, bound­ed out of the cave.<dopsen></dopsen><doplen> “Mon­ster-spir­its,</doplen> don’t you dare be un­ruly!” he shout­ed back at them as he left.<dopsen></dopsen><doplen> “The</doplen> vase has been punc­tured, and it can’t be used on hu­mans any­more. It’s only good for a night pot!” Mer­rily and nois­ily, he trod the clouds and went back to the place where he left the Tang Monk. The elder at the time was just say­ing a prayer to­ward the sky, using pinch­es of dirt as in­cense. Pil­grim stopped his cloud to hear what he was say­ing. With his hands fold­ed be­fore his chest, the elder bowed to the sky and said,
+  <div class="verse">
+    <v>I pray to all immortals of cloud and mist,</v>
+    <v>All devas, and Gods of Darkness and Light:</v>
+    <v>May they my good pupil, Pilgrim, assist</v>
+    <v>And grant him vast and boundless magic might.</v>
+    </div>
+  <p>When the Great Sage heard such words, he was moved to even great­er dili­gence. Caus­ing the cloudy lumi­nos­ity to sub­side, he drew near and said,<dopsen></dopsen><doplen> “Mas­ter,</doplen> I’ve re­turned.” The elder took him by the hand and said,<dopsen></dopsen><doplen> “Wu­kong,</doplen> you’ve worked very hard! When you didn’t come back after hav­ing gone deep into the moun­tain, I was very wor­ried. Tell me truly what sort of good or evil may we ex­pect in this mountain.”</p>
+  <p>With a smile, Pil­grim re­plied,<dopsen></dopsen><doplen> “My</doplen> trip was a suc­cess­ful one this time only be­cause the crea­tures of the Land in the East are blessed with good­ly affin­ity; and sec­ondly, be­cause the merit and vir­tue of my mas­ter are bound­less and lim­it­less; and third­ly, be­cause your dis­ciple has some mag­ic pow­ers.” Where­upon he gave a thor­ough ac­count of how he dis­guised him­self as the Little Wind Cut­ter, how he was trapped in­side the vase, and how he es­caped.<dopsen></dopsen><doplen> “Now</doplen> that I can be­hold the coun­te­nance of my mas­ter once more,” he said,<dopsen></dopsen><doplen> “I</doplen> feel like I have gone through an­other incar­na­tion.”
+  <p>Thank­ing him pro­fuse­ly, the elder asked,<dopsen></dopsen><doplen> “You</doplen> didn’t fight with the mon­ster­spir­its this time?”<dopsen></dopsen><doplen> “No,</doplen> I didn’t,” re­plied Pil­grim.<dopsen></dopsen><doplen> “You</doplen> can’t there­fore, es­cort me across the moun­tain, can you?” asked the elder.
+  <p>As he had al­ways been a per­son who loved to win, Pil­grim be­gan to shout,<dopsen></dopsen><doplen> “What</doplen> do you mean that I can’t es­cort you across this moun­tain?”<dopsen></dopsen><doplen> “You</doplen> haven’t quite prov­en that you can pre­vail against them,” said the elder.<dopsen></dopsen><doplen> “Ev­ery­thing</doplen> seems so mud­dled at the mo­ment. How could I dare pro­ceed?”
+  ­<p><doplen>“Mas­ter,”</doplen> re­plied Pil­grim with a laugh,<dopsen></dopsen><doplen> “you</doplen> are not very per­cep­tive! As the prov­erb says,
+  <div class="verse">
+    <v>A little yarn is no thread;</v>
+    <v>A single hand cannot clap.</v>
+    </div>
+  <p>There are three old de­mons, thou­sands and thou­sands of little fiends, and only one old Mon­key. How could I pos­si­bly fight with them?”
+  ­<p><doplen>“The</doplen> few can­not with­stand the many,” re­plied the elder.<dopsen></dopsen><doplen> “I</doplen> quite un­der­stand that you can’t cope with them all by your­self. But Eight Rules and Sha Monk both have abili­ties. I’ll tell them to go with you, so that your unit­ed ef­forts will sweep clean the moun­tain path and es­cort me through it.”<dopsen></dopsen><doplen> “What</doplen> you say is quite right,” said Pil­grim, turn­ing some­what pen­sive.<dopsen></dopsen><doplen> “Sha</doplen> Monk, how­ever, should stay here to guard you. Let Eight Rules go with me.”
+  <p>Ter­ri­bly alarmed, our Idiot said,<dopsen></dopsen><doplen> “El­der</doplen> Broth­er, you’re the one who is im­per­cep­tive! I’m rath­er crude, and I don’t have much abil­ity. Even when I walk along, I resist the wind. Of what use am I to you?”<dopsen></dopsen><doplen> “Broth­er,”</doplen> said Pil­grim,<dopsen></dopsen><doplen> “even</doplen> though you may not have great abili­ties, you are still an­other per­son. As the com­mon folks say, ‘Even a fart is addi­tional air!’ You can at the very least build up my cour­age.”<dopsen></dopsen><doplen> “All</doplen> right! All right!” said Eight Rules.<dopsen></dopsen><doplen> “I</doplen> hope you’ll look after me a bit. When things be­come tight, don’t play tricks on me.”<dopsen></dopsen><doplen> “Do</doplen> be care­ful, Eight Rules,” said the elder.<dopsen></dopsen><doplen> “Sha</doplen> Monk and I will re­main here.”
+  <p>Arous­ing his spir­it, our Idiot mount­ed a gust of vio­lent wind with Pil­grim and rode on the fog and the cloud to go up the tall moun­tain. When they ar­rived be­fore the door of the cave, they found the door tight­ly shut and no one in sight. Pil­grim walked for­ward and, hold­ing his iron rod, cried out in a loud voice,<dopsen></dopsen><doplen> “Fiends,</doplen> open your door! Come out quick­ly to fight with old Mon­key!” When the little fiends in the cave re­port­ed this, the old de­mon was deep­ly shak­en.<dopsen></dopsen><doplen> “The</doplen> ru­mor spread­ing for years about how pow­er­ful that ape is,” he said,<dopsen></dopsen><doplen> “has</doplen> been prov­en true to­day!”
+  ­<p><doplen>“El­der</doplen> Broth­er, what do you mean?” asked the sec­ond fiend on one side. The old de­mon re­plied,<dopsen></dopsen><doplen> “When</doplen> that Pil­grim changed into Little Wind Cut­ter ear­lier this morn­ing to sneak in here, we couldn’t rec­og­nize him. It was for­tu­nate that our Third Wor­thy Broth­er spot­ted him at last and we man­aged to put him in­side the vase. But he had the abil­ity to drill through the vase and he es­caped after he re­trieved his clothes. Now he’s pro­vok­ing bat­tle out­side. Who has enough cour­age to face him in the first fight?” To this ques­tion of his, how­ever, no one made a re­ply. He asked again, but still there was no an­swer, for ev­ery­one in­side the cave was play­ing deaf and dumb.
+  <p>His an­ger ris­ing, the old de­mon said,<dopsen></dopsen><doplen> “We’re</doplen> earn­ing our­selves an ugly rep­u­ta­tion on the main road to the West. When Pil­grim Sun to­day can mock us like this and we do not go out to face him in bat­tle, our fame will sure­ly di­min­ish. Let me risk this old life of mine to go have three rounds with him. If I can with­stand him for three rounds, the Tang Monk will be the food of our mouths. If I can’t, let’s close up our door and let them pass.” He put on his ar­mor and opened the door to walk out. Pil­grim and Eight Rules stood by the door to stare at him, and he was some fiend­ish crea­ture in­deed!
+  <div class="verse">
+    <v>A jeweled helmet topped his iron-hard head,</v>
+    <v>With dangling tassels colorful and bright.</v>
+    <v>Like flashing lightning his two eyes did glow;</v>
+    <v>Like shining mist hair on both temples flowed.</v>
+    <v>His claws were like silver, both quick and sharp;</v>
+    <v>His sawlike teeth were even and thickset.</v>
+    <v>The armor he wore was one solid gold piece;</v>
+    <v>A smart dragon-head sash wrapped round his waist.</v>
+    <v>His hands held a shiny scimitar of steel:</v>
+    <v>The world rarely saw such heroic might.</v>
+    <v>With one bellow loud as a thunderclap</v>
+    <v>He asked,<dopsen></dopsen><doplen> “Who</doplen> on our door would dare to rap?”</v>
+    </div>
+  <p>Turn­ing around, the Great Sage said,<dopsen></dopsen><doplen> “It’s</doplen> your Ven­er­able Fa­ther Sun, the Great Sage, Equal to Heav­en.”<dopsen></dopsen><doplen> “Are</doplen> you Pil­grim Sun?” asked the old de­mon with a laugh.<dopsen></dopsen><doplen> “You</doplen> au­da­cious ape! I’m not both­er­ing you. Why are you pro­vok­ing bat­tle here?” Pil­grim re­plied,<dopsen></dopsen><doplen> “As</doplen> the prov­erb says,
+  <div class="verse">
+    <v>The waves will only rise with the wind;</v>
+    <v>Water will subside without the tide.</v>
+    </div>
+  <p>If you didn’t both­er me, you think I would come look­ing for you? It’s be­cause you bunch of thugs and hood­lums have band­ed to­geth­er to plot against my mas­ter, plan­ning to de­vour him. That’s why I’ve come to do this.”
+  ­<p><doplen>“You</doplen> show up at our door in such a men­ac­ing man­ner,” said the old de­mon.<dopsen></dopsen><doplen> “Does</doplen> that mean that you want to fight?”<dopsen></dopsen><doplen> “Ex­act­ly,”</doplen> re­plied Pil­grim.<dopsen></dopsen><doplen> “Stop</doplen> act­ing with such inso­lence!” said the old de­mon.<dopsen></dopsen><doplen> “If</doplen> I or­dered out my fiend troops, placed them in for­ma­tion, raised the flags, and beat the drums to fight with you, all I would be do­ing is to show sim­ply that I’m the local tiger try­ing to take ad­van­tage of you. I’ll face you alone, one to one, and no other help­er will be per­mit­ted.” On hear­ing this, Pil­grim said,<dopsen></dopsen><doplen> “Zhu</doplen> Eight Rules, step aside. Let’s see what he’ll do with old Mon­key.” Idiot in­deed walked away to one side.
+  ­<p><doplen>“You</doplen> come over here,” said the old de­mon,<dopsen></dopsen><doplen> “and</doplen> act as my chop­ping block first. If your bald head can with­stand three blows of my scim­i­tar, I’ll let you and your Tang Monk go past. But if you can’t, you’d bet­ter turn him over quick­ly to me as a meal.”
+  <p>When he heard this, Pil­grim smiled and said,<dopsen></dopsen><doplen> “Fiend!</doplen> If you have brush and pa­per in your cave, take them out and I’ll sign a con­tract with you. You can start de­liv­er­ing your blows from to­day until next year, and I won’t re­gard you seri­ous­ly!” Arous­ing his spir­it, the old de­mon stood firm­ly with one foot placed in front of the oth­er. He lifted up his scim­i­tar with both hands and brought it down hard on the head of the Great Sage. Our Great Sage, how­ever, jerk­ed his head up­ward to meet the blow. All they heard was a loud crack, but the skin on the head did not even red­den. Great­ly as­ton­ished, the old de­mon said,<dopsen></dopsen><doplen> “What</doplen> a hard head this mon­key has!” Chuck­ling, the Great Sage said,<dopsen></dopsen><doplen> “You</doplen> don’t real­ize that old Mon­key was
+  <div class="verse">
+    <v>Born with a bronze head and a crown of steel</v>
+    <v>That no one possessed in Heav’n or on Earth.</v>
+    <v>Unbreakable by the mallet or the ax,</v>
+    <v>It has gone in my youth into Laozi’s stove.</v>
+    <v>Its making Four Dipper Stars had overseen</v>
+    <v>And Twenty-Eight Lodges applied their work.</v>
+    <v>It could not be wrecked though drowned a few times,</v>
+    <v>For tough sinews circled it all around.</v>
+    <v>Fearing still that it was not strong enough,</v>
+    <v>The Tang Monk added a fillet of gold!”</v>
+    </div>
+  ­<p><doplen>“Stop</doplen> brag­ging, ape!” said the old de­mon.<dopsen></dopsen><doplen> “Watch</doplen> the sec­ond blow of my scim­i­tar! It’ll not spare your life!”<dopsen></dopsen><doplen> “Why</doplen> talk like that?” re­plied Pil­grim.<dopsen></dopsen><doplen> “Isn’t</doplen> it enough that you hack away?”<dopsen></dopsen><doplen> “Mon­key,”</doplen> said the old de­mon,<dopsen></dopsen><doplen> “you</doplen> have no idea that my scim­i­tar is
+  <div class="verse">
+    <v>Metal in the furnace forged,</v>
+    <v>Wrought by the gods’ drawn out work.</v>
+    <v>The fine blade and its mighty pow’r</v>
+    <v>Conform to military science.</v>
+    <v>It looks like the tail of a fly</v>
+    <v>And also a white serpent’s waist.</v>
+    <v>In the mountain clouds would gather;</v>
+    <v>In the ocean waves would pile high.</v>
+    <v>Pounded and polished countless times,</v>
+    <v>It has been a hundred ways refined.</v>
+    <v>Though it’s kept in an ancient cave,</v>
+    <v>It’ll win once in battle it’s placed.</v>
+    <v>I’ll grab that nice, bald, priestly head of yours</v>
+    <v>And make two gourd halves with one mighty whack!”</v>
+    </div>
+  ­<p><doplen>“This</doplen> mon­ster-spir­it is so blind!” chuck­led the Great Sage.<dopsen></dopsen><doplen> “So,</doplen> you think that old Mon­key’s head is a gourd! All right. I won’t delay you. You can give me an­other blow.”
+  <p>The old de­mon lifted his blade to hack away once more, and again the Great Sage met it with his head. With a loud crack, the head was split in two, but the Great Sage also rolled on the ground im­me­di­ately and changed into two bod­ies. Ter­ri­fied by what he saw, the fiend low­ered his scim­i­tar. From a dis­tance, Eight Rules saw ev­ery­thing and said, laugh­ing,<dopsen></dopsen><doplen> “The</doplen> old de­mon should strike again, and there’ll be four per­sons!” Point­ing at Pil­grim, the old de­mon said,<dopsen></dopsen><doplen> “I</doplen> have heard that you are ca­pable of the Mag­ic of Body-Di­vi­sion. But why are you exer­cis­ing it in my pres­ence?”<dopsen></dopsen><doplen> “What</doplen> do you mean by the Mag­ic of Body-Divi­sion?” asked the Great Sage.
+  ­<p><doplen>“Why</doplen> didn’t you move when I gave you the first blow?” asked the old de­mon.<dopsen></dopsen><doplen> “Why</doplen> did you be­come two per­sons after the sec­ond one?”<dopsen></dopsen><doplen> “Fiend,</doplen> don’t be afraid,” said the Great Sage, laugh­ing.<dopsen></dopsen><doplen> “If</doplen> you cut me ten thou­sand times, I’ll give you twen­ty thou­sand persons!”
+  ­<p><doplen>“Mon­key,”</doplen> said the old de­mon,<dopsen></dopsen><doplen> “you</doplen> may be able to di­vide your body, but I doubt wheth­er you can re­trieve your bod­ies. If you have the abil­ity to be­come one again, you may give me a blow with your rod.”<dopsen></dopsen><doplen> “No</doplen> ly­ing, now,” said the Great Sage.<dopsen></dopsen><doplen> “You</doplen> said you want­ed to hack me three times with your scim­i­tar, and you have only done it twice. Now you want me to give you a blow with my rod. If I strike you even half a blow more, I’ll give up my sur­name Sun!”<dopsen></dopsen><doplen> “Well</doplen> said,” re­plied the old demon.
+  <p>Dear Great Sage! He em­braced the other half of him­self and, with a roll, be­came one per­son again. Pick­ing up his rod, he slammed it down on the old de­mon, who par­ried the blow with his scim­i­tar and said,<dopsen></dopsen><doplen> “Bra­zen</doplen> ape, don’t you dare be un­ruly! What sort of a fu­neral staff is that that you dare use it to hit some­one right be­fore his door?”<dopsen></dopsen><doplen> “If</doplen> you ask me about this rod of mine,” snapped the Great Sage,<dopsen></dopsen><doplen> “you</doplen> should know that it has a rep­u­ta­tion both in Heav­en and on Earth.”<dopsen></dopsen><doplen> “What</doplen> kind of repu­ta­tion?” asked the old de­mon. The Great Sage said,
+  <div class="verse">
+    <v>The rod of steel nine cyclic times refined</v>
+    <v>Was forged in the stove by Laozi himself.</v>
+    <v>King Yu took it, named it<dopsen></dopsen><doplen> “Treasure</doplen> Divine,”</v>
+    <v>To fix the Eight Rivers and Four Seas’ depth.</v>
+    <v>In it were spread out tracks of planets and stars,</v>
+    <v>Its two ends were clamped in pieces of gold.</v>
+    <v>Its dense patterns would frighten gods and ghosts;</v>
+    <v>On it dragon and phoenix scripts were drawn.</v>
+    <v>Its name was one Rod of Numinous Yang,</v>
+    <v>Stored deep in the sea, hardly seen by men.</v>
+    <v>Well-formed and transformed it wanted to fly,</v>
+    <v>Emitting bright strands of five-colored mist.</v>
+    <v>Enlightened Monkey took it back to the mount</v>
+    <v>To experience its pow’r for boundless change.</v>
+    <v>At times I would make it thick as a drum</v>
+    <v>Or small and tiny as an iron wire.</v>
+    <v>Huge like South Mountain or fine as a pin,</v>
+    <v>It lengthened or shortened after my desire.</v>
+    <v>Move it gently and colored clouds would rise.</v>
+    <v>Like flashing lightning it would soar and fly.</v>
+    <v>Its cold air, far-reaching, would bring you chills;</v>
+    <v>Its deadly aura could imbue the sky.</v>
+    <v>To tame tigers and dragons it I kept;</v>
+    <v>With me it toured all four corners of earth.</v>
+    <v>I once disturbed with this rod the Hall of Heav’n;</v>
+    <v>Its might broke up the Festival of Peach.</v>
+    <v>Fighting it the devarāja had no chance;</v>
+    <v>Against it Naṭa found the task most hard.</v>
+    <v>Struck by the rod, the gods had no place to hide;</v>
+    <v>One hundred thousand soldiers ran and fled.</v>
+    <v>With thunder gods guarding Divine Mists Hall</v>
+    <v>I leaped and fought to Hall of Perfect Light.</v>
+    <v>All flustered were the ministers at court,</v>
+    <v>And all divine officers were most confused.</v>
+    <v>I raised my rod to topple the Dipper Hall</v>
+    <v>And, turning, smashed the South Pole Palace.</v>
+    <v>When Emperor Jade saw how fierce was my rod,</v>
+    <v>Tathāgata was asked to face my wrath.</v>
+    <v>’Twas natural for a fighter to win or lose,</v>
+    <v>But harsh confinement was my certain lot,</v>
+    <v>Which lasted for a full five hundred years;</v>
+    <v>Then came kind counsels from South Sea’s Guanyin.</v>
+    <v>There was, she told me, a priest of Great Tang</v>
+    <v>Who offered to Heaven a stupendous vow:</v>
+    <v>To save the souls from the City of Death,</v>
+    <v>He would seek scriptures from the Spirit Mount.</v>
+    <v>But demons infested the westward way;</v>
+    <v>The journey thus was no convenient trek.</v>
+    <v>Knowing the rod had in the world no match,</v>
+    <v>She begged me to be his guardian on the way.</v>
+    <v>Perverts, touched by it, would go to Hades,</v>
+    <v>Their bones turning to flour, their flesh to dust.</v>
+    <v>Every where fiends had died beneath the rod,</v>
+    <v>In hundreds and thousands and countless scores.</v>
+    <v>Above, it busted the Dipper Palace;</v>
+    <v>Below, it smashed up all of Darkness Hall.</v>
+    <v>In Heaven it chased the Nine Planetoids</v>
+    <v>And wounded on Earth the summoner-judge.</v>
+    <v>It dropped from midair to rule mountains and streams,</v>
+    <v>Much stronger than Jupiter’s new year sword.</v>
+    <v>To guard the Tang Monk I bank on this rod,</v>
+    <v>Having beaten this world’s all monster-gods!</v>
+    </div>
+  <p>When he heard these words, the de­mon trem­bled and shook, though he risked his life and raised the scim­i­tar to strike. Beam­ing broad­ly, the Mon­key King met him with the iron rod. At first the two of them fought be­fore the cave; after a while, they leaped up to do bat­tle in mid­air. What a mar­vel­ous bat­tle it was!
+  <div class="verse">
+    <v>A treasure that fixed Heaven River’s depth</v>
+    <v>Was the rod, named Compliant, this world’s prize.</v>
+    <v>Such vaunting talents the demon displeased,</v>
+    <v>Who raised his scimitar with magic might.</v>
+    <v>A conflict before the door might one resolve.</v>
+    <v>How could any be spared in a midair fight?</v>
+    <v>After his own feelings one changed his looks;</v>
+    <v>One’s torso grew taller without delay.</v>
+    <v>They fought till clouds thickened in the sky</v>
+    <v>And fog drifted up from the ground.</v>
+    <v>That one made plans a few times to devour Tripitaka;</v>
+    <v>That one exercised his vast pow’r to guard the Tang Monk.</v>
+    <v>Because the Buddha wished the scriptures to impart,</v>
+    <v>Evil and good became clear, locked in bitter strife.</v>
+    </div>
+  <p>The old de­mon and the Great Sage fought for over twen­ty rounds, but no deci­sion could be reached. When Eight Rules down be­low saw, how­ever, how in­tense a bat­tle the two of them were wag­ing, he could no lon­ger stand idly by. Mount­ing the wind, he leaped into the air and de­liv­ered a ter­rific blow with his rake, aim­ing it at the mon­ster’s face. The de­mon was hor­ri­fied, for he did not know that Eight Rules was a blund­erer, some­one with­out any real stam­i­na. When he saw that long snout and those huge ears, the de­mon thought that the hands would also be heavy and the rake vi­cious. Aban­don­ing his scim­i­tar there­fore, he turned and fled in de­feat.<dopsen></dopsen><doplen> “Chase</doplen> him! Chase him!” shout­ed the Great Sage.
+  <p>Rely­ing on his com­pan­ion’s au­thor­ity, our Idiot raised high the muck­rake and went after the fiend. When the old de­mon saw him ap­proach­ing, he stood still be­fore the moun­tain slope and, fac­ing the wind, changed back into his orig­i­nal form. Open­ing wide his huge mouth, he want­ed to swal­low Eight Rules, who was so terri­fied by the sight that he dove quick­ly into the bush­es by the way­side. He crawled in there, with­out re­gard for thorns or prick­les and with no thought of the pain of the scratch­es on his head; trem­bling all over, he stayed in the bush­es to see what would de­vel­op.
+  <p>In a mo­ment, Pil­grim ar­rived, and the old fiend also opened wide his mouth to try to de­vour him, little know­ing that this was ex­actly what Pil­grim de­sired. Put­ting away his iron rod, Pil­grim ran up to the fiend, who swal­lowed him in one gulp. Our Idiot in the bush­es was so shak­en that he mut­tered to him­self,<dopsen></dopsen><doplen> “How</doplen> stu­pid is this Ban­Horse­Plague! When you saw the fiend com­ing to de­vour you, why didn’t you run away? Why did you go up to him in­stead? You might still be a priest to­day in­side his stom­ach, but to­mor­row you’d be a big pile of drop­pings!” Only after the de­mon left in tri­umph did our Idiot crawl out from the bush­es and slip away on the road he came.
+  <p>We tell you now about Tripi­taka, who wait­ed with Sha Monk be­neath the moun­tain slope. All of a sud­den they saw Eight Rules run­ning back and pant­ing heav­ily. Hor­ri­fied, Tripi­taka said,<dopsen></dopsen><doplen> “Eight</doplen> Rules, how is it that you look so des­per­ate? Where is Wu­kong?”<dopsen></dopsen><doplen> “El­der</doplen> Broth­er,” sobbed our Idi­ot,<dopsen></dopsen><doplen> “has</doplen> been swal­lowed by the mon­ster-spir­it in one gulp.” When he heard this, Tripi­taka col­lapsed on the ground, and only after a long time could he stamp his feet and pound his chest.<dopsen></dopsen><doplen> “O</doplen> disci­­ciple!” he cried.<dopsen></dopsen><doplen> “I</doplen> thought that you were so ad­ept in sub­du­ing the fiends that you could lead me to see Bud­dha in the West­ern Heav­en. How could I know that you would per­ish in the hands of this fiend? Alas! Alas! The merit of this dis­ciple and oth­ers have all turned to dust now!”
+  <p>The mas­ter was be­side him­self with grief. But look at our Idi­ot! In­stead of try­ing to com­fort his mas­ter he called out,<dopsen></dopsen><doplen> “Sha</doplen> Monk, bring me the lug­gage. The two of us will di­vide it up.”<dopsen></dopsen><doplen> “Sec­ond</doplen> Elder Broth­er,” said Sha Monk,<dopsen></dopsen><doplen> “why</doplen> do you want to di­vide it?”<dopsen></dopsen><doplen> “When</doplen> we have di­vided it,” re­plied Eight Rules,<dopsen></dopsen><doplen> “each</doplen> of us can go our own way; you can re­turn to Flow­ing Sand River to be a can­ni­bal, and I’ll go back to the Old Gao Vil­lage to see my wife. We’ll sell the white horse, and that should en­able us to buy a cof­fin for our mas­ter in his old age!” The elder was al­ready heav­ing in an­guish. When he heard these words, he be­gan to wail, call­ing on Heav­en to help him all the time and we shall leave him there for the mo­ment.
+  <p>We tell you about that old de­mon, who thought it a smart thing to have swal­lowed Pil­grim. When he reached his own cave, the vari­ous fiends came to greet him and asked him about the bat­tle.<dopsen></dopsen><doplen> “I</doplen> caught one,” said the old de­mon. De­light­ed, the sec­ond de­mon asked,<dopsen></dopsen><doplen> “Which</doplen> one did you catch, Big Broth­er?”<dopsen></dopsen><doplen> “It’s</doplen> Pil­grim Sun,” re­plied the old de­mon.<dopsen></dopsen><doplen> “Where</doplen> have you caught him?” asked the sec­ond de­mon. The old de­mon said,<dopsen></dopsen><doplen> “He</doplen> has been swal­lowed into my stom­ach in one gulp.”
+  <p>Hor­ri­fied, the third de­mon said,<dopsen></dopsen><doplen> “O</doplen> Big Broth­er, I’m sorry I haven’t told you, but Pil­grim Sun is ined­ible!”<dopsen></dopsen><doplen> “I’m</doplen> very ed­ible!” said the Great Sage in the belly.<dopsen></dopsen><doplen> “More­over,</doplen> I sat­isfy! You’ll nev­er be hun­gry again!” The little fiends were so fright­ened that one of them said,<dopsen></dopsen><doplen> “Great</doplen> King, it’s ter­rible! Pil­grim Sun is talk­ing in­side your stom­ach!”
+  ­<p><doplen>“I’m</doplen> not afraid of his talk­ing!” said the old de­mon.<dopsen></dopsen><doplen> “If</doplen> I have the abil­ity to de­vour him, you think I have no abil­ity to han­dle him? Go and boil me some salt wa­ter quick­ly. Let me pour it down my stom­ach and throw him up. Then we can have him slow­ly fried and eat­en with wine.”
+  <p>The little fiends in­deed went and brought back half a pan of hot salt wa­ter, which the old de­mon im­me­di­ately drained. Open­ing wide his mouth, he retched in ear­nest, but our Great Sage seemed to have tak­en roots in the stom­ach. He did not even budge. The old de­mon pressed his own throat and retched again and again until he be­came dizzy and dim of sight. Even his gall seemed to have been bust­ed! But Pil­grim re­mained un­move­able as ever. After he pant­ed for awhile, the old de­mon cried,<dopsen></dopsen><doplen> “Pil­grim</doplen> Sun, aren’t you com­ing out?”
+  ­<p><doplen>“It’s</doplen> too ear­ly!” re­plied Pil­grim.<dopsen></dopsen><doplen> “I</doplen> don’t feel like com­ing out!”<dopsen></dopsen><doplen> “Why</doplen> not?” asked the old de­mon.<dopsen></dopsen><doplen> “You’re</doplen> not a very smart mon­ster-spir­it!” said Pil­grim.<dopsen></dopsen><doplen> “Since</doplen> I be­came a monk, I have led a rath­er pe­nu­ri­ous life. It’s the cool au­tumn now, and all I have on is an un­lined shirt. This belly of yours is quite warm, and it has no draft. This is ex­actly where I should spend my win­ter.” On hear­ing this, all the fiends said,<dopsen></dopsen><doplen> “Great</doplen> King, Pil­grim Sun wants to spend the win­ter in your bel­ly.”<dopsen></dopsen><doplen> “If</doplen> he wants to do that,” said the old de­mon,<dopsen></dopsen><doplen> “I’ll</doplen> prac­tice med­i­ta­tion. With my mag­ic of hi­ber­na­tion, I’ll not eat for a whole win­ter and starve that Ban­Horse­Plague.”
+  ­<p><doplen>“My</doplen> son,” said the Great Sage,<dopsen></dopsen><doplen> “you</doplen> are so dumb! On this jour­ney in which old Mon­key is ac­com­pa­ny­ing the Tang Monk to go seek scrip­tures, we passed through Can­ton and I picked up a por­table fry­ing pan, ex­cel­lent for cook­ing <span class="on"><span class=note-src>chop suey.</span><span class="side note" role=note>The Chi­nese term is <em>za­sui</em> <zh>雜碎</zh>, mean­ing, liter­ally, mis­cel­la­neous things chopped up. In Can­ton­ese cui­sine, the dish is often pre­pared with slices of liver and giz­zard (chick­en or duck) stir-fried, quite dif­fer­ent from the fare served in mod­ern Amer­i­can res­tau­rants. Pop­u­lar tra­di­tion also as­cribes the in­ven­tion of the dish to Li Hong­zhang <zh>李鴻章</zh> (1823–1901), a prime min­is­ter and dip­lo­mat in the Qing, but as the XYJ text here makes clear, ap­par­ently the Can­ton­ese dish is much older.</span></span> If I take time to enjoy your liver, chit­ter­lings, stom­ach, and lungs, I think I can last eas­ily till spring!”
+  ­<p><doplen>“O</doplen> Elder Broth­er,” cried a hor­ri­fied sec­ond de­mon,<dopsen></dopsen><doplen> “this</doplen> ape is ca­pable of do­ing this!”<dopsen></dopsen><doplen> “O</doplen> Elder Broth­er,” said the third de­mon,<dopsen></dopsen><doplen> “it’s</doplen> all right to let him eat the chop suey, but I won­der where he is go­ing to set up the fry­ing pan.”<dopsen></dopsen><doplen> “On</doplen> the fork of his chest bone, of course!” re­plied Pil­grim.<dopsen></dopsen><doplen> “That’s</doplen> bad!” cried the third de­mon.<dopsen></dopsen><doplen> “If</doplen> he sets up the pan there and starts a fire, you’ll sneeze if the smoke rises to your nos­trils, won’t you?”<dopsen></dopsen><doplen> “Don’t</doplen> wor­ry,” said Pil­grim, chuck­ling.<dopsen></dopsen><doplen> “Let</doplen> old Mon­key punch a hole through his head with my gold­en-hooped rod. That will serve both as a sky­light and a chim­ney.”
+  <p>On hear­ing this, the old de­mon be­came quite fright­ened, even though he pre­tend­ed to be brave and said,<dopsen></dopsen><doplen> “Broth­ers,</doplen> don’t be afraid. Bring me our me­dici­nal wine. I’ll drink a few gob­lets and kill that ape with the drug.” Smil­ing to him­self, Pil­grim said,<dopsen></dopsen><doplen> “When</doplen> old Mon­key caused great dis­tur­bance in Heav­en five hun­dred years ago, he de­voured the elixir of Laozi, the wine of the Jade Em­peror, the peach­es of the Lady Queen Moth­er, and all kinds of dain­ties like phoe­nix mar­row and drag­on liver. What, in fact, have I not tast­ed be­fore? What kind of me­dici­nal wine is this that he dares use to drug me?”
+  <p>After the little fiends went and bailed two pots of the me­dici­nal wine, they filled a large gob­let and hand­ed it to the old de­mon. The mo­ment he took it in his hands, how­ever, our Great Sage could smell the wine’s fra­grance even in­side the belly of the de­mon.<dopsen></dopsen><doplen> “I</doplen> won’t al­low him to drink it!” he said to him­self. Dear Great Sage! With a twist of his head, he turned his mouth into the shape of a trum­pet which he placed im­me­di­ately be­low the throat of the old de­mon. When the old de­mon drank in one gulp the gob­let of wine, it was im­me­di­ately swal­lowed by Pil­grim. When he drank the sec­ond gob­let, it, too, was swal­lowed by Pil­grim, and in this way sev­en or eight gob­lets went down the throat of the de­mon. Put­ting down the gob­let, the old de­mon said,<dopsen></dopsen><doplen> “I’m</doplen> not drink­ing any­more. It used to be that two gob­lets of this wine would make my stom­ach feel like fire. I drank sev­en or eight gob­lets just now, and my face hasn’t even reddened!”
+  <p>But our Great Sage, you see, could not take too much wine. After he had swal­lowed sev­en or eight goblet­fuls from the old de­mon, he be­came so delir­i­ous that he be­gan to do calis­then­ics with­out pause in­side the de­mon’s belly. He did jump­ing jacks and cart­wheels; he let loose high kicks; grab­bing the liver he used it for a swing, and he went through hand­stands and som­er­saults, pranc­ing mad­ly here and there. So un­bear­able was the pain that the fiend slumped to the ground. We do not know wheth­er he died or not; let’s listen to the ex­pla­na­tion in the next chap­ter.</p>
+  <cite>Wu Cheng’en, <in>Journey to the West</in>, <en>circa 1592</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="crockford.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="dubellay.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="crockford.html"><span class="arrow">←</span>&nbsp;How JavaScript Works</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="dubellay.html">La Défense et illustration de la langue française&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+
+<script>
+  /* let atliens = document.querySelectorAll(".side.note");
+  for (var i = 0; i < atliens.length; i++) {
+      atliens[i].setAttribute("onclick", "myFunction()");
+    } */
+  //
+  document.addEventListener('click', toggleFullNote);
+  function toggleFullNote(event) {
+    if (event.target && event.target.classList.contains('side', 'note')) {
+      if (! event.target.classList.contains('visible')) {
+        event.target.classList.add('visible');
+      } else {
+        event.target.classList.remove('visible');
+      }
+    }
+    if (event.target && event.target.parentNode.classList.contains('side', 'note')) {
+      if (! event.target.parentNode.classList.contains('visible')) {
+        event.target.parentNode.classList.add('visible');
+      } else {
+        event.target.parentNode.classList.remove('visible');
+      }
+    }
+    if (event.target && event.target.className == 'note-src') {
+      if (! event.target.nextElementSibling.classList.contains('visible')) {
+        event.target.nextElementSibling.classList.add('visible');
+      } else {
+        event.target.nextElementSibling.classList.remove('visible');
+      }
+    }
+    if (event.target && event.target.parentNode.className == 'note-src') {
+      if (! event.target.parentNode.nextElementSibling.classList.contains('visible')) {
+        event.target.parentNode.nextElementSibling.classList.add('visible');
+      } else {
+        event.target.parentNode.nextElementSibling.classList.remove('visible');
+      }
+    }
+  }
+  
+  </script>
+</body>
+</html>

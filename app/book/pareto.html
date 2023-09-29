@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <script type="text/javascript" src="core/zooom.js"></script>
+
+  <style>
+      entry {font-feature-settings: "lnum" !important; hyphens: auto;}
+      a.none { font-feature-settings: "lnum"; }
+      div.entry {margin-bottom: 1.4em;}
+      img#f12.zooom-img {width: 50vw;}
+
+      aside image-caption::before { content: none;}
+      aside image-caption {font-family: dolly; color: var(--txt); text-align: inherit;}
+      @media all and (max-width:520px) { aside image-caption {text-align: center; }}
+
+      #opa:hover {opacity: 1 !important; transition-duration: 0.2s !important; transition-property: opacity;}
+      #oopa {transition-duration: 2s !important; transition-property: opacity;}
+      [wide] #opa {
+  font-size:calc(1.3rem * 92 / 100 * 2.4) !important;
+  margin-top: -2.3rem;
+  position: relative !important;
+  margin-bottom: 10rem;
+  text-align: right;
+}
+[wide] #opa topic {
+font-family: "Avocado 14" !important;
+      }
+
+
+
+        </style>
+
+<style>
+title-block.absolute {
+  position: relative;
+  margin-left: -12rem;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+title-block.sticky {
+  position: sticky;
+  margin-left: -9.5rem;
+  top: 3.2rem;
+  border-top: none;
+  padding-top: 0.5rem;
+  padding-top: 0.1em;
+}
+.sticky topic {
+  font-family: display;
+  font-family: "Avocado 14";
+  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 210%;
+  line-height: 0.8;
+  margin-bottom: 0.67em;
+  margin-bottom: 0.4em;
+}
+html:not([wide]) title-block.sticky:hover {
+  opacity: 1 !important;
+  transition-duration: .2s !important;
+  transition-property: opacity;
+}
+@media all and (max-width:520px) {
+  title-block.absolute {
+  display: none;
+}
+title-block.sticky {
+  display: none;
+}
+}
+
+[wide] title-block.absolute {
+  margin-left: 0;
+}
+[wide] title-block.sticky {
+  position: revert;
+  margin-left:0;
+  text-align: right;
+  font-size: 345%;
+  /* min-height: 28rem; */
+  margin-bottom: 10rem;
+}
+
+@media not all and (max-width:520px) {
+  html:not([wide]) #bullet {
+  display: none;
+  }
+  html:not([wide]) title-block.sticky {
+  background: var(--bkg);
+  }
+}
+</style>
+  <title>Trattato di sociologia generale | @mnrv</title>
+</head>
+<body id="body" class="">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="container"><div class="item one"></div></div>
+
+
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>Trattato di sociologia generale</topic>
+    <short-rule></short-rule>
+  </title-block>
+  <title-block class="mobil" style="padding-top: 0; border-top: none;"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Trattato di sociologia generale</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);"></short-rule></title-block>
+  
+<!--   <topic class="commentary">Trattato di sociologia generale</topic>
+ -->
+ <!-- <title-block class="mobil" style="padding-top: 0; border-top: none;"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Trattato di sociologia generale</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);"></short-rule></title-block>
+ <title-block class="dsktp"><topic></topic></title-block>
+ <title-block id="opa" class="dsktp" style="position: fixed; left: inherit; transform: translate(-126.5%, 2%); padding-top: 0.1rem; border-top: none"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Trattato dis sociologia generale</topic><short-rule></short-rule></title-block> -->
+
+  <div style="margin-top: 4rem; margin-bottom: 3rem; text-align: center; text-transform: lowercase; font-family: dolly-caps; ">
+  <div style="font-size: 130%;margin-bottom: 0.66rem">capitolo V</div>
+  <hr style="width:10%; margin: auto; height: 1px; border: none; margin-bottom: 1.4em">
+  <div style="font-size: 110%">le teorie pseudo-scientifique.</div></div>
+
+  <div class="entry" id="633"><p><entry><a href="#633">633.</a></entry>Ci ri­ma­ne da stu­dia­re le teo­rie della ca­te­go­ria (B), e sarà il com­pi­to del pre­sen­te capi­to­lo.</p><p>L’in­ter­ven­to dei prin­ci­pii non-spe­ri­men­tali, che era pa­le­se, espli­ci­to, nella ca­te­go­ria (A), è più o meno dis­si­mu­la­to, im­pli­ci­to, nella ca­te­go­ria (B). Le teo­rie non sono logi­co-spe­ri­men­tali, ma tali si vo­glio­no fare ap­pa­ri­re. Vi sono casi in­ve­ro in cui pos­so­no di­ven­tar­lo effet­ti­va­men­te, il che se­guirà se sarà pos­si­bi­le il to­glie­re la par­te non-spe­ri­men­ta­le sen­za trop­po al­te­ra­re i risul­ta­me­nti della teo­ria ; ma se ciò non è pos­si­bi­le, le teo­rie non po­tran­no, nep­pu­re mo­di­fi­ca­te, ave­re luo­go fra le lo­gi­co-spe­ri­men­tali.</p></div>
+  <div class="entry" id="634"><p><entry><a href="#634">634.</a></entry>Qui con­si­de­ria­mo prin­ci­pal­men­te le teo­rie della ca­te­go­ria (B), collo sco­po di sce­ve­ra­re in esse la par­te che è lo­gi­co-spe­ri­men­tale dalla par­te che tale non è. Que­sta in­da­gi­ne è im­por­tan­te sot­to due aspet­ti, cioè : 1º&nbsp;Ques­te teo­rie corri­spon­do­no a fatti de­for­ma­ti ; se ci rie­sce di se­pa­ra­re la par­te logi­co-spe­ri­men­ta­le, po­tre­mo ri­tro­va­re la for­ma reale dei fatti. 2º&nbsp;Caso mai ci fos­se­ro alcu­ne di que­ste teo­rie in cui la par­te non logi­co-spe­ri­men­ta­le è ac­ces­so­ria, la po­tre­mo eli­mi­na­re ed avre­mo una teo­ria logico-sperimentale.</p></div>
+  <div class="entry" id="635"><p><entry><a href="#635">635.</a></entry>Sup­po­nia­mo dunq­ue di ave­re il te­sto di una nar­ra­zio­ne, o di una teo­ria ; po­tre­mo con­si­de­ra­re i due pro­ble­mi se­guen­ti ; 1º&nbsp;Sup­po­sto che in que­sto te­sto ab­bia­no par­te, pic­co­la o gran­de, de­du­zio­ni me­ta­fi­si­che, arbi­tra­rie, miti, alle­go­rie, ecc., è pos­si­bi­le risa­li­re da que­sto te­sto ai con­cet­ti che vera­men­te ha vo­lu­to espri­me­re l’au­to­re, ai fatti che ha in­ten­so nar­ra­re, alle rela­zio­ni logi­co-spe­ri­men­tali che ha vo­lu­to espri­me­re ; e come ciò può farsi ? 2º&nbsp;Quali pro­ce­di­men­ti si pos­so­no ado­pe­ra­re per trar­re, mer­cè l’uso di que­ste de­du­zio­ni me­ta­fi­si­che, arbi­tra­rie di que­sti miti, di que­ste alle­go­rie, ecc., cer­te con­clu­sio­ni alle qua­li si vuo­le giungere ?</p></div>
+  <aside><p class="image"><img class="svg zooom" id="f12" src="images/pareto12.svg"><image-caption>Fig. 12</image-caption></p></aside>
+  <div class="entry" id="636"><p><entry><a href="#636">636.</a></entry>Gra­fica­men­te si vede an­che me­glio la cosa. 1º&nbsp;Si ha una teo­ria <i>T</i> che si sup­po­se espri­me­re certi fatti <i>A</i>, un te­sto che si sup­p­one ave­re ori­gi­ne dai fatti <i>A</i>. Co­no­scen­do <i>T</i> si vuo­le tro­va­re <i>A</i>. Se si rie­sce in tale im­pres­sa, si per­cor­rerà la via <i>TA</i> e, muo­ven­do dal te­sto <i>T</i>, si giun­gerà in <i>A</i>. Ma se, invo­lon­ta­ria­men­te, l’im­pres­sa falli­sce, in­ve­ce di <i>A</i> si tro­verà <i>B</i>, e si cre­derà, ben­chè ciò non sia, che <i>B</i> ha dato ori­gi­ne a <i>T</i>. Ana­lo­ga a que­sta ope­ra­zio­ne è quel­la che fa la criti­ca mo­der­na per risa­li­re, dai vari ma­no­scrit­ti exi­sten­ti di un’o­pe­ra, al te­sto ori­gi­na­le. Que­sto è <i>A</i>, e i vari ma­no­scrit­ti co­sti­tu­i­sco­no il com­ples­so <i>T</i>. 2º&nbsp;Dal­la teo­ria, dal te­sto <i>T</i>, si vo­glio­no trar­re cer­te con­clu­sio­ni <i>C</i>, che ge­ne­ral­men­te sono già note, e, mer­cè de­du­zio­ni che non sono logi­co-spe­ri­men­tali, muo­ven­do da <i>T</i>, si giun­ge in <i>C</i>.</p><p>Nel pri­mo pro­ble­ma si cer­ca <i>A</i> ; nel se­con­do pro­ble­ma non si cer­ca <i>C</i>, ma ben­si la via per giun­ge­re a <i>C</i>. Tal­vol­ta ciò si fa vo­lon­ta­ria­men­te, e cioè si sa che <i>C</i> non è con­se­guen­za di <i>T</i>, ma si vuo­le fare ap­pa­ri­re tale. Ab­bia­mo così un arti­fi­cio, un’a­zio­ne logi­ca di chi vuol per­sua­de­re al­trui di cosa che ben sa non es­se­re vera. Ma più spes­so, assai più spes­so, la ri­cer­ca della via per pas­sa­re da <i>T</i> a <i>C</i> è in­vo­lon­ta­ria. Nel­la men­te di chi la fa, esiste la fede in <i>T</i> e il vivo de­si­de­rio di con­se­gui­re <i>C</i> ; in­vo­lon­ta­ria­men­te que­sti due sen­ti­men­ti si con­giun­go­no mer­cè una via <i>TC</i>. Ab­bia­mo così un’a­zio­ne non-logi­ca, e chi pro­cac­cia di per­sua­de­re al­trui, ha per­sua­so pri­ma sè stes­so, e non usa per nien­te arti­fi­zi. Nel pri­mo pro­ble­ma, cioè quan­do si cer­ca <i>A</i>, seb­b­ene spes­so si usi pure l’ac­cor­do coi sen­ti­men­ti, si sup­po­ne al­me­no di vo­le­re usa­re de­du­zio­ni logi­co-spe­ri­men­tali, ed effet­ti­va­men­te si usa­no nelle scien­ze. La via <i>TA</i> (o, se si sba­glia. <i>TB</i>), è dun­que data, o si sup­p­one data, e si cer­ca <i>A</i>. Nel se­con­do pro­ble­ma, cioè quan­do, vo­lon­ta­ria­men­te od invo­lon­ta­ria­men­te, si cer­ca la via <i>TC</i>, seb­be­ne spes­so si fin­ga, e spes­sis­si­mo si cre­da di usa­re la via logi­co-spe­ri­men­ta­le, effet­ti­va­men­te si usa qua­si sem­pre l’ac­cor­do dei sen­ti­men­ti ; si cer­ca la via <i>TC</i> che può con­dur­re alla desi­de­ra­ta meta <i>C</i>, e che può es­se­re ben ac­cet­ta alla gen­te che si vuo­le persuadere.</p><p>So­li­ta­men­te tut­to ciò non ap­pa­re ; i due pro­ble­mi non si se­pa­ra­no, e la ri­cer­ca del­la via <i>TC</i> si com­pie col fer­mo con­vin­ci­men­to che in­ve­ce si cer­ca sol­tan­to <i>A</i>. Al soli­to, l’a­zio­ne non-logi­ca si rico­pre colla ver­ni­ce del­la logic­a. Ad esem­pio, sia <i>T</i> il te­sto del Van­ge­lo ; si pos­so­no cer­ca­re i fatti <i>A</i> che ad esso han­no dato ori­gi­ne, e sa­reb­be com­pi­to della critic­a sto­ri­ca ; ma chi que­sta non usa, o non usa esclu­si­va­men­te, vuol trar­re dal Van­ge­lo cer­te con­clu­sio­ni del­la sua mo­ra­le, o che co­mun­que sia ha latto sue, e per­ciò usa un’<i>in­ter­pre­ta­zio­ne TC</i>, che pos­sa ad­dur­lo alla desi­de­ra­ta mèta. Egli sa pre­ven­ti­va­men­te che deve cre­de­re in <i>T</i> ed in que­sti due ter­mi­ni sono fissi, ed egli cer­ca solo il modo di congiungerli.</p></div>
+  <div class="entry" id="644"><p><entry><a href="#644">644.</a></entry>Se il te­sto che vo­glia­mo in­ter­pre­ta­re fos­se una nar­ra­zio­ne sto­ri­ca, si po­treb­be effet­ti­va­men­te rite­ner­lo come una rap­pre­sen­ta­zio­ne al­meno ap­pros­si­ma­ta dei fatti che esprime (<a href="#541" class="none" onclick="notify('Article indisponible', 1500)">§&nbsp;541 e s.</a>).</p></div>
+  <div class="entry" id="645"><p><entry><a href="#645">645.</a></entry>Per al­tro, an­che in que­sto caso, cer­te di­ver­gen­ze ci sono sem­pre. Ad esem­pio, la nar­ra­zio­ne di un fatto an­che sem­pli­cis­si­mo ri­pro­du­ce dif­ficil­men­te il fatto pre­ci­so. I pro­fes­sori di dirit­to pe­na­le ha­nno fatto spes­so quest’e­spe­rien­za : un fatto ac­ca­de in pre­sen­za de­gli stu­den­ti, si pre­ga ognu­no di loro di scri­ver­ne la nar­ra­zio­ne, e si ot­ten­go­no tan­te nar­ra­zio­ni lie­ve­men­te di­ver­se, quan­te sono le per­so­ne. Tu assi­sti ad un fatto con un ra­gaz­zo, o con un adul­to aven­te una viva im­ma­gi­na­zio­ne, e poi chie­di loro di nar­rar­te­lo ; ve­drai che sem­pre vi ag­giun­go­no qual­che cosa, e che dan­no mag­gior for­za ai linea­men­ti di quel­la che ave­va­no in real­tà. Se­gue lo stes­so per chi ripe­te una nar­ra­zio­ne da lui udita (<a href="#541" class="none" onclick="notify('Article indisponible', 1500)">§&nbsp;1568</a>).</p><p>C’è di più. Poi­ché è uso ge­ne­ra­le ap­pun­to il dare que­sta mag­gior for­za, chi ascol­ta­la nar­ra­zio­ne fini­sce col farci la tara ; e quin­di per dare ad esso un’im­pres­sio­ne corri­spon­den­te alla real­tà, oc­cor­re usa­re ter­mi­ni che va­da­no un poco oltre il vero. Se su dieci per­so­ne tu ne vedi nove che rido­no, e se vuoi far pro­va­re ad al­trui un’im­pres­sio­ne del fatto corri­spon­den­te alla real­tà dirai : « Tutti rise­ro » ; che se tu di­ces­si : « Par­te di co­lo­ro rise­ro », l’im­pres­sio­ne sta­reb­be sot­to il vero.</p></div>
+  <div class="entry" id="646"><p><entry><a href="#646">646.</a></entry>Per­chè un rac­con­to si alte­ri, non oc­cor­re che pas­si di boc­ca in boc­ca ; esso si alte­ra an­che quan­do è ripe­tu­to dalla stes­sa per­so­na. Per esem­pio, una cosa che si vo­le­va indi­ca­re come <i>gran­de</i>, di­ver­rà ogno­ra più gran­de nei suc­ces­si­vi rac­con­ti ; una cosa <i>pic­co­la</i>, ogno­ra più pic­co­la. Si au­men­ta la dose, ogno­ra ce­den­do al me­de­si­mo sentimento.</p></div>
+  <div class="entry" id="647"><p><entry><a href="#647">647.</a></entry>Ab­bia­mo fatti pre­ci­si che mo­stra­no come sia­no in­gan­ne­voli cer­te im­pres­sio­ni. Ad esem­pio, <span class="on"><span class="note-src">le illu­sio­ni circa alle cita­zio­ni di certi au­to­ri sono sin­go­la­ri.</span><span class=note role=note>Spes­so si ode cita­re, come di Dante : « Non <i>ti curar</i> di lor, ma guar­da e passa », in­ve­ce di : « Non <i>ragionam</i> di lor, ma guarda e passa » (<i>Inf.</i>,&nbsp;III,&nbsp;51).</span></span> Mol­ti fran­ce­si cre­do­no cita­re il Molière dicendo :</p>
+  <blockquote><c>Il est avec le ciel des accomodements.</c></blockquote>
+  <p>« <span class="on"><span class="note-src">(p. 153</span><span class=note role=note><pp><smcp>E. Fournier</smcp> ; <i>L’esprit des autres. — Ibidem</i> : (p. 36) J’en con­nais qui se fâ­che­raient tout rouge si j’al­lais leur sou­tenir que tel vers n’est pas de leur cher Despréaux. Dites, par ex­emple, à l’un ou l’autre de ces rou­ti­niers opi­niâ­tres, que le vers cé­lèbre</pp><pv>La critique est aisée, et l’art est difficile</pv><pp>n’est pas dans l’<i>Art Poëtique</i>, et vous ver­rez la belle que­relle qu’ils vous fe­ront. Ils égrè­ne­ront vers par vers les quatre chants du (p. 37) poëme, voire toutes les œuvres du poëte, et non seu­le­ment ils ne trou­ve­ront pas ce­lui qu’ils cher­chent, mais ils en dé­cou­vri­ront même cer­tains au pas­sage qui en sont la con­tre-partie… N’im­porte, ils ne s’avoue­ront pas bat­tus pour si peu, et sou­tien­dront de plus belle que leur vers ché­ri est de Boileau, et qu’il est dans l’<i>Art poëtique</i>… parce qu’il de­vrait y être ».</pp></span></span>) Le vers est ex­cel­lent, mais Molière ne l’a pas écrit, l’on a donc tort de le lui prê­ter. Pour l’ob­te­nir, il faut prendre la sub­stance de deux (<span style="font-feature-settings: 'onum'">p. 154</span>) des siens à l’acte IV, scène V ; c’est Tartuffe qui parle :</p><blockquote><v>Le ciel défend, de vrai, certains contentements ;</v><v>Mais on trouve avec lui des accomodements. »</v></blockquote><p>La cele­bre <i>phrase</i> del Mi­ra­beau : « Allez dire à votre maître, ecc. » non è mai stata det­ta. Il marchese di Dreux-Brézé ha retti­fi­ca­to i fatti, nella se­du­ta del <span style="font-feature-settings: 'onum'">10 mar­zo 1833</span>, della Ca­me­ra dei Pari : « <span class="on"><span class="note-src">(p. 229)</span><span class=note role=note>Citato da <smcp>Fournier</smcp> ; <i>L’esprit dans l’histoire.</i> L’au­to­re ag­giun­ge in una nota : « D’après le compte-rendu du <i>Jour­nal des Dé­bats</i> du même jour (<span style="font-feature-settings: 'onum'">10&nbsp;mars 1833</span>), M. de Montlosier fit un signe af­fir­ma­tif. — Les <i>Mémoires</i> de Bailly, pu­bliées en <span style="font-feature-settings: 'onum'">1804</span>, t. I, <span style="font-feature-settings: 'onum'">p. 216</span>, ne rap­portent les pa­roles de Mirabeau, ni comme on les ré­pète or­di­nai­re­ment, ni comme elles sont re­pro­duites ici. Les <i>Éphémérides</i> de Noël, au contraire (<span style="font-feature-settings: 'onum'">Juin, p. 164</span>), con­sa­crent dès <span style="font-feature-settings: 'onum'">1803</span> la ver­sion don­née par M. de Dreux-Brézé ».</span></span> Mirabeau dit à mon père : <i>Nous som­mes as­sem­blés par la vo­lon­té na­tio­nale, nous, n’en sor­ti­rons que par la force.</i> Je de­mande à M. de Montlosier si cela est exact ».</p>
+  </div>
+  <cite>Vilfredo Pareto, <in>Trattato di sociologia generale</in>, <en>1856</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="wittgenstein.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="walras.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="wittgenstein.html"><span class="arrow">←</span>&nbsp;Tractatus Logico-Philosophicus</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="walras.html">éléments d’économie politique pure&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+  window.addEventListener('load', function () {
+    new Zooom({
+      zooomElement: 'img.zooom',
+      zooomWrap: 'zooom-wrap',
+      zooomImg: 'zooom-img',
+      zooomOverlay: 'zooom-overlay'
+    });
+  })
+</script>
+
+<script>
+
+  const setOpacity = function() {
+    const element = document.querySelector(".sticky")
+        , ascrollPosition = window.scrollY
+        , aviewportHeight = window.innerHeight
+        , condition = document.querySelector("html[wide]");
+    if (condition) {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight * 3))
+    } else {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight * 1.5))
+    }
+  };
+  window.addEventListener("scroll", setOpacity);
+  window.addEventListener("resize", setOpacity);
+  window.addEventListener("scroll", function() {
+    let viewportHeight = window.innerHeight
+      , scrollTop = window.pageYOffset
+      , scrollHeight = document.body.scrollHeight
+      , condition = document.querySelector("html[wide]");
+    if (scrollTop <= viewportHeight && condition) {
+      // let translateY = scrollTop / 2;
+      let translateY = scrollTop / 4;
+      document.querySelector(".sticky").style.transform = `translateY(-${translateY}px)`;
+    }
+  });
+  
+  // window.onload = function () {
+  //   const element = document.querySelector(".sticky");
+  //   if (element) {
+  //     element.addEventListener('mouseenter', () => element.classList.add('hovered'));
+  //     element.addEventListener('mouseleave', () => element.classList.remove('hovered'));
+  //   }
+  // };
+  
+  
+  const toggleMenu2 = function(e) {
+    const element = document.querySelector(".sticky")
+        , menu = document.querySelector("#menu")
+        , body = document.querySelector("body");
+  
+    // click anychere on page
+    if (body.classList.contains("menu_open")
+    && e.target.id === "content") {
+      body.classList.toggle("menu_open");
+      setTimeout(function() {
+        menu.style.visibility = "hidden";
+      }, 600);
+    }
+  
+    if (e.target === element || e.target.parentNode === element) {
+      body.classList.toggle("menu_open");
+      if (body.classList.contains("menu_open")) {
+        menu.style.visibility = "visible";
+      } else {
+        setTimeout(function() {
+          menu.style.visibility = "hidden";
+        }, 600);
+      }
+    }
+  };
+  document.addEventListener("click", toggleMenu2);
+  
+  </script>
+
+</body>
+</html>

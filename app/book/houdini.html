@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/houdini.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+      
+      [dark="true"] img.svg { filter: invert(1) opacity(0.8)}
+      p.type-specimen {
+          border: 1px solid var(--btw);
+          margin-top: 3rem;
+          }
+      p.type-specimen + p {
+          text-align: center;
+          }
+
+
+      img.svg { filter: grayscale(1) }
+      [dark="true"] img.svg { filter: invert(1) grayscale(1)}
+      img.svg:hover { filter: none; }
+      [dark="true"] img.svg:hover { filter: invert(1) grayscale(1); }
+      
+      p.type-specimen {
+          border: 1px solid var(--btw);
+          margin-top: 3rem;
+          }
+      p.type-specimen + p {
+          text-align: center;
+          }
+      a.specimen,
+      [dark="true"] a.specimen {
+          font-family: 'ScalaSans';
+          font-feature-settings: "smcp";
+          text-transform: lowercase;
+          letter-spacing: 0;
+          padding: 0.35em 0.5em 0.45em;
+          border-radius: 1em;
+          background: var(--txt);
+          color: var(--bkg);
+          }
+      a.type-specimen:after,
+      a.specimen:after { content: none; }
+      a.type-specimen:hover { background: none; cursor: zoom-in; }
+      a.specimen:hover { background: rgb(240, 26, 44); }
+      a.specimen:active { background: var(--act); color: white !important;}
+      [dark="true"] a.specimen:not(:hover) { color: var(--bkg); }
+      [dark="true"] a.specimen:hover { color: var(--txt); }
+
+      [wide] .notforwide {
+        display: none !important;
+      }
+      [wide] .forwide {
+        display: block !important;
+      }
+
+       
+br.forwide {
+        display: none;
+      }
+      [wide] br.forwide {
+        display: block;
+      }
+    </style>
+  <style>
+    html:not([wide]) title-block.dsktp {
+        position: initial;
+        margin-left: -9rem;
+      }
+  </style>
+  
+<style>
+title-block.absolute {
+  position: relative;
+  margin-left: -12rem;
+  margin-left: -11.45rem;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+title-block.sticky {
+  position: sticky;
+  margin-left: -9.5rem;
+  top: 3.2rem;
+  border-top: none;
+  /* padding-top: 0.5rem;
+  padding-top: 5px;
+  padding-top: 0.1em; */
+}
+.sticky topic {
+  /* font-family: display;
+  font-family: "Avocado 14";
+  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 210%;
+  line-height: 0.8; */
+  /* margin-bottom: 0.67em;
+  margin-bottom: 0.4em; */
+}
+html:not([wide]) title-block.sticky:hover {
+  opacity: 1 !important;
+  transition-duration: .2s !important;
+  transition-property: opacity;
+}
+@media all and (max-width:520px) {
+  title-block.absolute {
+  display: none;
+}
+title-block.sticky {
+  display: none;
+}
+}
+
+[wide] title-block.absolute {
+  margin-left: 0;
+}
+[wide] title-block.sticky {
+  position: revert;
+  margin-left:0;
+  text-align: right;
+  font-size: 345%;
+  font-size: 200%;
+  /* min-height: 36rem; */
+  margin-bottom: 10rem;
+  margin-bottom: 5rem;
+}
+
+@media not all and (max-width:520px) {
+  html:not([wide]) #bullet {
+  display: none;
+  }
+  html:not([wide]) title-block.sticky {
+  background: var(--bkg);
+  }
+}
+
+[wide] short-rule {
+  font-size: 83%;
+}
+  
+  </style>
+
+  <title>Houdini | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="typographie.html">­</a>
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>Houdini</topic>
+    <short-rule>Germanique ou italienne ?</short-rule>
+    <p class="dsktp type-specimen notforwide" style="padding: 1em"><a href="images/houdini/houdini_specimen.html" class="type-specimen"><img class="svg" src="images/houdini/houdini_specimen0.svg"></a></p>
+    <p class="dsktp notforwide"><a href="images/houdini/houdini_specimen.html" class="specimen">specimen</a></p>
+  </title-block>
+
+  <title-block class="mobil"><topic>Houdini</topic>
+    <short-rule>Germanique ou italienne ?</short-rule>
+    <p class="dsktp type-specimen notforwide" style="padding: 1em"><a href="images/houdini/houdini_specimen.html" class="type-specimen"><img class="svg" src="images/houdini/houdini_specimen0.svg"></a></p>
+    <p class="dsktp notforwide"><a href="images/houdini/houdini_specimen.html" class="specimen">specimen</a></p></title-block>
+   
+  
+      <style>
+
+        table {
+          cursor: help;
+          text-align: center;
+          width: 100%;
+          height: 20rem;
+          border: none;
+    
+          font-family: houdini85;
+          color:var(--btp);
+          line-height: 1 !important;
+          /* font-size: 0.35rem; */ /*white-space: nowrap; overflow-x: hidden; */
+          margin-bottom: 5rem;
+          }
+        [dark="true"] table {color: var(--txt);}
+        table *::selection { background: transparent; }
+        #m1 {font-size: 3rem;}
+        @media all and (max-width:520px) {
+          table {height: 60vh; margin-bottom: 4rem;}
+          #m1 {font-size: 12vw;}
+          }
+        </style>
+      <table onclick="scribbler()" contenteditable="false">
+        <script>
+    
+          function getRandomSentence() {
+            var index= Math.floor(Math.random() * (sentences.length));
+            return sentences[index];
+          }
+    
+          function scribbler() {
+            let milou = document.getElementById('m1');
+            milou.innerHTML = (getRandomSentence());
+          }
+    
+          var sentences= [
+        /* WHO NEED HOUDINI? */'<div style="font-family: houdini85">WHO NEED <span style="display: inline-flex; transform: skew(-8deg);">HOUDINI</span> ?</div>',
+        /* Der Deutschamerikaner */ '<span class="mobil" style="font-size: 90%;">Deutschamerikaner</span><span class="dsktp">Deutschamerikaner</span>',
+        /* Automaat wasmachine */ 'Automaat Wasmachine',
+        /* mediabesturingselementen */ 'media­besturings­elementen',
+
+        /* Norðuratlantshavi */ 'Norðuratlantshavi',
+        /* stéttarfélögum */ 'stéttarfélögum',
+        /* Lýsi */ 'Lýsi',
+        /* Lýsi */ '<span style="font-family: houdini98;">DZIENNIK CHICAGOSKI</span>',
+        /* Lýsi */ '<span style="font-family: houdini98;">Usilują Odciąć</span>',
+        /* Lýsi */ '<span style="font-family: houdini98;">Kronika Chicagoska.</span>',
+        /* Lýsi */ /* '<span style="font-family: houdini98;">Inkognito in Frankfurt</span>', */
+        /* Lýsi */ '<span style="font-family: houdini98;">Die AMERIKANER<br>sprechen&nbsp;nicht „deutschfreundlich“</span>',
+        /* Lýsi */ /* '<div style="font-family: houdini98; transform: translate(0, -3rem);">Die AMERIKANER<br>sprechen&nbsp;nicht „deutschfreundlich“</div>',
+        'abschließt', */
+
+
+        /* GẂRAIDD */ 'gẃraidd',
+        /* GẂRAIDD */ 'GẂRAIDD',
+        /* kůň domácí */ 'kůň domácí',
+        /* Minuskuła karolińska */ 'Minuskuła karolińska',
+        /* Atsevišķos vārdos */ 'Atsevišķos vārdos',
+        /* Oslobađanje Hrvatske */ 'Oslobađanje Hrvatske',
+        /* Mlađe kameno doba */ 'Mlađe kameno doba',
+        
+        /* 711 yılında İspanya’yı */ '711 yılında İspanya’yı',
+        /* Avrupalılaştıramadık */ 'Avrupalılaştıramadık',
+        
+        /* ómega-3 */ /* 'ómega-3', */
+        /* D-vítamínum */ 'D-vítamínum',
+        /* Sodium Chloride (NaCl) */ 'Sodium Chloride (NaCl)',
+        /* Myrthegaflon 30mg */ '<span style="font-family: houdini98">Myrthegaflon</span><div style="font-family:houdini98; display:inline; font-size: 25%; line-height: 0; vertical-align: 2em;border: 0.14em solid var(--btp); border-radius: 50%; padding: 0 0.3em; -webkit-text-stroke: 0.03em var(--btp);">R</div>&nbsp;&nbsp;30 mg',
+        /* polštarski-rijks museum */ 'polštarski-rijks museum<e style="font-family:houdini98; font-size: 25%; line-height: 0; vertical-align: 2em;">TM</e>',
+        /* EINSATZBEREIT NEUBAUTEN */ '<span style="font-family: houdini98; text-transform:uppercase;">Einstürzende Neubauten</span>',  
+        /* MOTHER & DAUGHTERS */ '<span style="font-size: 80%">MOTHER & DAUGHTERS, <br class="mobil"><span style="font-damily: houdini98; font-size: 75%; -webkit-text-stroke: 0.7px var(--btp);">PART TWO</span></span>',
+        /* baroco habana */'<span style="font-family: houdini98">“baroco habana”</span>',
+        /* YOURNAME@DOMAIN.CO.UK */ '<span style="font-size: 75%">YOURNAME@DOMAIN.CO.UK</span>',
+        /* TÊTE DE VEAU */ /* '<span style="font-family: Houdini98; padding: 0.15em 0.25em; border: 0.11em solid var(--btp); text-transform:uppercase;">sacré-cœur</span>', */
+        /* MON AMOUR */ '<span style="font-family: Houdini98; padding: 0.15em 0.25em; border: 0.11em solid var(--btp); text-transform:uppercase;">MON AMOUR</span>',
+        /* MON AMOUR */ '<span style="font-family: Houdini98; padding: 0.15em 0.25em; border: 0.11em solid var(--btp); text-transform:uppercase;">tête de veau</span>',
+        /* « entre guillemets » */ '« entre guillemets »',
+        /* FRANÇOIS */ /* 'FRANÇOIS N<span style="-webkit-text-stroke: 0.6px var(--btp); letter-spacing:-0.2888em">˚</span><span style="vertical-align:0.1em; line-height:0">-</span> 1', */
+        /* TÊTE DE VEAU 'TÊTE DE VEAU',*/
+        /* TÊTE DE VEAU */ /* '<div style="text-align:">Du persil dans les oreilles.</div>', */
+
+        /* vasistas */ /* 'vasistas', */
+        /* wass-ist-dass *//* 'wass-ist-dass', */
+        /* was ist das */ /* 'was ist das ?', */
+        
+        /* ALERTE ROUGE */'<span style="font-family: houdini98">ALERTE ROUGE</span>',
+        /* Synallagmatique et léonine */ /* 'Synallagmatique <br class="mobil">et léonine', */
+        /* article indisponible */ 'article indisponible',
+        /* RINCEUR AUTOMATIQUE */ 'RINCEUR AUTOMATIQUE',
+        /* INTRODUCTION */ 'INTRODUCTION',
+        /* SENS COMMUN */ /* 'SENS COMMUN', */
+        /* PROFONDO ROSSO */ 'PROFONDO ROSSO',
+        /* Extensión casi plana. */ '<span style="text-transform:">Extensión casi plana.</span>',
+        /* "matricule",   */      
+        
+        /* 'WORLD SOCCER CUP 2001', */
+        /* WORLD SOCCER CUP 2001 */ '<div style="margin-top:-0.155em; line-height:1.3 !important">W<span style="font-family: houdini98; font-size:75%;-webkit-text-stroke: 0.6px var(--btp); text-transform: uppercase">orld</span> S<span style="font-family: houdini98; font-size:75%;-webkit-text-stroke: 0.6px var(--btp); text-transform: uppercase">occer</span> C<span style="font-family: houdini98; font-size:75%;-webkit-text-stroke: 0.6px var(--btp); text-transform: uppercase">up</span> 2001</div>',
+        /* GRAND MÉCHANT LOUP */ /* '<div style="margin-top:-0.155em; line-height:1.3 !important">G<span style="font-family: houdini98; font-size:75%;-webkit-text-stroke: 0.6px var(--btp); text-transform: uppercase">rand</span> M<span style="font-family: houdini98; font-size:75%;-webkit-text-stroke: 0.6px var(--btp); text-transform: uppercase">échant</span> L<span style="font-family: houdini98; font-size:75%;-webkit-text-stroke: 0.6px var(--btp); text-transform: uppercase">oulou</span></div>', */
+        /* lather. rinse. repeat. */ '<span="font-family: houdini98">lather. rinse. repeat.</span>',
+        '¿Dónde está?',
+
+        /* 'Un nouvel opérateur.', */
+        
+        
+        /* 'WHAT DO THEY CALL<br>THE “⸿” SYMBOL?',
+        /* 'AND THIS “†” SYMBOL?',
+        /* 'AND THAT “‡” SYMBOL?', */
+        
+        
+        /* HOUDINI! */ '<span class="mobil" style="font-family: houdini98; font-size: 28vw;">HOUDINI!</span><span class="dsktp" style="font-family: houdini98; font-size: 2.5em;">HOUDINI!</span>',
+        /* BIG */ '<span class="mobil" style="font-family: houdini98; font-size: 70vw;">BIG</span><span class="dsktp" style="font-family: houdini98; font-size: 6em;">BIG</span>',
+        /* FAT */ '<span class="mobil" style="font-family: houdini98; font-size: 70vw;">FAT</span><span class="dsktp" style="font-family: houdini98; font-size: 6em;">FAT</span>',
+        /* LIAR */'<span class="mobil" style="font-family: houdini98; font-size: 55vw;">LIAR</span><span class="dsktp" style="font-family: houdini98; font-size: 6em;">LIAR</span>',
+        /* ₤ */ '<span class="mobil" style="font-family: houdini98; font-size: 72vw;">₤</span><span class="dsktp" style="font-family: houdini85; font-size: 6em;">₤</span>',
+        /* FORTE */ '<span class="mobil" style="font-family: houdini85; margin-top:-1rem;font-size: 2.2em;">FORTE !</span><span class="dsktp" style="font-family: houdini85; font-size: 2.5em;">FORTE !</span>',
+        /* FORTE */ /* '<div class="dsktp" style="font-family: houdini85; margin-top:-4rem;font-size: 4em;">FORTE !</div><div class="mobil" style="font-family: houdini85; margin-top:-4rem;font-size: 3.6em;">FORTE !</div>', */
+
+        ];
+          </script>
+      <tbody><tr><td id="m1"><script>document.write(getRandomSentence());</script></td></tr></tbody>
+      </table>
+
+    <div><p class="mobil forwide" style="text-align:center; margin-bottom: 2.4em;"><a href="/images/houdini/houdini_specimen.html" class="specimen">specimen</a></p></div>
+
+  <!-- <div class="details">
+  <p>Houdini couvre l’ensemble de l’alphabet latin étendu, ainsi que:
+  <br>× 3 versions localisées (catalane, hongroise, turque)
+  <br>× 2 nuances de graisse (85 et 98)
+  <br>× 2 jeux de chiffres (proportionnels et tabulaires)
+  <br>+ nombreuses variantes stylistiques OpenType</p></div> -->
+  <div class="btw"><div class="btw-title">à propos</div>
+  <ul>
+    <li><p>Houdini se situe dans la li­gnée des ca­rac­tères géo­mé­tri­ques ger­ma­ni­ques. Il est re­com­man­dé dans la com­po­si­tion de la si­gna­lé­tique et des titres au­tant que dans les corps plus petits lors­qu’il s’agit de con­den­ser l’in­for­ma­tion en un mi­ni­mum d’espace.</p></li>
+    <li><p>Houdini est fourni en deux nuances de graisse (85 et 98) pour donner les meilleurs résultats sur les appareils haut-de-gamme comme sur les imprimantes de bureau.</p></li>
+    </ul></div>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  </div>
+
+<a class="nav" href="milou.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="minusculissime.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="milou.html"><span class="arrow">←</span>&nbsp;milou</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="typographie.html">chapitre</a></div>
+<div><a class="box-link" href="minusculissime.html">Le plus petit caractère mondial&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+  const toggleMenu2 = function(e) {
+const element = document.querySelector(".sticky")
+    , menu = document.querySelector("#menu")
+    , body = document.querySelector("body");
+
+// click anychere on page
+if (body.classList.contains("menu_open")
+&& e.target.id === "content") {
+  body.classList.toggle("menu_open");
+  setTimeout(function() {
+    menu.style.visibility = "hidden";
+  }, 600);
+}
+
+if (e.target === element || e.target.parentNode === element) {
+  body.classList.toggle("menu_open");
+  if (body.classList.contains("menu_open")) {
+    menu.style.visibility = "visible";
+  } else {
+    setTimeout(function() {
+      menu.style.visibility = "hidden";
+    }, 600);
+  }
+}
+};
+document.addEventListener("click", toggleMenu2);
+
+</script>
+</body>
+</html>
+

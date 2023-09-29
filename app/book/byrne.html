@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <script type="text/javascript" src="core/zooom.js"></script>
+
+  <style>
+
+
+div.volume {
+        font-family: dolly-caps; 
+        text-transform: lowercase;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.volume > div:nth-child(1) {
+        font-size: 130%;
+        margin-bottom: 0.66rem;
+        }
+    div.volume > div:nth-child(2) {
+        font-size: 110%;
+        }
+
+    div.volume + div.id > hr { margin-top: 1.4em; }
+    
+
+
+      entry {font-feature-settings: "lnum" !important; hyphens: auto;}
+      a.none { font-feature-settings: "lnum"; }
+      div.entry {margin-bottom: 1.4em;}
+      img#f12.zooom-img {width: 50vw;}
+
+      aside image-caption::before { content: none;}
+      aside image-caption {font-family: dolly; color: var(--txt); text-align: inherit;}
+      @media all and (max-width:520px) { aside image-caption {text-align: center; }}
+
+      #opa:hover {opacity: 1 !important; transition-duration: 0.2s !important; transition-property: opacity;}
+      #oopa {transition-duration: 2s !important; transition-property: opacity;}
+ 
+
+
+
+
+    div.id {text-align: center;}
+    div.id > div:nth-child(2) {
+      font-family: dolly-caps;
+      /* font-size: 105%; */
+      font-size: 120%;
+      letter-spacing: 0.05rem;
+      padding-top: 3.66rem;
+      padding-top: 2rem;
+      text-transform: lowercase;      
+      margin-bottom: 2.8rem;
+      }
+    div.id a { display: block; }
+    div.id a:hover { background: none; color: var(--txt); }
+    div.id hr {
+      border: none;
+      width:10%;
+      height: 1px;
+      margin: auto;
+      margin-top: 3.8rem;
+      }
+
+      .head {margin-bottom: 1em; text-align: center; font-size: 120%; font-weight: normal; margin-top: 0; padding-top: calc(3.66rem + 2rem - 2rem); margin-bottom: 2.8rem;}
+      .head > a:hover:before {
+    position: relative;
+    color: var(--act);
+    font-weight: normal;
+    content: "# ";
+    margin-right: 0.10em;
+    top: -0.08em;
+    font-size: 90%;
+    visibility: hidden;
+    }
+    img {filter: none;}
+    li {display:flex;}
+    li img {/* display: inline-block; */ width: 4rem; padding: 0 0 0 1em; margin-top:-2em ; /*  float: right; */}
+
+
+    div.id + div {display: flex;}
+    img.pp {
+      float:left;
+      width:4.7em;
+      position:relative;
+      top:0.2em;
+      margin-right:0.4em;
+      padding-left: 0.1em;
+      /* left:-0.2em; */
+      margin-bottom:1em;
+      pointer-events: none;
+      transition: none;
+    }
+    [dark="true"] img.pp {filter: invert(1) opacity(0.9);}
+    .pfig { width: 115% ; margin-top: -1rem; display: flex; float: right;}
+    .pfig img {}
+    .id + div  {margin-bottom: 2em;}
+    p {margin-bottom: 0.4em;}
+    c2sc {font-family: dolly-caps;}
+    greek {font-family: bookerly; font-size: 110%; vertical-align: -0.13em; line-height: 0; position: relative; display: inline-block; text-indent: 0 !important;}
+
+    @media all and (max-width:520px) { 
+      div.id + div {display: flex;  flex-direction: column;}
+      .pfig { width: auto ; display: flex; margin: 2rem 4em;}
+
+    }
+
+
+    
+        </style>
+
+  <title>The first six books of the Elements of Euclid | @mnrv</title>
+</head>
+<body id="body" class="">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="container"><div class="item one"></div></div>
+
+
+<div id="content">
+
+<!--   <topic id="lightswitch" class="commentary">Trattato di sociologia generale</topic>
+ -->
+ <!-- <title-block id="lightswitch" class="mobil" style="padding-top: 0; border-top: none;"><topic id="lightswitch" style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Les six premiers livres des Éléments</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);"></short-rule></title-block>
+ <title-block class="dsktp"><topic></topic></title-block>
+ <title-block id="opa" class="dsktp" style="position: fixed; left: inherit; transform: translate(-126.5%, 2%); padding-top: 0.1rem; border-top: none"><topic id="lightswitch" style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Le premier livre des Éléments</topic><short-rule></short-rule></title-block>
+  --><topic id="lightswitch" class="commentary"><from id="lightswitch">The first six books of <br>the Elements of Euclid </from><by id="lightswitch" style="font-family: Scalasans; font-style: italic; text-transform: none; font-size: 50%;">by&nbsp;Oliver&nbsp;Byrne</by></topic>
+
+ <div class="id"><hr><div id="def" style="font-size: 105%; text-transform: none; font-family: dolly; text-align: ;"><a href="#def"><strong>Definitions</strong></a></div></div>
+
+<table class="definitions">
+  <style>
+    .definitions {margin-left: -0.16em; }
+    .definitions td:first-of-type {width: 2.3rem; vertical-align: text-top; font-weight: bold; font-family: dolly-caps; text-transform: lowercase;}
+    .definitions td:nth-child(2) {vertical-align: text-top;}
+    .definitions tr td:nth-child(3) {text-align: right;}
+    .definitions img {width: 4rem !important; text-align: right;}
+    </style>
+  <tbody>
+    <tr><td>1.</td><td><p>A <em>point</em> is that which has no parts.</p></td></tr>
+    <tr><td>2.</td><td><p>A <em>line</em> is length with­out breadth.</p></td></tr>
+    <tr><td>3.</td><td><p>The ex­trem­i­ties of a line are points.</p></td></tr>
+    <tr><td>4.</td><td><p>A straight or right line is that which lies even­ly be­tween its ex­trem­i­ties.</p></td></tr>
+    <tr><td>5.</td><td><p>A sur­face is that which has length and breadth only.</p></td></tr>
+    <tr><td>6.</td><td><p>The ex­trem­i­ties of a sur­face are lines.</p></td></tr>
+    <tr><td>7.</td><td><p>A plane sur­face is that which lies even­ly be­tween its ex­trem­i­ties.</p></td></tr>
+    <tr><td>8.</td><td><p>A plane an­gle is the in­cli­na­tion of two lines to one an­oth­er, in a plane, which meet to­geth­er, but are not in the same di­rec­tion.</p></td></tr>
+    <tr><td>9.</td><td><p>A plane rec­ti­lin­ear an­gle is the in­cli­na­tion of two straight lines to one an­oth­er, which meet to­geth­er, but are not in the same straight line.</p></td><td><img style="width: 4rem;" src="images/byrne/009.svg"></td></tr>
+    <tr><td>10.</td><td><p>When one straight line stand­ing on an­oth­er straight line makes the ad­ja­cent an­gles equal, each of these an­gles is called a right <em>an­gle</em>, and each of these lines is said to be <em>per­pen­dic­ular</em> to the oth­er.</p></td><td><img style="width: 4rem;" src="images/byrne/010.svg"></td></tr>
+    <tr><td>11.</td><td><p>An ob­tuse an­gle is an an­gle great­er than a right angle.</p></td><td><img src="images/byrne/011.svg"></td></tr>
+    <tr><td>12.</td><td><p>An acute an­gle is less than a right an­gle.</p></td><td><img src="images/byrne/012.svg"></td></tr>
+    <tr><td>13.</td><td><p>A term or bound­ary is the ex­trem­ity of any thing.</p></td></tr>
+    <tr><td>14.</td><td><p>A fig­ure is a sur­face en­closed on all sides by a line or lines.</p></td></tr>
+    <tr><td>15.</td><td><p>A cir­cle is a plane fig­ure, bound­ed by one con­tin­ued line, called its cir­cum­fer­ence or pe­riph­ery; and hav­ing a cer­tain point with­in it, from which all straight lines drawn to its cir­cum­fer­ence are equal.</p></td><td><img src="images/byrne/015.svg"></td></tr>
+    <tr><td>16.</td><td><p>This point (from which the equal lines are drawn) is called the cen­tre of the cir­cle.</p></td></tr>
+    <tr><td>17.</td><td><p>A di­am­e­ter of a cir­cle is a straight line drawn through the cen­tre, ter­mi­nat­ed both ways in the cir­cum­fer­ence.</p></td><td><img src="images/byrne/017.svg"></td></tr>
+    <tr><td>18.</td><td><p>A sem­i­cir­cle is the fig­ure con­tained by the di­am­e­ter, and the part of the cir­cle cut off by the di­am­e­ter.</p></td><td><img src="images/byrne/018.svg"></td></tr>
+    <tr><td>19.</td><td><p>A seg­ment of a cir­cle is a fig­ure con­tained by a straight line, and the part of the cir­cum­fer­ence which it cuts off.</p></td><td><img style="padding-left: 0.4em; width: 3.5em;" src="images/byrne/019.svg"></td></tr>
+    <tr><td>20.</td><td><p>A fig­ure con­tained by straight lines only, is called a rec­ti­lin­ear fig­ure.</p></td></tr>
+    <tr><td>21.</td><td><p>A tri­an­gle is a rec­ti­lin­ear fig­ure in­clud­ed by three sides.</p></td></tr>
+    <tr><td>22.</td><td><p>A quad­ri­lat­eral fig­ure is one which is bound­ed by four sides. The straight lines <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"> and <img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"> con­nect­ing the ver­ti­ces of the op­po­site an­gles of a quad­ri­lat­eral fig­ure, are called its di­ag­o­nal.</p></td><td><img src="images/byrne/022.svg"></td></tr>
+    <tr><td>23.</td><td><p>A pol­y­gon is a rec­ti­lin­ear fig­ure bound­ed by more than four sides.</p></td></tr>
+    <tr><td>24.</td><td><p>A tri­an­gle whose three sides are equal, is said to be equi­lat­er­al.</p></td><td><img src="images/byrne/024.svg"></td></tr>
+    <tr><td>25.</td><td><p>A tri­an­gle which has only two sides equal is called an isos­ce­les tri­an­gle.</p></td><td><img src="images/byrne/025.svg"></td></tr>
+    <tr><td>26.</td><td><p>A sca­lene tri­an­gle is one which has no two sides equal.</p></td></tr>
+    <tr><td>27.</td><td><p>A right an­gled tri­an­gle is that which has a right an­gle.</p></td><td><img src="images/byrne/027.svg"></td></tr>
+    <tr><td>28.</td><td><p>An ob­tuse an­gled tri­an­gle is that which has an ob­tuse an­gle.</p></td><td><img src="images/byrne/028.svg"></td></tr>
+    <tr><td>29.</td><td><p>An acute an­gled tri­an­gle is that which has three acute an­gles.</p></td><td><img src="images/byrne/029.svg"></td></tr>
+    <tr><td>30.</td><td><p>Of four­sid­ed fig­ures, a square is that which has all its sides equal, and all its an­gles right an­gles.</p></td><td><img src="images/byrne/030.svg"></td></tr>
+    <tr><td>31.</td><td><p>A rhom­bus is that which has all its sides equal, but its an­gles are not right an­gles.</p></td><td><img src="images/byrne/031.svg"></td></tr>
+    <tr><td>32.</td><td><p>An ob­long is that which has all its an­gles right an­gles, but has not all its sides equal.</p></td><td><img src="images/byrne/032.svg"></td></tr>
+    <tr><td>33.</td><td><p>A rhom­boid is that which has its op­po­site sides equal to one an­oth­er, but all its sides are not equal, nor its an­gles right an­gles.</p></td><td><img style="width: 4rem;" src="images/byrne/033.svg"></td></tr>
+    <tr><td>34.</td><td><p>All oth­er quad­ri­lat­eral fig­ures are called tra­pe­zi­ums.</p></td></tr>
+    <tr><td>35.</td><td><p>Par­al­lel straight lines are such as are in the same plane, and which be­ing pro­duced con­tin­u­ally in both di­rec­tions, would nev­er meet.</p></td><td><img style="width: 4rem;" src="images/byrne/035.svg"></td></tr>
+  </tbody>
+  </table>
+
+
+<div class="id"><hr><div id="post" style="font-size: 105%; text-transform: none; font-family: dolly; text-align: ;"><a href="#post"><strong>Postulates</strong></a></div></div>
+
+<table class="definitions">
+  <style>
+    .definitions {margin-left: -0.16em; }
+    .definitions td:first-of-type {width: 2.3rem; vertical-align: text-top; font-weight: bold; font-family: dolly-caps; text-transform: lowercase;}
+    .definitions td:nth-child(2) {vertical-align: text-top;}</style>
+<tbody>
+  <tr><td>I.</td><td><p>Let it be grant­ed that a straight line may be drawn from any one point to any oth­er point.</p></td></tr>
+  <tr><td>II.</td><td><p>Let it be grant­ed that a fi­nite straight line may be pro­duced to any length in a straight line.</p></td></tr>
+  <tr><td>III.</td><td><p>Let it be grant­ed that a cir­cle may be de­scribed with any cen­tre at any dis­tance from that cen­tre.</p></td></tr>
+  
+</tbody>
+</table>
+<div class="id"><hr><div id="ax" style="font-size: 105%; text-transform: none; font-family: dolly; text-align: ;"><a href="#ax"><strong>Axioms</strong></a></div></div>
+
+<table class="definitions">
+  <style>
+    .definitions {margin-left: -0.16em; }
+    .definitions td:first-of-type {width: 2.3rem; vertical-align: text-top; font-weight: bold; font-family: dolly-caps; text-transform: lowercase;}
+    .definitions td:nth-child(2) {vertical-align: text-top;}</style>
+<tbody>
+  <tr><td>I.</td><td colspan="2"><p>Mag­ni­tudes which are equal to the same are equal to each oth­er.</p></td></tr>
+  <tr><td>II.</td><td colspan="2"><p>If equals be add­ed to equals the sums will be equal.</p></td></tr>
+  <tr><td>III.</td><td colspan="2"><p>If equals be tak­en away from equals the re­main­ders will be equal.</p></td></tr>
+  <tr><td>IV.</td><td colspan="2"><p>If equals be add­ed to une­quals the sums will be une­qual.</p></td></tr>
+  <tr><td>V.</td><td colspan="2"><p>If equals be tak­en away from une­quals the re­main­ders will be une­qual.</p></td></tr>
+  <tr><td>VI.</td><td colspan="2"><p>The dou­bles of the same or equal mag­ni­tudes are equal.</p></td></tr>
+  <tr><td>VII.</td><td colspan="2"><p>The halves of the same or equal mag­ni­tudes are equal.</p></td></tr>
+  <tr><td>VIII.</td><td colspan="2"><p>The mag­ni­tudes which co­in­cide with one an­oth­er, or ex­act­ly fill the same space, are equal.</p></td></tr>
+  <tr><td>IX.</td><td><p>The whole is great­er than its part.</p></td></tr>
+  <tr><td>X.</td><td><p>Two straight lines can­not in­clude a space.</p></td></tr>
+  <tr><td>XI.</td><td><p>All right an­gles are equal.</p></td></tr>
+  <tr><td>XII.</td><td><p>If two straight lines <nobr>(<img style="width: 4rem;vertical-align: middle" src="images/byrne/linesredblue.svg">)</nobr> meet a third straight line <nobr>(<img style="vertical-align: middle; width: 4rem;" src="images/byrne/lineblack.svg">)</nobr> so as to make the two in­te­ri­or an­gles <nobr>( <img style="width: 1.4rem !important; vertical-align: middle" src="images/byrne/circlequarteryellow.svg"></nobr> and <nobr><img style="width: 1.4rem !important;vertical-align: middle " src="images/byrne/circlequarterred.svg"> )</nobr> on the same side less than two straight an­gles, these two straight lines will meet if they be pro­duced on that side on which the an­gles are less than two right an­gles.</p></td><td><img style="width: 6rem; margin-top: -1.4rem;" src="images/byrne/ax12.svg"></td></tr>
+
+</tbody>
+</table>
+
+
+
+<div class="id"><hr><div id="p1"><a href="#p1">Prop. I. Prob.</a></div></div>
+
+  <div><div><p><img class="pp" src="images/byrne/O.svg" alt="N"><em><c2sc>N</c2sc> a giv­en fi­nite straight line <nobr>(<img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg">)</nobr> to de­scribe an equi­lat­eral triangle.</em></p></div>
+    <div class="pfig"><img src="images/byrne/p1.svg" alt="P"></div></div>
+  <div>
+    <p>Describe <img style="padding: 0 0.5em 0 0.5em; width: 4em; vertical-align: middle;" src="images/byrne/circlea.svg"> and <img style="padding: 0 0.5em 0 0.5em; width: 4em; vertical-align: middle;" src="images/byrne/circleb.svg"> (post. III) ;
+    <p>draw <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineyellow.svg"> and <img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"> (post. I).
+    <p>Then will <img style="vertical-align: -1.2em; width: 4em;" src="images/byrne/triangle.svg"> be equilateral.
+    <table><tbody>
+      <tr style="height: 2rem;">
+        <td style="text-align: left;">For</td>
+        <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg"></td>
+        <td><greek>=</greek></td>
+        <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineyellow.svg"></td>
+        <td>(def. 15) ;</td>
+      </tr>
+      <tr style="height: 2rem;">
+        <td style="text-align: left;">and</td>
+        <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg"></td>
+        <td><greek>=</greek></td>
+        <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"></td>
+        <td>(def. 15) ;</td>
+      </tr>
+      <tr style="height: 2rem;">
+        <td style="text-align: left;"><greek>∴</greek></td>
+        <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineyellow.svg"></td>
+        <td><greek>=</greek></td>
+        <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"></td>
+        <td>(ax. I) ;</td>
+      </tr>
+    </tbody></table>
+    <p>and therefore <img style="vertical-align: -1.2em; width: 4em;" src="images/byrne/triangle.svg"> is the equilateral triangle required.</p>
+    <p style="float: right;">Q. E. D.</p>
+  </div>
+  <div class="id"><hr><div id="p2"><a href="#p2">Prop. II. Prob.</a></div></div>
+
+<div>
+  <div>
+  <p><img class="pp" src="images/byrne/F.svg" alt="P"><em><c2sc>ROM</c2sc> a giv­en point <nobr>(<img style="vertical-align: middle; width: 4em;" src="images/byrne/lineredblue.svg">),</nobr> to draw a straight line equal to a given straight line <nobr>(<img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg">)</nobr>.</em></p>
+</div>
+<div class="pfig" style="width:100% ;"><img src="images/byrne/p2.svg" alt="P"></div>
+</div>
+<div>
+  <p>Draw <img style="vertical-align: middle; width: 4em;" src="images/byrne/linedotblack.svg"> (post. I), describe <img style="vertical-align: -1.2em; width: 4em;" src="images/byrne/triangleb.svg"> (pr. I.I),
+  <p>produce <img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"> (post. II),
+  <p>describe <img style="vertical-align: middle; width: 4em; margin-left: -0.2em; margin-right: 0.2em;" src="images/byrne/circlec.svg"> (post. III), <nobr>and <img style="vertical-align: middle; width: 5em; margin: 0 0.3em;" src="images/byrne/circled.svg"> (post.&nbsp;III) ;</nobr>
+  <p>produce <img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"> (post. II), then <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"> is the line required.
+    <table>
+      <!-- <style>td {border: 1px solid #020e17;}</style> -->
+      <tbody>
+        <tr style="height: 2rem;">
+          <td style="text-align: left;">For</td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineyellowred.svg"></td>
+          <td><greek>=</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineredbluea.svg"> (def. 15),</td>
+          <td></td>
+        </tr>
+        <tr style="height: 2rem;">
+          <td style="text-align: left;">and</td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"></td>
+          <td><greek>=</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"> (const.),</td>
+          <td></td>
+        </tr>
+        <tr style="height: 2rem;">
+          <td style="text-align: left;"><greek>∴</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineyellow.svg"></td>
+          <td><greek>=</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"> (ax. III),</td>
+          <td><span style="visibility: hidden;">————————</span></td>
+        </tr>
+        <tr style="height: 2rem;">
+          <td colspan="5" style="text-align: left;">but (def. 15) <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg"> <greek>=</greek> <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineyellow.svg"> <greek>=</greek> <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"> ;</td>
+        </tr>
+        <tr style="height: 2rem;">
+          <td colspan="5" style="text-align: left;"><greek>∴</greek> <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"> drawn from the given point <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineredblue.svg"></td>
+        </tr>
+        <tr style="height: 2rem;">
+          <td colspan="5" style="text-align: left;">is equal to the given line <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg">.</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p style="float: right;">Q. E. D.</p>
+</div>
+<div class="id"><hr><div id="p3"><a href="#p3">Prop. III. Prob.</a></div></div>
+  <div><div><p><img class="pp" src="images/byrne/F.svg" alt="P"><em><c2sc>ROM</c2sc> the greater <nobr>(<img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblackdot.svg">),</nobr> of two given straight lines, to cut off a part equal to the less <nobr>(<img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg">)</nobr>.</em></p></div>
+    <div class="pfig"><img src="images/byrne/p3.svg" alt="P"></div></div>
+  <div>
+    <p>Draw <img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"> <greek>=</greek> <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"> (pr. 2.) ;
+    <p>describe <nobr><img style="vertical-align: middle; width: 4em;" src="images/byrne/circlee.svg"> (post. 3.),</nobr>
+    <p>then <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"> <greek>=</greek> <img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg">.</p>
+    <table><tbody>
+        <tr style="height: 2rem;">
+          <td style="text-align: left;">For</td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"></td>
+          <td><greek>=</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg"></td>
+          <td>(def. 15.),</td>
+        </tr>
+        <tr style="height: 2rem;">
+          <td style="text-align: left;">and</td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"></td>
+          <td><greek>=</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/linered.svg"></td>
+          <td>(const.) ;</td>
+        </tr>
+        <tr style="height: 2rem;">
+          <td style="text-align: left;"><greek>∴</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblue.svg"></td>
+          <td><greek>=</greek></td>
+          <td><img style="vertical-align: middle; width: 4em;" src="images/byrne/lineblack.svg"></td>
+          <td>(ax. I.).</td>
+        </tr>
+      </tbody></table>
+    <p style="float: right;">Q. E. D.</p>
+  </div>
+
+  
+
+
+
+  <cite>Oliver Byrne, <in>The First Six Books of the Elements of Euclid</in>, <en>1847</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="#"><div id="prev" class="side"></div></a>
+<a class="nav" href="#"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="#"><span class="arrow">←</span>&nbsp;</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="#">&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+  var opa = document.getElementById('opa');
+  window.addEventListener('scroll', function() {
+    opa.style.transitionDuration = "0s"
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    opa.style.opacity = Math.max(0.05, Math.min(1, -scroll / 400 + 1));
+});
+</script>
+</body>
+</html>

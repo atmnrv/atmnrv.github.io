@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/Bookerly.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+    #content > p {margin-bottom: 0; text-align: justify;}
+    #content > p + p {text-indent: 1.6em;}
+    .subhead {margin-bottom: 1em; text-align: center; font-size: 120%; font-weight: normal; margin-top: 0; padding-top: calc(3.66rem + 2rem - 2rem); margin-bottom: 2.8rem;}
+    hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 3.8rem;
+
+        /* margin-top: 4rem; */
+        /* margin-bottom: 1.4em; */
+        }
+    greek {
+        font-family: bookerly;
+        font-size: 95%;
+        line-height: 0;
+
+        position: relative;
+        display: inline-block;
+        text-indent: 0 !important;
+      /*border-bottom: 1px dotted black;*/
+        }
+    greek:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+        }
+    greek .tooltiptext {
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        align-items: flex; /* center vertically */
+        justify-content: center; /* center horizontally */
+        font-family: scalasans-caps;
+        text-align: center;
+        color: #fff;
+        background-color: #555;
+        width: 4rem;
+        height: 1.6rem;
+        border-radius: 0.25rem;
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 1;
+        left: -1.6rem;
+        bottom: 1em;
+        transition: opacity 0.3s;
+        line-height: 2em;
+        pointer-events: none;
+        }
+
+    greek:hover .tooltiptext::after {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        top: 100%;
+        left: 50%;
+        margin-left: -.25rem;
+        border-width: .25rem;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+        }
+
+    /* #navtable > div + div { border-left: none; border-top: none;} */
+    .subhead > a:hover:before {
+    position: relative;
+    color: var(--act);
+    font-weight: normal;
+    content: "# ";
+    margin-right: 0.10em;
+    top: -0.08em;
+    font-size: 90%;
+    visibility: hidden;
+    }
+    #content > p > c2sc {font-family: dolly-caps;}
+    #opa:hover {opacity: 1 !important; transition-duration: 0.2s !important; transition-property: opacity;}
+
+
+    </style>
+            <style>
+
+              html:not([wide]) title-block.dsktp {
+                 position: initial;
+                 margin-left: -9rem;
+               }
+                   </style>
+  
+<style>
+  title-block.absolute {
+    position: relative;
+    margin-left: -12rem;
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+  title-block.sticky {
+    position: sticky;
+    margin-left: -9.5rem;
+    top: 3.2rem;
+    border-top: none;
+    padding-top: 0.5rem;
+    padding-top: 0.1em;
+  }
+  .sticky topic {
+    font-family: display;
+    font-family: "Avocado 14";
+    text-transform: lowercase;
+    font-weight: normal;
+    font-size: 210%;
+    line-height: 0.8;
+    margin-bottom: 0.67em;
+    margin-bottom: 0.4em;
+  }
+  html:not([wide]) title-block.sticky:hover {
+    opacity: 1 !important;
+    transition-duration: .2s !important;
+    transition-property: opacity;
+  }
+  @media all and (max-width:520px) {
+    title-block.absolute {
+    display: none;
+  }
+  title-block.sticky {
+    display: none;
+  }
+  }
+  
+  [wide] title-block.absolute {
+    margin-left: 0;
+  }
+  [wide] title-block.sticky {
+    position: revert;
+    margin-left:0;
+    text-align: right;
+    font-size: 345%;
+    /* min-height: 36rem; */
+    margin-bottom: 10rem;
+  }
+  
+  [wide] title-block.sticky short-rule {
+  font-size: 87%;
+  }
+  @media not all and (max-width:520px) {
+    html:not([wide]) #bullet {
+    display: none;
+    }
+    html:not([wide]) title-block.sticky {
+    background: var(--bkg);
+    }
+  }
+  </style>
+  
+
+  <title>Simboliqe Religieuse | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>Simboliqe religieuse</topic>
+    <short-rule>Cours d’istoire universèle professé à l’otel de ville de Paris</short-rule>
+  </title-block>
+  <title-block class="mobil" style="padding-top: 0; border-top: none;"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Simboliqe religieuse</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);">Cours d’istoire universèle professé à l’otel de ville de Paris</short-rule></title-block>
+
+  <!-- <title-block class="mobil" style="padding-top: 0; border-top: none;"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">simboliqe religieuse</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);">Cours d’istoire universèle professé à l’otel de ville de Paris</short-rule></title-block>
+  <title-block class="dsktp"><topic></topic></title-block>
+  <title-block id="opa" class="dsktp" style="position: fixed; left: inherit; transform: translate(0, 2%); padding-top: 0.1rem; border-top: none"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">simboliqe religieuse</topic><short-rule>Cours d’istoire universèle professé à l’otel de ville de Paris</short-rule></title-block> -->
+ 
+ <!-- <title-block class="mobil" style="/* padding-top: 0; border-top: none; */"><topic id="lightswitch" style="/* font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8; */">Simboliqe religieuse</topic><short-rule style="/* padding-bottom: 1em; border-bottom: 1px solid var(--txt); */">Cours d’istoire universèle professé à l’otel de ville de Paris</short-rule></title-block>
+  <title-block class="dsktp"><topic></topic></title-block>
+  <title-block class="dsktp" id="opa" style="position: fixed; left: inherit; transform: translate(-126.5%, 2%); padding-top: 0.4rem; border-top: none"><topic id="lightswitch" style="/* font-family: display; text-transform: lowercase; font-weight: normal; font-size: 210%; line-height: 0.8; */">Simboliqe religieuse</topic><short-rule>Cours d’istoire universèle professé à l’otel de ville de Paris</short-rule></title-block>
+ -->
+  <div class="gap" style="height: 4.34rem"></div><ul class="children"></ul>
+  <div class="subhead" style="/* padding-top: 4rem; margin-bottom: 2em; */" id="lois"><a href="#lois">les lois éternelles</a></div>
+  <p>C’est chez les Grecs qe le poli­téisme a trou­vé sa forme la plus par­faite, mais le sanskrit, qi est la langue des aînés de notre race, a conser­vé la plus an­ciène ex­pres­sion du di­vin. Les Aryas de l’In­de invo­qaient les Dé­vas, c’es­t-à-dire les Lu­mières, de la ra­cine <i>div</i>, bril­ler. Ce mot se re­trouve dans le latin <i>di­vus</i>, qi a le sens de di­vin, et dans le grec <greek>δῖος<span class="tooltiptext">dîos</span></greek>, qi si­gni­fie bril­lant, il­lustre ; mais c’est à tort qe les lin­guistes ont vou­lu rata­cher le mot <greek>Θεός<span class="tooltiptext">Theós</span></greek> à la même ra­cine. Omère dit sou­vent <greek>δῖα θεαῶν<span class="tooltiptext" style="width: 6rem;">dîa&nbsp;theaôn</span></greek>, la bril­lante ou il­lustre Déesse, il ne dit pas <greek>θεῖα θεαῶν<span class="tooltiptext" style="width: 7rem">theîa theaôn</span></greek>, la di­vine Déesse, ce qi se­rait un pléo­nasme. La véri­table éti­mo­lo­gie du mot grec <greek>Θεός<span class="tooltiptext">Theós</span></greek> a été do­née par Èro­dote. Se­lon lui, les Pé­las­ges, les Grecs pri­mi­tifs, avant de co­naître les noms propres des Dieus, les ape­laient en gé­né­ral <greek>θεούς<span class="tooltiptext">theoús</span></greek>, c’est-à-dire les ordo­na­teurs, les lois, à cause de l’ordre q’ils éta­blissent dans l’uni­vers, <greek>ὡς ϰόσ­μῳ</greek><greek> θέντες τὰ πάντα<span class="tooltiptext" style="width:14rem">hōs&nbsp;kósmōi&nbsp;théntes&nbsp;tá&nbsp;pánta</span></greek>. La ra­cine de <greek>θεός<span class="tooltiptext">theós</span></greek> est donc <greek>θέω<span class="tooltiptext">théō</span></greek>, <greek>τίθημι<span style="font-family: dolly; font-size: 0.95rem;">,</span>​<span class="tooltiptext">títhēmi</span></greek>​ éta­blir, po­ser, fon­der, ré­gler, d’où on peut tirer aus­si <greek>Θέμις<span class="tooltiptext">Thémis</span></greek>, le prin­cipe de l’ordre, <greek>θεσμός<span class="tooltiptext">thesmós</span></greek>, la règle éta­blie, <greek>θητές<span class="tooltiptext">thễtés</span></greek>, les tra­vail­leurs qi consti­tuent la cité, <greek>Θησεύς<span class="tooltiptext">Thēseús</span></greek>, nom propre du fon­da­teur de la dé­mo­cra­cie d’Athènes. La no­cion de l’ordre uni­ver­sel est par­ti­cu­lière à la Grèce. Dans l’alter­nance ré­gu­lière des sai­sons, dans l’éter­nèle sin­fo­nie du Cos­mos, les Grecs trou­vèrent la ré­vé­la­cion de la loi. Les Olym­piens ne sont pas les lu­mières du ciel, come les Dieus vé­diqes, ils sont les lois d’ordre, de pro­por­cion et d’ar­mo­nie qi se ré­ve­lent à nos sens par la beau­té, à notre es­prit par la jus­tice. C’est la reli­gion qi conve­nait à une race ar­tiste et répu­bli­caine. L’art grec et la mo­rale grèqe sont les consé­qences ma­gni­fiqes des prin­cipes fon­da­men­taus de l’El­lènisme, la plu­ra­lité des causes, l’indé­pen­dance des forces et l’ar­mo­nie des lois.</p>
+  <p>Les causes in­co­nues qi sont à la fois les lois fi­siqes du monde et les lois mo­rales des so­cié­tés, l’ome les conçoit à son image parce q’il trouve en lui le tipe d’une vo­lon­té libre, d’une loi qi se co­naît èle­même. Ain­si, au lieu de cher­cher, come en Orient, un idéal di­vin dans la na­ture exté­rieure ou au-des­sus d’èle, l’ome le trouve en lui­même. Cet idéal, qi se ré­vèle aux sens par la beau­té, à l’es­prit par la conscience du droit, il en re­vêt, come d’un man­teau de lu­mière, les prin­cipes ca­chés de l’ordre uni­ver­sel, qi sont les Dieus, c’est ce qe la langue filo­so­fiqe apè­le antro­po­mor­fisme. Entre les Dieus et l’ome, la mort met un abîme qi semble in­fran­chis­sable ; mais la reli­gion grèqe comble cet abîme par le dogme ras­su­rant de l’apo­téose. La Grèce avait un sen­ti­ment trop pro­fond de la di­gni­té umaine pour ne pas dé­ve­lo­per cette noble croyance de l’im­mor­ta­lité de l’âme qi, par le culte des morts, ra­tache le pré­sent et l’ave­nir au pas­sé. Tan­dis qe les pa­triarches bi­bliqes s’en­dor­ment à côté de leurs pères, les hé­ros grecs conservent au-delà du tom­beau une vie indé­pen­dante. Pro­tec­teurs des fa­milles, gar­diens vigi­lants des ci­tés, ils veillent sur leurs descen­dants, et le peuple qi les in­voqe le ma­tin des ba­tailles onore leurs tom­beaus come des temples et mèle leurs louanges à celles des Dieus.</p>
+  <p>On a cru long­temps qe les reli­gions étaient l’œuvre des prêtres et qe la téo­cra­cie ré­pon­dait à l’en­fance des so­cié­tés. C’est  une double er­reur qe l’étude scien­ti­fiqe des reli­gions ne per­met plus de sou­te­nir. La fa­mille est la mo­lé­cule de toutes les so­cié­tés umaines ; ce q’on trouve à l’ori­gine de l’is­toire des peuples, ce n’est pas la téo­cra­cie, c’est l’état pa­triar­cal. Les reli­gions ne sont pas plus l’œuvre  qe les lan­gues ne sont cèle des gram­mai­riens. L’ima­gi­na­cion po­pu­laire a créé la mi­to­lo­gie, langue na­tu­rèle des reli­gions, come èle a créé la langue gram­ma­ti­cale. Spon­ta­né­ment, come l’oi­seau chante, èle done aus croyances nais­santes la forme poé­tiqe du sim­bole, come èle ex­prime par des images les idées gé­né­rales qi s’éveillent dans l’es­prit au contact des apa­rences. La tra­di­cion main­tient les formes du culte et les trans­met d’une gé­né­ra­cion à l’autre. La di­rexion du culte pri­vé apar­tient au chef de la fa­mille ; le dé­pôt des rites tra­di­cio­nels ­du culte pu­blic est confié au sa­cer­doce qi par­tout, ex­cep­té dans la Grèce an­tiqe, forme un corps spécial dans l’État. Tan­tôt le sa­cer­doce se trans­met de père en fils, sans cer­taines fa­milles pri­vilé­giées qi for­ment une caste éré­di­taire, les Brah­manes dans l’In­de, les Mages en Perse, les Chal­déens à Ba­by­lone, les Lé­vites en Ju­dée ; tan­tôt il se re­crute par l’ini­cia­cion in­divi­due­le, come dans le Boud­hisme et le Chris­tia­nisme. Chez les Ro­mains, la di­rexion du culte pu­blic apar­te­nait aus chefs de fa­mille ; en Grèce, cete fonxion était rem­plie par les ma­gis­trats en exer­cice. Il i avait des sa­cris­tains, <greek>ίερεῖς<span class="tooltiptext">iereís</span></greek>, il n’i avait pas de prêtres. En ré­dui­sant le sa­cer­doce à son véri­table rôle, la garde des tradi­cions, l’en­tre­tien des temples et l’acom­plis­se­ment des cé­ré­mo­nies du culte pu­blic, les Grecs ont écar­té le dan­ger des lutes reli­gieuses. Il n’i a pas trace, dans toute l’is­toire grèqe, d’une faxion sa­cer­do­tale, il n’i avait pas d’éré­sie, parce q’il n’i avait pas d’or­to­doxie. Les mo­dernes ne se fi­gurent pas fa­cile­ment une reli­gion sans église et sans livres sa­crés, ou le dogme, éclos spon­ta­né­ment dans la pen­sée po­pu­laire, était livré dans son ex­pres­sion à la fan­tai­sie arbi­traire des poètes, les pre­miers téo­lo­giens de l’El­lènisme, et dans son in­ter­pré­ta­cion aus sis­tèmes des filos­fes, ses der­niers iéro­fan­tes ; une reli­gion mo­bile, va­riant d’une com­mune à l’autre, ou le culte ré­glé par l’État, c’es­tà­dire par le peuple, puisqe la Grèce fut tou­jours répu­bli­caine, consis­tait en sacri­fices, en luttes gim­niqes et en re­pré­sen­ta­cions scé­niqes où les Dieus jouaient un rôle  et per­mè­taient aus poètes co­miqes de rire à leurs dé­pens sans le moindre soup­çon d’im­pié­té. Pour ju­ger une reli­gion si opo­sée à nos abi­tu­des et pour lui rendre la jus­tice à la­qèle a droit toute pen­sée qi a fait vivre l’uma­ni­té pen­dant des siècles, il faut en ob­ser­ver les ré­sul­tats ; l’is­toire nous les montre dans l’art grec, fruit na­tu­rel de la reli­gion de la beau­té, et dans les cités répu­bli­caines où toutes les formes de la li­ber­té furent es­sayées et pra­tiqées, dans ces sé­vères prin­cipes de mo­rale so­ciale qi pro­dui­sirent de si grand omes et, ce qi vaut mieux, de si grands peuples.</p>
+  <hr>
+  <div class="subhead" style="/* padding-top: 4rem; margin-bottom: 2em; */" id="simboliqe"><a href="#simboliqe">simboliqe de l’ellènisme</a></div>
+  <p>La mi­to­lo­gie est la langue na­tu­rèle des reli­gions. Sous des formes poé­tiqes et plas­tiqes, èle per­so­ni­fie les Idées mères, ces prin­cipes latents et vir­tuels de toute exis­tence, qi ré­sident au sein de la Nuit pri­mi­tive, mère des Dieus. La science, qi ad­met es mo­lé­cules invi­sibles, mais éten­dues, qi per­so­ni­fie le calo­riqe, qi croit aux deus fluides élec­triqes, qi ex­pliqe la vie mi­né­rale par l’affi­ni­té, come si un mot ex­pliqaut un fait, sou­rit dédai­gneu­se­ment des Grecs, qi rê­vaient une Dryade dans cha­cun des chênes de Do­done et un Nèréi­de dans chaqe flot de la mer<nn­bsp></nn­bsp>: pour­tant les concep­sions an­tiqes ren­fer­ment une no­cion plus juste de la vie uni­ver­selle qe toutes nos abs­traxions mortes, et ont de plus l’avan­tage de four­nir des tipes à la pein­ture et à la sta­tuaire. Se­lon la difé­rence des formes do­nées aus idées on for­mule des lois fi­siqes ou on crée des œuvres d’art. Il est per­mis d’être à la fois de l’avis de Newton et de l’avis de Fi­dias.</p>
+  <p>Tant qe les dogmes vivent dans la croyance des peuples, les Dieus ont une vie propre aus­si per­sonèle qe cèle de l’ome, qi ne peut les conce­voir q’à son image puisqe l’ome est le tipe d’une force libre et d’une loi consciente. Leurs atri­buts sont mul­ti­ples come nos fa­cul­tés. Ainsi Zeus n’est pas seu­le­ment l’air vital qi nou­rit tout les êtres, le Dieu dont les mile imens se re­trouvent dans les innom­brables com­bi­nai­sons de l’Oxi­gène, le roi de la foudre, qi des­cend en ro­sée bien­fai­sante dans le sein de la tère fé­conde <em>( conju­gis in gre­mium lac­tae des­cen­dit )</em>, il est aus­si le prin­cipe de l’ordre uni­ver­sel, le vaiqeur des Ti­tans, c’es­tà­dire le mo­dé­ra­teur des forces cos­miqes, et dans un sens plus ex­clu­si­ve­ment mo­ral, le prin­cipe de la jus­tice, base de toute so­cié­té, source de toute ver­tu. La foi naïve des races jeunes se content du côté poé­tiqe des sim­boles. Qand le peuple d’Athènes allait en pé­leri­nage au temple des Grandes Déesses d’Éleu­sis, les poètes lui racon­taient l’en­lè­ve­ment de Corè par Aïdes, la dou­leur de sa mêre et le re­tour de Corè à la lu­mière cé­leste. Cette lé­gende sufi­sait au peuple, qi se reti­rait en re­mer­ciant la Mère bien­fai­sante à la­qèle il de­vait le blé, nou­ri­cier de l’ome. Mais il i av ait aus­si des es­prits in­qiets de la des­ti­née hu­maine ; pour eus, Corè n’était pas seu­le­ment la vé­gé­ta­cion, fille de la tère, qi meurt pen­dant l’hi­ver pour res­su­ci­ter au prin­temps ; c’était l’âme qi re­trouve une vie nou­vèle au­de­là du tom­beau. Au der­nier acte de l’ini­cia­cion, l’ié­ro­fante mon­trait aux mistes un épi de blé cou­pé en si­lence, gage des pro­messes di­vines, sim­bole de re­nais­sance et d’im­mor­ta­li­té.</p>
+  <p>Qand les races vieil­lissent, l’es­prit se sé­pare du corps, l’idée, pour se dé­ga­ger, re­jète l’image, la science brise l’urne du sim­bole où s’abreu­vaient les peuples jeunes et forts. En qi­tant leur en­ve­lope de poé­sie, les véri­tés d’in­tui­cion ar­rivent à la conscience d’èles­mêmes. Es­t-ce une mort, es­tce une résur­exion ? Qand l’er­mé­neu­tiqe stoï­ciène dé­cou­vrait un sis­tème de fi­siqe reli­gieuse dans l’El­lènisme, qi était vi­vant à cette époqe, on lui ob­jec­tait qe les prières dans les temples s’adres­saient, non à des sim­boles, mais à des réali­tés ; la même ob­jexion m’a été faite qand j’ai mon­tré un psi­co­lo­gie reli­gieuse dans la mi­to­lo­gie cré­tienne. On évite d’apliqer à une reli­gion vi­vante le scal­pel q’on em­ploie sans scru­pule pour pour une reli­gion morte ; ce n’est plus de l’ana­to­mie, c’est de la vivi­sexion, et on craint d’en­tendre des plaintes, come une vois d’Amadryade s’exa­lant du chêne dont on sou­lève l’écorce. Rassu­rons-nous ; ce n’est pas blas­fémer les Dieus qe de les éle­ver dans la sfère idéale, au-des­sus des formes fugi­tives, des in­car­na­cions pas­sa­gères de leur éter­nèle pen­sée. Les Dieus ne peuvent mou­rir, et qand on croit avoir scèlé la pière de leur sé­pulcre, il res­sus­citent dans leur gloire, come aux jours où de­vant cete éblouis­sante lu­mière du <c2sc>XVI</c2sc><e>e</e> siècle, le monde à sa­lué la re­nais­sance des an­ciens Dieus.</p>
+  <cite>Louis Ménard, <in>Simboliqe Religieuse</in>, <en>1898</en>.</p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="dubellay.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="wittgenstein.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="dubellay.html"><span class="arrow">←</span>&nbsp;La Défense et illustration de la langue française</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="wittgenstein.html">Tractatus Logico-Philosophicus&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+ 
+<script>
+
+  const setOpacity = function() {
+    const element = document.querySelector(".sticky")
+        , ascrollPosition = window.scrollY
+        , aviewportHeight = window.innerHeight
+        , condition = document.querySelector("html[wide]");
+    if (condition) {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight * 3))
+    } else {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight))
+    }
+  };
+  window.addEventListener("scroll", setOpacity);
+  window.addEventListener("resize", setOpacity);
+  window.addEventListener("scroll", function() {
+    let viewportHeight = window.innerHeight
+      , scrollTop = window.pageYOffset
+      , scrollHeight = document.body.scrollHeight
+      , condition = document.querySelector("html[wide]");
+    if (scrollTop <= viewportHeight && condition) {
+      // let translateY = scrollTop / 2;
+      let translateY = scrollTop / 4;
+      document.querySelector(".sticky").style.transform = `translateY(-${translateY}px)`;
+    }
+  });
+  
+  // window.onload = function () {
+  //   const element = document.querySelector(".sticky");
+  //   if (element) {
+  //     element.addEventListener('mouseenter', () => element.classList.add('hovered'));
+  //     element.addEventListener('mouseleave', () => element.classList.remove('hovered'));
+  //   }
+  // };
+  
+  
+  const toggleMenu2 = function(e) {
+    const element = document.querySelector(".sticky")
+        , menu = document.querySelector("#menu")
+        , body = document.querySelector("body");
+  
+    // click anychere on page
+    if (body.classList.contains("menu_open")
+    && e.target.id === "content") {
+      body.classList.toggle("menu_open");
+      setTimeout(function() {
+        menu.style.visibility = "hidden";
+      }, 600);
+    }
+  
+    if (e.target === element || e.target.parentNode === element) {
+      body.classList.toggle("menu_open");
+      if (body.classList.contains("menu_open")) {
+        menu.style.visibility = "visible";
+      } else {
+        setTimeout(function() {
+          menu.style.visibility = "hidden";
+        }, 600);
+      }
+    }
+  };
+  document.addEventListener("click", toggleMenu2);
+  
+  </script>
+  
+
+</body>
+</html>

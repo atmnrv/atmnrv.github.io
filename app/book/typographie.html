@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+    ul li::before {content: none;}   
+    a.toc {
+      display: block; 
+      padding-left: 0.2em !important;
+      margin-left: -0.2em !important;
+      padding-right: 0em !important;
+      margin-right: -0em !important;
+      }
+    a.toc::before {
+      content: "•";
+      margin-left: -2em;
+      padding-right: 1.5em;
+      font-weight: bold;
+      position: static;
+      color: var(--txt)
+    }
+    a.toc.none:hover { pointer-events: none;}
+    ex { font-family: dolly-caps; text-transform: lowercase; }
+    ex + in { display: block; font-style: italic; /* margin-left: 0.5rem; */ }
+  
+    p, pp, image-caption, li {hyphens: auto; -webkit-hyphens: auto;}
+  
+  </style>
+
+  <title>Typographie | @mnrv</title>
+</head>
+<body id="body" lang="fr">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="."></a>
+<div id="content" lang="fr">
+  <topic id="lightswitch">Typographie</topic>
+  <p>Il n’y a qu’une bonne typographie : celle qui donne envie de lire. Toutes les autres sont mauvaises, chacune à leur façon.</p>
+  <p>Le rôle de la typographie est de capter puis de conserver une très précieuse ressource pour un auteur—<i>l’attention du lecteur</i>. C’est une ressource limitée et particulièrement volage qui nécessite que l’on traite son lecteur avec soin, par conscience du don qu’il fait en nous lisant.</p>
+  <p>Négliger les effets de la typographie, c’est, au contraire, s’exposer au risque de communiquer accidentellement qu’on ne se soucie guère de la réception de son message ; ou pis : celui de n’être pas lu. </p>
+  <p>On peut prétendre qu’un message sans typographie demeure <i>légible</i>, bien sûr ; mais dès lors qu’on souhaite proprement communiquer—c’est-à-dire dépasser l’accumulation de signes sur une page—quelques notions de composition sont alors indispensables.</p>
+  <p>Des siècles d’imprimerie et de typographie ont établi des règles que seul un fou ignorerait. (Ou un graphiste soucieux d’impressionner ses pairs.) Ce chapitre est dédié à tous ceux qui ont besoin à communiquer clairement, et même d’ajouter un minimum de valeur esthétique à leurs messages.</p>
+  <div class="gap" style="height:1em"></div>
+  <ul class="children">
+    <li><a class="toc xref" href="oni.html">Oni</a></li>
+    <li><a class="toc xref" href="oni-minot.html">Oni-minot</a></li>
+    <li><a class="toc xref" href="milou.html">Milou</a></li>
+    <li><a class="toc xref" href="houdini.html">Houdini</a></li>
+    <li><a class="toc" href="minusculissime.html"><ex>appendice.</ex><in>Le plus petit caractère mondial</in></a></li>
+    <li><a class="toc" href="minuscule.html"><ex>appendice.</ex><in>La police montée sur roulettes</in></a></li>
+    </ul>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="ui.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="bibliographie.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="ui.html"><span class="arrow">←</span>&nbsp;ux·ui design</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div><a class="box-link" href="bibliographie.html">bibliographie&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>
+

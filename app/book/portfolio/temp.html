@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="../core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="../core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="../core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../core/fonts.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../core/woffs/SF.css" />
+  <script type="text/javascript" src="../core/functions.js"></script>
+  <style>
+    p, pp, image-caption, li {
+      hyphens: auto; -webkit-hyphens: auto;
+    }
+    smcp {font-family: dolly-caps;}
+    /* @font-face {
+      font-family: 'SFThin';
+      src: url('../core/nuancier/core/SFProDisplay-Thin.woff') format('woff'); */
+      /* font-weight: 200; */
+      /* font-style: normal;
+      text-rendering: optimizeLegibility; */
+    /* } */
+    /* @font-face {
+      font-family: 'SFSm';
+      src: url('../core/nuancier/core/SFProDisplay-Medium.woff') format('woff'); */
+      /* font-weight: 600; */
+      /* font-style: normal;
+      text-rendering: optimizeLegibility; */
+    /* } */
+    /* ul li:before { content: "\20DE" !important; } */
+    ol > li:before {
+      counter-increment: foobar !important;
+    }
+    ol li:before {
+      position: absolute;
+      content: counter(foobar);
+      counter-increment: none;
+      font-family: "SFThin"; 
+      font-feature-settings: "ss19";
+      font-size: 1.50rem;
+      line-height: 1.1rem;
+      line-height: 1.2rem;
+      margin-left: -2.55rem;
+    }
+
+    ol.abc > li:before{
+      content: counter(foobar, upper-alpha);
+    }
+    
+    ol li.s:before { content: "S"; }
+    ol li.t:before { content: "T"; }
+    ol li.a:before { content: "A"; }
+    ol li.r:before { content: "R"; }
+    ol li.b:before { content: "B"; }
+
+    /* .subhead {
+      margin-left: -1.4rem;
+    } */
+    tag {
+      display: inline-block;
+      background: #fbe3df8f;
+      padding: 4px 10px;
+      padding: 0.15em .25em .15em .3em;
+      border: 1px solid #f9d7d0;
+      border-radius: 4px;
+      margin-right: 0.4em;
+      margin-bottom: .2em;
+      margin-top: .2em;
+      font-family: ScalaSans;
+      color: #777;
+      font-size: 0.9em;
+    }
+    ol > li ul > li {
+      margin-left: 0;
+      list-style: none;
+    }
+    /* ol > li ul > li::before {
+      position: absolute;
+      content: "•";
+      margin-left: -2.5rem;
+    } */
+    ul > li:before {
+    position: absolute;
+    content: "•";
+    margin-left: -2.5rem;
+    /* margin-left: -1.75rem; */
+    font-family: dolly;
+    /* font-weight: normal; */
+    font-size: 1.10rem;
+    }
+
+    /* p.hand { */
+      /* margin-top: -1em; */
+      /* font-style: italic; */
+    /* } */
+    p.hand::before {
+      content: "☞"; font-size: 120%; line-height: 0; font-style: normal; padding-right: .33em;
+    }
+ul.tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style-type: none !important;
+}
+ul.tags >li {
+  margin-right: 0.4em;
+  margin-bottom: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  list-style-type: none !important;
+
+  display: inline-block;
+      background: #fbe3df8f;
+      padding: 4px 10px;
+      padding: 0.15em .25em .15em .3em;
+      border: 1px solid #f9d7d0;
+      border-radius: 4px;
+      margin-right: 0.4em;
+      margin-bottom: .2em;
+      margin-top: .2em;
+      font-family: ScalaSans;
+      color: #777;
+      font-size: 0.9em;
+      margin-left: 0;
+}
+ul.tags > li::before {
+  list-style-type: none !important;
+content: none; margin: 0; padding: 0;
+
+}
+</style>
+
+<title>entretien | @mnrv</title>
+</head>
+<body id="body">
+  <div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+  <a class="navtop" id="navtop" href=".">­</a>
+<div id="content" lang="fr">
+  <topic class="article">B.a.-Ba de l’économie du livre numérique</topic>
+  <!-- <div class="subhead">l’entretien</div> -->
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  
+  <aside><p>Le <em>pitch</em> (< 2 min)<br>Le but est de ne pas se faire interrompre. ≠ parcours pro.</p></aside>
+  <p><strong><dopla>« Je</dopla> vous laisse vous présenter…</strong></p>
+  
+  <p style="margin-bottom: 0.5em;"><dopla>« Bonjour,</dopla>
+    <br>je suis [ … , gémeau ascendant balance…]…
+    <br>Je vous remercie de me recevoir pour le poste de […]</p>
+    <p><strong>•</strong>&nbsp;&nbsp;+ Intérêt bref pour le poste, le métier</p>
+    <p style="margin-bottom: 0.5em;">Expérience en lien avec le poste visé (1, 2 ou 3 exp.)</p>
+    <p><strong>•</strong>&nbsp;&nbsp;Ce lien sont les compétences.</p>
+    <p style="margin-bottom: 0.5em;">Se projeter dans le poste (motivation, projet)</p>
+    <p><strong>•</strong>&nbsp;&nbsp;Utiliser des mon forts : « Mon projet… »</p>
+    
+    <p>Bonjour,&nbsp;&nbsp;&nbsp;&nbsp;(lion ascencedant sagitaire)</p>
+    <p>intérêt pour le poste</p>
+    <p>Votre parcours professionnel (les recruteurs cherchent quelqu’un qui va rester dans l’entreprise)</p>
+    <p>je cherche à élargir mes compétences, alors je profite du profil jeune <span style="font-size: 120%; line-height: 0;">☞</span>&nbsp;&nbsp;passerelle</p>
+    <p>CV vide ? Collecte d’expériences. — J’ai voyagé, travailé à mon compte; et j’ai de nouvelle priorité, je cherche une maison à la campagne.</p>
+    <p>Dans un contexte où les cycles de destructions d’emplois sont de plus en plus courts, nous sommes invités à assumer de nouveaux rôles, ou, à tout le moins, à travailler avec des nouveaux métiers—je ne vois donc aucun inconvénient. Et en outre, je suis quelqu’un de curieux, je n’ai jamais perdu le désir d’apprendre.</p>
+    <p>Je ne m’intéresse pas au travail une fois qu’il est fait (citation Karl Lagerfild). C’est une force. Entendez les objections, les mises en gardes, les oppositions à ce qu’on appelle courament l’intelligence artificielle. Elle nécessite une remise en question et un réapprenissage—qui s’acère une véritable difficulté pour beaucoup. Je n’ai pas ce problème. Je suis un polyvalent, et ne cultive pas l’orgueil. J’embrasse les nouvelles manière de créer.</p>
+    <p>Parcours inverse, mais le travail en équipe me permettrait de travailler sur des projets à plus grande échelles ; et puis, j’ai envie de m’acheter une maison en Normandie</p>
+    <p>jeune métier <span style="font-size: 120%; line-height: 0;">☞</span>&nbsp;&nbsp;phese d’exploration + on me pardonnera ma fougue / c’est un métier pour lequel il n’existe ni école ni diplôme + encore les bagages de l’ancienne approche (<span style="font-size: 120%; line-height: 0;">☞</span>&nbsp;&nbsp; • la voiture automobile & voiture hippomobile ; les stigmates de la machine à écrire sur la composition écran ; ou encore la différence entre internet et le télégrame (dans la vourse par exemple))</p>
+    <p>Ce que le poste me fait gagner : me permet de monter en compétence ; de revenir sur le marché…</p>
+
+    <p>Être proche du lieu de travail est un plus pour l’entreprise</p>
+    <p>Pourquoi je ne vais pas quitter l’entreprise ; la motivation, c’est ce que l’employé (l’employeur ?) gagne.</p>
+    <p>Ce que j’y gagne intellectuellemnt, en termes de formation; Les employés ne cherchent plus à faire carrière, c’est pourquoi les entreprises jouent sur les formations.</p>
+    <p>Environnement de travail (petite équipe, grande équipe…)</p>
+    <p>Les valeurs de l’entreprise.</p>
+    <p>Compétences transversales ; qualités transferables</p>
+    <p>patient (franc & direct) abrupt, gourmand, pugnacité, légereté, vif
+  
+    
+      <br>démontrer qu’on est quelqu’un de fiable
+    </p>
+
+  <aside><p>Méthode&nbsp;&nbsp;S.T.A.R.</p></aside>
+  <p><strong><dopla>« Citez-moi</dopla> <i>x</i> qualités…</strong></p>
+  <ul class="tags"><li>invention</li><li>créativité</li><li>rigueur</li><li>constance</li><li>discipline</li><li>dévoué</li><li>fidèle</li><li>à l’écoute</li><li>curiosité</li><li>adaptabilité</li><li>souplesse</li><li>observateur</li><li>retenu</li><li>discret</li><li>j’aime apprendre</li><li>autonome</li><li>gestion des priorités</li><li>synthétique</li><li>esprit d’initiative</li><li>joueur</li><li>capacité à apprendre</li><li>visionnaire</li><li>humble</li><li>légèreté</li><li>adaptabilité</li><li>esprit d’équipe</li><li>rigueur</li><li>sens de l’initiative</li><li>savoir proposer, savoir donner envie…</li><li>esprit d’initiative</li><li>esprit de synthèse</li><li>pluridisciplinaire</li></ul></p>
+  <p>Plutôt que de <smcp>motivation</smcp>, je préfère parler de dédication, ou encore de discipline… La motivation est une force, mais c’est aussi une émotion, une réaction à un événement extérieur—on ne contrôle pas sa motivation—c’est pourquoi je préfère parler de discipline. Elle dénote une attitude passive ; j’aime être maître de mes émotions, et beaucoup moins de vivre dans l’expectative. Je n’aime pas subir, j’aime être acteur, l’anticipation fait partie de mon travail ; et si j’aime les surprise, je n’aime pas me retrouver dépourvu, acculé par manque de vision/lucidité ou de préparation. La motivation, c’est bien, mais ce n’est pas suffisant. C’est une force motrice insuffisante.</p>
+  <p>Le meilleur moyen de travailler ensemble : tenir ses engagements.</p>
+  <p>J’aime apprendre. Acquérir de nouveaux savoirs, développer de nouvelles compétences, maîtriser de nouveau outils…  J’allais dire sortir de ma zone de confort ; mais il s’agirait davantage d’élargir ma zone de confort / mais en faitje ne fait que l’élargir.</p>
+  
+  <p><strong><dopla>« Citez-moi</dopla> <i>x</i> défauts… »</strong></p>
+  <aside><p>Le <em>péché mignon</em> : petit, ou sans lien avec le metier.</p></aside>
+  <p class="hand">La gourmandise, sans aucun doute.</p>
+  <aside><p>La <em>qualité-défaut</em> : qualité poussée à l’extrême qui devient défaut + action pour palier.</aside>
+  <!-- <p class="hand">J’aime l’ordre, j’aime que mon bureau soit bien rangé ; le problème est que j’ai tendance à m’approprier les espaces communs</p></li> -->
+  <aside><p>Le <em>défaut compensé</em> : défaut dont on se sert comme une excuse pour présenter une qualité.</aside>
+
+
+  <ul>
+    <li>
+    <li>
+    <li>
+    <p class="hand">Je n’ai jamais était le plus habile avec les mots ; c’est peut-être la raison qui m’a poussé à communiquer par l’image / Je ne suis pas le plus habile avec les mots, à l’oral, à peser le poids des mots… (habitude, mais j’ai longuement travaillé, alors je ne suis plus tout à fait sûr) / Je parle vite. / mais c’est peut-être la raison qui ma m’a entraîné vers l’image. Je dois avouer que c’est aussi par habitude, c’est un défaut sur lequel j’ai longtemps travaillé, alors je ne saurais véritablement affirmer qu’il est toujours d’actualité.</p>
+    <p class="hand">J’ai du mal à prler de moi, mais j’y travaille.</p>
+    <p class="hand">Je peux passer pour réservé, mais c’est parce que je suis très à l’écoute. Taciturne, mais très à l’écoute, et très observateur. Discret.</p>
+    <p class="hand">Je n’hésite pas à parler quand je pense qu’une personne se trompe. Je me suis aperçu que c’était, en réalité, pas tant un défaut qu’une qualité, et qu’elle participe à créer une relation de confiance. J’aime prendre la parole, partager—et surtout défendre—mon point de vue, (je suis assez compétitif).</p></li>
+  </ul>
+    <p><span style="font-family: SFSm; font-feature-settings:'liga'">!&#x20DE</span>&nbsp;&nbsp;Après avoir parlé d’un défaut […] (silence) — non, (vraiment), je n’en vois pas d’autres !</p></li>
+    <p>Les défauts (par ex. la réflexivité, qui permet d’accepter sa part de responsabilité) ou les axes de progression.</p>
+    <p>Manque de patience, j’aime l’échange d’idée, passioné, audacieux. J’ai les qualités de mes défauts ; mes qualités et mes défauts sont les mêmes : passioné. Je sais désammorcer les conflits ; léger.</p>
+
+    <aside><p>Méthode&nbsp;&nbsp;S.T.A.R.</p></aside>
+    <p><strong><dopla>« Une</dopla> expérience réussie/un échec… »</strong></p>
+    <ul>
+      <li>Fontes print + web</li>
+      <li>indépendant / autonome</li>
+      <li>les métiers créatif regorgent de défis</li>
+      <li>je ne crains pas le jugement, j’aime partager mon point de vue ou ma sensibilité sur un sujet ; parce que la réaction m’apportera quelque chose</li>
+      <li>je gère très bien la pression, je ne laisse pas intimider</li>
+      <li>passioné / et j’aime travailler</li>
+    </ul>
+    
+    <p><strong><dopla>« Où</dopla> vous voyez-vous dans <i>x</i> ans ?</strong>
+    <p>Où dans le futur ? —
+    <br>On est là pour rassurer le recruteur.
+    <br>J’ai un projet clair ; j’ai décidé où je voulais aller.</p>
+  
+    <p><strong><dopla>« Si</dopla> j’appelle votre ancien employeur que me dira-t-il de vous ?</strong></p>
+    <p>— Je n’ai pas gardé contact, et, pour tout vous dire, je ne sais pas s’il est encore dans l’entreprise.</p>
+
+    <p><strong><dopla>« Pourquoi</dopla> avez-vous quitté votre précédent emploi ?</strong>
+    <br>— J’avais fait le tour du poste, du CDD… un changement de direction qi m’avait donné l’impression d’avoir changé de travail ; alors, c’était le moment, le signe d’un changement.
+    <br>[Ne jamais parler en mal de l’entreprise]
+    <br>Je voulais partir en voyage. Je voulais faire de l’auto-entreprenariat. Je me suis arrêté, j’ai décidé de prioriser ma santé, et maintenant c’est réglé. Je suis d’autant plus motivé parce que je n’ai pas travaillé depuis longtemps.
+    <br>Je suis resté à jour dans mes compétences. Être au chômage ne veut pas dire inactif. Je suis resté en contact avec mes amis du domaine. J’ai gardé un rythme de vie.
+    <p>je me sens à l’étroit dans mon métier</p>
+    <p>il me manque de travailler en équipe</p>
+    <p>rejoindre une entreprise : partager, échelle plus grande</p>
+    <p>travail en équipe : la confrontation d’idée</p>
+    <br>S’il y a un point de faiblesse dans le CV :
+    <br>reconversion, chômage : inclure dans le pitch, pour couper l’herbe sous le pied du recruteur
+    <br>manque d’expériences : appuyer sur les études ; les activités personnelles sont concluantes (S.T.A.R.)</p>
+
+    <p><strong><dopla>« Avez-vous</dopla> d’autres candidatures ?</strong>
+    <br>— Naturellement… Cependant, je privilégie votre entreprise.</p>
+
+    <p><strong><dopla>« Q’avez-vous</dopla> fait depuis que vous êtes sans emploi ?</strong></p>
+ 
+    <p><strong><dopla>« Selon</dopla> vous, pourquoi devrions-nous choisir votre candidature sur les autres ?</strong>
+    <p>— je viens avec mon appétit et ma perspective (profile qui pourrait sembler atypique)</p>
+    <p>Réponse en deux temps :</p>
+    <p>La singularité de mon parcours, de mon profil…
+    <br>La typographie, c’est l’aller-retour entre le détail et le global.</p>
+    <p>Parce que j’en ai les compétences. Parce que je suis motivé. Parce que…</p>
+    <p>Je ne saurais le dire pour les autres. Je ne pourraos pas parler, me prononcer pour les autres.</p>
+ 
+    <p><strong><dopla>« Est-ce</dopla> que vous avez des question ?</strong></p>
+    <p><strong>•</strong>&nbsp;&nbsp;Transmettre les coordonnées de l’ancien employeur
+    <br><strong>•</strong>&nbsp;&nbsp;Les priorités de la prise de poste
+    <br><strong>•</strong>&nbsp;&nbsp;Évolutions possibles ? Salaire, mobilité interne, hierarchie, compétences, responsabilités…
+    <br><strong>•</strong>&nbsp;&nbsp;L’information que vous n’avez pas trouvée
+    <br><strong>•</strong>&nbsp;&nbsp;Les valeurs de l’entreprise (au quotidien)… *Attention aux valeurs écrans (pages <i>Qui sommes-nous</i> du site)
+    <br><span style="font-family: SFSm; font-feature-settings:'liga'">!&#x20DE</span>&nbsp;&nbsp;Poser des questions pertinentes. Il faut rebondir sur les réponses. Éviter les questions fermées.
+    <br>
+    <br>Est-ce que j’ai été assez clair ? Y a-t-il un point… ?
+    <br>Qu’avez-vous pensé de ma candidature ?
+    <br>
+    <br>[Envoyer un mail pour remercier, (merci de l’entretien et du temps accordé), quand on est loin dans le processus.]</p>
+ 
+    <ol class="abc"></ol>
+
+  <div class="subhead">présentation</div>
+  <div class="subhead">expérience</div>
+  <div class="subhead">projet</div>
+
+  <div class="subhead">moi</div>
+
+  <p><strong>
+    <dopla>« Quelles</dopla> sont, selon vous, les qualités indispensables ?
+  </strong></p>
+
+  <p><strong><dopla>« Une</dopla> lacune…</strong>
+    <br>— Ce n’est pas une lacune, mais une opportunité d’apprendre (logiciel sketch : j’ai appris à maîtriser le logiciel)</p>
+  <p><strong><dopla>« Une</dopla> dernière chose ?</strong>
+    <br>(occasion de montrer que l’on a bien lu l’annonce)
+    <br>— Je n’ai mon permis que depuis un an.</p>
+  <p><strong><dopla>« Que</dopla> ferez-vous si vous n’êtes pas pris</strong>
+    <br>je reprendais du dessert / si je me plante, j’ai d’autre offres
+
+    <p>La motivation : je suis prêt à postuler une seconde fois</p>
+    <p class="hand">Ne pensez pas à m’écarter maintenant, parce qu’on va se revoir ; je postulerai à nouveau.</p>
+  
+
+  <div class="subhead">+</div>
+  <p>Les arts équestre, le sourire, le naturel, la sprezzatura / nonchalance</p>
+  <p>passion / vocation</p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  <div class="subhead"><span style="font-family: 'SFSm'; font-feature-settings:'liga'">&#x1F138</span> Prétententions salariales <span style="font-weight: normal; font-family: dolly;"> (être sûr d’être embauché)</span></div>
+  <p><smcp>Le salaire</smcp> : le premier qui dégaine… est celui qui perd.</p>
+  <ol>
+    <li><p style="margin-bottom: 0.5em;">Connaître les prix du marché :</p>
+      <p><strong>•</strong>&nbsp;&nbsp;salaire moyen (INSEE) ;
+      <br><strong>•</strong>&nbsp;&nbsp;simulateur de salaire (<i>apec.fr</i>) ;
+      <br><strong>•</strong>&nbsp;&nbsp;<i>glassdoor.com</i> ;
+      <br><strong>•</strong>&nbsp;&nbsp;<i>waage.fr</i> ;</p>
+    </li>
+    <li>Quantifier ses résultats : votre valeur ;</li>
+    <li><p style="margin-bottom: 0.5em;">Négocier quand on a convaincu :</p>
+      <p><span style="font-size: 120%; line-height: 0;">☞</span>&nbsp;&nbsp;En <strong>brut</strong>, pas en net, sinon on se fait avoir
+      <br><span style="font-size: 120%; line-height: 0;">☞</span>&nbsp;&nbsp;<i>salaire-brut-en-net.fr</i></p></li>
+    <li>Insister sur la négociation ;</li>
+    <li>Présenter : « <i>x</i> ne me semble pas raisonnable »…
+      <br><smcp>Karen</smcp> : « Je suis prêt à négocier dès que j’en sais plus sur le poste, je suis sûr/certain que nous trouverons un terrain <nobr>d’entente</nobr> »</li>
+    </ol>
+    <p>En cas de grille :</p>
+    <ul>
+      <li>prime d’activité ;</li>
+      <li></li>
+      <li></li>
+      <li>« je comprends que vous soyiez […], y a-t-il un point sur lequel nous pourions négocier »</li>
+    </ul>
+    <p><strong>La négociation peut servir à montrer son intérêt pour le poste et l’entreprise.</strong></p>
+    <!-- <p><span style="font-size: 120%; line-height: 0;">☞</span>&nbsp;&nbsp;contrat non-cadre : 22% ; contrat cadre : 25%.</p> -->
+    <div class="subhead">Méthode S.T.A.R.</div>
+    <ol>
+      <li class="s"><p style="margin-bottom: 0.5em;">Situation : professionnelle ; telle qualité ou compétence ;</p></li>
+      <li class="t"><p style="margin-bottom: 0.5em;">Tâche : rôle et respons. ; mission, objectifs et difficultés…</p></li>
+      <li class="a"><p style="margin-bottom: 0.5em;">Action : détail, compét., mesures prises pour att. objectif ;</p></li>
+      <li class="r"><p style="margin-bottom: 0.5em;">Résultat : bilan chiffré ; pour l’entreprise, pour moi</p></li>
+    </ol>
+    <p>Créer une police d’écriture, ou de lecture, à l’usage des aveugles. Une fonte pour les personnes pour lesquelles la transition au braille est difficile ; la résolution ne permet de / une des joies de nos mtiers de surmonter une difficulté</p>
+    <p>Intégrer les obstacles dans mes projets</p>
+    <div class="subhead">CV</div>
+    <p>Synthèse + mots-clés<br>Réutiliser les mots de l’annonce, de l’offre</p>
+
+    <div class="subhead">Les tâches</div>
+    <p>Taille de l’entreprise, ses valeurs, son emplacement.</p>
+    <p>Les valeurs de le l’entreprise ; les conditions de travail.</p>
+    <p>Régionale, nationale…</p>
+
+    <div class="subhead">éléments de langage</div>
+    <p>Je suis ravi que vous m’en parliez, car…</p>
+    <p>Voilà un sujet que je souhaitais aborderævec vous</p>
+    <p>c’est faire preuve d’initiative et de synthèse</p>
+    <p>à l’affut des nouvelles tendances et surtout des nouvelles technologies</p>
+    <p>l’avenir me donne beaucoup de raison d’être optimiste</p>
+    <p>il faut parler d’évolution (≠ poste supérieur)</p>
+    <p><dopla>« C’est</dopla> une bonne question que vous me posez ; laissez-moi u réfléchir…</p>
+    <p>méthode IKIGUAI</p>
+    <p>la linerté, c’est la faculté de pouvoir choisir ses contraintes</p>
+    <p>Michel-Ange : sto laborando</p>
+    <p>de transformer les obstacles en défis ; intégrer les contraintes dans mes projets (méthode S.T.A.R.)</p>
+    <p>J’ai appris le HTML, CSS et JavaScript parce que je n’aimais pas le foramt pdf.</p>
+    <p>Les métiers interdisciplinaire sont une opportunité d’avoir des perspective et de nouer des liens avec des personnes qui se développent dans d’autres cercle</p>
+    <p>clairement définir ses objectifs est le meilleur moyen de les atteindre ; quels sont les nouveaux objectifs et comment les atteindre</p>
+    <p>cerner sa marge de manœuvre pour agir (discernement et audace)</p>
+    <p>avoir la luciditéde prendre une décision en cas d’échecs // je suis un partisan de la réécriture</p>
+    <p>je préfère le présentiel ; pour pouvoir observer les réactions des collègues, sur quelle partie de ce que je leur montre il passe une demi seconde de plus // la communication no verbale</p>
+    <p>“You cannot bore people into buying your product.”
+      —David Ogilvy</p>
+      <p>It’s all fair game. If you like stealing the ideas of others, great! Steal from better sources. (That’s the secret to whatever success I have, certainly.) Anything but another hamburger button.</p>
+      <p>Beauty commands attention.</p>
+      <p>aujourd’hui j’aspire à</p>
+      <p>c’est une manière de dire que je préfère la vérité au consensus</p>
+      <p>mes qualités (telles quelles)<br>mes compétences<br>mes atouts<br>mes défauts</p>
+      <p>directeur de projet //
+        direction artistique</p>
+        <p> repérer les nouveaux besoins, combler un interstice</p>
+        <br>repérer les nouveaux besoins
+
+    <div>
+      <div class="subhead">/////////////</div>
+      La motivation, c’est bien, mais ce n’est pas suffisant
+<br>je préfère dédication ou discipline, parce que l’on peut controler
+<br>souvent par motivation on entend jaculatoire, éphèmere——et l’on ne contrôle pas sa motivation
+<br>phénomène, force, énergie jaculatoire
+<br>
+<br><strong>« élargir ma zone de confort »</strong>
+<br>
+<br>acquérir rapidement de nouvelles compétences // maîtriser exploiter de nouveaux outils pour évoluer
+<br>
+<br>créatif / ludique
+<br>transformer les problèmes en défi
+<br>intégrer les obstacles dans mes projets (star)
+<br>
+<br>j’ai appris HTML, CSS et JS parce que je n’aimais pas le PDF
+<br>
+<br>et puis c’est toujours une occasion de parler avec les gens de différents domaines,
+<br>LaTex, développeurs, etc. j’aime connaître leurs outils leurs avis
+<br>c’est une opportunité de créer du lien avec les autres, c’est-à-dire avec des personnes vers qui l’on irait pas instictivement mais qui ne viendrait pas à nous non plus, c’est une occasion de créer du lien 
+<br>
+<br>(avoir la lucidité de prendre une décision en cas d’échecs) // ne pas s’attarder et surtout déployer une solution nouvelle
+<br>ne pas forcer les ronds dans les carrés
+<br>une souplesse comme au Scrabble, ce moment en début de partie où l’on a son Scrabble (son mot de 7 lettres) mais qu’on ne peut placer… alors on le réserve en tentant de minimiser les pertes—alors que la bonne solution dans la majeure partie des cas consiste à détruire son mot, il ne faut pas s’y attacher/accrocher à son mot
+<br>
+<br>je préfère le présentiel, pour une raison très simple
+<br>c’est pouvoir observer la réaction des gens et court-circuiter l’intelectualisation
+<br>sur quelle partie de ce que je montre il passe une demi seconde en plus
+<br>communication non-verbale
+<br>
+<br>“You cannot bore people into buying your product.”
+<br>—David Ogilvy
+<br>
+<br>Beauty commands attention.
+<br>Double difficulté : capter l’attention et la retenir
+<br>
+<br>j’aime les projet long, les préparation, le repérage, l’approche, puis l’action
+<br>
+<br>
+<br>It’s all fair game. If you like stealing the ideas of others, great! Steal from better sources. (That’s the secret to whatever success I have, certainly.) Anything but another hamburger button.
+<br>
+<p></p>
+    </div>
+<p>À propos de l’affiche dessinée pour Chaumont : « pour peu qu’on les regarde de loin, certains détails nous apparaîssent clairement »</p>
+
+
+  <p style="margin-top: calc(2rem * 95 / 100); text-align: right; /* font-feature-settings: 'c2sc'; */ font-family: dolly-caps; letter-spacing: 0.1em;">C.Q.F.D.</p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="."><div id="prev" class="side"></div></a>
+<a class="nav" href="graphisme.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="."><span class="arrow">←</span>&nbsp;retour à la case départ</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div><a class="box-link" href="graphisme.html">graphisme&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>

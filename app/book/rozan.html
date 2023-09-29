@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+      topic.commentary {margin-bottom: 1.4rem;}
+      c2sc { font-family: dolly-caps; }
+      aside p {-webkit-hyphens: auto; hyphens: auto;}
+      c:not(::first-line) { text-align: right}
+      /* html {font-size: 80% !important} */
+      
+      /* .quotefr.old {
+          /* background-image: url("images/dblfrl.svg");
+          background-size: 0.43em;
+          background-position: 0 -0.03em; */
+          /* -webkit-box-decoration-break: clone; */
+      /* } */
+      /* [dark="true"] .quotefr.old {
+        background-image: url("images/dblfrl_alt.svg");
+      }
+      .quotefr.old span:first-of-type {
+        margin-left: -0.1em;
+      } */ 
+      .quotefr {
+          /* background-image: url("images/dblfrl.svg");
+          background-size: 0.43em;
+          background-position: 0 -0.03em; */
+          /* background: 0 -0.025em / 0.54rem 1rem url("images/splfrl.svg"); */
+          background: 0 -0.025em / 0.54rem 1rem url("images/spfrr.svg");
+          background-repeat: no-repeat;
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
+          margin-left: 0;
+          padding-left: 0.82em;
+          padding-left: 0.62em;
+      }
+      [dark="true"] .quotefr {
+        background-image: url("images/splfrl_alt.svg");
+        background-image: url("images/spfrr_alt.svg");
+      }
+      .quotefr span:first-of-type {
+        margin-left: -0.1em;
+      }
+      .quotefr span:first-of-type::before {
+  content: "‹";
+  background: var(--bkg);
+  margin-left: -0.8em;
+  padding-right: 0.1em;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+  color: var(--txt);
+}
+
+      div.entry entry > a {
+        /* transition-property: color; */
+        /* transition-duration: 0.2s; */
+      }
+      div.entry entry > a:hover {
+        color: #534e5e;
+      }
+
+  </style>
+
+  <title>Petites ignorances de la conversation | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <topic id="lightswitch" class="commentary" style="letter-spacing: 0.037em; /* font-size: 1.85rem */">petites ignorances de la conversation</topic>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  <!-- <aside><p>Cette an­tho­lo­gie de phrases toutes faites et de dic­tons po­pu­laires est un tré­sor de lan­gue et d’his­toire ; d’au­tant que, l’ou­vrage da­tant de 1856, la plu­part des ex­pres­sions étu­diées ici ont au­jourd’hui disparu.</aside> -->
+  <div class="gap" style="height:4rem"></div><ul class="children"></ul>
+  <div class ="entry" id="voltaire">
+  <p><entry><a href="#voltaire">Orthographe de Voltaire.</a></entry>On nomme ain­si la sub­sti­tu­tion de <em>ai</em> à <em>oi</em> dans un cer­tain nombre de sub­stan­tifs et dans l’im­par­fait et le con­di­tion­nel des ver­bes. C’est Voltaire, en ef­fet, qui, en adop­tant cette or­tho­gra­phe, l’a po­pu­la­ri­sée et l’a fait pas­ser dans notre lan­gue. Il pen­sait que l’or­tho­gra­phe doit se rap­pro­cher au­tant que pos­sible de la pro­non­cia­tion ; à ses yeux, c’est une in­con­gruité d’écrire <em>em­ploi­roient</em>, <em>oc­troi­roient</em> quand on pro­nonce <em>em­ploi­raient</em>, <em>oc­troi­raient</em>.<dops></dops><dopl> « L’écri­ture,</dopl> dit-il, est la pein­ture de la voix ; plus elle est res­sem­blante, meil­leure elle est. » Autre­fois, les mots en <em>oi</em> se pro­non­çaient comme ils s’écri­vaient, et alors l’in­con­gruité que si­gnale Voltaire n’exis­tait pas. Plus tard, à la cour de Médicis, notre langue s’est ita­lia­ni­sée : on a voulu adou­cir les sons qui pa­rais­saient trop rudes à l’oreille, et c’est de là en réa­lité que date cette trans­for­ma­tion qui se fit dans la pro­non­cia­tion d’abord,</p>
+  <blockquote>
+    <v>Quand l’argent est meslé on ne peut reconnoistre</v>
+    <v>Celui du serviteur d’avec celui du maistre.</v>
+    <cite>regnier</cite></blockquote>
+  <p>et en­suite dans l’orthographe.</p>
+  <p>Laurent Joubert, le fa­meux mé­de­cin de Henri III, et l’au­teur d’un <em>Dia­logue sur la ca­c­ogra­phie fran­çaise</em>, est l’in­ven­teur de la no­uvelle ortho­graphe.<dops></dops><dopl> « Laurent</dopl> Joubert, dit Charles Nodier dans ses <em>No­tions élé­men­taires de lin­gui­stique</em>, est, en ef­fet, le pre­mier néo­gra­phe qui soit avisé de sub­sti­tuer le di­gramme <em>ai</em> à la diph­thongue <em>oi</em> dans l’ortho­graphe de notre nom na­tio­nal. Cer­tains princes d’Al­le­magne lui ayant don­né charge d’es­sayer à leur faire com­pre­ndre exac­te­ment le lan­gage fran­sais (je prie le lec­teur d’être bien per­sua­dé que c’est Laurent Joubert qui parle et écrit) : <span class="quotefr"><span>Pour</span> ce, con­tin­ue-t-il, j’ay mé­pri­sé tous livres écris en fran­sais, et me suis con­traint d’ap­prandre le lan­gage an con­ver­sant fa­mi­liè­re­ment avec ceus qui par­let mieus, ob­ser­vant trae soi­gneu­se­ment la vraye pro­la­cion. De la­quelle m’étant bien as­su­ré, j’ai com­men­cé d’ex­pri­mer par écrit le naïf par­ler du Fran­sais. ›</span> Cette pro­non­cia­tion niai­se­ment ita­lia­ni­sée, née de l’im­puis­sance à la cour ita­lienne des Valois, et pro­pa­gée dans la pro­vince par un sot es­prit d’imi­ta­tion, n’avait pas en­core ga­gné les gram­mai­riens. Il ap­par­te­nait au mé­de­cin du roi d’en faire les hon­neurs, qui étaient ré­ser­vés, en der­nier res­sort, à un de ses gentilshommes. »</p>
+  <p>On cite, après Laurent Joubert, le gram­mai­rien Honorat Rambaut et l’avo­cat Bérain, qui ont aus­si ten­té d’in­tro­duire dans l’ortho­graphe le chan­ge­ment dont nous occupons.</p>
+  <p>Racine paraît être le pre­mier, parmi les grands écri­vains, qui ait sub­sti­tué <em>ai</em> à <em>oi</em> dans les per­son­nes des verbes :<dops></dops><dopl> « La</dopl> ca­ta­strophe de ma pièce, dit-il parlant de <em>la Thé­baïde</em>, est peut-être un peu trop san­glante ; en ef­fet, il n’y <em>pa­raît</em> pres­que pas un ac­teur qui ne meure à la fin. »</p>
+  <p>Ainsi, l’ortho­graphe dite de Voltaire n’a pas été in­ven­tée par lui ; elle re­monte au <span style="text-transform: lowercase; font-family: dolly-caps;">xvi</span><span style="font-size: 70%; line-height: 1; vertical-align: 0.45em;">e</span> siècle et elle a fait un pas dans le <span style="text-transform: lowercase; font-family: dolly-caps;">xvii</span><span style="font-size: 70%; line-height: 1; vertical-align: 0.45em;">e</span> sous l’au­to­rité de Racine ; mais si Voltaire n’en est que l’Améric Vespuce, c’est lui in­con­te­sta­ble­ment qui l’a fait pr­éva­loir sur l’an­cienne orthographe.</p>
+  <p>Il est à re­mar­quer que, par hor­reur sans doute de tout ce qui vient de Voltaire, la plu­part des mem­bres du haut clergé ont con­servé l’usage de la diph­thongue <em>oi</em> dans l’im­par­fait et le con­di­tion­nel des verbes. Quel­ques-uns de nos écri­vains ont fait de même : Chateaubriand et Nodier sont de ce nombre.</p></div>  
+  <div style="text-align: center; margin-bottom: 0.8rem;">*</div>
+  <div class ="entry" id="toast">
+  <p><entry><a href="#toast">Toast.</a></entry>De tous les mots que nous avons em­prun­tés aux An­glais, <em>toast</em> est peut-être le plus ré­pan­du, le seul sur le sens et la pro­non­cia­tion duquel on ne se mé­prenne point. Il n’en est pas de même de beau­coup d’autres mots que la <em>fashion</em> a in­tro­duits dans le lan­gage à la mode. L’ex­emple, cité par M<e>me</e> de Girardin, de cette dame qui de­mande à quel­qu’un s’il a été <em>aux sept pe­tites chaises</em> (<em>au steeple chase</em>) est peut-être un peu fort, mais il y en a un cer­tain nombre de la même fa­mille.—Rien de sem­blable pour le mot <em>toast</em> ; l’ha­bi­tude est si bien prise de ne pas pro­non­cer la lettre <em>a</em>, qu’on a déjà com­men­cé à lui don­ner une forme tout à fait fran­çaise : <em>toste</em>.</p>
+  <p>Le mot an­glais <em>toast</em> si­gni­fie <em>rôtie de pain</em>. Autre­fois, pour por­ter la santé des dames, on met­tait une rôtie dans les pots de bière, et cette rô­tie res­tait à celui qui bu­vait le der­nier. C’est de là, as­sure-t-on, que vien­nent le nom et l’usage des <em>toasts</em>.—À l’ap­pui de cette ori­gine, on ra­conte l’anec­dote sui­vante : Anne de Boulen pre­nait un bain ; pour rendre hom­mage à sa rare beau­té, les sei­gneurs de sa suite bu­rent cha­cun un verre d’eau qu’ils avaient puisé dans la bai­gnoire. Un seul ne le fit pas ; à ceux qui lui en de­man­dèrent la rai­son, il ré­pon­dit : Je me ré­serve le toast.</p>
+  <p>On pense aussi que le mot an­glais pour­rait bien venir de l’an­cien verbe fran­çais <em>toster</em> qui si­gni­fiait choquer.</p></div>
+  <div style="text-align: center; margin-bottom: 0.8rem;">*</div>
+  <div class ="entry" id="chatre">
+  <p><entry><a href="#chatre">Le bon billet qu’à La Châtre !</a></entry>Mes­dames, quand M. Legouvé, dans une épître à votre ad­resse, ose vous dire</p>
+  <blockquote>
+    <v>Que vous prenez parfois pour tracer vos serments</v>
+    <v>La plume dont Ninon écrivait à La Châtre,</v></blockquote>
+  <p>il vous ca­lom­nie d’abord, et il fait en­suite al­lu­sion à un mot de­ve­nu pro­verbe dont on a peut-être trop abu­sé dans ces der­niers temps.</p>
+  <p>Nous re­ve­nons aux pro­verbes avec une vé­ri­table rage ; nous n’avons pas tort ; seulement, nous ferions bien de choi­sir les bons. <dops></dops><dopl> « Les</dopl> beaux pro­verbes bien ap­pli­qués, dit Henri Estienne, or­nent le lan­gage de ceux qui, d’ail­leurs, sont bien em­par­lés. » Qu’on ré­pète donc tous les jours, si l’on veut, ceux qui don­nent un bon conseil ou qui rap­pel­lent une pa­role utile, mais qu’on ne dise pas à chaque ins­tant : <em>Le bon bilet qu’à La Châtre.</em>—C’est quel­que­fois of­fen­sant pour vous, Mes­dames, et c’est tou­jours de mau­vais goût.</p>
+  <p>Vous con­nais­sez, sans doute, l’anec­dote qui a don­né nais­sance à cette ex­pres­sion tant ré­pé­tée. Pour le cas ce­pen­dant où elle ne serait pas venue jus­qu’à vous, la voi­ci en deux mots : – Le mar­quis de La Châtre aimait ten­dre­ment Ninon. Ob­ligé, par un voyage, de la quit­ter pen­dant quel­que temps, il s’était de­man­dé si, pen­dant l’ab­sence, Ninon l’aime­rait tou­jours. Nous ne sa­vons quelle idée le mar­quis se fai­sait de l’amour et de la fi­dé­lité d’une fille d’Ève, mais il vou­lut, pour mettre fin à ses anxiétés, que Ninon s’enga­geât par écrit à lui res­ter fi­dèle. Ninon si­gna, le marquis partit, et… <span class="on"><span class="note-src">Ninon qui n’aimait pas les entr’actes,</span><span class=note role=note>Une liai­son de cœur est la pièce où les actes sont les plus courts et les entr’actes les plus longs. (<span class="caps">Ninon de Lenclos</span>)</span></span> oublia bientôt pro­messe et si­gna­ture. Comme il était un peu tard quand son bil­let lui re­vint en mé­moire, elle ne put s’em­pê­cher de s’écrier : Ah ! le bon bil­let qu’à La Châtre !</p>
+  <p>C’est de­puis ce temps ou plu­tôt depuis cette his­toire, que le mot est passé dans la langue. Ayez dans les mains un bil­let sans valeur, un en­ga­ge­ment peu sé­rieux, et l’on di­ra pour ca­rac­té­ri­ser votre si­tua­tion : <em>Le bon billet qu’à La Châtre !</em></p></div>
+  <div style="text-align: center; margin-bottom: 0.8rem;">*</div>
+  <div class ="entry" id="y">
+  <p><entry><a href="#y">Y.</a></entry>Ceux qui ont re­mar­qué les énor­mes Y qui ont long­temps dé­co­ré les car­reaux de la plu­part des bou­tiques de mer­ce­rie n’ont pas été sans se de­man­der ce que ce ca­rac­tère de l’al­pha­bet pou­vait avoir de plus par­ti­cu­liè­re­ment com­mun avec les ru­bans, le fil et les ai­guilles.—Cette en­seigne re­monte au <c2sc>xvii</c2sc><e>e</e> siècle, et elle doit son ori­gine aux grè­gues, sorte de hauts-de-chausses, de cu­lottes à la grec­que que l’on por­tait à cette époque.</p>
+  <p>Les grè­gues s’at­ta­chaient avec un nœud de ru­ban, nom­mé un <em>lie-grègues</em> ; ce nœud a long­temps servi d’en­seigne aux mar­chands qui le ven­daient, c’est-à-dire aux mer­ciers, qui ont eu l’in­gé­nieuse idée d’y joindre cette in­scrip­tion-ca­lem­bourg : <em>à l’Y</em>.</p>
+  <p>Ce ca­lem­bourg par à peu près nous rap­pelle le ré­bus d’un au­ber­giste al­le­mand du quar­tier la­tin qui, vou­lant prendre l’en­seigne : <em>À l’élève en droit</em>, avait fait peindre au-des­sus de sa porte un <em>A</em>, un <em>l’</em> et un élé­phant qui se te­nait de­bout sur ses pieds de der­rière. Pour ce brave Teu­ton, cela vou­lait dire : <em>À l’élé­phant droit</em> (à l’élèfe en droit).—Nous par­don­ne­rions aux mer­ciers fran­çais, s’ils avaient eu, comme notre Al­le­mand, l’ex­cuse de la pro­non­cia­tion.</p>
+  <p>L’<em>Y</em> est si fa­mi­liè­re­ment éta­bli de­puis des siècles dans le monde de la mer­ce­rie qu’il est de­ve­nu un terme tech­nique : il sert à dé­si­gner par­ti­cu­liè­re­ment les ai­guilles courtes. Par­lez d’ai­guilles Y à une dame</p>
+  <blockquote>
+    <c>Qui ne soit pas déshonorée</c>
+    <c>De se voir une aiguille entre les doigts fourrée,</c></blockquote>
+  <p>et vous pou­vez être sûr d’être par­fai­te­ment entendu.</p></div>
+  <div style="text-align: center; margin-bottom: 0.8rem;">*</div>
+  <div class ="entry" id="mule">
+  <p><entry><a href="#mule">Ferrer la mule.</a></entry><em>Ferrer la mule</em> s’est dit et se dit en­core pour si­gni­fier : faire des pro­fits il­li­cites en trom­pant sur le prix de ce qu’on est char­gé d’ache­ter.<span class="on"><span class="note-src"><dops></dops><dopl> « Les</dopl> ser­vantes ap­pel­lent l’anse du pa­nier</span><span class=note role=note><dopla>« <em>Faire</dopla> dan­ser l’anse du pa­nier</em>, se dit d’une cui­si­nière qui trom­pa ses maî­tres en leur fai­sant payer les cho­ses plus cher qu’elle ne les a ache­tées. Lors­que cette cui­si­nière, re­ve­nue du mar­ché, pré­sen­ta les pro­vi­sions qu’elle en rap­porte, elle se­coue or­di­nai­re­ment et fait dan­ser, pour ain­si dire, le pa­nier où elles sont con­te­nues, afin de leur don­ner l’ap­pa­rence d’un plus grand vo­lume en ne les lais­sant pas en­tas­sées, et de prou­ver qu’elles n’ont pas coûté trop d’ar­gent, en rai­son de leur poids et de leur quan­tité. C’est de là pro­ba­ble­ment qu’est née cette lo­cu­tion où la par­tie est pour le tout, c’est-à-dire l’anse du pa­nier pour le pa­nier même. »<smcp style="padding-left: 0.5em;">Quitard</smcp></span></span> le pro­fit qu’elles font à <em>fer­rer la mule</em>.—On ap­pelle par­mi les va­lets l’anse du pa­nier, les <em>fer­re­ments de la mule</em>, les vols qu’ils font à leurs maîtres sur le prix des den­rées qu’ils achè­tent au mar­ché. » <em>(Dict. de Trévoux.)</em></p>
+  <p>Cette ex­pres­sion date, selon quel­ques-uns, du temps où les con­seil­lers au par­le­ment se ren­daient au Pa­lais, mon­tés sur des mules. Les la­quais qui res­taient de­hors pen­dant la sé­ance, pas­saient leur temps à jouer et ils ex­tor­quaient à leurs maîtres l’ar­gent qui leur était né­ces­saire, en pré­ten­dant qu’ils avaient fait <em>fer­rer leurs mules</em>.—On pense plus gé­né­ra­le­ment que cette ex­pres­sion re­monte à Vespasien. Le mu­le­tier de cet em­pe­reur s’étant laissé cor­rompre par la pro­messe d’une ré­com­pense, fit avoir une au­dience à un plai­deur en pré­tex­tant que ses mules étaient dé­fer­rées.—<dops></dops><dopl> « Ayant</dopl> vu, dit Suétone, dans un de ses voyages, son mu­le­tier s’ar­rêter brus­que­ment pour faire <em>fer­rer ses mules</em>, et le soup­çon­nant d’avoir vou­lu don­ner ain­si à un plai­deur dont ils avaient fait ren­contre, le temps de lui par­ler af­faire, il (Vespasien) lui de­man­da com­bien il avait reçu pour les fers, et il se fit payer une par­tie de la somme. »</p></div>
+  <cite>Charles Rozan, <in>Petites ignorances de la conversation</in>, <en>1856</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="bastiat.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="dequincey.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="bastiat.html"><span class="arrow">←</span>&nbsp;ce qu’on voit et ce qu’on ne voit pas</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="dequincey.html">On murder&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>

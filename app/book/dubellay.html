@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/Bookerly.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/pseudolly.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+   
+    div.id {text-align: center;}
+
+    div.id > div:nth-child(2) {
+      font-family: pseudolly;
+      font-style: italic;
+      font-size: 105%;
+      letter-spacing: 0.05rem;
+      padding-top: 3.66rem;
+      /* margin-bottom: 2em; */
+      /* margin-bottom: 1.4em; */
+      }
+
+   div.id > div:nth-child(3) {
+      font-family: dolly-caps;
+      text-transform: lowercase;      
+      font-size: 120%;
+      padding-top: 2rem;
+      /* margin-bottom: 3.8rem */
+      margin-bottom: 2.8rem;
+      }
+
+      div.id a { display: block; }
+      div.id a:hover { background: none; color: var(--txt); }
+      div.id hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 3.8rem;
+
+        /* margin-top: 4rem; */
+        /* margin-bottom: 1.4em; */
+        }
+      p, div.id {
+        font-family: pseudolly;
+        font-feature-settings: "dlig";
+        }
+        c2sc {font-family: dolly-caps;}
+      greek {
+        font-family: bookerly;
+        font-size: 95%;
+        line-height: 0;
+
+        /* position: relative;
+        display: inline-block;
+        text-indent: 0 !important */;
+      /*border-bottom: 1px dotted black;*/
+        }
+        p {        text-align: justify;
+}
+    img.pp {
+      float:left;
+      width:5em;
+      position:relative;
+      top:0.2em;
+      margin-right:0.4em;
+      padding-left: 0.1em;
+      /* left:-0.2em; */
+      margin-bottom:0.3em;
+      pointer-events: none;
+    }
+    [dark="true"] img.pp {filter: invert(1) opacity(0.9);}
+    #opa:hover {opacity: 1 !important; transition-duration: 0.2s !important; transition-property: opacity;}
+    
+    dcaps {
+      float: left;
+      position: relative;
+      display: inline;
+      background-repeat: no-repeat;
+      background-size: contain;
+      /* pointer-events: none; */
+      padding-left: 0.1em;
+      margin-right:0.4em;
+    }
+    [dark]  dcaps.p {
+      background-image: url('images/dropcap+p_alt.png');
+    }
+    dcaps.p {
+      background-image: url('images/dropcap+p.png');
+      top: 0.2em;
+      /* width: 6.3em; */
+      width: 6.4em;
+      height:6.4em;
+      width: 5em;
+      height: 5em;
+    }
+    dcaps.large.p {
+      width: 6.4em;
+      height:6.4em;
+    }
+    [dark]  dcaps.e {
+      background-image: url('images/dropcap+e_alt.png');
+    }
+    dcaps.e {
+      background-image: url('images/dropcap+e.png');
+      top: 0.2em;
+      /* width: 6.3em; */
+      width: 6.4em;
+      height:6.4em;
+      width: 5em;
+      height: 5em;
+    }
+    dcaps.large.e {
+      width: 6.4em;
+      height:6.4em;
+    }
+
+
+
+    </style>
+        <style>
+
+         html:not([wide]) title-block.dsktp {
+            position: initial;
+            margin-left: -9rem;
+          }
+              </style>
+
+<style>
+  title-block.absolute {
+    position: relative;
+    margin-left: -12rem;
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+  title-block.sticky {
+    position: sticky;
+    margin-left: -9.5rem;
+    top: 3.2rem;
+    border-top: none;
+    padding-top: 0.5rem;
+    padding-top: 0.1em;
+  }
+  .sticky topic {
+    font-family: display;
+    font-family: "Avocado 14";
+    text-transform: lowercase;
+    font-weight: normal;
+    font-size: 210%;
+    line-height: 0.8;
+    margin-bottom: 0.67em;
+    margin-bottom: 0.4em;
+  }
+  html:not([wide]) title-block.sticky:hover {
+    opacity: 1 !important;
+    transition-duration: .2s !important;
+    transition-property: opacity;
+  }
+  @media all and (max-width:520px) {
+    title-block.absolute {
+    display: none;
+  }
+  title-block.sticky {
+    display: none;
+  }
+  }
+  
+  [wide] title-block.absolute {
+    margin-left: 0;
+  }
+  [wide] title-block.sticky {
+    position: revert;
+    margin-left:0;
+    text-align: right;
+    font-size: 345%;
+    /* min-height: 36rem; */
+    margin-bottom: 10rem;
+  }
+  
+  @media not all and (max-width:520px) {
+    html:not([wide]) #bullet {
+    display: none;
+    }
+    html:not([wide]) title-block.sticky {
+    background: var(--bkg);
+    }
+  }
+  </style>
+  
+  <title>La Défense et illustration de la langue française | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>La défense et illustration de la langue française</topic>
+    <short-rule>Livre premier</short-rule>
+  </title-block>
+  <title-block class="mobil" style="padding-top: 0; border-top: none;"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Tractatus Logico-Philosophicus</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);">Logicsh-philosophische Abhandlung</short-rule></title-block>
+
+
+  <!-- <title-block id="lightswitch" class="mobil" style="padding-top: 0; border-top: none;"><topic id="lightswitch">La Défense et illustration de&nbsp;la&nbsp;langue&nbsp;Française</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);">Livre premier</short-rule></title-block>
+  <title-block class="dsktp"><topic></topic></title-block> -->
+  <!-- <title-block class="dsktp" id="opa" style="position: fixed; left: inherit; transform: translate(-126.5%, 2%); padding-top: 0.4rem; border-top: none"><topic id="lightswitch" style="/* font-family: display; text-transform: lowercase; font-weight: normal; font-size: 210%; line-height: 0.8; */">La Défense et illustration de la langue Française</topic><short-rule>Livre premier</short-rule></title-block> -->
+  <!-- <title-block class="dsktp" id="opa" style="position: fixed; left: inherit; transform: translate(0%, 2%); padding-top: 0.4rem; border-top: none"><topic id="lightswitch" style="/* font-family: display; text-transform: lowercase; font-weight: normal; font-size: 210%; line-height: 0.8; */">La Défense et illustration de la langue Française</topic><short-rule>Livre premier</short-rule></title-block> -->
+  <div class="gap" style="height: 4.34rem"></div>
+  <div class="id"><hr style="display:none"><div id="2">Que la Langue Françoy&#xE000;e ne doit e&#xE000;tre&nbsp;nommée&nbsp;barbare.</div><div><a href="#2">Chap. II.</a></div></div>
+  <p id="_2"><dcaps class="p"></dcaps><c2sc>OUR</c2sc> com­men­cer don­ques à en­trer en ma­tiere, quand à la &#xE004;­gni­fi­ca­tiõ de ce mot Bar­bare : Bar­bares an­ciẽ­ne­ment etoint nõ­mez ceux, &#xE006; ĩep­te­mẽt &#xE005;loint Grec. Car cõme les etrã­gers ve­nans à Athenes &#xE003;’ef­for­coint de par­ler Grec, ilz tũ­boint &#xE003;ou­uẽt en ce&#xE003;te voix ab­&#xE003;urde <greek>βάρ­ϐα­ρας</greek>. De­puis les Grecz trã­por­ta­rent ce nõ aux meurs bru­taux, & cruelz, ap­pel­lant toutes na­tions hors la Grece, Bar­bares. Ce qui ne doit en riẽ di­mi­nuer l’ex­cel­lẽce de notre Lan­gue : veu  cete ar­ro­gãce Greque, ad­mi­ra­trice eu­le­mẽt de es in­uen­tiõs, n’auoit loy ny pri­ui­lege de le­gi­ti­mer ain&#xE004; a Na­tion, & aba­tar­dir les autres : comme Anarchar&#xE004;s dioit, que les Scythes etoint Bar­bares entre les Athe­niens, mais les Athe­niens au&#xE004; entre les Scythes. Et quand la bar­ba­rie des meurs de notz An­cétres eut deu les mou­uoir à nous apel­ler Bar­bares, &#xE004; et ce, que ie ne voy point, pour­quoy on nous doiue main­te­nant etimer telz : veu qu’en ci­ui­li­té de èurs, equité de loix, magna­ni­mi­té de cou­raiges, bref en toutes formes, & ma­nieres de vi­ure non moins lou­ables, que <span style="padding-left: 0.15em;"></span>fi­tables, nous ne ommes rien moins qu’eux : mais bien plus, veu qu’ilz ont telz main­te­nant, que nous les pou­uons iute­ment apel­ler par le nom, qu’ilz ont donné aux autres. En­cores moins doit auoir lieu, de ce que les Romains nous ont ap­pel­lez Bar­bares, veu leur am­bi­tion, & inatiable faim de gloyre : qui ta­choint non eu­le­ment à ub­iu­guer, mais à rendre toutes autres na­tions viles, & ab­iectes aupres d’eux : prin­ci­pa­le­ment les Gauloys, dont ilz ont receu plus de honte, & dom­maige, que des autres. A ce pro­pos, on­geant beau­coup de oys, d’ou viẽt que les getes du peuple Ro­main, ont tãt ce­lebrés de tout le Mõde, voyre de &#xE004; long in­ter­uale <span style="padding-left: 0.15em;"></span>ferés, à ceux de toutes les autres Natiõs en­emble, ie ne treuue point pl° grande rai­on que cete cy : c’et que les Ro­mains ont eu &#xE004; grande mul­ti­tude d’Ecri­uains, que la plus part de leur getes (pour ne dire pis) par l’Epace de tant d’an­nées, ar­deur de ba­tailles, vatité d’Italie, in­cur&#xE004;õs d’e­trã­gers, ’et cõ­er­uée en­tiere iuques à notre tens. Au con­traire les faiz des autres nations &#xE004;n­gu­lie­re­ment des Gau­loys, auant qu’ilz tumba­ent en la puy­ance des Fran­coys, & les faiz des Fran­coys me­mes depuis qu’ilz ont dõné leur nom aux Gaules, ont été &#xE004; mal re­cueil­liz, que nous en auons qua&#xE004; perdu non eu­le­ment la gloyre, mais la me­moyre. A quoy à bien aydé l’enuie des Ro­mains, qui comme par vne cer­taine con­iu­ra­tion conpi­rant contre nous, ont ex­tenué en tout ce qu’ilz ont peu, notz lou­anges bel­liques, dont ilz ne pou­uoint en­durer la clarté : & non eu­le­ment nous ont fait tort en cela, mais pour nous rẽdre encor’ plus odieux, & con­temp­tibles, nous ont apellz bru­taux, cruelz, & Bar­bares. Quel­qu’vn dira, pour­quoy ont ilz ex­empté les Grecz memes, dont ilz auoint em­prunté tout ce, qu’ilz auoint de bon, au moins quãd aux Sciẽces, & il­lutra­tion de leur Lan­gue. Ces rayons me emblẽt uf­fiantes de faire en­tendre à tout equi­table Eti­ma­teur des choes, que notre Langue (pour auoir eté nõmes Bar­bares ou de noz ennemys, ou de ceux, qui n’auoint Loy de nous bailler ce Nom) ne doit pour­tant etre de­priée memes de ceux, aux quelz elle et <span style="padding-left: 0.15em;"></span>pre, & na­turelle : & qui en riẽ ne ont moindres,  les Grecz, ou Romains.</p>
+  <div class="id"><hr><div id="3">Pourquoy la Langue Françoy&#xE000;e n’e&#xE000;t &#xE000;i riche que&nbsp;la&nbsp;Greque,&nbsp;&#xF0C26;&nbsp;Latine.</div><div><a href="#3" onclick="hgg()">Chap. III.</a></div></div>
+  <p id="_3" style="display: none;"><dcaps class="e"></dcaps><c2sc>t</c2sc> &#xE004; no&#xE003;tre Lã­gue n’e&#xE003;t &#xE004; co­pieu&#xE003;e, & ri­che &#xE000; la Greque, ou La­tine, ce­la ne doit e&#xE003;­tre im­pu­té au de­fault d’icelle, com­me &#xE004; d’elle me&#xE003;me elle ne pou­uoit ia­mais e&#xE003;tre &#xE004; non pauure, & &#xE003;terile : mais bien on le doit at­tri­buer à l’igno­rance de notz maieurs, qui ayans (comme dict quel­qu’vn, par­lant des an­ciens Ro­mains) en plus grande re­com­man­da­tion le bien faire, que le bien dire, & mieux aymans lai&#xE003;&#xE003;er à leur po&#xE003;­te­ri­té les ex­emples de ver­tu, &#xE000; les preceptes : &#xE003;e sont priuez de la gloyre de leurs bien faitz, & nous du fruict de l’im­mi­ta­tion d’iceux : & &#xE005; me&#xE003;­me moyen nous ont lai&#xE003;&#xE003;é no&#xE003;tre Langue &#xE004; pauure, & nue, qu’elle a be­&#xE003;oing des or­ne­mẽtz, & (&#xE003;’il fault ain&#xE004; par­ler) des plumes d’autruy. Mais &#xE006; vou­droit dire &#xE000; la Greque, & Romaine eu&#xE003;&#xE003;ent touiours eté en l’excellẽnce qu’on les a vues du tens d’Homere, & de De­mo&#xE003;­thene, de Vir­gile, & de Ci­ce­ron ? Et &#xE004; ces aucteurs eu&#xE003;&#xE003;ent iugé, &#xE000; iamais pour quelque diligẽce, & culture, qu’on y eu&#xE003;t peu faire, elles n’eu&#xE003;­&#xE003;ent &#xE003;ceu pro­duyre plus grand fruict, &#xE003;e feu&#xE003;­&#xE003;ent ilz tant efor­cez de les mettre au pont, ou nous les voyons main­te­nant ? Ain­&#xE004; puys-ie dire de no&#xE003;tre Lan­gue, qui com­mence en­cores à fleu­rir, &#xE003;ans fruc­ti­fier : ou pluto&#xE003;t comme vne plante, & Ver­gette, n’a point en­cores fleury, tant &#xE003;e fault qu’elle ait ap­por­té tout le fruit, qu’elle pou­roit bien pro­duyre. Cela cer­tai­ne­ment non pour le de­fault de la Na­ture d’elle au&#xE003;si apte à en­gen­drer, que les autres : mais pour la coulpe de ceux, qui l’õt euë en garde, & ne l’ont cul­ti­uée à &#xE003;uffi&#xE003;ance : ains comme cne plante &#xE003;auuaige, en celuy me&#xE003;­mes De&#xE003;ert, ou elle auoit com­men­cé à naitre, &#xE003;ans ia­mais l’ar­ro­&#xE003;er, la tail­ler, ny de­fendre des Ronces, & Epines, qui luy fai&#xE003;oit vmbre, l’ont lai&#xE003;&#xE003;é enuieillir, & qua&#xE004; mourir. Que &#xE004; les an­ciens Ro­mains eu&#xE003;­&#xE003;ent eté au&#xE003;­si ne­gli­gés à la cul­ture de leur Langue, quand pre­mie­re­ment elle com­mẽ­ça à pu­lu­ler, pour cer­tain en &#xE004; peu de tens elle ne feu&#xE003;t de­ue­nue &#xE004; grande. Mais eux en gui­&#xE003;e de bons Agri­cul­teurs, l’ont pre­miere­ment tran&#xE003;­muée d’vn lieu &#xE003;au­uaige en vn do­me­&#xE003;tique : puis af­fin que plus to&#xE003;t, & mieux elle peu&#xE003;t fruc­ti­fier, cou­pant à l’en­tour les inu­tiles ra­meaux, l’ont pour echãge d’iceux re­&#xE003;tau­rée de Ra­meaux francz, & do­mes­tiques ma­gi­stra­le­ment tirez de la Langue Greque, les quelz &#xE003;ou­dai­ne­ment &#xE003;e &#xE003;ont &#xE004; bien entez, & faitz &#xE003;em­bla­bles à leur tronc, que de­&#xE003;or­mais n’ap­pa­roi&#xE003;&#xE003;ent plus adop­tifz, mais na­turelz. De la &#xE003;ont nées en la Langue Latine ces fleurs, & ces fruictz co­lo­rez de cete grande elo­quence, auec­ques ces nom­bres, & cete lyai­&#xE003;on &#xE004; ar­ti­fi­cielle, toutes les quelles cho&#xE003;es non tant de &#xE003;a pro­pre na­ture, que par ar­ti­fice toute Langue a co­utume de profuyre. Don­ques &#xE004; les Grecz, & Ro­mains plus di­li­gens à la cul­ture de leurs Langues que nous à celle de la no&#xE003;tre, n’ont peu trou­uer en icelles &#xE004; non auec­ques grand la­beur, & in­du­&#xE003;trie ny grace, ny Nombre, ny fi­na­ble­ment au­cune elo­quence, nous de­uons nous emer­ueil­ler &#xE004; no&#xE003;tre vul­gaire n’e&#xE003;t &#xE004; riche com­me il pour­ra bien e&#xE003;tre, & de la prendre oc­ca­&#xE003;ion de le me­pri­&#xE003;er cõme cho&#xE003;e vile, & de petit prix ? Le tens vien­dra (peut e&#xE003;tre) & ie l’e&#xE003;pere moyẽ­nant la bõne de­&#xE003;ti­née Fran­çoy&#xE003;e, que ce noble, & pui&#xE003;&#xE003;ant Roy­aume ob­tiẽ­dra à &#xE003;on tour les re&#xE003;nes de la mo­nar­chie, & que no&#xE003;tre Langue, (&#xE004; auec­ques Françoys n’e&#xE003;t du tout en&#xE003;euelie la Langue Françoy&#xE003;e) qui com­mence encor’ à ieter &#xE003;es &#xE003;es ra­cines, &#xE003;or­ti­ra de terre, & &#xE003;’eleue­ra en telle hau­teur, & gro&#xE003;&#xE003;eur, qu’elle &#xE003;e poura ega­ler aux me&#xE003;mes Grecz & Ro­mains, pro­duy­&#xE003;ant comme eux, des Homeres, De­mo­&#xE003;thenes, Vir­giles, & Ci­ce­rõs, au&#xE003;si bien que la France a quel­ques­fois pro­duit des Pe­ricles, Nicies, Al­ci­biades, The­mi­&#xE003;tocles, Ce&#xE003;ars, & Scipions.</p>
+  <div class="id"><hr><div id="4">Que la Langue Françoy&#xE000;e n’e&#xE000;t &#xE000;i pauvre que&nbsp;beaucoup&nbsp;l’e&#xE000;timent.</div><div><a href="#4">Chap. IIII.</a></div></div>
+  <div class="id"><hr><div id="5">Que les Traductions ne &#xE000;ont &#xE000;uffi&#xE000;antes pour donner&nbsp;perfection&nbsp;à&nbsp;la&nbsp;Langue&nbsp;Françoy&#xE000;e.</div><div><a href="#5">Chap. V.</a></div></div>
+  <div class="id"><hr><div id="6">Des mauuais Traducteurs, &#xF0C26; de ne traduyre les&nbsp;Poëtes.</div><div><a href="#6">Chap. VI.</a></div></div>
+  <div class="id"><hr><div id="7">Comment les Romains ont enrichy leur Langue.</div><div><a href="#7">Chap. VII.</a></div></div>
+  <div class="id"><hr><div id="8">D’amplifier la Langue Françoy&#xE000;e par l’immitation des&nbsp;anciens&nbsp;Aucteurs&nbsp;Grecz,&nbsp;&#xF0C26;&nbsp;Romains.</div><div><a href="#8">Chap. VIII.</a></div></div>
+  <cite>Joachim du Bellay, <in>La Deffence et illustration de la Langue Françoyse</in>, <en>1549</en>.</p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="wu.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="menard.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="wu.html"><span class="arrow">←</span>&nbsp;Journey to the West</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="menard.html">simboliqe religieuse&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+
+<script>
+
+  const setOpacity = function() {
+    const element = document.querySelector(".sticky")
+        , ascrollPosition = window.scrollY
+        , aviewportHeight = window.innerHeight
+        , condition = document.querySelector("html[wide]");
+    if (condition) {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight * 3))
+    } else {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight))
+    }
+  };
+  window.addEventListener("scroll", setOpacity);
+  window.addEventListener("resize", setOpacity);
+  window.addEventListener("scroll", function() {
+    let viewportHeight = window.innerHeight
+      , scrollTop = window.pageYOffset
+      , scrollHeight = document.body.scrollHeight
+      , condition = document.querySelector("html[wide]");
+    if (scrollTop <= viewportHeight && condition) {
+      // let translateY = scrollTop / 2;
+      let translateY = scrollTop / 4;
+      document.querySelector(".sticky").style.transform = `translateY(-${translateY}px)`;
+    }
+  });
+  
+  // window.onload = function () {
+  //   const element = document.querySelector(".sticky");
+  //   if (element) {
+  //     element.addEventListener('mouseenter', () => element.classList.add('hovered'));
+  //     element.addEventListener('mouseleave', () => element.classList.remove('hovered'));
+  //   }
+  // };
+  
+  
+  const toggleMenu2 = function(e) {
+    const element = document.querySelector(".sticky")
+        , menu = document.querySelector("#menu")
+        , body = document.querySelector("body");
+  
+    // click anychere on page
+    if (body.classList.contains("menu_open")
+    && e.target.id === "content") {
+      body.classList.toggle("menu_open");
+      setTimeout(function() {
+        menu.style.visibility = "hidden";
+      }, 600);
+    }
+  
+    if (e.target === element || e.target.parentNode === element) {
+      body.classList.toggle("menu_open");
+      if (body.classList.contains("menu_open")) {
+        menu.style.visibility = "visible";
+      } else {
+        setTimeout(function() {
+          menu.style.visibility = "hidden";
+        }, 600);
+      }
+    }
+  };
+  document.addEventListener("click", toggleMenu2);
+  
+  </script>
+  
+  
+<script>
+  var te = document.getElementById('_3');
+  function hgg() {
+    /* document.getElementById('_2').style = "display: none"; */
+    te.style = "display: block"
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="../core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="../core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="../core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../core/palette.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../core/fonts.css" />
+  <script type="text/javascript" src="../core/zooom.js"></script>
+  <style>
+    #navtable > div + div {border: 0}
+
+    title-block {
+      position: relative;
+      left: inherit;
+      transform: translate(-9.5rem, 2%);
+      margin-right: -9.5rem;
+      padding-top: 0.1rem;
+      border-top: none;
+
+      width: calc(2.55rem * 3);
+      top: -0.33em;
+      }
+
+    title-block topic {
+      font-family: display;
+      text-transform: lowercase;
+      font-weight: normal;
+      font-size: 240%;
+      line-height: 0.8;
+      line-height: 0.5;
+      margin-bottom: 1.2rem;
+      }
+
+    @media all and (max-width:520px) {
+      title-block {
+      width: 100%;
+      transform: none; 
+
+      border-top: none;
+      border-top: 1px solid;
+      padding-top: 0.7rem;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.005rem;
+      /* background: var(--bkg); */
+      /* background-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px); */
+      }
+
+      topic {
+      display: inline;
+      font-size: 321%;
+      font-size: 300%;
+      font-size: 280%;
+      }
+
+      short-rule {
+      font-family: dolly;
+      font-style:italic;
+      font-weight: normal;
+      font-size: 0.9rem;
+      border: none;
+      display: inline;
+      padding-left: 1em;
+      }
+      }
+
+    @media all and (min-width:1200px) {
+      title-block { 
+      width: calc(2.55rem * 4);
+      transform: translate(-12rem, 2%);
+      margin-right: -11.5rem;
+      }}
+
+    dl > title-block { margin-top: 0; margin-bottom: -1em; }
+    dl > title-block:first-of-type topic { border-top: 0px solid var(--txt) }
+    /* dl > title-block:first-of-type topic { border-top: 0.15em solid var(--txt) } */
+    dl > title-block:first-of-type topic.none { border-top: 0px solid rgba(255, 255, 255, 0) }
+
+    dl {
+      margin: 0;
+      padding: 0px 0 0 0;
+      }
+    @media all and (max-width:520px) {
+      dl {
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+      }}
+
+    dt {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 3rem;
+      /* margin-top: 3rem; */
+      margin-bottom: 3rem;
+      /* margin-top:; !!! */
+      z-index: 100;
+      }
+    dl:nth-of-type(1) dt {
+      margin-top: -9rem;
+      margin-bottom: 9rem;
+      }
+    dl:nth-of-type(2) dt {
+      margin-top: -6.1rem;
+      margin-bottom: 6.1rem;
+      }
+    dl:nth-of-type(3) dt {
+      margin-top: -5.4rem;
+      margin-bottom: 5.4rem;
+      }
+    @media all and (max-width:520px) {
+      dt {
+      top: 0rem;
+      top: -1px;
+      margin-top: -1.4rem;
+      margin-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      /*  background-color: rgba(255, 239, 239, 0.95); */
+      /* backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      margin-left: -1.5rem;
+      padding-left: 1.5rem;
+      margin-right: -1.5rem;
+      padding-right: 1.5rem; */
+      }
+      dl:nth-of-type(1) dt,
+      dl:nth-of-type(2) dt,
+      dl:nth-of-type(3) dt {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      }}
+    
+
+    @media all and (max-width:520px) {
+      dd {
+      padding-bottom: 0rem;
+      }}
+    
+
+
+    .note {width: 100%}
+
+
+
+      .c1a topic, .c1b topic {
+        transition-property: border-color;
+        transition-duration: 0.2s;
+      }
+      .c1a a, .c1b a, .c2 a, .c3 a, .c4 a { 
+        transition-property: color;
+        transition-duration: 0.2s;
+      }
+      .c1a.hover a:active,
+      .c1b.hover a:active,
+      .c2 a.hover:active,
+      .c3 a.hover:active,
+      .c4 a.hover:active {
+        transition: none;
+      }
+
+      .c2 topic   { border-color: var(--cm) !important; }
+      .c2 a.hover { color: var(--cq) }
+      .c3 topic   { border-color: var(--c3) !important; }
+      .c3 a.hover { color: var(--c3) }
+      .c4 topic   { border-color: var(--ç4) !important; }
+      .c4 a.hover { color: var(--ç4) }
+
+      /* BODY OF TEXT */
+
+      /* UX-UI Design (1) */
+      dl:nth-of-type(1)         { color: var(--a15) }
+      dl:nth-of-type(1) a:after { color: var(--a14); top: -0.25em; }
+      a.cross::after            { content: "\FEFF†"; }
+      a.doublecross::after      { content: "\FEFF‡"; }
+      a.triplecross::after      { content: "\FEFF||"; }
+      a.quadruplecross::after   { content: "\FEFF||"; }
+      dl:nth-of-type(1) a:hover,
+      dl:nth-of-type(1) .on:hover > .note-src,
+      dl:nth-of-type(1) .un:hover > .note-src   { background: #fff7ee }
+      dl:nth-of-type(1) .note, .details         { border-bottom: none; background: linear-gradient(to bottom, var(--rad), var(--bkg)); }
+      /* dl:nth-of-type(1) title-block             { color: var(--a15) } */
+      /* dl:nth-of-type(1) title-block.hover a     { color: var(--a14) } */
+      /* dl:nth-of-type(1) title-block.hover topic { border-color: inherit; } */
+
+
+      /* UX-UI Design (2) */
+      dl:nth-of-type(2)           { color: var(--c1) }
+      dl:nth-of-type(2) a:hover   { background: var(--a)}
+      dl:nth-of-type(2) a::after  { color: var(--a14) }
+      title-block.c1b             { color: var(--c1) }
+      title-block.c1b.hover a     { color: var(--c1) }
+      title-block.c1b.hover topic { border-color: inherit; }
+     /*  dl:nth-of-type(1) dd { color: var(--c1) } */
+      /* dl:nth-of-type(1) dd { color: var(--cm) }
+      dl:nth-of-type(2) dd { color: var(--c1) }
+      dl:nth-of-type(3) dd { color: var(--cq) } */
+
+
+
+      @media all and (max-width:520px) {
+      dl:nth-of-type(1) dd > p:first-of-type {font-size: 115%; /* color: var(--c1); */}
+      dl:nth-of-type(1) { color: var(--c1)}
+      /* dl:nth-of-type(2) dt {/* mix-blend-mode:exclusion ; *//*} */
+      /* dl:nth-of-type(2) svg {fill: var(--c2);} */
+      dl:nth-of-type(4) dt {mix-blend-mode: screen;}
+      }
+
+
+      title-block { transition-property: opacity; transition-duration: 0.2s; }
+      title-block.scrolledd { opacity: 0.3; }
+      title-block.scrolledd:hover {opacity: 1; background-color: rgb(255, 255, 255); color: #faf3f3;}      
+
+      p, pp, image-caption {hyphens: auto; -webkit-hyphens: auto;}
+      p.com {font-family: ScalaSans; color: var(--st); margin-top: 1em;}
+      .note-src {display: block;}
+      .note-src:after {content: none !important;}
+      image-caption.none::before { content: none; }
+      image-caption.none { padding-top: 0; margin-top: -0.1em}
+      image-caption.non::before { content: none; }
+      image-caption.non { padding-top: 0.5em; margin-top: 0; }
+    
+    /* image-caption:not(.ty)::before { content: none; }
+    image-caption:not(.ty) {padding-top: 0; margin-top: -0.1rem}
+    image-caption + image-caption {padding: 0;} */
+    a.xref { line-height: 0;}
+    title-block a:after {content: none;}
+    title-block a:hover {background-color: var(--bg);}
+    dl:nth-of-type(4) dd p.image {cursor: pointer;}
+    a.svg {display:block; width: 100%;}
+    a.svg:hover {background: none;}
+    svg {margin:auto; display: block; width: 100%;}
+    #houdini, #milou {
+      background: var(--bg);
+      background: none;
+      transition-duration: 0.2s;
+      transition-property: background, border-radius;
+      margin-bottom: 1em;
+      padding: 3em 7em;
+      padding: 3em 6em;
+      padding: 1.8em 2em;
+      padding-top: 3em;
+      border-radius: 8px;
+      }
+    #milou {
+      background: var(--bg);
+      background: none;
+      transition-duration: 0.2s;
+      transition-property: background, border-radius;
+      margin-bottom: 1em;
+      padding: 1.8em 8em;
+      padding-top: 3em;
+      border-radius: 8px;
+      }
+    @media all and (max-width:520px) {#houdini, #milou {padding: 2em 2em;}}
+    @media all and (max-width:520px) {#milou, #milou {padding: 2em 5em;}}
+    #oni {
+      margin-bottom: 1em;
+      padding: 1.8em 8em;
+      border-radius: 8px;
+      padding-top: 3em;
+
+      }
+    #houdini:hover, #milou:hover, #oni:hover {
+      /* fill:rgb(52, 79, 153); */
+      transition-property: fill;
+      transition-duration: 2s !important; 
+      /* animation-name: hov;
+      animation-duration: 1s;
+      animation-iteration-count: infinite; */
+      /* animation: hov 5s  steps(1, end)  infinite;  */     
+        animation-name: hov;
+        animation-duration: 20s;
+        /* animation-timing-function: steps(1, end); */
+        animation-delay: 0;
+        animation-iteration-count: infinite;
+        animation-direction: normal;   
+      }
+
+
+      @keyframes hov {
+      0%, 100%  
+      {fill: rgb(25	41	23	);}
+      11% 
+      {fill: rgb(201	65	59	);}
+      22% 
+      {fill: rgb(144	124	105	);}
+      33% 
+      {fill: rgb(227	210	169	);}
+      44% 
+      {fill: rgb(235	221	93	);}
+      55% 
+      {fill: rgb(28, 179, 133);}
+      /* {fill: rgb(161	156	184	)} */
+      66% 
+      {fill: rgb(64,	93,	123)	;}
+      77% 
+      {fill: rgb(200	208	212	);}
+      88% 
+      {fill: rgb(75	76	69	);}
+
+}
+@keyframes hovf {
+      0%, 100%  
+      {fill: rgb(25	41	23	);}
+      10% 
+      {fill: rgb(201	65	59	);}
+      20% 
+      {fill: rgb(235	221	93	);}
+      30% 
+      {fill: rgb(227	210	169	);}
+      40% 
+      {fill: rgb(200	208	212	);}
+      50% 
+      {fill: rgb(144	124	105	);}
+      60% 
+      {fill: rgb(161	156	184	)}
+      70% 
+      {fill: rgb(64,	93,	123)	;}
+      80% 
+      {fill: rgb(28, 179, 133);}
+      90% 
+      {fill: rgb(75	76	69	);}
+
+}
+
+    #houdini:active, #milou:active, #oni:active { fill: var(--act) !important; }
+    </style>
+ 
+    <style>dd.image:hover img {filter: none !important;}
+    img {filter: none !important;}</style>
+      <style>
+        /* ul li::before {content: none;}    */
+        li {margin-bottom: 0.2em;}
+        a.toc {
+          display: block; 
+          padding-left: 0.4em;
+          margin-left: -0.4em;
+          }
+        a.toc::before {
+          content: "•";
+          margin-left: -2em;
+          padding-right: 1.5em;
+          font-weight: bold;
+          position: static;
+          color: var(--txt)
+        }
+        ex { font-family: dolly-caps; text-transform: lowercase; }
+        /* ex:after { content: ","; } */
+        ex + in { display: block; font-style: italic; /* margin-left: 0.5rem; */ }
+
+
+        a {border-radius: 8px !important; transition-property: background !important;}
+      p {hyphens: auto;}
+      p, li {font-family: scalasans; line-height: 1.4;}
+      </style>
+  <title>Portfolio | @mnrv</title>
+</head>
+
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="../.">­</a>
+<div id="content" lang="fr">
+  <hr>
+  <p style="font-family: scalasans; font-weight: bold;"><c2sc>Éducation</c2sc></p>
+  <p>École Nationale Supérieure des Arts Décoratifs de Paris
+  <span style="float: right; text-align: right; font-family: scalasans; color: #808080;">2010–2015</span>
+  <br><i>Spécialité : Image imprimée</i></p>
+  <div class="gap" style="height:1em"></div>
+  <hr>
+  <p style="font-family: scalasans; font-weight: bold;"><c2sc>Expérience</c2sc></p>
+  <p>Typographie • Houdini
+    <span style="float: right; text-align: right; font-family: scalasans; color: #808080;">2021</span>
+    <br><i>Caractère franc et géométrique</i></p>
+  <p>UX/UI design • atmnrv.github.io
+    <span style="float: right; text-align: right; font-family: scalasans; color: #808080;">2020–2021</span>
+    <br><i>Une maquette pour le livre numérique</i></p>
+    <p>Typographie • Milou
+      <span style="float: right; text-align: right; font-family: scalasans; color: #808080;">2020</span>
+      <br><i>Caractère de titrage pour apprendre à lire</i></p>
+      <p>Typographie • Oni
+        <span style="float: right; text-align: right; font-family: scalasans; color: #808080;">2019</span>
+        <br><i>Famille de caractères optimisée pour le confort <br>de lecture en (très) basse résolution</i></p>
+        
+        <div class="gap" style="height:1em"></div>
+        <hr>
+        <p style="font-family: scalasans; font-weight: bold;"><c2sc>Compétences et intérêts</c2sc></p>
+        <ul>
+          <li>Anglais courant</li>
+          <li>Adobe CC (PhotoShop, Illustrator, InDesign, Premiere…)</li>
+          <li>HTML, CSS + JavaScript</li>
+          <li>FontLab</li>
+          <li>Logic Pro, Audition</li>
+        </ul>
+  <div class="gap" style="height:1em"></div>
+</div>
+
+<a class="nav" href="."><div id="prev" class="side"></div></a>
+<a class="nav" href="."><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div></div>
+<div class="center"><a class="box-link" onclick="history.back()">retour</a></div>
+<div></div></div></div>
+
+<script>
+  //   T A B L E   D E   N A V I G A T I O N   //
+
+  const iter_navigator = () => document.getElementById("navigator");
+
+  const max_scroll_height = () => document.body.scrollHeight;
+
+  const reveal_bottom_nav = function () {
+    const navigator = iter_navigator();
+    if (!navigator) return;
+    const y_remaining = max_scroll_height() - (window.scrollY + window.innerHeight);
+    const invisible_threshold = body.clientWidth * .175;
+    const visible_threshold = body.clientWidth * .100;
+    const new_opacity =
+      y_remaining >= invisible_threshold ? 0
+        : y_remaining <= visible_threshold ? 1
+          : Math.pow(((invisible_threshold - y_remaining)
+            / (invisible_threshold - visible_threshold)), 2);
+    navigator.style.opacity = new_opacity;
+    navigator.classList[new_opacity > 0 ? "add" : "remove"]("visible")
+  };
+
+  window.addEventListener("resize", reveal_bottom_nav);
+  window.addEventListener("scroll", reveal_bottom_nav);
+
+</script>
+<script>
+  localStorage.setItem('darkScheme', false);
+</script>
+<script>
+  window.addEventListener('load', function () {
+    new Zooom({
+      zooomElement: 'img.zooom',
+      zooomWrap: 'zooom-wrap',
+      zooomImg: 'zooom-img',
+      zooomOverlay: 'zooom-overlay'
+    });
+  })
+</script>
+<script>
+
+/*   N O T E S   */
+
+function toggleNote(event) {
+    if (event.target.classList.contains("note-src")) {
+      if (event.target.nextElementSibling.style.display == "block") {
+          event.target.nextElementSibling.style.display = "none";
+      } else {
+          event.target.nextElementSibling.style.display = "block";
+      }
+    }
+    if (event.target.classList.contains("note")) {
+      if (event.target.style.display == "none") {
+          event.target.style.display = "block";
+      } else {
+          event.target.style.display = "none";
+      }
+    }
+    // mod for <i> in note-src
+    if (event.target.parentNode.classList.contains("note-src")) {
+      if (event.target.parentNode.nextElementSibling.style.display == "block") {
+          event.target.parentNode.nextElementSibling.style.display = "none";
+      } else {
+          event.target.parentNode.nextElementSibling.style.display = "block";
+      }
+    }
+    // mod for pp
+    if (event.target.parentNode.classList.contains("note")) {
+      if (event.target.parentNode.style.display == "none") {
+          event.target.parentNode.style.display = "block";
+      } else {
+          event.target.parentNode.style.display = "none";
+      }
+    }
+    // mod for <i> in <pp>
+    if (event.target.parentNode.parentNode.classList.contains("note")) {
+      if (event.target.parentNode.parentNode.style.display == "none") {
+          event.target.parentNode.parentNode.style.display = "block";
+      } else {
+          event.target.parentNode.parentNode.style.display = "none";
+      }
+    }
+    // mod for <i> in <nobr> in <pp>
+    if (event.target.parentNode.parentNode.parentNode.classList.contains("note")) {
+      if (event.target.parentNode.parentNode.parentNode.style.display == "none") {
+          event.target.parentNode.parentNode.parentNode.style.display = "block";
+      } else {
+          event.target.parentNode.parentNode.parentNode.style.display = "none";
+      }
+    }
+}
+
+document.addEventListener('click', toggleNote);
+
+
+
+</script>
+
+
+<script>
+  let _c1a = document.querySelectorAll(".c1a");
+  let _c1b = document.querySelectorAll(".c1b");
+  let _c2 = document.querySelectorAll(".c2 a");
+  let _c3 = document.querySelectorAll(".c3 a");
+  let _c4 = document.querySelectorAll(".c4 a");
+
+  for (let i = 0; i < _c1a.length; i++) {
+    _c1a[i].addEventListener("mouseover", function() {
+      for (let i = 0; i < _c1a.length; i++) {
+        _c1a[i].classList.add("hover");
+      }
+    });
+    _c1a[i].addEventListener("mouseout", function() {
+      for (let i = 0; i < _c1a.length; i++) {
+        _c1a[i].classList.remove("hover");
+      }
+    });
+  }
+  for (let i = 0; i < _c1b.length; i++) {
+    _c1b[i].addEventListener("mouseover", function() {
+      for (let i = 0; i < _c1b.length; i++) {
+        _c1b[i].classList.add("hover");
+      }
+    });
+    _c1b[i].addEventListener("mouseout", function() {
+      for (let i = 0; i < _c1b.length; i++) {
+        _c1b[i].classList.remove("hover");
+      }
+    });
+  }
+  for (let i = 0; i < _c2.length; i++) {
+    _c2[i].addEventListener("mouseover", function() {
+      for (let i = 0; i < _c2.length; i++) {
+        _c2[i].classList.add("hover");
+      }
+    });
+    _c2[i].addEventListener("mouseout", function() {
+      for (let i = 0; i < _c2.length; i++) {
+        _c2[i].classList.remove("hover");
+      }
+    });
+  }
+  for (let i = 0; i < _c3.length; i++) {
+    _c3[i].addEventListener("mouseover", function() {
+      for (let i = 0; i < _c3.length; i++) {
+        _c3[i].classList.add("hover");
+      }
+    });
+    _c3[i].addEventListener("mouseout", function() {
+      for (let i = 0; i < _c3.length; i++) {
+        _c3[i].classList.remove("hover");
+      }
+    });
+  }
+  for (let i = 0; i < _c4.length; i++) {
+    _c4[i].addEventListener("mouseover", function() {
+      for (let i = 0; i < _c4.length; i++) {
+        _c4[i].classList.add("hover");
+      }
+    });
+    _c4[i].addEventListener("mouseout", function() {
+      for (let i = 0; i < _c4.length; i++) {
+        _c4[i].classList.remove("hover");
+      }
+    });
+  }
+  
+</script>
+
+</body>
+</html>

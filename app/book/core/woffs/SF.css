@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'SFThin';
+    src: url('SFProDisplay-Thin.woff') format('woff');
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+    font-family: 'SFLi';
+    src: url('SFProDisplay-Light.woff') format('woff');
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+    font-family: 'SFReg';
+    src: url('SFProDisplay-Regular.woff') format('woff');
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+    font-family: 'SFMed';
+    src: url('SFProDisplay-Medium.woff') format('woff');
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'SFBold';
+    src: url('SFProDisplay-Bold.woff2') format('woff2');
+    font-style: bold;
+    text-rendering: optimizeLegibility;
+}

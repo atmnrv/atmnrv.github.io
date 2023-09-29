@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/Bookerly.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <script type="text/javascript" src="core/zooom.js"></script>
+
+  <style>
+      entry {font-feature-settings: "lnum" !important; hyphens: auto;}
+      greek {
+          font-family: bookerly;
+          font-size: 95%;
+          line-height: 0;
+
+          position: relative;
+          display: inline-block;
+          text-indent: 0 !important;
+        /*border-bottom: 1px dotted black;*/
+        }
+      div.id hr {
+          border: none;
+          width:10%;
+          height: 0px;
+          margin: auto;
+          /* margin-top: 5rem; */
+          margin-top: 2.8rem;
+/*           margin-bottom: 1.4em;
+ */          }
+      div.id > div:nth-child(2) {
+          font-family: dolly-caps;
+          text-transform: lowercase;
+          text-align: center;
+          font-size: 120%;
+          margin-bottom: calc(1.4em - 1px);
+          padding-top: 1.4em;
+          /* margin-bottom: 0.7em; */
+          }
+      div.id > div:nth-child(2) e {
+          vertical-align: 0.2em;
+          }
+      div.id > div:nth-child(3) {
+          text-align: center;
+          font-style: italic;
+          font-size: 105%;
+          margin-bottom: 2em;
+          /* margin-bottom: 1.4em; */
+          letter-spacing: 0.05rem;
+          }
+      div.id > div:nth-child(3) i {
+          font-style: normal;
+          }
+      div.id a {
+          display: block;
+          }
+      div.id a:hover {
+          background: none;
+          color: var(--txt);
+          }
+
+      div.entry > sub, p > sub { line-height: 0em; }
+      body {
+        font-family: "dolly","bookerly";
+        font-feature-settings: "lnum";
+      }
+      div.entry:not(table) {text-align: justify;}
+      greek {display: inline;}
+
+
+      span.frac {
+          text-indent: 0;
+          display: inline-block;
+          text-align: center;
+          vertical-align: middle;
+
+          margin-top: -0.3em;
+          margin-bottom: -0.3em;
+          }
+      span.frac > sup,
+      span.frac > sub {
+          display: block;
+          font: inherit;
+          padding: 0 0.25em;
+          }
+      span.frac > sup { border-bottom: solid 1px; }
+      span.frac > span { display: none; }
+
+      sub {vertical-align: -25%; font-size: 85%;}
+      table > * { text-align: center;}
+
+      #opa:hover {opacity: 1 !important;}
+
+      </style>
+
+<style>
+  title-block.absolute {
+    position: relative;
+    margin-left: -12rem;
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+  title-block.sticky {
+    position: sticky;
+    margin-left: -9.5rem;
+    top: 3.2rem;
+    border-top: none;
+    padding-top: 0.5rem;
+    padding-top: 0.1em;
+  }
+  .sticky topic {
+    font-family: display;
+    font-family: "Avocado 14";
+    text-transform: lowercase;
+    font-weight: normal;
+    font-size: 210%;
+    font-size: 207%;
+    line-height: 0.8;
+    margin-bottom: 0.67em;
+    margin-bottom: 0.4em;
+    font-feature-settings: 'c2sc';
+  }
+  html:not([wide]) title-block.sticky:hover {
+    opacity: 1 !important;
+    transition-duration: .2s !important;
+    transition-property: opacity;
+  }
+  @media all and (max-width:520px) {
+    title-block.absolute {
+    display: none;
+  }
+  title-block.sticky {
+    display: none;
+  }
+  }
+  
+  [wide] title-block.absolute {
+    margin-left: 0;
+  }
+  [wide] title-block.sticky {
+    position: revert;
+    margin-left:0;
+    text-align: right;
+    font-size: 345%;
+    margin-bottom: 5rem;
+    /* min-height: 70rem; */
+  }
+  
+  @media not all and (max-width:520px) {
+    html:not([wide]) #bullet {
+    display: none;
+    }
+    html:not([wide]) title-block.sticky {
+    background: var(--bkg);
+    }
+    html:not([wide])  .forWide {
+    display: none;
+    }
+  }
+  
+  </style>
+  <title>Éléments d’économie politique pure | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>Éléments d’économie politique pure <span class="forWide"><br><span style="font-size: 64%; vertical-align: 0.07em">ou</span> <br><span style="font-size: 84%;">Théorie de la richesse sociale</span></span></topic>
+    <short-rule>Édition définitive revue et augmentée par l’auteur</short-rule>
+  </title-block>
+  <title-block class="mobil" style="padding-top: 0; border-top: none;"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Éléments d’économie politique pure ou Théorie de la richesse sociale</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);">Édition définitive revue et augmentée par l’auteur</short-rule></title-block>
+
+<!--  <topic id="lightswitch" class="commentary">Éléments d’économie politique pure ou Théorie de la richesse sociale</topic>
+      <div class="gap" style="height:1em"></div>
+-->  
+ <!-- <title-block id="lightswitch" class="mobil" style="padding-top: 0; border-top: none;"><topic id="lightswitch" style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Éléments d’économie politique pure ou Théorie de la richesse sociale</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);">Édition définitive revue et augmentée par l’auteur</short-rule></title-block> -->
+ <!-- <title-block class="dsktp"><topic></topic></title-block>
+ <title-block id="opa" class="dsktp" style="position: fixed; left: inherit; transform: translate(-126.5%, 2%); padding-top: 0.1rem; border-top: none"><topic id="lightswitch" style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Éléments d’économie politique pure</topic><short-rule>Édition définitive revue et augmentée par l’auteur</short-rule></title-block> -->
+
+  <div class="id" id="27"><hr><div><a href="#27">27<e>me</e> leçon</a></div><div>Théorème de l’utilité maxima des capitaux neufs à services&nbsp;producteurs.</div></div>
+  <div style="text-align: center; margin-top: -0.5em; margin-bottom: 3.5em; font-size: 90%; padding: 0 1.5rem"><a href="#263"><b>263</b>.&nbsp;L’utilité effective <i>maxima</i> des capitaux neufs à profits producteurs à lieu à la même condition que celle des capitaux neufs à profits consommables.</a> — <a href="#264" onclick="notify('Article indisponible', 1500)"> <b>264</b>.&nbsp;Définition analytique de la libre concurence en matière de capitalisation et de crédit.</a></div>
+  <div class="entry" id="263"><p><entry><a href="#263">263.</a></entry>Il nous faut sup­po­ser main­te­nant que les capi­taux neufs sont des­ti­nés à don­ner des pro­fits pro­duc­teurs, c’est-à-dire des pro­fits consom­més plus direc­te­ment, mais dans la fa­bri­ca­tion de pro­duits, et voir quelle est, dans ce cas, la condi­tion de maxi­mum de leur utili­té effective.
+  <p>Soient donc enfin
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr style="height: 1.4em;"><td style="text-align:center"><greek><i>Δ</i></greek><sub>a</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>a,1</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>a,2</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>a,3</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    <tr style="height: 1.4em;"><td style="text-align:center"><greek><i>Δ</i></greek><sub>b</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>b,1</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>b,2</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>b,3</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    <tr style="height: 1.4em;"><td style="text-align:center"><greek><i>Δ</i></greek><sub>c</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>c,1</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>c,2</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>c,3</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    <tr style="height: 1.4em;"><td style="text-align:center"><greek><i>Δ</i></greek><sub>d</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>d,1</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>d,2</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>δ</i></greek><sub>d,3</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    </tbody></table>
+  des quan­ti­tés de pro­duits (A), (B), (C), (D)… consom­mées res­pec­ti­ve­ment par des échan­geurs (1), (2), (3)… aux prix <i>p</i><sub>b</sub> , <i>p</i><sub>c</sub> , <i>p</i><sub>d</sub>… de (B), (C), (D)… en (A). Soient, comme pré­cé­dem­ment (<a href="#541" class="none" onclick="notify('Ar­ticle indis­po­nible', 1500)">§&nbsp;247</a>), <i>a</i><sub>t</sub>… <i>a</i><sub>p</sub> , <i>a</i><sub>k</sub> , <i>a</i><sub>k<greek>′</greek></sub> , <i>a</i><sub>k<greek>″</greek></sub>… <i>b</i><sub>t</sub>… <i>b</i><sub>p</sub> , <i>b</i><sub>k</sub> , <i>b</i><sub>k<greek>′</greek></sub> , <i>b</i><sub>k<greek>″</greek></sub>… <i>c</i><sub>t</sub>… <i>c</i><sub>p</sub> , <i>c</i><sub>k</sub> , <i>c</i><sub>k<greek>′</greek></sub> , <i>c</i><sub>k<greek>″</greek></sub>… <i>d</i><sub>t</sub>… <i>d</i><sub>p</sub> , <i>d</i><sub>k</sub> , <i>d</i><sub>k<greek>′</greek></sub> , <i>d</i><sub>k<greek>″</greek></sub>… les coeffi­cients de fa­bri­ca­tion, c’est-à-dire les quan­ti­tés res­pec­tives de ser­vices (T)… (P)… (K), (K<greek>′</greek>), (K<greek>″</greek>)… qui entrent dans la confec­tion de cha­cun de ces pro­duits (A), (B), (C), (D)… et soient, en conséquence,
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left">D<sub>k</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub>k</sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>a</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub>k</sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>b</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub>k</sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>c</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub>k</sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>d</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;…</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left">D<sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>a</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>b</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>c</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>d</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;…</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left">D<sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>a</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>b</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>c</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center"><greek><i>Δ</i></greek><sub>d</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;…</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:center" colspan="14">&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;</td>
+    </tr>
+    </tbody></table>
+  des quan­ti­tés qui sont à la fois les <i>­quan­ti­tés de pro­fits neufs</i> (K), (K<greek>′</greek>), (K<greek>″</greek>)… <i>em­ployées</i> res­pec­ti­ve­ment dans la fa­bri­ca­tion de (A), (B), (C), (D)… et les <i>­quan­ti­tés de capi­taux neufs</i> (K), (K<greek>′</greek>), (K<greek>″</greek>)… <i>fabri­quées</i> pour être em­prun­tées par les pro­duc­teurs. Et soient tou­jours P<sub>k</sub>, P<sub>k<greek>′</greek></sub>, P<sub>k<greek>″</greek></sub>… les prix de ces capi­taux, de telle sorte que l’on ait
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr style="height: 1.4em;">
+    <td style="text-align:center">D<sub>k</sub></td>
+    <td style="text-align:center">P<sub>k</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">D<sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center">P<sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">D<sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center">P<sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;…&nbsp;=&nbsp;</td>
+    <td style="text-align:center">E,</td>
+    </tr>
+    </tbody></table>
+  E étant tou­jours l’ex­cèdent total du re­ve­nu sur la consom­ma­tion à dis­tri­buer par la so­cié­té entre les <i>l</i> es­pèces de capi­taux neufs.</p>
+  <p>Soient d’ailleurs
+  <table style="margin: 1em auto; width: 100%;"><tbody><tr>
+    <td style="text-align:center;"><i>u</i>&nbsp;=&nbsp;<greek><i>Φ</i></greek><sub>a,1</sub> (q),</td>
+    <td style="text-align:center;"><i>u</i>&nbsp;=&nbsp;<greek><i>Φ</i></greek><sub>b,1</sub> (q),</td>
+    <td style="text-align:center;"><i>u</i>&nbsp;=&nbsp;<greek><i>Φ</i></greek><sub>c,1</sub> (q),</td>
+    <td style="text-align:center;"><i>u</i>&nbsp;=&nbsp;<greek><i>Φ</i></greek><sub>d,1</sub> (q) …</td>
+    </tr></tbody></table>
+  les équa­tions ex­pri­mant les utili­tés ef­fec­tives des pro­duits (A), (B), (C), (D)… pour l’échan­geur (1) en fonc­tion des quan­ti­tés consom­mées de ces pro­duits égales aux quo­tients des <i>­quan­ti­tés em­ployées de pro­fits</i> pro­duc­teurs, ou des <i>quan­ti­tés fabri­quées de capi­taux</i> pro­duc­teurs, par les coeffi­cients de fa­bri­ca­tion, et, par conséquent,
+  <table style="margin: 1em auto;"><tbody><tr>
+    <td style="text-align:center"><greek><i>Φ</i></greek><sub>a,1</sub> (<greek><i>δ</i></greek><sub>a,1</sub>)</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>Φ</i></greek><sub>b,1</sub> (<greek><i>δ</i></greek><sub>b,1</sub>)</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>Φ</i></greek><sub>c,1</sub> (<greek><i>δ</i></greek><sub>c,1</sub>)</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><greek><i>Φ</i></greek><sub>d,1</sub> (<greek><i>δ</i></greek><sub>d,1</sub>)</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr></tbody></table>
+  l’uti­li­té ef­fec­tive to­tale de ces pro­duits à rendre <i>maxi­ma</i> par la dis­tri­bu­tion des épar­gnes entre les di­verses va­rié­tés de capi­taux neufs. Les déri­vées des fonc­tions <greek><i>Φ</i></greek> étant es­sen­tiel­le­ment dé­crois­santes, le maxi­mum d’uti­li­té ef­fec­tive des capi­taux neufs aura lieu, pour notre indi­vi­du, quand les sommes des ac­crois­se­ments dif­fé­ren­tiels par­tiels d’uti­li­té rela­tifs aux quan­ti­tés fabri­quées de cha­cun des capi­taux neufs se­ront égales deux à deux en même temps que de signe contraire, puisque, si on sup­pose deux quel­conques d’entre ces sommes iné­gales et de signe contraire, il y aura avan­tage à fa­bri­quer moins du ca­pi­tal pour le­quel la somme des ac­crois­se­ments dif­fé­ren­tiels est plus faible pour fa­bri­quer plus de celui pour le­quel elle est plus forte. La seule diffi­cul­té qui se pré­sente ici est qu’au lieu que les ac­crois­se­ments dif­fé­ren­tiels d’uti­li­té rela­tifs aux quan­ti­tés fabri­quées de cha­cun des capi­taux neufs se pré­sentent à nous isolé­ment les uns des autres, nous les trou­vons confon­dus dans les ac­crois­se­ments dif­fé­ren­tiel d’uti­li­té rela­tifs aux quan­ti­tés consom­mées de produits
+  <div style="margin: 1em auto; text-align: center;"><greek><i>Φ</i>′</greek><sub>a,1</sub>&nbsp;(<greek><i>δ</i></greek><sub>a,1</sub>)&nbsp;<i>d</i><greek><i>δ</i></greek><sub>a,1</sub> &nbsp;+&nbsp;&nbsp;<greek><i>Φ</i>′</greek><sub>b,1</sub>&nbsp;(<greek><i>δ</i></greek><sub>b,1</sub>)&nbsp;<i>d</i><greek><i>δ</i></greek><sub>b,1</sub> &nbsp;+&nbsp;&nbsp;<greek><i>Φ</i>′</greek><sub>c,1</sub>&nbsp;(<greek><i>δ</i></greek><sub>c,1</sub>)&nbsp;<i>d</i><greek><i>δ</i></greek><sub>c,1</sub> &nbsp;+&nbsp;&nbsp;<greek><i>Φ</i>′</greek><sub>d,1</sub>&nbsp;(<greek><i>δ</i></greek><sub>d,1</sub>)&nbsp;<i>d</i><greek><i>δ</i></greek><sub>d,1</sub> &nbsp;+&nbsp;&nbsp;…</div>
+  dont nous avons à les dégager.</p>
+  <p>Or, d’une part, les déri­vées des fonc­tions d’uti­li­té ef­fec­tive par rap­port aux quan­ti­tés consom­mées de pro­duits ne sont autre chose que les rare­tés qui sont di­rec­te­ment pro­por­tion­nelles aux prix de vente des pro­duits 1 , <i>p</i><sub>b</sub> , <i>p</i><sub>c</sub> , <i>p</i><sub>d</sub> … sui­vant les équations
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>r</i><sub>a,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>r</i><sub>b,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>r</i><sub>c,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>r</i><sub>d,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    </tr>
+    <tr>
+    <td style="text-align:center">1</td>
+    <td style="text-align:center"><i>p</i><sub>b</sub></td>
+    <td style="text-align:center"><i>p</i><sub>c</sub></td>
+    <td style="text-align:center"><i>p</i><sub>d</sub></td>
+    </tr></tbody></table>
+  et ces prix de vente des pro­duits sont égaux à leurs prix de re­vient, sui­vant les équations
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr style="height: 1.4em;">
+    <td style="text-align:center">1</td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub><i>t</i></sub> <i>p</i><sub><i>t</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub><i>p</i></sub> <i>p</i><sub><i>p</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>a</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:center"><i>p</i><sub>b</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub><i>t</i></sub> <i>p</i><sub><i>t</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub><i>p</i></sub> <i>p</i><sub><i>p</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>b</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:center"><i>p</i><sub>c</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub><i>t</i></sub> <i>p</i><sub><i>t</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub><i>p</i></sub> <i>p</i><sub><i>p</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>c</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:center"><i>p</i><sub>d</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub><i>t</i></sub> <i>p</i><sub><i>t</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub><i>p</i></sub> <i>p</i><sub><i>p</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center"><i>d</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">…</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:center" colspan="17">&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;</td>
+    </tr>
+    </tbody></table>
+  d’où il ré­sulte que toutes ces déri­vées peuvent être dé­com­po­sées en par­ties di­rec­te­ment pro­por­tion­nelles aux frais de pro­duc­tion en fer­ma­gers, sa­laires et inté­rêts et, en par­ti­cu­lier, aux pro­duits des coeffi­cients de fa­bri­ca­tion par les prix des pro­fits <i>p</i><sub>k</sub> , <i>p</i><sub>k<greek>′</greek></sub> , <i>p</i><sub>k<greek>″</greek></sub>… Et, d’autre part, les diffé­ren­tielles des quan­ti­tées consom­mées de pro­duits peuvent être rem­pla­cées par les quo­tients des diffé­ren­tielles des quan­ti­tés de pro­fits em­ployées dans la confec­tion de ces pro­duits (les­quelles, ici, sont aus­si lesdif­fé­ren­tielles des quan­ti­tés fabri­quées de cha­cun des capi­taux neufs) par les coeffi­cients de fa­bri­ca­tion, sui­vant les équations
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>a,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k,1,a</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,a</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,a</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>a</i><sub>k</sub></td>
+    <td style="text-align:center"><i>a</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><i>a</i><sub>k<greek>″</greek></sub></td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>b,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k,1,b</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,b</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,b</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>b</i><sub>k</sub></td>
+    <td style="text-align:center"><i>b</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><i>b</i><sub>k<greek>″</greek></sub></td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>c,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k,1,c</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,c</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,c</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>c</i><sub>k</sub></td>
+    <td style="text-align:center"><i>c</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><i>c</i><sub>k<greek>″</greek></sub></td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>d,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k,1,d</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,d</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,d</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>d</i><sub>k</sub></td>
+    <td style="text-align:center"><i>d</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><i>d</i><sub>k<greek>″</greek></sub></td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+    <td style="text-align:center" colspan="17">&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+  et, au point de vue du pro­blème de la dis­tri­bu­tion par une so­cié­té d’un cer­tain ex­cé­dent du re­ve­nu sur la consom­ma­tion entre les di­verses va­rié­tés de ca­pi­ta­li­sa­tion, ces diffé­ren­tielles ddes quan­ti­tés fabri­quées de cha­cun des capi­taux neufs sont égales entre elles, pour un même capi­tal, sui­vant les équations
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left"><i>d</i><greek><i>δ</i></greek><sub>k,1,a</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k,1,b</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k,1,c</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k,1,d</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k,1</sub></td>
+    <td style="text-align:left">,</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,a</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,b</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,c</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1,d</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1</sub></td>
+    <td style="text-align:left">,</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,a</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,b</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,c</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1,d</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center">…</td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1</sub></td>
+    <td style="text-align:left">…</td>
+    </tr></tbody></table>
+    </p>
+  <p>De sorte que, fina­le­ment, l’éga­li­té deux à deux avec signe contraire des sommes des ac­crois­se­ments dif­fé­ren­tiels par­tiels d’uti­li­té d’où ré­sulte le maxi­mum que nous cher­chons peut s’ex­pri­mer par le sys­tème d’équations :
+  <div style="overflow-x: scroll;">
+  <table style="margin: 1em;">
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding:0em 0.15em; font-size: 200%; text-align:center;" rowspan="2">(</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>a</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>b</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>c</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    <td style="vertical-align:middle; padding:0em 0 0 0.15em; font-size: 200%; text-align:center;" rowspan="2">)</td>
+    <td style="vertical-align:middle; padding:0em 0.25em 0 0; text-align:left;" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>k,1</sub></td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>a</i><sub>k</sub></td>
+    <td style="text-align:center"><i>b</i><sub>k</sub></td>
+    <td style="text-align:center"><i>c</i><sub>k</sub></td>
+    <td style="text-align:center"><i>d</i><sub>k</sub></td>
+    </tr>
+    </tbody>
+    </table>
+  <table style="margin: 1em;">
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding: 0em 0.25em 0 0;" rowspan="2">+</td>
+    <td style="vertical-align:middle; padding:0em 0.15em 0 0; font-size: 200%; text-align:center;" rowspan="2">(</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>a</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>b</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>c</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><sub><i>k</i><greek>′</greek></sub> <i>p</i><sub><i>k</i><greek>′</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    <td style="vertical-align:middle; padding:0em 0 0 0.15em; font-size: 200%; text-align:center;" rowspan="2">)</td>
+    <td style="vertical-align:middle; padding:0em 0.25em 0 0; text-align:left;" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">=</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">0&nbsp;,</td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>a</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><i>b</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><i>c</i><sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center"><i>d</i><sub>k<greek>′</greek></sub></td>
+    </tr>
+    </tbody>
+    </table>
+  <table style="margin: 1em;">
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding:0em 0.15em; font-size: 200%; text-align:center;" rowspan="2">(</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>a</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>b</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>c</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><sub><i>k</i></sub> <i>p</i><sub><i>k</i></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    <td style="vertical-align:middle; padding:0em 0 0 0.15em; font-size: 200%; text-align:center;" rowspan="2">)</td>
+    <td style="vertical-align:middle; padding:0em 0.25em 0 0; text-align:left;" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>k,1</sub></td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>a</i><sub>k</sub></td>
+    <td style="text-align:center"><i>b</i><sub>k</sub></td>
+    <td style="text-align:center"><i>c</i><sub>k</sub></td>
+    <td style="text-align:center"><i>d</i><sub>k</sub></td>
+    </tr>
+    </tbody>
+    </table>
+  <table style="margin: 1em;">
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding: 0em 0.25em 0 0;" rowspan="2">+</td>
+    <td style="vertical-align:middle; padding:0em 0.15em 0 0; font-size: 200%; text-align:center;" rowspan="2">(</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>a</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>b</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>c</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em"><i>d</i><sub><i>k</i><greek>″</greek></sub> <i>p</i><sub><i>k</i><greek>″</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">+</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">…</td>
+    <td style="vertical-align:middle; padding:0em 0 0 0.15em; font-size: 200%; text-align:center;" rowspan="2">)</td>
+    <td style="vertical-align:middle; padding:0em 0.25em 0 0; text-align:left;" rowspan="2"><i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">=</td>
+    <td style="vertical-align:middle; padding:0em 0.25em" rowspan="2">0</td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><i>a</i><sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center"><i>b</i><sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center"><i>c</i><sub>k<greek>″</greek></sub></td>
+    <td style="text-align:center"><i>d</i><sub>k<greek>″</greek></sub></td>
+    </tr>
+    </tbody>
+    </table>
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr>
+    <td style="text-align:center" colspan="17">&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </p>
+  <p>D’ail­leurs, au même point de vue qui est ici le nôtre, les sommes al­gébriques deux à deux des pro­duits des prix P<sub>k</sub> , P<sub>k<greek>′</greek></sub> , P<sub>k<greek>″</greek></sub>… des di­vers capi­taux neufs par les diffé­ren­tielles des quan­ti­tés fabri­quées de ces capi­taux, sont tou­jours, en ver­tu de l’équa­tion [2], nulles sui­vant les équa­tions
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left">P<sub>k</sub> <i>d</i><greek><i>δ</i></greek><sub>k,1</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">P<sub>k<greek>′</greek></sub> <i>d</i><greek><i>δ</i></greek><sub>k<greek>′</greek>,1</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:left">,</td>
+    </tr>
+    <tr style="height: 1.4em;">
+    <td style="text-align:left">P<sub>k</sub> <i>d</i><greek><i>δ</i></greek><sub>k,1</sub></td>
+    <td style="text-align:center">&nbsp;+&nbsp;</td>
+    <td style="text-align:center">P<sub>k<greek>″</greek></sub> <i>d</i><greek><i>δ</i></greek><sub>k<greek>″</greek>,1</sub></td>
+    <td style="text-align:center">&nbsp;=&nbsp;</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:left">…</td>
+    </tr></tbody></table>
+    </p>
+  <p>La condition d’utilité maxima des capitaux neufs pour cet échangeur peut donc s’exprimer par le système d’équations :
+    <table style="margin: 1em auto;">
+      <tbody>
+      <tr>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2"></td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>a</i><sub>k</sub> <i>p</i><sub>k</sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>b</i><sub>k</sub> <i>p</i><sub>k</sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>c</i><sub>k</sub> <i>p</i><sub>k</sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>d</i><sub>k</sub> <i>p</i><sub>k</sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">…</td>
+      </tr>
+      <tr>
+      <td style="text-align:center"><i>a</i><sub>k</sub> P<sub>k</sub></td>
+      <td style="text-align:center"><i>b</i><sub>k</sub> P<sub>k</sub></td>
+      <td style="text-align:center"><i>c</i><sub>k</sub> P<sub>k</sub></td>
+      <td style="text-align:center"><i>d</i><sub>k</sub> P<sub>k</sub></td>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;=&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>a</i><sub>k<greek>′</greek></sub> <i>p</i><sub>k<greek>′</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>b</i><sub>k<greek>′</greek></sub> <i>p</i><sub>k<greek>′</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>c</i><sub>k<greek>′</greek></sub> <i>p</i><sub>k<greek>′</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>d</i><sub>k<greek>′</greek></sub> <i>p</i><sub>k<greek>′</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">…</td>
+      </tr>
+      <tr>
+      <td style="text-align:center"><i>a</i><sub>k<greek>′</greek></sub> P<sub>k<greek>′</greek></sub></td>
+      <td style="text-align:center"><i>b</i><sub>k<greek>′</greek></sub> P<sub>k<greek>′</greek></sub></td>
+      <td style="text-align:center"><i>c</i><sub>k<greek>′</greek></sub> P<sub>k<greek>′</greek></sub></td>
+      <td style="text-align:center"><i>d</i><sub>k<greek>′</greek></sub> P<sub>k<greek>′</greek></sub></td>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;=&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>a</i><sub>k<greek>″</greek></sub> <i>p</i><sub>k<greek>″</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>b</i><sub>k<greek>″</greek></sub> <i>p</i><sub>k<greek>″</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>c</i><sub>k<greek>″</greek></sub> <i>p</i><sub>k<greek>″</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>d</i><sub>k<greek>″</greek></sub> <i>p</i><sub>k<greek>″</greek></sub></td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;+&nbsp;</td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">…</td>
+      </tr>
+      <tr>
+      <td style="text-align:center"><i>a</i><sub>k<greek>″</greek></sub> P<sub>k<greek>″</greek></sub></td>
+      <td style="text-align:center"><i>b</i><sub>k<greek>″</greek></sub> P<sub>k<greek>″</greek></sub></td>
+      <td style="text-align:center"><i>c</i><sub>k<greek>″</greek></sub> P<sub>k<greek>″</greek></sub></td>
+      <td style="text-align:center"><i>d</i><sub>k<greek>″</greek></sub> P<sub>k<greek>″</greek></sub></td>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;=&nbsp;</td>
+      <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2" colspan="17">&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;</td>
+      </tr>
+      </tbody>
+      </table>
+  lequel exprimerait également la condition du maximum d’utilité effective des capitaux neufs pour les ééchangeurs (2), (3)… Et, cela étant, la condition du maximum d’utilité effective des services des capitaux neufs, dans le cas où ils sont destinés à donner des profits producteurs et non plus consommables, s’exprime toujours par le système d’équations
+  <table style="margin: 1em auto;">
+    <tbody>
+    <tr>
+    <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2"></td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>p</i><sub>k</sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>p</i><sub>k<greek>′</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="border-bottom:solid 1px; padding:0em 0.25em; text-align:center"><i>p</i><sub>k<greek>″</greek></sub></td>
+    <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">&nbsp;=&nbsp;</td>
+    <td style="vertical-align:middle; padding:0em 0.25em; text-align:center" rowspan="2">…</td>
+    </tr>
+    <tr>
+    <td style="text-align:center">P<sub>k</sub></td>
+    <td style="text-align:center">P<sub>k<greek>′</greek></sub></td>
+    <td style="text-align:center">P<sub>k<greek>″</greek></sub></td>
+    </tr>
+    </tbody>
+    </table>
+    </p>
+  <p>Donc il est cer­tain que : — <i>­Soit que l’ex­cé­dent du re­ve­nu sur la consom­ma­tion se trans­forme en capi­taux à ser­vices consom­mables ou en capi­taux à ser­vices pro­duc­teurs, le maxi­mum d’uti­li­té ef­fec­tive des ser­vices de ces capi­taux neufs a lieu, pour la so­cié­té, quand le rap­port du prix du pro­fit au prix du capi­tal, ou le taux de re­ve­nu brut, est le même pour tous les capitaux.</i></p>
+    </div>
+    <cite>Léon Walras, <in>Éléments d’économie politique pure</in>, <en>1874</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="pareto.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="gibbon.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="pareto.html"><span class="arrow">←</span>&nbsp;trattato di sociologia generale</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="gibbon.html">the decline and fall of <br class="dsktp">the roman empire&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+
+<script>
+
+  const setOpacity = function() {
+    const element = document.querySelector(".sticky")
+        , ascrollPosition = window.scrollY
+        , aviewportHeight = window.innerHeight
+        , condition = document.querySelector("html[wide]");
+    if (condition) {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight * 3))
+    } else {
+      element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight * 1.5))
+    }
+  };
+  window.addEventListener("scroll", setOpacity);
+  window.addEventListener("resize", setOpacity);
+  window.addEventListener("scroll", function() {
+    let viewportHeight = window.innerHeight
+      , scrollTop = window.pageYOffset
+      , scrollHeight = document.body.scrollHeight
+      , condition = document.querySelector("html[wide]");
+    if (scrollTop <= viewportHeight && condition) {
+      // let translateY = scrollTop / 2;
+      let translateY = scrollTop / 4;
+      document.querySelector(".sticky").style.transform = `translateY(-${translateY}px)`;
+    }
+  });
+  
+  // window.onload = function () {
+  //   const element = document.querySelector(".sticky");
+  //   if (element) {
+  //     element.addEventListener('mouseenter', () => element.classList.add('hovered'));
+  //     element.addEventListener('mouseleave', () => element.classList.remove('hovered'));
+  //   }
+  // };
+  
+  
+  const toggleMenu2 = function(e) {
+    const element = document.querySelector(".sticky")
+        , menu = document.querySelector("#menu")
+        , body = document.querySelector("body");
+  
+    // click anychere on page
+    if (body.classList.contains("menu_open")
+    && e.target.id === "content") {
+      body.classList.toggle("menu_open");
+      setTimeout(function() {
+        menu.style.visibility = "hidden";
+      }, 600);
+    }
+  
+    if (e.target === element || e.target.parentNode === element) {
+      body.classList.toggle("menu_open");
+      if (body.classList.contains("menu_open")) {
+        menu.style.visibility = "visible";
+      } else {
+        setTimeout(function() {
+          menu.style.visibility = "hidden";
+        }, 600);
+      }
+    }
+  };
+  document.addEventListener("click", toggleMenu2);
+  
+  </script>
+  
+  </body>
+  </html>
+  

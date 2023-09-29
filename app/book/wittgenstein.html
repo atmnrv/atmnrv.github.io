@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/Bookerly.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+  
+
+    div.volume + div.id > hr { margin-top: 1.4em; }
+    div.id hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 3.8rem;
+        /* margin-bottom: 1.4em; */
+        }
+    div.id > div:nth-child(2) {
+        font-family: dolly-caps;
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 120%;
+        padding-top: 3.66rem;
+        /* margin-bottom: 1.4em; */
+        /* margin-bottom: 0.7em; */
+        }
+    div.id > div:nth-child(3) {
+        font-family: dolly-caps;
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 100%;
+        padding-top: 2rem;
+        margin-bottom: 2.8rem;
+        }
+        div.id a { display: block;}
+        div.id a:hover {background: none;}
+  </style>
+  <style>
+   
+    .subhead.subheaded > a:hover:before {
+    position: relative;
+    color: var(--act);
+    font-weight: normal;
+    content: "# ";
+    margin-right: 0.10em;
+    top: -0.08em;
+    font-size: 90%;
+    visibility: hidden;
+    }
+    #content > p > c2sc {font-family: dolly-caps;}
+    #opa:hover {opacity: 1 !important; transition-duration: 0.2s !important; transition-property: opacity;}
+
+    </style>
+    <style>
+
+      table div.entry {margin-bottom: -0.1em;}
+      table:not(#de, #en) div.entry {margin-bottom: 0;}
+      table:not(#de, #en) div.entry p:last-of-type {margin-bottom: 1em;}
+      table:not(#de, #en) div.entry p:first-of-type {text-indent: 0 !important;}
+
+      table td {vertical-align:top;}
+      table td p {text-indent: 0.9em;}
+      #en td p, #de td p {text-align: left !important; text-indent: 1.33em;}
+
+      table {width: calc(100% + 4.2rem); margin-left: -4rem; margin-right: -0.2rem;}
+      [wide] table { width: 100%; margin-left: -0.15rem; margin-right: -0.2rem; }
+      @media all and (max-width:520px) {
+        table {width: calc(100% + 0.35rem); margin-left: -0.15rem; margin-right: -0.2rem;}}
+      table td:nth-of-type(1) {width: 12%; font-weight: bold;}
+      table td:nth-of-type(2) {width: 44% ; padding-right: 0.5em; }
+      table td:nth-of-type(3) {width: 44% ; padding-left: 0.5em; }
+      table:not(#de, #en) td:nth-of-type(2),
+      table:not(#de, #en) td:nth-of-type(3) { font-size: 90%;}
+      table:not(#de, #en) div.entry {padding-top: 0.1em;}
+
+      #en, #de {width: calc(100% + 0.35rem); margin-left: -0.15rem; margin-right: -0.2rem;}
+      #en td:nth-of-type(1),
+      #de td:nth-of-type(1) {width: 4%;}
+      #en td:nth-of-type(2) {width: 44% ; padding-right: 0em;}
+      #en td:nth-of-type(3) {display: none;}
+      #de td:nth-of-type(2) {display: none;}
+      #de td:nth-of-type(3) {width: 44% ; padding-left: 0em;}
+
+      td:nth-of-type(2) .on { counter-increment: note;}
+      td:nth-of-type(3) .on { counter-increment: note 0;}
+      #de td:nth-of-type(3) .on { counter-increment: note 1;}
+
+      .note { font-family: dolly; width: auto; }
+      #de .note, #en .note {margin-left: -4.3rem; margin-right: 0.15rem; column-count: 2; column-gap: 1rem;}
+        @media all and (max-width:520px) {
+        #en .note, #de .note {margin-left: -3.9rem; column-count: 1;}}
+
+      /* [dark="true"] td:nth-of-type(1) a {padding-left: 0.2em; padding-right: 0.2em;} */
+      td:nth-of-type(1) a:hover {background: none;}
+      [dark="true"] td:nth-of-type(1) a:hover {color: inherit;}
+      td:nth-of-type(1) a:after {content: none;}
+      td:nth-of-type(1) a:before {content: "§"; position: absolute; transform: translate(-1em); font-weight: normal; opacity: 0; color: var(--act);}
+      /* table:not(#de, #en) td:nth-of-type(1) a:before {transform: translate(-2rem); } */
+      td:nth-of-type(1) a:hover:before {opacity: 1; transition: opacity 0.2s ease-in-out; }
+      table td:nth-of-type(2) em {font-style:italic;}
+      table td:nth-of-type(3) em {font-style:normal; letter-spacing: 0.2em; padding-left: 0.2em;}
+      var {font-family: bookerly; font-style: italic; line-height: 0; font-size: 90%;}
+      doplen { margin-left: -0.3em; }
+      #clic:hover { color: var(--o)}
+
+      
+      br.forwide {
+        display: none;
+      }
+      [wide] br.forwide {
+        display: block;
+      }
+    </style>
+  <style>
+    html:not([wide]) title-block.dsktp {
+        position: initial;
+        margin-left: -9rem;
+      }
+  </style>
+  
+<style>
+title-block.absolute {
+  position: relative;
+  margin-left: -12rem;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+title-block.sticky {
+  position: sticky;
+  margin-left: -9.5rem;
+  top: 3.2rem;
+  border-top: none;
+  padding-top: 0.5rem;
+  padding-top: 5px;
+  padding-top: 0.1em;
+}
+.sticky topic {
+  font-family: display;
+  font-family: "Avocado 14";
+  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 210%;
+  line-height: 0.8;
+  margin-bottom: 0.67em;
+  margin-bottom: 0.4em;
+}
+html:not([wide]) title-block.sticky:hover {
+  opacity: 1 !important;
+  transition-duration: .2s !important;
+  transition-property: opacity;
+}
+@media all and (max-width:520px) {
+  title-block.absolute {
+  display: none;
+}
+title-block.sticky {
+  display: none;
+}
+}
+
+[wide] title-block.absolute {
+  margin-left: 0;
+}
+[wide] title-block.sticky {
+  position: revert;
+  margin-left:0;
+  text-align: right;
+  font-size: 345%;
+  /* min-height: 36rem; */
+  margin-bottom: 10rem;
+}
+
+@media not all and (max-width:520px) {
+  html:not([wide]) #bullet {
+  display: none;
+  }
+  html:not([wide]) title-block.sticky {
+  background: var(--bkg);
+  }
+}
+</style>
+
+  <title>Tractatus logico-philosophicus | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<!-- <div id="menu"><div class="gap" style="height:1em"></div><ul class="children"></ul><div><p id="titre">Une maquette numérique du livre</p><h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Quelle différence quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur les roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI Design</a></h1><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p><div class="gap" style="height:1em"></div><ul class="children"></ul></div></div> -->
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>Tractatus <br class="forwide">Logico-Philosophicus</topic>
+    <short-rule>Logicsh-philosophische Abhandlung</short-rule>
+  </title-block>
+  <title-block class="mobil" style="padding-top: 0; border-top: none;"><topic style="font-family: display; text-transform: lowercase; font-weight: normal; font-size: 240%; line-height: 0.8;">Tractatus Logico-Philosophicus</topic><short-rule style="padding-bottom: 1em; border-bottom: 1px solid var(--txt);">Logicsh-philosophische Abhandlung</short-rule></title-block>
+  <div class="gap" style="height: 5rem"></div>
+  <blockquote style="padding-left: 25%; padding-left: 33.33%; padding-right: 0rem;"><p><span style="letter-spacing: 0.2em;">Mot­to</span> : <span style="letter-spacing: 0.2em; padding-left: 0.2em;">...</span> und al­les, was man weiss, nicht bloss rau­schen und brau­sen ge­hört hat, lässt sich in drei Wor­ten <nobr>sa­gen</nobr>.</p><cite style="text-transform: lowercase; margin-left: 0;">Kürnberger</cite></blockquote>
+  <div class="gap" style="height: 2rem"></div>
+  <div class="entry"><p>This book will per­haps only be un­der­stood by those who have them­selves al­ready thought the thoughts which are ex­pressed in it—or simi­lar thoughts. It is there­fore not a text-book. Its ob­ject would be at­tained if there were one per­son who read it with under­stand­ing and to whom it af­ford­ed plea­sure.<p>The book deals with the prob­lems of phi­los­o­phy and shows, as I be­lieve, that the meth­od of for­mu­lat­ing these prob­lems rests on the mis­under­stand­ing of the logic of our lan­guage. Its whole mean­ing could be summed up some­what as fol­lows : What can be said at all can be said clear­ly ; and where­of one can­not speak there­of one must be si­lent.<p>The book will, there­fore, draw a limit to think­ing, or rath­er—not to think­ing, but to the ex­pres­sion of thoughts ; for, in or­der to draw a limit to think­ing we should have to be able to think both sides of this limit (we should there­fore have to be able to think what can­not be thought).<p>The limit can, there­fore, only be drawn in lan­guage and what lies on the oth­er side of the limit will be sim­ply non­sense.<p>How far my ef­forts agree with those of oth­er phi­los­o­phers I will not de­cide. In­deed what I have here writ­ten makes no claim to nov­elty in points of de­tail ; and there­fore I give no sourc­es, be­cause it is in­dif­fer­ent to me wheth­er what I have thought has al­ready been thought be­fore me by an­oth­er.<p>I will only men­tion that to the great works of Frege and the writ­ings of my friend Ber­trand Rus­sell I owe in large mea­sure the stim­u­la­tion of my thoughts.<p>If this work has a val­ue it con­sists in two things. First that in it thoughts are ex­pressed, and this val­ue will be the great­er the bet­ter the thoughts are ex­pressed. The more the nail has been hit on the head.— Here I am con­scious that I have fall­en far short of the pos­sible. Sim­ply be­cause my pow­ers are in­suf­fi­cient to cope with the task.—May oth­ers come and do it bet­ter.<p>On the oth­er hand the truth of the thoughts com­mu­ni­cated here seems to me un­as­sail­able and de­fin­i­tive. I am, there­fore, of the opin­ion that the prob­lems have in es­sen­tials been fi­nally solved. And if I am not mis­tak­en in this, then the val­ue of this work sec­ond­ly con­sists in the fact that it shows how little has been done when these prob­lems have been solved.</div>  
+ 
+  <div class="id"><hr><div id="tlp"><a href="#tlp">Tractatus Logico-Philosophicus</a></div><div id="clic" style="cursor:pointer">Logicsh-philosophische Abhandlung</div><!-- <div>Tractatus Logico-Philosophicus</div><div>Le Vicomte de VALMONT à la Présidente de TOURVEL.</div> --></div>
+
+<style>
+        @media all and (max-width:520px) {
+          /* table:not(#de, #en) {margin-left: -3.15rem;} */
+          table:not(#de, #en) {font-size: 80%;}
+          table:not(#de, #en) {width: calc(100% + 0.15rem)}
+          table:not(#de, #en) td:nth-of-type(1) {display: none;}
+        }
+
+</style>
+  <table id="de">
+    <tbody>
+    <tr><td>1º</td><td><div class="entry"><p><span class="on"><span class="note-src">The world is ev­ery­thing that is the case.</span><span class=note role=note>The dec­i­mal fig­ures as num­bers of the sep­a­rate prop­o­si­tions indi­cate the logi­cal im­por­tance of the prop­o­si­tions, the em­pha­sis laid upon them in my ex­po­si­tion. The prop­o­si­tions <var>n.1</var>, <var>n.2</var>, <var>n.3</var>, etc., are com­ments on prop­o­si­tion No. <var>n</var> ; the prop­o­si­tions <var>n.m1</var>, <var>n.m2</var>, etc., are com­ments on the prop­o­si­tion No. <var>n.m</var> ; and so on.</span></span></p></div></td><td><div class="entry"><p><span class="on"><span class="note-src">Die Welt ist al­les, was der Fall ist.</span><span class=note role=note>Die Deci­mal­zah­len als Num­mern der ein­zel­nen Sät­ze deu­ten das logi­sche Ge­wicht der Sät­ze an, den Nach­druck, der auf ih­nen in mei­ner Dar­stel­lung liegt. Die Sät­ze <var>n.1</var>, <var>n.2</var>, <var>n.3</var>, etc., sind Be­mer­kun­gen zum Sat­ze <var>n</var> ; die Sät­ze <var>n.m1</var>, <var>n.m2</var>, etc. Be­mer­kun­gen zum Sat­ze No. <var>n.m</var> ; und so wei­ter.</span></span></p></div></td></tr>
+    <!-- <tr><td></td><td><div class="entry"><p>The dec­i­mal fig­ures as num­bers of the sep­a­rate prop­o­si­tions indi­cate the logi­cal im­por­tance of the prop­o­si­tions, the em­pha­sis laid upon them in my ex­po­si­tion. The prop­o­si­tions <var>n.1</var>, <var>n.2</var>, <var>n.3</var>, etc., are com­ments on prop­o­si­tion No. <var>n</var> ; the prop­o­si­tions <var>n.m1</var>, <var>n.m2</var>, etc., are com­ments on the prop­o­si­tion No. <var>n.m</var> ; and so on.</p></div></td><td><div class="entry"><p>Die Deci­mal­zah­len als Num­mern der ein­zel­nen Sät­ze deu­ten das logi­sche Ge­wicht der Sät­ze an, den Nach­druck, der auf ih­nen in mei­ner Dar­stel­lung liegt. Die Sät­ze <var>n.1</var>, <var>n.2</var>, <var>n.3</var>, etc., sind Be­mer­kun­gen zum Sat­ze <var>n</var> ; die Sät­ze <var>n.m1</var>, <var>n.m2</var>, etc. Be­mer­kun­gen zum Sat­ze No. <var>n.m</var> ; und so wei­ter.</p></div></td></tr> -->
+    <tr><td>1.1</td><td><div class="entry"><p>The world is the to­tal­ity of facts, not of things.</p></div></td><td><div class="entry"><p>Die Welt ist die Ge­samt­heit der Tatsa­chen, nicht der Dinge.</p></div></td></tr>
+    <tr><td>1.11</td><td><div class="entry"><p>The world is deter­mined by the facts, and by these be­ing <em>all</em> the facts.</p></div></td><td><div class="entry"><p>Die Welt ist durch die Tat­sa­chen be­stimmt und da­durch, dass es <em>alle</em> Tat­sa­chen sind.</p></div></td></tr>
+    <tr><td>1.12</td><td><div class="entry"><p>For the to­tal­ity of facts deter­mines both what is the case, and also all that is not the case.</p></div></td><td><div class="entry"><p>Denn, die Ge­samt­heit der Tat­sa­chen be­stimmt, was der Fall ist und auch, was alles nicht der Fall ist.</p></div></td></tr>
+    <tr><td>1.13</td><td><div class="entry"><p>The facts in logi­cal space are the world.</p></div></td><td><div class="entry"><p>Die Tat­sa­chen im logi­schen Raum sind die Welt.</p></div></td></tr>
+    <tr><td>1.2</td><td><div class="entry"><p>The world di­vides into facts.</p></div></td><td><div class="entry"><p>Die Welt zer­fällt in Tatsachen.</p></div></td></tr>
+    <tr><td>1.21</td><td><div class="entry"><p>Any one can ei­ther be the case or not be the case, and ev­ery­thing else re­main the same.</p></div></td><td><div class="entry"><p>Ei­nes kann der Fall sein oder nicht der Fall sein und alles übri­ge gleich blei­ben.</p></div></td></tr>
+    <tr><td>2</td><td><div class="entry"><p>What is the case, the fact, is the exis­tence of atom­ic facts.</p></div></td><td><div class="entry"><p>Was der Fall ist, die Tat­sa­che, ist das Be­ste­hen von Sachverhalten.</p></div></td></tr>
+    <tr><td>2.01</td><td><div class="entry"><p>An atom­ic fact is a com­bi­na­tion of ob­jects (en­ti­ties, things).</p></div></td><td><div class="entry"><p>Der Sach­ver­halt ist eine Ver­bin­dung von Ge­gen­stän­den. (Sa­chen, Dingen.)</p></div></td></tr>
+    <tr><td>2.011</td><td><div class="entry"><p>It is es­sen­tial to a thing that it can be a con­stit­u­ent part of an atom­ic fact.</p></div></td><td><div class="entry"><p>Es ist dem Ding we­sent­lich, der Be­stand­teil ei­nes Sach­ver­hal­tes sein zu können.</p></div></td></tr>
+    <tr><td>2.012</td><td><div class="entry"><p>In logic noth­ing is acci­den­tal : if a thing <em>can</em> oc­cur in an atom­ic fact the pos­si­bil­ity of that atom­ic fact must al­ready be pre­judged in the thing.</p></div></td><td><div class="entry"><p>In der Lo­gik ist nichts zu­fäl­lig : Wenn das Ding im Sach­ver­halt vor­kom­men <em>kann</em>, so muss die Mög­lich­keit des Sach­ver­hal­tes im Ding be­reits prä­ju­di­ziert sein.</p></div></td></tr>
+    <tr><td>2.0121</td><td><div class="entry"><p>It would, so to speak, ap­pear as an acci­dent, when to a thing that could exist alone on its own ac­count, subse­quent­ly a state of af­fairs could be made to fit.</p><p>If things can oc­cur in atom­ic facts, this pos­si­bil­ity must al­ready lie in them.</p><p>(A logi­cal en­tity can­not be mere­ly pos­sible. Log­ic treats of ev­ery pos­si­bil­ity, and all pos­si­bili­ties are its facts.)</p><p>Just as we can­not think of spa­tial ob­jects at all apart from space, or tem­po­ral ob­jects apart from time, so we can­not think of <em>any</em> ob­ject apart from the pos­si­bil­ity of its con­nex­ion with oth­er things.</p><p>If I can think of an ob­ject in the con­text of an atom­ic fact, I can­not think of it apart from the <em>pos­si­bil­ity</em> of this context.</p></div></td><td><div class="entry"><p>Es er­schie­ne gleich­sam als Zu­fall, wenn dem Ding, das al­lein für sich be­ste­hen könn­te, nach­träg­lich eine Sach­la­ge pas­sen wür­de.</p><p>Wenn die Din­ge in Sach­ver­hal­ten vor­kom­men kön­nen, so muss dies schon in ih­nen lie­gen.</p><p>(Et­was Logi­sches kann nicht nur­mög­lich sein. Die Lo­gik han delt von je­der Mög­lich­keit und alle Mög­lich­kei­ten sind ihre Tatsachen.)</p><p>Wie wir uns räum­li­che Ge­gen­stän­de über­haupt nicht aus ser­halb des Rau­mes, zeit­li­che nicht aus­ser­halb der Zeit den­ken kön­nen, so kön­nen wir uns <em>kei­nen</em> Ge­gen­stand aus­ser­halb der Mög­lich­keit sei­ner Ver­bin­dung mit an­de­ren denken.</p><p>Wenn ich mir den Ge­gen­stand im Ver­ban­de des Sach­ver­halts den­ken kann, so kann ich ihn nicht aus­ser­halb der <em>Mög­lich­keit</em> die­ses Ver­ban­des denken.</p></div></td></tr>
+    <tr><td>2.0122</td><td><div class="entry"><p>The thing is inde­pen­dent, in so far as it can oc­cur in all <em>pos­sible</em> cir­cum­stanc­es, but this form of inde­pen­dence is a form of con­nex­ion with the atom­ic fact, a form of de­pen­dence. (It is im­pos­sible for words to oc­cur in two dif­fer­ent ways, alone and in the prop­o­si­tion.)</p></div></td><td><div class="entry"><p>Das Ding ist selb­stän­dig, inso­fern es in allen <em>mög­li­chen</em> Sach­la­gen vor­kom­men kann, aber die­se Form der Selb­stän­dig­keit ist eine Form des Zu­sam­men­hangs mit dem Sach­ver­halt, eine Form der Un­selb­stän­dig­keit. (Es ist un­mög­lich, dass Wor­te in zwei ver­schie­de­nen Wei­sen auf­tre­ten, al­lein und im Satz.)</p></div></td></tr>
+    <tr><td>2.0123</td><td><div class="entry"><p>If I know an ob­ject, then I also know all the pos­si­bili­ties of its oc­cur­rence in atom­ic facts.</p><p>(Ev­ery such pos­si­bil­ity must lie in the na­ture of the object.)</p><p>A new pos­si­bil­ity can­not subse­quent­ly be found.</p></div></td><td><div class="entry"><p>Wenn ich den Ge­gen­stand ken­ne, so ken­ne ich auch sämt­li­che Mög­lich­kei­ten sei­nes Vor­kom­mens in Sachverhalten.</p><p>(Jede sol­che Mög­lich­keit muss in der Na­tur des Ge­gen­stan­des liegen.)</p><p>Es kann nicht nach­träg­lich eine neue Mög­lich­keit ge­fun­den werden.</p></div></td></tr>
+    <tr><td>2.01231</td><td><div class="entry"><p>In or­der to know an ob­ject, I must know not its ex­ter­nal but all its in­ter­nal qual­i­ties.</p></div></td><td><div class="entry"><p>Um ei­nen Ge­gen­stand zu ken­nen, muss ich zwar nicht sei­ne ex­ter­nen—aber ich muss alle sei­ne in­ter­nen Eigen­schaf­ten ken­nen.</p></div></td></tr>
+    <tr><td>2.0124</td><td><div class="entry"><p>If all ob­jects are giv­en, then there­by are all <em>pos­sible</em> atom­ic facts also given.</p></div></td><td><div class="entry"><p>Sind alle Ge­gen­stän­de ge­ge­ben, so sind da­mit auch alle <em>mög­li­chen</em> Sach­ver­hal­te gegeben.</p></div></td></tr>
+    <tr><td>2.013</td><td><div class="entry"><p>Ev­ery thing is, as it were, in a space of pos­sible atom­ic facts. I can think of this space as emp­ty, but not of the thing with­out the space.</p></div></td><td><div class="entry"><p>Je­des Ding ist, gleich­sam, in ei­nem Rau­me mög­li­cher Sach­ver­hal­te. Die­sen Raum kann ich mir leer den­ken, nicht aber das Ding ohne den Raum.</p></div></td></tr>
+    <tr><td>2.0131</td><td><div class="entry"><p>A spa­tial ob­ject must lie in infi­nite space. (A point in space is a place for an argument.)</p><p>A speck in a vi­sual field need not be red, but it must have a co­lour ; it has, so to speak, a co­lour space round it. A tone must have <em>a</em> pitch, the ob­ject of the sense of touch <em>a</em> hard­ness, etc.</p></div></td><td><div class="entry"><p>Der räum­li­che Ge­gen­stand muss im un­end­li­chen Rau­me lie­gen. (Der Raum­punkt ist eine Argumentstelle.)</p><p>Der Fleck im Ge­sichts­feld muss zwar nicht rot sein, aber eine Far­be muss er ha­ben : er hat so­zu­sa­gen den Far­ben­raum um sich. Der Ton muss <em>eine</em> Höhe ha­ben, der Ge­gen­stand des Tast­sin­nes <em>eine</em> Här­te usw.</p></div></td></tr>
+    <tr><td>2.014</td><td><div class="entry"><p>Ob­jects con­tain the pos­si­bil­ity of all states of affairs.</p></div></td><td><div class="entry"><p>Die Ge­gen­stän­de ent­hal­ten die Mög­lich­keit aller Sachlagen.</p></div></td></tr>
+    <tr><td>2.0141</td><td><div class="entry"><p>The pos­si­bil­ity of its oc­cur­rence in atom­ic facts is the form of the object.</p></div></td><td><div class="entry"><p>Die Mög­lich­keit sei­nes Vor­kom­mens in Sach­ver­hal­ten, ist die Form des Ge­gen­stan­des.</p></div></td></tr>
+    <tr><td>2.02</td><td><div class="entry"><p>The ob­ject is sim­ple.</p></div></td><td><div class="entry"><p>Der Ge­gen­stand ist ein­fach.</p></div></td></tr>
+    <tr><td>2.0201</td><td><div class="entry"><p>Ev­ery state­ment about com­plex­es can be anal­ysed into a state­ment about their con­stit­u­ent parts, and into those prop­o­si­tions which com­plete­ly de­scribe the complexes.</p></div></td><td><div class="entry"><p>Jede Aus­sa­ge über Kom­ple­xe lässt sich in eine Aus­sa­ge über de­ren Be­stand­tei­le und in die­je­ni­gen Sät­ze zer­le­gen, wel­che die Kom­ple­xe voll­stän­dig beschreiben.</p></div></td></tr>
+    <tr><td>2.021</td><td><div class="entry"><p>Ob­jects form the sub­stance of the world. There­fore they can­not be com­pound.</p></div></td><td><div class="entry"><p>Die Ge­gen­stän­de bil­den die Sub­stanz der Welt. Dar­um kön­nen sie nicht zu­sam­men­ge­setzt sein.</p></div></td></tr>
+    <tr><td>2.0211</td><td><div class="entry"><p>If the world had no sub­stance, then wheth­er a prop­o­si­tion had sense would de­pend on wheth­er an­oth­er prop­o­si­tion was true.</p></div></td><td><div class="entry"><p>Hät­te die Welt kei­ne Sub­stanz, so wür­de, ob ein Satz Sinn hat, da­von ab­hän­gen, ob ein an­de­rer Satz wahr ist.</p></div></td></tr>
+    <tr><td>2.0212</td><td><div class="entry"><p>It would then be im­pos­sible to form a pic­ture of the world (true or false).</p></div></td><td><div class="entry"><p>Es wäre dann un­mög­lich, ein Bild der Welt (wahr oder falsch) zu entwer­fen.</p></div></td></tr>
+    <tr><td>2.022</td><td><div class="entry"><p>It is clear that how­ever dif­fer­ent from the real one an imag­ined world may be, it must have some­thing—a form—in com­mon with the real world.</p></div></td><td><div class="entry"><p>Es ist of­fen­bar, dass auch eine von der wirk­li­chen noch so ver­schie­den ge­dach­te Welt Et­was—eine Form—mit der wirk­li­chen ge­mein ha­ben muss.</p></div></td></tr>
+    <tr><td>2.023</td><td><div class="entry"><p>This fixed form con­sists of the objects.</p></div></td><td><div class="entry"><p>Die­se feste Form be­steht eben aus den Ge­gen­stän­den.</p></div></td></tr>
+    <tr><td>2.0231</td><td><div class="entry"><p>The sub­stance of the world <em>can</em> only de­ter­mine a form and not any ma­te­rial prop­er­ties. For these are first pre­sent­ed by the prop­o­si­tions—first formed by the con­fig­u­ra­tion of the objects.</p></div></td><td><div class="entry"><p>Die Sub­stanz der Welt <em>kann</em> nur eine Form und kei­ne ma­te­ri­el­len Eigen­schaf­ten be­stim­men. Denn die­se wer­den erst durch die Sät­ze dar­ge­stellt—erst durch die Kon­fi­gu­ra­ti­on der Ge­gen­stän­de gebildet.</p></div></td></tr>
+    <tr><td>2.0232</td><td><div class="entry"><p>Rough­ly speak­ing : ob­jects are co­lour­less.</p></div></td><td><div class="entry"><p>Bei­läu­fig ge­spro­chen : Die Ge­gen­stän­de sind farb­los.</p></div></td></tr>
+    <tr><td>2.0233</td><td><div class="entry"><p>Two ob­jects of the same logi­cal form are—apart from their ex ter­nal prop­er­ties—only dif­fer­en­ti­ated from one an­oth­er in that they are different.</p></div></td><td><div class="entry"><p>Zwei Ge­gen­stän­de von der glei­chen logi­schen Form sind—ab­ge­se­hen von ih­ren ex­ter­nen Eigen­schaf­ten—von ein­an­der nur da­durch unter­schie­den, dass sie ver­schie­den sind.</p></div></td></tr>
+    <tr><td>2.02331</td><td><div class="entry"><p>Ei­ther a thing has prop­er­ties which no oth­er has, and then one can dis­tin­guish it straight away from the oth­ers by a de­scrip­tion and refer to it ; or, on the oth­er hand, there are sev­eral things which have the to­tal­ity of their prop­er­ties in com­mon, and then it is quite im­pos­sible to point to any one of them.</p><p>For if a thing is not distin­guished by any­thing, I can­not dis tin­guish it—for oth­er­wise it would be distinguished.</p></div></td><td><div class="entry"><p>Ent­we­der ein Ding hat Eigen­schaf­ten, die kein an­de­res hat, dann kann man es oh­ne­wei­te­res durch eine Be­schrei­bung aus den an­de­ren her­aus­he­ben, und dar­auf hin­wei­sen ; oder aber, es gibt meh­re­re Din­ge, die ihre sämt­li­chen Eigen­schaf­ten ge­mein­sam ha­ben, dann ist es über­haupt un­mög­lich auf ei­nes von ih­nen zu zei­gen.</p><p>Denn, ist das Ding durch nichts her­vor­ge­ho­ben, so kann ich es nicht her­vor­he­ben, denn sonst ist es eben hervorgehoben.</p></div></td></tr>
+    <tr><td>2.024</td><td><div class="entry"><p>Sub­stance is what ex­ists inde­pen­dent­ly of what is the case.</p></div></td><td><div class="entry"><p>Die Sub­stanz ist das, was un­ab­hän­gig von dem was der Fall ist, be­steht.</p></div></td></tr>
+    <tr><td>2.025</td><td><div class="entry"><p>It is form and con­tent.</p></div></td><td><div class="entry"><p>Sie ist Form und In­halt.</p></div></td></tr>
+    <tr><td>2.0251</td><td><div class="entry"><p>Space, time and co­lour (co­loured­ness) are forms of objects.</p></div></td><td><div class="entry"><p>Raum, Zeit und Far­be (Fär­big­keit) sind For­men der Gegenstände.</p></div></td></tr>
+    <tr><td>2.026</td><td><div class="entry"><p>Only if there are ob­jects can there be a fixed form of the world.</p></div></td><td><div class="entry"><p>Nur wenn es Ge­gen­stän­de gibt, kann es eine feste Form der Welt geben.</p></div></td></tr>
+    <tr><td>2.027</td><td><div class="entry"><p>The fixed, the exis­tent and the ob­ject are one.</p></div></td><td><div class="entry"><p>Das Fe­ste, das Be­ste­hen­de und der Ge­gen­stand sind Eins.</p></div></td></tr>
+    <tr><td>2.0271</td><td><div class="entry"><p>The ob­ject is the fixed, the exis­tent ; the con­fig­u­ra­tion is the chang­ing, the variable.</p></div></td><td><div class="entry"><p>Der Ge­gen­stand ist das Fe­ste, Be­ste­hen­de ; die Kon­fi­gu­ra­ti­on ist das Wech­seln­de, Unbeständige.</p></div></td></tr>
+    <tr><td>2.0272</td><td><div class="entry"><p>The con­fig­u­ra­tion of the ob­jects forms the atom­ic fact.</p></div></td><td><div class="entry"><p>Die Kon­fi­gu­ra­ti­on der Ge­gen­stän­de bil­det den Sachverhalt.</p></div></td></tr>
+    <tr><td>2.03</td><td><div class="entry"><p>In the atom­ic fact ob­jects hang one in an­oth­er, like the mem­bers of a chain.</p></div></td><td><div class="entry"><p>Im Sach­ver­halt hän­gen die Ge­gen­stän­de in­ein­an­der, wie die Glie­der ei­ner Kette.</p></div></td></tr>
+    <tr><td>2.031</td><td><div class="entry"><p>In the atom­ic fact the ob­jects are com­bined in a defi­nite way.</p></div></td><td><div class="entry"><p>Im Sach­ver­halt ver­hal­ten sich die Ge­gen­stän­de in be­stimm­ter Art und Wei­se zueinander.</p></div></td></tr>
+    <tr><td>2.032</td><td><div class="entry"><p>The way in which ob­jects hang to­geth­er in the atom­ic fact is the struc­ture of the atom­ic fact.</p></div></td><td><div class="entry"><p>Die Art und Wei­se, wie die Ge­gen­stän­de im Sach­ver­halt zu­sam­men­hän­gen, ist die Struk­tur des Sachverhaltes.</p></div></td></tr>
+    <tr><td>2.033</td><td><div class="entry"><p>The form is the pos­si­bil­ity of the struc­ture.</p></div></td><td><div class="entry"><p>Die Form ist die Mög­lich­keit der Struk­tur.</p></div></td></tr>
+    <tr><td>2.034</td><td><div class="entry"><p>The struc­ture of the fact con­sists of the struc­tures of the atom­ic facts.</p></div></td><td><div class="entry"><p>Die Struk­tur der Tat­sa­che be­steht aus den Struk­tu­ren der Sachverhalte.</p></div></td></tr>
+    <tr><td>2.04</td><td><div class="entry"><p>The to­tal­ity of exis­tent atom­ic facts is the world.</p></div></td><td><div class="entry"><p>Die Ge­samt­heit der be­ste­hen­den Sach­ver­hal­te ist die Welt.</p></div></td></tr>
+    <tr><td>2.05</td><td><div class="entry"><p>The to­tal­ity of exis­tent atom­ic facts also deter­mines which atom ic facts do not ex­ist.</p></div></td><td><div class="entry"><p>Die Ge­samt­heit der be­ste­hen­den Sach­ver­hal­te be­stimmt auch, wel­che Sach­ver­hal­te nicht be­ste­hen.</p></div></td></tr>
+    <tr><td>2.06</td><td><div class="entry"><p>The exis­tence and non­ex­is­tence of atom­ic facts is the reality.</p><p>(The exis­tence of atom­ic facts we also call a pos­i­tive fact, their non­ex­is­tence a neg­a­tive fact.)</p></div></td><td><div class="entry"><p>Das Be­ste­hen und Nicht­be­ste­hen von Sach­ver­hal­ten ist die Wirklichkeit.</p><p>(Das Be­ste­hen von Sach­ver­hal­ten nen­nen wir auch eine po­si­ti­ve, das Nicht­be­ste­hen eine ne­ga­ti­ve Tatsache.)</p></div></td></tr>
+    <tr><td>2.061</td><td><div class="entry"><p>Atom­ic facts are in­de­pen­dent of one an­oth­er.</p></div></td><td><div class="entry"><p>Die Sach­ver­hal­te sind von ein­an­der un­ab­hän­gig.</p></div></td></tr>
+    <tr><td>2.062</td><td><div class="entry"><p>From the exis­tence or non­ex­is­tence of an atom­ic fact we can­not infer the exis­tence or non­ex­is­tence of another.</p></div></td><td><div class="entry"><p>Aus dem Be­ste­hen oder Nicht­be­ste­hen ei­nes Sach­ver­hal­tes kann nicht auf das Be­ste­hen oder Nicht­be­ste­hen ei­nes an­de­ren ge­schlos­sen werden.</p></div></td></tr>
+    <tr><td>2.063</td><td><div class="entry"><p>The total real­ity is the world.</p></div></td><td><div class="entry"><p>Die ge­sam­te Wirk­lich­keit ist die Welt.</p></div></td></tr>
+    <tr><td>2.1</td><td><div class="entry"><p>We make to our­selves pic­tures of facts.</p></div></td><td><div class="entry"><p>Wir ma­chen uns Bil­der der Tatsachen.</p></div></td></tr>
+    <tr><td>2.11</td><td><div class="entry"><p>The pic­ture pres­ents the facts in logi­cal space, the exis­tence and non­ex­is­tence of atom­ic facts.</p></div></td><td><div class="entry"><p>Das Bild stellt die Sach­la­ge im logi­schen Rau­me, das Be­ste­hen und Nicht­be­ste­hen von Sach­ver­hal­ten vor.</p></div></td></tr>
+    <tr><td>2.12</td><td><div class="entry"><p>The pic­ture is a mod­el of real­ity.</p></div></td><td><div class="entry"><p>Das Bild ist ein Mo­dell der Wirklichkeit.</p></div></td></tr>
+    <tr><td>2.13</td><td><div class="entry"><p>To the ob­jects corre­spond in the pic­ture the ele­ments of the pic­ture.</p></div></td><td><div class="entry"><p>Den des Ge­gen­stän­den ent­spre­chen im Bil­de die Ele­men­te des Bil­des.</p></div></td></tr>
+    <tr><td>2.131</td><td><div class="entry"><p>The ele­ments of the pic­ture stand, in the pic­ture, for the objects.</p></div></td><td><div class="entry"><p>Die Ele­men­te des Bil­des ver­tre­ten im Bild die Gegenstände.</p></div></td></tr>
+    <tr><td>2.14</td><td><div class="entry"><p>The pic­ture con­sists in the fact that its ele­ments are com­bined with one an­oth­er in a defi­nite way.</p></div></td><td><div class="entry"><p>Das Bild be­steht dar­in, dass sich sei­ne Ele­men­te in be­stimm­ter Art und Wei­se zu ein­an­der ver­hal­ten.</p></div></td></tr>
+    <tr><td>2.141</td><td><div class="entry"><p>The pic­ture is a fact.</p></div></td><td><div class="entry"><p>Das Bild ist eine Tat­sa­che.</p></div></td></tr>
+    <tr><td>2.15</td><td><div class="entry"><p>That the ele­ments of the pic­ture are com­bined with one an­oth­er in a defi­nite way, rep­re­sents that the things are so com­bined with one another.</p><p>This con­nex­ion of the ele­ments of the pic­ture is called its struc­ture, and the pos­si­bil­ity of this struc­ture is called the form of rep­re­sen­ta­tion of the picture.</p></div></td><td><div class="entry"><p>Dass sich die Ele­men­te des Bil­des in be­stimm­ter Art und Wei­se zu ein­an­der ver­hal­ten stellt vor, dass sich die Sa­chen so zu ein­an­der ver­hal­ten.</p><p>Die­ser Zu­sam­men­hang der Ele­men­te des Bil­des heis­se sei­ne Struk­tur und ihre Mög­lich­keit sei­ne Form der Abbildung.</p></div></td></tr>
+    <tr><td>2.151</td><td><div class="entry"><p>The form of rep­re­sen­ta­tion is the pos­si­bil­ity that the things are com­bined with one an­oth­er as are the ele­ments of the pic­ture.</p></div></td><td><div class="entry"><p>Die Form der Ab­bil­dung ist die Mög­lich­keit, dass sich die Din­ge so zu ein­an­der ver­hal­ten, wie die Ele­men­te des Bil­des.</p></div></td></tr>
+    <tr><td>2.1511</td><td><div class="entry"><p>Thus the pic­ture is linked with real­ity ; it reach­es up to&nbsp;it.</p></div></td><td><div class="entry"><p>Das Bild ist s o mit der Wirk­lich­keit ver­knüpft ; es reicht bis zu ihr.</p></div></td></tr>
+    <tr><td>2.1512</td><td><div class="entry"><p>It is like a scale ap­plied to real­ity.</p></div></td><td><div class="entry"><p>Es ist wie ein Massstab an die Wirk­lich­keit an­ge­legt.</p></div></td></tr>
+    <tr><td>2.15121</td><td><div class="entry"><p>Only the out­er­most points of the di­vid­ing lines <em>touch</em> the ob­ject to be measured.</p></div></td><td><div class="entry"><p>Nur die äus­ser­sten Punk­te der Teil­stri­che <em>be­rüh­ren­den</em> zu mes­sen­den Gegenstand.</p></div></td></tr>
+    <tr><td>2.1513</td><td><div class="entry"><p>Ac­cord­ing to this view the rep­re­sent­ing rela­tion which makes it a pic­ture, also be­longs to the picture.</p></div></td><td><div class="entry"><p>Nach die­ser Auf­fas­sung ge­hört also zum Bil­de auch noch die ab­bil­den­de Be­zie­hung, die es zum Bild macht.</p></div></td></tr>
+    <tr><td>2.1514</td><td><div class="entry"><p>The rep­re­sent­ing rela­tion con­sists of the coor­di­na­tions of the ele­ments of the pic­ture and the things.</p></div></td><td><div class="entry"><p>Die ab­bil­den­de Be­zie­hung be­steht aus den Zu­ord­nun­gen der Ele­men­te des Bil­des und der Sachen.</p></div></td></tr>
+    <tr><td>2.1515</td><td><div class="entry"><p>These coor­di­na­tions are as it were the feel­ers of its ele­ments with which the pic­ture touch­es reality.</p></div></td><td><div class="entry"><p>Die­se Zu­ord­nun­gen sind gleich­sam die Füh­ler der Bild­ele­men­te, mit de­nen das Bild die Wirk­lich­keit berührt.</p></div></td></tr>
+    <tr><td>2.16</td><td><div class="entry"><p>In or­der to be a pic­ture a fact must have some­thing in com­mon with what it pictures.</p></div></td><td><div class="entry"><p>Die Tat­sa­che muss um Bild zu sein, et­was mit dem Ab­ge­bil­de­ten ge­mein­sam haben.</p></div></td></tr>
+    <tr><td>2.161</td><td><div class="entry"><p>In the pic­ture and the pic­tured there must be some­thing iden­ti cal in or­der that the one can be a pic­ture of the oth­er at all.</p></div></td><td><div class="entry"><p>In Bild und Ab­ge­bil­de­tem muss et­was iden­tisch sein, da­mit das eine über­haupt ein Bild des an­de­ren sein kann.</p></div></td></tr>
+    <tr><td>2.17</td><td><div class="entry"><p>What the pic­ture must have in com­mon with real­ity in or­der to be able to rep­re­sent it after its man­ner—right­ly or false­ly—is its form of representation.</p></div></td><td><div class="entry"><p>Was das Bild mit der Wirk­lich­keit ge­mein ha­ben muss, um sie auf sei­ne Art und Wei­se—rich­tig oder falsch—ab­bil­den zu kön­nen, ist sei­ne Form der Abbildung.</p></div></td></tr>
+    <tr><td>2.171</td><td><div class="entry"><p>The pic­ture can rep­re­sent ev­ery real­ity whose form it has.</p><p>The spa­tial pic­ture, ev­ery­thing spa­tial, the co­loured, ev­ery­thing co­loured, etc.</p></div></td><td><div class="entry"><p>Das Bild kann jede Wirk­lich­keit ab­bil­den, de­ren Form es hat.</p><p>Das räum­li­che Bild alles Räum­li­che, das far­bi­ge alles Far­bi­ge, etc.</p></div></td></tr>
+    <tr><td>2.172</td><td><div class="entry"><p>The pic­ture, how­ever, can­not rep­re­sent its form of rep­re­senta­tion ; it shows it forth.</p></div></td><td><div class="entry"><p>Sei­ne Form der Ab­bil­dung aber, kann das Bild nicht ab­bil­den ; es weist sie auf.</p></div></td></tr>
+    <tr><td>2.173</td><td><div class="entry"><p>The pic­ture rep­re­sents its ob­ject from with­out (its stand­point is its form of rep­re­sen­ta­tion), there­fore the pic­ture rep­re­sents its ob­ject right­ly or falsely.</p></div></td><td><div class="entry"><p>Das Bild stellt sein Ob­jekt von aus­ser­halb dar (sein Stand­punkt ist sei­ne Form der Dar­stel­lung), dar­um stellt das Bild sein Ob­jekt rich­tig oder falsch dar.</p></div></td></tr>
+    <tr><td>2.174</td><td><div class="entry"><p>But the pic­ture can­not place itself out­side of its form of repre sentation.</p></div></td><td><div class="entry"><p>Das Bild kann sich aber nicht aus­ser­halb sei­ner Form der Dar­stel­lung stellen.</p></div></td></tr>
+    <tr><td>2.18</td><td><div class="entry"><p>What ev­ery pic­ture, of what­ever form, must have in com­mon with real­ity in or­der to be able to rep­re­sent it at all—right­ly or false­ly—is the logi­cal form, that is, the form of reality.</p></div></td><td><div class="entry"><p>Was je­des Bild, wel­cher Form im­mer, mit der Wirk­lich­keit ge­mein ha­ben muss, um sie über­haupt—rich­tig oder falsch—ab­bil­den zu kön­nen, ist die logi­sche Form, das ist, die Form der Wirklichkeit.</p></div></td></tr>
+    <tr><td>2.181</td><td><div class="entry"><p>If the form of rep­re­sen­ta­tion is the logi­cal form, then the pic­ture is called a logi­cal picture.</p></div></td><td><div class="entry"><p>Ist die Form der Ab­bil­dung die logi­sche Form, so heisst das Bild das logi­sche Bild.</p></div></td></tr>
+    <tr><td>2.182</td><td><div class="entry"><p>Ev­ery pic­ture is <em>also</em> a logi­cal pic­ture. (On the oth­er hand, for ex­am­ple, not ev­ery pic­ture is spatial.)</p></div></td><td><div class="entry"><p>Je­des Bild ist <em>auch</em> ein logi­sches. (Da­ge­gen ist z. B. nicht je­des Bild ein räumliches.)</p></div></td></tr>
+    <tr><td>2.19</td><td><div class="entry"><p>The logi­cal pic­ture can de­pict the world.</p></div></td><td><div class="entry"><p>Das logi­sche Bild kann die Welt abbilden.</p></div></td></tr>
+    <tr><td>2.2</td><td><div class="entry"><p>The pic­ture has the logi­cal form of rep­re­sen­ta­tion in com­mon with what it pictures.</p></div></td><td><div class="entry"><p>Das Bild hat mit dem Ab­ge­bil­de­ten die logi­sche Form der Ab­bil­dung gemein.</p></div></td></tr>
+    <tr><td>2.201</td><td><div class="entry"><p>The pic­ture de­picts real­ity by rep­re­sent­ing a pos­si­bil­ity of the exis­tence and non­ex­is­tence of atom­ic facts.</p></div></td><td><div class="entry"><p>Das Bild bil­det die Wirk­lich­keit ab, in­dem es eine Mög­lich­keit des Be­ste­hens und Nicht­be­ste­hens von Sach­ver­hal­ten darstellt.</p></div></td></tr>
+    <tr><td>2.202</td><td><div class="entry"><p>The pic­ture rep­re­sents a pos­sible state of af­fairs in logi­cal space.</p></div></td><td><div class="entry"><p>Das Bild stellt eine mög­li­che Sach­la­ge im logi­schen Rau­me dar.</p></div></td></tr>
+    <tr><td>2.203</td><td><div class="entry"><p>The pic­ture con­tains the pos­si­bil­ity of the state of af­fairs which it represents.</p></div></td><td><div class="entry"><p>Das Bild ent­hält die Mög­lich­keit der Sach­la­ge, die es darstellt.</p></div></td></tr>
+    <tr><td>2.21</td><td><div class="entry"><p>The pic­ture agrees with real­ity or not ; it is right or wrong, true or false.</p></div></td><td><div class="entry"><p>Das Bild stimmt mit der Wirk­lich­keit über­ein oder nicht ; es ist rich­tig oder un­rich­tig, wahr oder falsch.</p></div></td></tr>
+    <tr><td>2.22</td><td><div class="entry"><p>The pic­ture rep­re­sents what it rep­re­sents, inde­pen­dent­ly of its truth or false­hood, through the form of representation.</p></div></td><td><div class="entry"><p>Das Bild stellt dar, was es dar­stellt, un­ab­hän­gig von sei­ner Wahro­der Falsch­heit, durch die Form der Abbildung.</p></div></td></tr>
+    <tr><td>2.221</td><td><div class="entry"><p>What the pic­ture rep­re­sents is its sense.</p></div></td><td><div class="entry"><p>Was das Bild dar­stellt, ist sein Sinn.</p></div></td></tr>
+    <tr><td>2.222</td><td><div class="entry"><p>In the agree­ment or dis­agree­ment of its sense with real­ity, its truth or fal­sity consists.</p></div></td><td><div class="entry"><p>In der Über­ein­stim­mung oder Nicht­über­ein­stim­mung sei­nes Sin­nes mit der Wirk­lich­keit, be­steht sei­ne Wahr­heit oder Falschheit.</p></div></td></tr>
+    <tr><td>2.223</td><td><div class="entry"><p>In or­der to dis­cov­er wheth­er the pic­ture is true or false we must com­pare it with reality.</p></div></td><td><div class="entry"><p>Um zu er­ken­nen, ob das Bild wahr oder falsch ist, müs­sen wir es mit der Wirk­lich­keit vergleichen.</p></div></td></tr>
+    <tr><td>2.224</td><td><div class="entry"><p>It can­not be dis­cov­ered from the pic­ture alone wheth­er it is true or false.</p></div></td><td><div class="entry"><p>Aus dem Bild al­lein ist nicht zu er­ken­nen, ob es wahr oder falsch ist.</p></div></td></tr>
+    <tr><td>2.225</td><td><div class="entry"><p>There is no pic­ture which is a pri­ori true.</p></div></td><td><div class="entry"><p>Ein a prio­ri wah­res Bild gibt es nicht.</p></div></td></tr>
+    <tr><td>3</td><td><div class="entry"><p>The logi­cal pic­ture of the facts is the thought.</p></div></td><td><div class="entry"><p>Das logi­sche Bild der Tat­sa­chen ist der Gedanke.</p></div></td></tr>
+    <tr><td>3.001</td><td><div class="entry"><p><doplen>“An</doplen> atom­ic fact is think­able”—means : we can imag­ine&nbsp;it.</p></div></td><td><div class="entry"><p><doplende style="margin-left: -0.47em;">„Ein</doplende> Sach­ver­halt ist denk­bar“ heisst : Wir kön­nen uns ein Bild von ihm machen.</p></div></td></tr>
+    <tr><td>3.01</td><td><div class="entry"><p>The to­tal­ity of true thoughts is a pic­ture of the world.</p></div></td><td><div class="entry"><p>Die Ge­samt­heit der wah­ren Ge­dan­ken sind ein Bild der Welt.</p></div></td></tr>
+    <tr><td>3.02</td><td><div class="entry"><p>The thought con­tains the pos­si­bil­ity of the state of af­fairs which it thinks.</p><p>What is think­able is also possible.</p></div></td><td><div class="entry"><p>Der Ge­dan­ke ent­hält die Mög­lich­keit der Sach­la­ge die er denkt.</p><p>Was denk­bar ist, ist auch möglich.</p></div></td></tr>
+
+    </tbody></table>
+
+  <cite>Ludwig Wittgenstein, <in>Tractatus logico-philosophicus</in>, <en>1921–22</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="menard.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="pareto.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="menard.html"><span class="arrow">←</span>&nbsp;simboliqe religieuse</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="pareto.html">trattato di sociologia generale&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+
+  const button = document.querySelector("#clic");
+  const table = document.querySelector("table");
+  
+  const cycleLang = () => {
+    if (table.getAttribute('id') == "de") {
+      table.setAttribute("id", "en"); localStorage.setItem('wittgenstein', "en")
+    } else if (table.getAttribute('id') == "en") {
+      table.removeAttribute("id");    localStorage.setItem('wittgenstein', "ende")
+    } else {
+      table.setAttribute("id", "de"); localStorage.setItem('wittgenstein', "de")
+    }
+  }
+  button.addEventListener('click', cycleLang);
+
+/* if (localStorage.getItem('wittgenstein') == "de")
+  table.setAttribute("id", "de") */
+if (localStorage.getItem('wittgenstein') == "en")
+  table.setAttribute("id", "en")
+if (localStorage.getItem('wittgenstein') == "ende")
+  table.removeAttribute("id")
+
+
+  </script>
+
+<script>
+  let td = document.querySelectorAll("td:nth-of-type(1)");
+
+  for (var i = 0; i < td.length; i++) {
+    let text = td[i].innerHTML;
+    let tr = td[i].parentNode;
+    tr.setAttribute("id", text);
+    td[i].innerHTML = `<a href="#`+text+`">`+text+`</a>`;
+  }
+
+</script>
+   
+<script>
+
+const setOpacity = function() {
+  const element = document.querySelector(".sticky")
+      , ascrollPosition = window.scrollY
+      , aviewportHeight = window.innerHeight
+      , condition = document.querySelector("html[wide]");
+  if (condition) {
+    element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight * 3))
+  } else {
+    element.style.opacity = Math.max(0.05, 1 - (ascrollPosition / aviewportHeight))
+  }
+};
+
+window.addEventListener("scroll", setOpacity);
+window.addEventListener("resize", setOpacity);
+window.addEventListener("scroll", function() {
+  let viewportHeight = window.innerHeight
+    , scrollTop = window.pageYOffset
+    , scrollHeight = document.body.scrollHeight
+    , condition = document.querySelector("html[wide]");
+  if (scrollTop <= viewportHeight && condition) {
+    // let translateY = scrollTop / 4;
+    let translateY = scrollTop / 2;
+    document.querySelector(".sticky").style.transform = `translateY(-${translateY}px)`;
+  }
+});
+
+// window.onload = function () {
+//   const element = document.querySelector(".sticky");
+//   if (element) {
+//     element.addEventListener('mouseenter', () => element.classList.add('hovered'));
+//     element.addEventListener('mouseleave', () => element.classList.remove('hovered'));
+//   }
+// };
+
+
+const toggleMenu2 = function(e) {
+  const element = document.querySelector(".sticky")
+      , menu = document.querySelector("#menu")
+      , body = document.querySelector("body");
+
+  // click anychere on page
+  if (body.classList.contains("menu_open")
+  && e.target.id === "content") {
+    body.classList.toggle("menu_open");
+    setTimeout(function() {
+      menu.style.visibility = "hidden";
+    }, 600);
+  }
+
+  if (e.target === element || e.target.parentNode === element) {
+    body.classList.toggle("menu_open");
+    if (body.classList.contains("menu_open")) {
+      menu.style.visibility = "visible";
+    } else {
+      setTimeout(function() {
+        menu.style.visibility = "hidden";
+      }, 600);
+    }
+  }
+};
+document.addEventListener("click", toggleMenu2);
+
+</script>
+
+
+</body>
+</html>

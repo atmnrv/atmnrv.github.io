@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <script type="text/javascript" src="core/zooom.js"></script>
+
+  <style>
+    .lightscheme, .darkscheme img {cursor: default}
+    .darkscheme {display: none;}
+    [dark="true"] .darkscheme {display:block}
+    [dark="true"] .lightscheme {display:none}
+    #content > p > c2sc {font-family: dolly-caps;}
+
+    div:not(.nb) img { filter: none !important }
+    div.nb img { filter: grayscale(100%) !important; }
+    div.nb:hover img, div.zooom-wrap img.zooom-img { filter: none !important; }
+    div.nb { margin-left: -10rem; padding-left: 10rem; }
+    p {hyphens: auto; -webkit-hyphens: auto;}
+
+    /* image-caption::before { content: none; } */
+    /* image-caption { margin-top: 0.7em; } */
+
+  </style>
+  <style>
+    .sticky { position: sticky; position: -webkit-sticky; top: 3rem; top: 3.7rem; }
+    .sticky aside { top: 0rem; position: absolute; }
+    .sticky aside p:first-of-type { margin-bottom: 0.2em; }
+
+    .flex { display: flex; flex-wrap: wrap; }
+    .flex > .column img { margin-bottom: 0; vertical-align: middle; }
+
+    .flex.cena > .column                { max-width: calc(102.48% / 6); }
+    .flex.cena > .column:not(:nth-of-type(1)) { margin-left: -0.5% !important; }
+    .flex.trop > .column                { flex: calc(85% / 7); }
+    .flex.trop > .column.x2             { flex: calc(100% * 2 / 7); flex: calc(109.6% * 2 / 7)}
+    .flex.trop > .column + .column      { margin-left: 0.2em; }
+    .flex.pm > .column                  { flex: 20%; max-width: 20%; }
+    .flex.mille > .column               { flex: 20%; max-width: 20%; }
+
+    a.cross::after  { 
+      content: "\FEFF†";
+      color: #dd8e26;
+      top: -0.25em;
+    }
+      a.doublecross::after      { content: "\FEFF‡"; }
+      a.triplecross::after      { content: "\FEFF§"; }
+      a.quadruplecross::after   { content: "\FEFF||"; }
+  </style>
+
+<style>
+  #button {
+      position: fixed;
+      top: 5rem;
+      left: 4rem;
+      z-index: 999;
+      height: 4rem;
+      width:4rem;
+      border-radius: 50%;
+      background: #2a2a24; /*#feffcb;*/
+      background: mediumseagreen;
+      transition-property: opacity top left height width;
+      transition-duration: 1s;
+
+      }
+  @media not all and (max-width:520px) {
+    #button:hover {
+      top: 4.9rem;
+      left: 3.9rem;
+      height: 4.2rem;
+      width:4.2rem;
+      opacity: 1 !important;
+    }
+  }
+  @media all and (max-width:520px) {
+      #button {
+      top: unset;
+      bottom: 3.5rem;
+      left: unset;
+      right: 3rem;
+    /* left: -1.75rem; */
+      height: 2.8rem;
+      width: 2.8rem;
+      opacity: 0.80 !important;
+      }
+      #button:hover {
+      
+      opacity: 0.80 !important;
+      }}
+  [dark="true"] #button { background: mistyrose; }
+  #button:hover { cursor: pointer; }
+  #button:active { background: var(--act) !important; opacity: .75 !important; }
+  
+
+  p.image:not(.noshad) img,
+  div.flex {
+    box-shadow: 0 1.5px 4px rgba(0,0,0,.24),0 1.5px 6px rgba(0,0,0,.12);
+  }
+  topic + p.image img, img.zooom-img {
+    box-shadow: initial !important;
+  }
+  #menu a:hover { color: #c72e15; transition: color .2s;}
+  /* #menu a {transition: color .2s;} */
+
+
+ol {
+  list-style: none;
+}
+ol li {
+  /* counter-increment: acount; */
+}
+
+  ol li::before {
+  font-family: "SFThin";
+  font-feature-settings: "ss19";
+  font-size: 1.50rem;
+  line-height: 1.2rem;
+  margin-left: -2.55rem;
+
+  counter-increment: acount;
+  content: counter(acount);
+}
+ol:first-of-type {
+  counter-reset: acount -1;
+  counter-reset: acount;
+}
+
+image-caption::before {
+  width: 25%;
+  background: var(--st);
+}
+
+  </style>
+  <style>
+    pp.li::before {
+      font-family: "SFThin";
+      font-feature-settings: "ss19";
+      font-size: 1.50rem;
+      line-height: 1.2rem;
+      line-height: 0;
+      margin-left: -2.55rem;
+      counter-increment: acount;
+      /* content: "1"; */
+      padding-right: 1.3rem;
+      /* vertical-align: -0.1em; */
+      vertical-align: -0.14em;
+  }
+  pp.d2 {
+    padding-left: 2.55rem;
+  }
+  pp.li {
+    padding-left: 2.55rem;
+  }
+  pp.li.a::before { content: "1"; }
+  pp.li.b::before { content: "2"; }
+  pp.li.c::before { content: "3"; }
+  pp.li.d::before { content: "4"; }
+  pp.li.e::before { content: "5"; }
+  </style>
+
+  <style>
+    [wide] .sticky {
+      display: none;
+    }
+    @media all and (max-width:520px) {
+      .sticky {
+      display: none;
+    }
+      .dnl {
+      display: none;
+    }
+
+    }
+    .dnl {
+      display: none;
+    }
+    [wide] .dnl {
+      display: block;
+    }
+    [wide] image-caption.mobil {
+      display: block;
+    }
+    [wide] .nbb {
+      margin-top: 0 !important;
+    }
+  </style>
+  <title>Beaux-arts | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href=".">­</a>
+<div id="content" lang="fr">
+  <topic>Beaux-Arts</topic>
+  <p>On prend toujours un risque en mariant le texte et l’image. L’association des deux se fait toujours au détriment de l’un ou de l’autre ; et, en définitive, de l’un <i>et</i> de l’autre.</p>
+  <p>À première vue, l’opposition pourrait sembler factice. D’une part, parce qu’il n’y a pas de différence véritable entre texte et image ; le premier n’est qu’une forme particulière de la seconde—en fait, il suffit qu’un texte soit composé dans une langue inconnue pour que celui-ci perde aussitôt son caractère singulier. Et d’autre part, parce que la notion de <em>lecture</em> est assez souple pour qu’on puisse, aussi pédantesquement soit-il, se permettre de « lire une image ».</p>
+  <p>Mais à y regarder de plus près, ce qui les distingue mérite amplement qu’on affirme leur opposition. Certes, texte et image sont de nature similaire, mais notre cerveau les interprète différemment. Et le meilleur moyen de rendre compte de cette différence est de restreindre la définition de lecture à son acception courante : apprendre à lire, c’est apprendre à reconnaître une séquence de signes graphiques que les conventions et les usages ont associé à des unités du langage.</p>
+  <p>C’est une différence considérable…</p>
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nb">
+    <div class="sticky"><aside><p><em>Les plages de <nobr>Sibérie</nobr></em><br>[extrait]</p><p>sérigraphie, <br>12&nbsp;×&nbsp;12 cm.</p></aside></div>
+    <p class="image"><img class="zooom" src="images/ba+sf.jpg" /></p>
+    <image-caption class="mobil"><em>Les plages de Sibérie</em>, sérigraphie, 12&nbsp;×&nbsp;12 cm.</image-caption>
+  </div>
+  <div class="gap" style="height:0.5em"></div>
+  
+
+
+  <aside><p>L’histoire de la lecture remonte à l’invention de l’écriture au cours du <c2sc>IV</c2sc><e>e</e> millénaire avant l’ère <nobr>chrétienne</nobr>.</p></aside>
+  <p>La lecture est une fonction détournée du langage. Mais, contrairement au langage, qui est une faculté innée de l’homme, la lecture est une activité récente—inutile de dire qu’elle ne dispose pas de système dédié ; c’est le produit d’un processus cognitif complexe qui, à condition de lire avec les yeux, commence dans le système visuel et se poursuit dans le système <nobr>langagier</nobr>.</p>
+ 
+  <p><span class="un"><span class="note-src">L’exercice est exigeant</span><span class="note">
+    <pp class="li a">Le flux électro­magnétique de la lumière doit tout d’abord être converti en signal bio­électrique pour pouvoir être inter­prété par le cerveau ; c’est le rôle des cônes et des bâtonnets, les <strong>cellules photosensibles</strong> de la rétine ;</pp>
+    <pp class="li b">Le <strong>nerf optique</strong> conduit ce signal au <strong>corps géniculé latéral</strong> (CGL), qui agit, dans un premier temps, comme relais et réémet le signal vers le <strong>cortex visuel primaire</strong> (V1), respon­sable de la reconnaissance des formes, des couleurs et du mouvement ;</pp>
+    <pp class="li c">Le signal entre ensuite dans une boucle rétroactive entre l’aire V1, qui reçoit les projections du CGL, et le CGL lui-même, qui recycle et affine l’information de l’aire V1 ;</pp>
+    <pp class="li d">Les informations produites par le cortex visuel primaire sont envoyées vers les <strong>aires dites extrastriées du cortex visuel</strong>, où elles seront analysées à plus haut niveau (couleurs, textures, motifs, reconnaissances des visages, des corps, etc.).</pp>
+    <pp class="d2">Ce processus de cartographie rétinienne—qu’on appelle la rétinotopie—est commun à toute activité visuelle. Mais, texte « vu » n’est pas texte « lu ». Le processus de lecture se poursuit ailleurs dans le <nobr>cerveau</nobr>.</pp>
+    <pp class="li e">L’information arrive dans le centre du langage où travaillent en synergie l’<strong>aire de Wernicke</strong>, responsable de l’interprétation du langage, et l’<strong>aire de Broca</strong>, aire motrice du langage, responsable de l’articulation et de la production du langage. Le texte est lu.</pp>
+
+  </span></span> et réclame une attention soutenue, énergivorace, et, dès lors qu’il est prolongé, mobilise les facultés du lecteur et le plonge dans un état de focalisation et de performance optimale, autrement appelé <i>état de flux</i>.</p>
+ <p>L’accès à l’état de flux dépend de l’expérience. Il est plus ou moins long selon qu’on lise peu ou beaucoup, et demeure inac­ces­sible au débutant, puisque celui-ci ne possède pas le réseau synaptique qu’on se construit avec la pratique et qui facilite la circulation de l’information entre les différentes aires cérébrales.<!--  En revanche, l’état de flux n’est jamis instantané, même pour le plus avancé des lecteurs. --></p>
+ <!-- <p>L’accès à l’état de flux dépend de l’expérience. Il est plus ou moins long selon qu’on lise peu ou beaucoup, et demeure inac­ces­sible au débutant, dans la mesure où celui-ci ne possède pas le réseau synaptique qu’on se construit avec la pratique et qui facilite la circulation de l’information entre les différentes aires cérébrales. En revanche, l’état de flux n’est jamis instantané, même pour le plus avancé des lecteurs.</p> -->
+ <p>Ainsi, lorsqu’une image exerce le stimulus suffisant pour capter l’attention du lecteur et l’extraire de sa lecture, elle fait l’effet d’un feu rouge sur une route nationale, et le condamne à devoir repasser par une phase de lecture légère avant de pouvoir regagner sa pleine <nobr>concentration</nobr>.</p>
+ <p>On peut recourir à divers artifices pour réduire la friction du texte et de l’image. La solution la plus élégante étant probablement de désaturer les images afin que celles-ci s’intègrent mieux au gris typographique du texte. Elles deviennent ainsi plus facile à ignorer. — Mais à quoi bon illustrer un texte quand on cherche délibérément à diminuer la force des images ?</p>
+
+ <div class="gap" style="height:0.1px"></div>
+ <div class="nb">
+   <div class="sticky"><aside><p><em>Portrait de jeune fille</em></p><p>papier et huile sur bois, <br>32&nbsp;×&nbsp;38 cm.</p></aside></div>
+   <p class="image noshad"><img class="zooom" src="images/ba+portrait.jpg" /></p>
+   <image-caption class="mobil"><em>Portrait de jeune fille</em>, papier et huile sur bois, 32&nbsp;×&nbsp;38 cm.</image-caption>
+ </div>
+ <div class="gap" style="height:0.5em"></div>
+ <div class="gap dnl" style="height:2em"></div>
+
+
+ <div class="gap" style="height:0.1px"></div>
+ <div class="nb">
+   <div class="sticky"><aside><p><em>Portrait de jeune fille</em></p><p>papier et huile sur bois, <br>32&nbsp;×&nbsp;38 cm.</p></aside></div>
+   <p class="image"><img class="zooom" src="images/ba+mono.jpg" /></p>
+   <image-caption class="mobil"><em>Portrait de jeune fille</em>, papier et huile sur bois, 32&nbsp;×&nbsp;38 cm.</image-caption>
+ </div>
+ <div class="gap" style="height:2.5em"></div>
+
+ 
+ <div class="gap" style="height:0.1px"></div>
+ <div class="nb">
+   <div class="sticky"><aside><p><em>Portrait de jeune fille</em></p><p>papier et huile sur bois, <br>32&nbsp;×&nbsp;38 cm.</p></aside></div>
+   <p class="image"><img class="zooom" src="images/ba+quatre.jpg" /></p>
+   <image-caption class="mobil"><em>Portrait de jeune fille</em>, papier et huile sur bois, 32&nbsp;×&nbsp;38 cm.</image-caption>
+ </div>
+ <div class="gap" style="height:0.5em"></div>
+
+  <p>Toute l’efficacité de l’image vient de ce qu’elle est un mode de communication quasi instantané—le délai entre stimulation et perception est si court qu’on le pourrait qualifier de nul. Une image se remarque de loin. Pour les raisons que j’énonçais plus haut, elle demande peu d’attention, donc peu d’effort—donc peu d’énergie. Et, on en retient la substance très facilement. Elle est aussi, à un certain niveau d’abstraction, un mode de communication <nobr>universel</nobr>.</p>
+  <p>Or, c’est toute la difficulté de la cohabitation du texte et de l’image. L’image est intrusive. Ou, pour le dire autrement, il s’exerce une lutte inégale entre le texte, qui suppose rigueur et discipline, et l’image, qui a pour elle l’avantage de suivre l’inclination naturelle d’<em>Homo <nobr>sapiens</nobr></em>.</p>
+  <!-- <p>Or, c’est toute la difficulté de la cohabitation du texte et de l’image. L’image est intrusive. Ou, pour le dire autrement, il s’exerce une lutte inégale entre le texte, qui suppose rigueur et discipline, et l’image, qui a pour elle cet avantage qu’elle suit l’inclination naturelle d’<em>Homo sapiens</em>.</p> -->
+  <p>C’est pourquoi les livres pour enfants sont illustrés et que les livres « pour adultes » (entre guillemets) ne le sont plus. Les images sont un atout précieux pour l’enfant, un élément familier dans un monde inconnu.Elles sont, en revanche, autant de cahots sur la route du point de vue du lecteur avancé. C’est le <em>paradoxe des roulettes du vélo</em> que j’évoque à propos de <a class="xref" href="milou.html">Milou</a>, po­lice dessinée pour ap­prendre à lire. Pour faire court : <a class="cross" href="minuscule.html">quand on sait faire du vélo, on enlève les <nobr>roulettes</nobr>.</a></p>
+  <!-- <p>C’est pourquoi les livres pour enfants sont illustrés et que les livres « pour adultes » (entre guillemets) ne le sont plus. Les images se révèlent un atout précieux lorsqu’il s’agit d’amener l’enfant à la lecture en lui proposant un élément familier ; mais elles sont autant de cailloux dans les bottes du lecteur avancé. C’est le <em>paradoxe des roulettes du vélo</em> que j’évoque à propos de <a class="xref" href="milou.html">Milou</a>, po­lice dessinée pour ap­prendre à lire. Pour faire court : <a class="cross" href="minuscule.html">quand on sait faire du vélo, on enlève les roulettes.</a></p> -->
+  <p>On comprendra pourquoi j’ai longtemps hésité avant d’illustrer mon ouvrage. Ce n’est pas tant qu’il y avait un risque à marier le texte et l’image, mais parce que si j’aime l’image, c’est en partie pour me passer du texte. Néanmoins, il fallait bien penser à ceux qui n’aiment pas lire ; même s’il était plutôt question, une fois n’est pas coutume, de s’assurer que ce ne fût pas le texte qui gênât la lecture des <nobr>images</nobr>.</p>
+  <div class="gap" style="height:2.5rem"></div>
+
+  <!--<div class="gap dnl" style="height:.5em"></div><div class="dnl" style="height:1.5em"></div> -->
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em>Sans titre (le comble)</em></p><p>papier et huile sur bois, <br>32&nbsp;×&nbsp;38 cm.</p></aside></div>
+    <p class="image noshad"><img class="zooom" src="images/ba+comporosebleu.jpg" /></p>
+    <image-caption class="mobil"><em>Sans titre (le comble)</em>, papier et huile sur bois, 32&nbsp;×&nbsp;38 cm.</image-caption>
+  </div>
+  <div class="gap" style="height:2em"></div>
+  <div class="gap dnl" style="height:2em"></div>
+
+<!-- 
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em>Les Préraphaélites</em></p><p>deuxième panneau, <br>technique mixte, <br>70&nbsp;×&nbsp;34 cm.</p></aside></div>
+    <p class="image"><img class="zooom" src="images/ba+pre.jpg" /></p>
+    <image-caption class="mobil"><em>Les Préraphaélites</em>, deuxième panneau, technique mixte, 70&nbsp;×&nbsp;34 cm.</image-caption>
+  </div>
+  <div class="gap" style="height:1em"></div>
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em>Les Préraphaélites</em></p><p>deuxième panneau, <br>technique mixte, <br>70&nbsp;×&nbsp;34 cm.</p></aside></div>
+    <p class="image"><img class="zooom" src="images/ba+pre5.jpg" /></p>
+    <image-caption class="mobil"><em>Les Préraphaélites</em>, deuxième panneau, technique mixte, 70&nbsp;×&nbsp;34 cm.</image-caption>
+  </div>
+  <div class="gap" style="height:1em"></div> -->
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em>Les Préraphaélites</em></p><p>deuxième et cinquième panneau, <br>technique mixte, <br>70&nbsp;×&nbsp;34 cm.</p></aside></div>
+    <p class="image"><img class="zooom" src="images/ba+pr2.jpg" /></p>
+    <image-caption class="mobil"><em>Les Préraphaélites</em>, deuxième panneau, technique mixte, 70&nbsp;×&nbsp;34 cm.</image-caption>
+    <div class="gap" style="height:3em"></div>
+    <div class="gap dnl" style="height:1em"></div>
+
+    <p class="image"><img class="zooom" src="images/ba+pr5.jpg" /></p>
+    <image-caption class="mobil"><em>Les Préraphaélites</em>, cinquième et dernier panneau, technique mixte, 70&nbsp;×&nbsp;34 cm.</image-caption>
+  </div>
+  <div class="gap" style="height:2em"></div>
+  <div class="gap dnl" style="height:1.5em"></div>
+
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em>Ultima cena</em></p> <p>études au crayon noir, <br>140&nbsp;×&nbsp;210 mm.</p></aside></div>
+    <div class="flex cena"><div class="column"><img src="images/ba+ultima1.jpg" class="zooom"></div><div class="column"><img src="images/ba+ultima2.jpg" class="zooom"></div><div class="column"><img src="images/ba+ultima3.jpg" class="zooom"></div><div class="column"><img src="images/ba+ultima4.jpg" class="zooom"></div><div class="column"><img src="images/ba+ultima5.jpg" class="zooom"></div><div class="column"><img src="images/ba+ultima6.jpg" class="zooom"></div></div>
+    <image-caption  class="mobil" style="margin-top: 1.8em;"><em>Ultima cena</em>, études au crayon noir, 140&nbsp;×&nbsp;210 mm.</image-caption>
+    <div class="gap dnl" style="height:.5em"></div>
+  </div>
+  <div class="gap" style="height:4em"></div>
+
+  <div class="dnl" style="height:1em"></div>
+
+  <div class="gap" style="height:0.1px"></div><div class="nbb">
+    <div class="sticky"><aside><p><em>Les Caraïbes</em><br>(détail)</p><p>eau-forte, <br> 121&nbsp;×&nbsp;174 mm.</p></aside></div>
+    <div class="flex trop" style="margin-top:-1.2em">
+      <div class="column"><img src="images/ba+af08.jpg" class="zooom"></div>
+      <!-- <div class="column"><img src="images/ba+af12.jpg" class="zooom"></div> -->
+      <div class="column x2"><img src="images/ba+af12.jpg" class="zooom"></div>
+      <div class="column"><img src="images/ba+af16.jpg" class="zooom"></div>
+      <div class="column"><img src="images/ba+af19.jpg" class="zooom"></div>
+      <div class="column"><img src="images/ba+af30.jpg" class="zooom"></div>
+      <!-- <div class="column x2"><img src="images/ba+af24.jpg" class="zooom"></div> -->
+    </div>
+    <!-- <div class="gap" style="height:.5em"></div> -->
+
+    <image-caption class="mobil" style="margin-top: 1.8em;"><em>Les Caraïbes</em>, eau-forte, 121&nbsp;×&nbsp;174 mm.</image-caption>
+    <div class="gap dnl" style="height:0"></div>
+  </div>
+  <div class="gap" style="height: 4em"></div>
+
+
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em>Petites manières</em></p><p>aquarelle, vernis et encre de Chine, <br> 24&nbsp;×&nbsp;32 cm.</p></aside></div>
+    <div class="flex pm"><div class="column"><img src="images/ba+pm_1.jpg" class="zooom"></div><div class="column"><img src="images/ba+pm_2.jpg" class="zooom"></div><div class="column"><img src="images/ba+pm_4.jpg" class="zooom"></div><div class="column"><img src="images/ba+pm_7.jpg" class="zooom"></div><div class="column"><img src="images/ba+pm_8.jpg" class="zooom"></div></div>
+    <image-caption class="mobil" style="margin-top: 1.8em;"><em>Petites manières</em>, aquarelle et encre de Chine, 24&nbsp;×&nbsp;32 cm.</image-caption>
+    <div class="gap dnl" style="height:0"></div>
+  </div>
+  <div class="gap" style="height:4em"></div>
+
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em>Un épisode de chasse à la baleine</em></p><p>40 pages, <br>estampe sur verre, <br> 121&nbsp;×&nbsp;174 mm.</p></aside></div>
+    <p class="image"><img class="zooom" src="images/ba+ep_crop2.jpg" /></p>
+    <image-caption class="mobil" style="margin-top: 1.8em;"><em>Un épisode de chasse à la baleine</em>, 40 pages, estampe sur verre, 121&nbsp;×&nbsp;174 mm.</image-caption>
+  </div>
+  <div class="gap" style="height:2.5em"></div>
+  <div class="dnl" style="height:1.5em"></div>
+
+
+
+
+  <div class="gap" style="height:0.1px"></div>
+  <div class="nbb">
+    <div class="sticky"><aside><p><em style="font-feature-settings: 'lnum';">1 000 cm<e>3</e></em></p> <p><i>anthologie</i>, <br>~300 pages, <br>10&nbsp;×&nbsp;10&nbsp;×&nbsp;10 cm.</p></aside></div>
+    <div class="flex mille">
+      <div class="column">
+        <img src="images/ba+1001.jpg" class="zooom">
+        <img src="images/ba+1002.jpg" class="zooom">
+        <img src="images/ba+1003.jpg" class="zooom">
+        <img src="images/ba+1004.jpg" class="zooom">
+        <img src="images/ba+1005.jpg" class="zooom">
+      </div>
+      <div class="column">
+        <img src="images/ba+1006.jpg" class="zooom">
+        <img src="images/ba+1007.png" class="zooom">
+        <img src="images/ba+1008.jpg" class="zooom">
+        <img src="images/ba+1009.jpg" class="zooom">
+        <img src="images/ba+1010.jpg" class="zooom">
+      </div>
+      <div class="column">
+        <img src="images/ba+1011.jpg" class="zooom">
+        <img src="images/ba+1012.png" class="zooom">
+        <img src="images/ba+1013.jpg" class="zooom">
+        <img src="images/ba+1014.png" class="zooom">
+        <img src="images/ba+1015.jpg" class="zooom">
+      </div>
+      <div class="column">
+        <img src="images/ba+1016.jpg" class="zooom">
+        <img src="images/ba+1017.png" class="zooom">
+        <img src="images/ba+1018.jpg" class="zooom">
+        <img src="images/ba+1019.jpg" class="zooom">
+        <img src="images/ba+1020.jpg" class="zooom">
+      </div>
+      <div class="column">
+        <img src="images/ba+1021.jpg" class="zooom">
+        <img src="images/ba+1022.jpg" class="zooom">
+        <img src="images/ba+1023.jpg" class="zooom">
+        <img src="images/ba+1024.jpg" class="zooom">
+        <img src="images/ba+1025.jpg" class="zooom">
+      </div></div>
+    <image-caption class="mobil" style="margin-top: 1.8em;"><em style="font-feature-settings: 'lnum';">1000 cm<e>3</e></em>, anthologie, ~300 pages, 10&nbsp;×&nbsp;10&nbsp;×&nbsp;10 cm.</image-caption>
+    <div class="gap dnl" style="height:.5em"></div>
+  </div>
+  
+  <div class="gap" style="height:2em"></div>
+
+
+
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="bibliographie.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="."><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="bibliographie.html"><span class="arrow">←</span>&nbsp;bibliographie</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div><a class="box-link" href=".">retour à la case départ&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+
+  function setMargins() {
+    const stickyElements = document.querySelectorAll('.sticky');
+    const isWide = document.documentElement.getAttribute('wide') === 'true';
+
+    stickyElements.forEach(el => {
+      const asideHeight = el.querySelector('aside').getBoundingClientRect().height;
+      el.style.marginBottom = `calc(${asideHeight}px - 0.5em)`;
+      el.parentElement.style.marginTop = isWide ? '1.5em' : `calc(1.5em - ${asideHeight}px)`;
+    });
+  }
+
+  setMargins();
+  window.addEventListener('resize', setMargins);
+  new MutationObserver(setMargins)
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['wide'] });
+  // const observer = new MutationObserver(setMargins);
+  // observer.observe(document.documentElement, { attributes: true, attributeFilter: ['wide'] });
+
+
+
+</script>
+<script>
+  window.addEventListener('load', function () {
+    new Zooom({
+      zooomElement: 'img.zooom',
+      zooomWrap: 'zooom-wrap',
+      zooomImg: 'zooom-img',
+      zooomOverlay: 'zooom-overlay'
+    });
+  })
+</script>
+<!-- <script>
+  const hiLight = function() {
+    var a = document.querySelector(".note-src");
+    a.style.borderRadius = "8px";
+    a.style.background = "var(--a)";
+    if (localStorage.getItem("darkScheme") == "true")
+    a.style.color = "var(--bkg)";
+    setTimeout(function() {
+    a.style.transitionDuration = "2s";
+    a.style.background = null;
+    a.style.color = null;      
+  }, 2000);
+  setTimeout(function() {
+    a.style.borderRadius = null;
+    a.style.transitionDuration = null;
+    }, 3000);
+  }
+  window.addEventListener("load", hiLight);
+</script> -->
+
+<!-- <script>
+const bullet = document.querySelector('#button');
+const viewportHeight = window.innerHeight;
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const opacity = Math.max(0.05, 1 - (scrollPosition / viewportHeight));
+  
+  // bullet.style.transitionProperty = "height top left width";
+  bullet.style.opacity = opacity;
+});
+</script> -->
+
+</body>
+</html>

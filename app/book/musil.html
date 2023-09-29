@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+    div.volume {
+        font-family: dolly-caps; 
+        text-transform: lowercase;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.volume > div:nth-child(1) {
+        font-size: 130%;
+        margin-bottom: 0.66rem;
+        }
+    div.volume > div:nth-child(2) {
+        font-size: 110%;
+        }
+
+    div.volume + div.id > hr { margin-top: 1.4em; }
+    div.id hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.id > div:nth-child(2) {
+        text-align: center;
+        font-size: 115%;
+        margin-bottom: 1.4em;
+        /* margin-bottom: 0.7em; */
+        }
+    div.id > div:nth-child(3) {
+        text-align: center;
+        font-style: italic;
+        font-size: 105%;
+        margin-bottom: 2em;
+        /* margin-bottom: 1.4em; */
+        letter-spacing: 0.05rem;
+        }
+      
+    #content > p { margin-bottom: 0; text-align: justify }
+    #content > p + p { text-indent: 1.33em; }
+    p > c2sc { font-family: dolly-caps; text-transform: lowercase;}
+  </style>
+
+  <title>Der Mann ohne Eigenschaften | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <topic id="lightswitch" class="verlag"><div class="sur">Robert Musil</div>der mann ohne eigenschaften</topic>
+  <div class="volume"><div>Erster Teil</div><div>Eine Art Einleitung</div></div>
+  <div class="id" id="1"><hr><div><a href="#1">1</a></div><div>Woraus bemerkenswerter Weise nichts hervorgeht</div></div>
+  <p><img class="dsktp svg" src="images/dropcap+ue.svg" style="float:left;width:2.5em;position:relative;top:0.4em;margin-right:0.55em;left:0.275em;margin-bottom:0.3em; cursor: default;"><img class="mobil svg" src="images/dropcap+ue.svg" style="float:left;width:2.5em;position:relative;top:0.45em;margin-right:0.5em;left:0.2em; cursor: default;"><c2sc>ber</c2sc> dem At­lan­tik befand sich ein ba­ro­me­t­risches Mini­mum; es wan­derte ost­wärts, einem über Ruß­land la­gern­den Maxi­mum zu, und ver­riet noch nicht die Nei­gung, diesem nörd­lich aus­zu­wei­chen. Die Iso­thermen und Iso­theren taten ihre Schul­dig­keit. Die Luft­tem­p­era­tur stand in einem ord­nungs­ge­mäßen Ver­hält­nis zur mitt­le­ren Jah­res­tem­pe­ra­tur, zur Tem­pe­ra­tur des kälte­sten wie des wärm­sten Monats und zur ape­ri­o­dischen mo­nat­lichen Tem­pe­ra­tur­schwan­kung. Der Auf- und Un­ter­gang der Sonne, des Mondes, der Licht­wechsel des Mondes, der Venus, des Sa­turn­ringes und viele an­de­re be­deut­same Er­schei­nungen ent­sprachen ihrer Vor­aus­sage in den as­t­ro­no­mischen Jahr­büchern. Der Was­ser­dampf in der Luft hatte seine höchste Spann­kraft, und die Feuch­tig­keit der Luft war gering. Mit einem Wort, das das Tat­säch­liche recht gut be­zeich­net, wenn es auch et­was alt­mo­disch ist Es war ein schö­ner Au­gust­tag des Jahres 1913.</p>
+  <p>Autos schossen aus schmalen, tiefen Straßen in die Seich­tig­keit heller Plätze. Fuß­gän­ger­dun­kel­heit bil­dete wol­kige Schnüre. Wo kräf­tigere Striche der Ge­schwin­dig­keit quer durch ihre lockere Eile fuhren, ver­dickten sie sich, rie­selten nach­her rascher und hatten nach we­nigen Schwin­gungen wieder ihren gleich­mäßigen Puls. Plün­derte Töne waren zu einem drah­tigen Ge­räusch in­ein­ander ver­wunden, aus dem ein­zelne Spit­zen vor­stan­den, längs des­sen schnei­dige Kanten lie­fen und sich wie­der ein­eb­neten, von dem klare Töne ab­split­terten und ver­flo­gen. An diesem Ge­räusch, ohne daß sich seine Be­son­der­heit be­schrei­ben ließe, würde ein Mensch nach jah­re­langer Ab­we­sen­heit mit ge­schlos­senen Au­gen er­kannt haben, daß er sich in der Reichs­haupt- und Re­si­denz­stadt Wien be­fin­de. Städte las­sen sich an ihrem Gang er­ken­nen wie Menschen Die Au­gen öff­nend, würde er das gleiche an der Art be­mer­ken, wie die Be­we­gung in den Straßen schwingt, bei wei­tem früher als er es durch ir­gend­eine be­zeich­nende Ein­zel­heit her­aus­fände. Und wenn er sich, das zu kön­nen, nur ein­bilden sollte, schadet es auch nichts. Die über­schät­zung der Frage, wo man sich be­finde, stammt aus der Hor­den­zeit, wo man sich die Fut­ter­plätze merken mußte. Es wäre wich­tig, zu wissen, warum man sich bei einer roten Nase ganz un­genau damit be­gnügt, sie sei rot, und nie da­nach fragt, wel­ches be­son­dere Rot sie habe, ob­gleich sich das durch die Wel­len­länge auf Mi­k­ro­mil­li­me­ter genau aus­drücken ließe; wo­gegen man bei et­was so viel Ver­wi­ckel­terem, wie es eine Stadt ist. in der man sich auf­hält, immer durch­aus genau wissen möchte, wel­che be­sondere Stadt das sei. Es lenkt von Wich­tigerem ab.</p>
+  <cite>Robert Musil, <in>Der Mann ohne Eigenschaften</in>, <en>1930–43</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="#"><div id="prev" class="side"></div></a>
+<a class="nav" href="#"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="#"><span class="arrow">←</span>&nbsp;</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="#">&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>
+

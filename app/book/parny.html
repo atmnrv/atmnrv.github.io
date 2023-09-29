@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+    #content > p:first-of-type:first-letter {
+        float: left;
+        margin: 0.13em 0.07em 0 -0.05em;
+        font-size: 3.1em;
+        line-height: 0.75em;
+        }
+
+    div.nom {
+        font-family: dolly-caps;
+        font-weight: bolder;
+        /* padding-left: calc(2rem - 0.66rem); */
+        }
+    action {
+        position: absolute;
+        font-family: dolly;
+        font-style: italic; 
+        font-weight: normal;
+        text-align: left;
+        margin-right: 2.5rem
+        }
+    action:before {
+        font-style: normal;
+        content:",";
+        padding-right: 0.5em;
+        }
+
+    div.verse {
+        margin-bottom: 1.66em;
+        /* margin-bottom: 1.4em; */
+        /* font-size: 0.95rem; */
+        }
+    div.verse + div.verse {
+        /* margin-top: 2em; */
+        }
+    div.nom + div.verse {
+        margin-top: 0.35em;
+        margin-bottom: 0.7em;
+        /* margin-top: 0.2em; */
+        /* margin-bottom: 0.5em; */
+        }
+
+    bis { visibility: hidden; /* padding-right: 0.5em; */ }
+
+  </style>
+
+  <title>La guerre des dieux | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <topic id="lightswitch" class="verlag"><div class="sur">évariste de parny</div>la guerre des dieux</topic>
+  <div style="text-align: center; text-transform: lowercase; font-family: dolly-caps; font-size: 130%; margin-top: 4rem; margin-bottom: 2em">chant cinquième.</div>
+  <p style="font-style: italic; font-size: 100%; margin: 0 0 2rem 0; padding: 0 0 0 0; text-align: justify;">D<b style="font-size: 80%;">E</b> jolies Bacchantes sé­dui­sent et eni­vrent pres­que tous les chré­tiens em­ployés au blo­cus. Dis­pute scien­ti­fi­que et scan­da­leuse. Im­pié­té de S. Car­pion. Une païen­ne re­çoit de S. Gui­gno­let les sept sa­cre­mens. Ex­tra­va­gan­ces de nos bien­heu­reux ; ils en­trent dans l’Olympe.</p>
+  <div class="verse">
+  <v>Gens du bon ton, galans auprès des dames,</v>
+  <v>Et qui souvent surprener leurs faveurs,</v>
+  <v>Dans vos discours insolens et moqueurs</v>
+  <v>Vous dénigrez, vous outragez les femmes.</v>
+  <v>Celles qu’amour jeta dans vos filets,</v>
+  <v>Que vous avez, ou que vous avez eues,</v>
+  <v>Celles aussi que vous n’aures jamais,</v>
+  <v>Celles encor qui vous sont inconnues,</v>
+  <v>Toutes enfin à vos malin propos</v>
+  <v>Servent de texte, ou véritable ou faux.</v>
+  <v>Hommes ingrats ! forts de vos privilèges,</v>
+  <v>Pour triompher de leur faible raison,</v>
+  <v>Vous osez tout ; de la séduction</v>
+  <v>Devant leurs pas vous semez toues les pièges ;</v>
+  <v>Les soins adroits, les transports renaissans,</v>
+  <v>Et la louange, et la gaîté folâtre.</v>
+  <v>Et les soupirs plus doux et plus touchans,</v>
+  <v>Rien n’est omis ; elles ont à combattre</v>
+  <v>Tout à la fois vous, leur cœur, et leurs sens :</v>
+  <v>Et votre bouche accuse leur faiblesse !</v>
+  <v>Et sans profit souillant votre bonheur,</v>
+  <v>Méchans et vils, à leurs tendres caresses</v>
+  <v>Vous imprimez le sceau du déshonneur !</v>
+  <v>Lâches ingrats ! corrigeant son ouvrage,</v>
+  <v>Si la nature à ce sexe charmant</v>
+  <v>Voulait donner votre force en partage,</v>
+  <v>On verrait changer timidement,</v>
+  <v>Non pas d’esprit, mais au moins de langage.</v>
+  <v>Que le mépris soit votre châtiment ;</v>
+  <v>Il vous est dû : certains que la vengeance</v>
+  <v>Ne suivra pas une facile offense,</v>
+  <v>Vous outragez ce sese désarmé,</v>
+  <v>Flatté toujours, et toujours opprimé.</v>
+  <v>Par ses refus du moins qu’il vous punisse.</v>
+  <v>Pour vous, lecteur, aux femmes plus propice,</v>
+  <v>Sur leurs erreurs fermez vos yeux discrets,</v>
+  <v>Et de l’amour respectez les secrets.</v>
+  <v>L’on est souvent méchant par jalousie,</v>
+  <v>Vous le savez : n’imitez pas les saints,</v>
+  <v>Qui sur la belle Marie</v>
+  <v>Se permettaient quelques propos malins.</v>
+  </div>
+  <div class="verse">
+  <v>Du paradis tandis que le parterre,</v>
+  <v>En médisant, égayait l’<em>Angelus</em>,</v>
+  <v>Plus loin nos saints, employés au blocus,</v>
+  <v>Riaient aussi, mais d’une autre manière.</v>
+  <v>De ces remparts, que leurs yeux observaient,</v>
+  <v>Subitement une porte s’entr’ouvre :</v>
+  <v>On s’arme, on tremble, on regarde, on découvre</v>
+  <v>Un faible enfant que des femmes suivaient.</v>
+  <v>C’était l’Amour conduisant des Bacchantes ;</v>
+  <v>C’était un piège ma nos héros tendu.</v>
+  <v>Par leur beauté ces prêtresses galantes</v>
+  <v>Peuvent d’un ange ébranler la vertu.</v>
+  <v>Nos gens alors reprennent leur courage,</v>
+  <v>Serrent les rangs, et marchent à grands pas</v>
+  <v>Sur l’ennemei qui ne s’enfuyait pas,</v>
+  <v>Et qui gaiment poursuivait son voyage.</v>
+  <v><dopla>« Ces</dopla> femmes-là n’ont pas peur, et font bien,</v>
+  <v>Dit l’ange Esral ; j’aime assez les déesses. »</v>
+  <v>Saint Jean répond : <dops></dops><dopl> « Leur</dopl> habit, leur maintien,</v>
+  <v>Ne semblent pas annoncer des princesses.</v>
+  <v>— Reconnais-tu ce que portent leurs mains ?</v>
+  <v>— Un léger thyrse et d’excellens raisins.</v>
+  <v>Ce sont, je crois, de jeunes vivandières :</v>
+  <v>A nous combattre elles ne songent guères.</v>
+  <v>— La peau d’un tigre enveloppe à demi</v>
+  <v>Leurs corps d’albâtre : et conviens, mon ami,</v>
+  <v>Que leur beauté vaut bien les frais d’un siège.</v>
+  <v>Quel air fripon ! de pampres couronnés,</v>
+  <v>Leurs cheuveux noirs, aux vents abandonnés,</v>
+  <v>Font ressortir leurs épaules de neige.</v>
+  <v>Leurs jeunes mains caressent tour-à-tour</v>
+  <v>Ce bel enfant, qui sans doute est l’Amour.</v>
+  <v>— Serait-ce là le fils de Cythérée ?</v>
+  <v>Non ; voilà bien ses ailes, son flambeau ;</v>
+  <v>Mais je ne vois ni carquois ni bandeau.</v>
+  <v>Remarques-tu cette marche assurée,</v>
+  <v>Ces pieds de bouc, ce regard indécent ?</v>
+  <v>Il a tout l’air d’un Satyre naissant.</v>
+  <v>— Satyre ou non, par-tout il saura plaire ;</v>
+  <v>De l’autre Amour c’est sans doute le frère. »</v>
+  </div>
+  <div class="gap" style="height:1em"></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Comment, chrétiens ! ici, dans le ciel même !</v><v>On punira cette insolence extrême ;</v><v>Dieu saura tout ; il est le Dieu vengeur.</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse"><v>Oui, faux élus, l’enfer va vous reprendre.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Ils font les sourds ; quel excès d’impudeur !</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse"><v>Oubliez-vous que votre créateur</v><v>Par un seul mot au néant peut vous rendre ?</v></div>
+  <div class="nom">l’ange esral.</div>
+  <div class="verse"><v>Mon créateur ? Votre Dieu ne l’est point.</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse"><v>Vous blasphémez.</v></div>
+  <div class="nom">l’ange esral.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Vous blasphémez.</bis> Les nations antiques</v><v>Ont reconnu des esprits angéliques.</v><v>Le monde entier fut d’accord sur ce point.</v><v>Juifs et chrétiens, venus après les autres,</v><v>Nous ont trouvés tout faits : soyez des nôtres,</v><v>Très volontiers, répondit Gabriel ;</v><v>Et pour nous tous il portait la parole.</v><v>Tais-toi donc, Blaise, et retourne à l’école.</v></div>
+  <div class="nom">saint guignolet<action>à Moïse.</action></div>
+  <div class="verse"><v>Quoi ! vous pillez Mages, Phéniciens,</v><v>Brachmanes, Grecs, Parsis, et Chaldéens ;</v><v>Lépreux et nus, encroûtés d’ignorance,</v><v>Du Nil au Gange on vit votre indigence</v><v>Quêter, voler, au hasard ramasser</v><v>De vieux haillons, les recoudre en Syrie,</v><v>Sur votre corps sans goût les entasser ;</v><v>Et puis, tout fiers de cette friperie,</v><v>Pour créateurs vous voudriez passer ?</v></div>
+  <div class="nom">saint carpion<action>à Moïse.</action></div>
+  <div class="verse"><v>Tout beau serpent, natif de Phénicie,</v><v>D’un autre Éden franchissant le fossé,</v><v>Attaqua l’homme et s’en vit repoussé.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Chicane ! Allons, ma pomme est plus jolie.</v></div>
+  <div class="nom">saint carpion.</div>
+  <div class="verse"><v>Soit ; mais déjà la curiosité,</v><v>Bien avant Ève, avait séduit Pandore.</v><v>Ce trait charmant, ta plume l’a gâté.</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse"><v>Quel baragouin !</v></div>
+  <div class="nom">saint guignolet.</div>
+  <div class="verse"><v><bis>Quel baragouin !</bis> Et du déluge encore</v><v>Oseras-tu t’attribuer l’honneur ?</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Je l’oserai, car j’en suis l’inventeur.</v></div>
+  <div class="nom">saint guignolet.</div>
+  <div class="verse"><v>Deucalion, Ogyès…</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Deucalion, Ogyès…</bis> O prodige !</v><v>Saint Guignolet savant !</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Saint Guignolet savant !</bis> Il a trop bu.</v></div>
+  <div class="nom" style="margin-top: 0.5rem">moïse.</div>
+  <div class="verse"><v>Carpion parle !</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Carpion parle !</bis> Il a trop bu, te dis-je.</v></div>
+  <div class="nom" style="margin-top: 0.5rem">moïse.</div>
+  <div class="verse"><v>De ces raisins quelles est donc la vertu ?</v></div>
+  <div class="nom">saint carpion.</div>
+  <div class="verse"><v>Au grand Bacchus, rends sa baguette antique,</v><v>Sa double corne, et son pouvoir magique.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Si j’ai volé, ce fut sans y penser.</v></div>
+  <div class="nom">saint guignolet.</div>
+  <div class="verse"><v>Au moins, mon cher, il faut t’en confesser.</v></div>
+  <div class="nom">saint carpion.</div>
+  <div class="verse"><v>Votre Samson, si gros, si ridicule,</v><v>Ressemble en laid au vigoureux Hercule.</v><v>Par une femme ils sont trahis tous deux.</v></div>
+  <div class="nom">saint guignolet.</div>
+  <div class="verse"><v>Jephté, son vœu, sa fille infortunée,</v><v>Rappellent trop le Grec Idoménée.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Vous tairez-vous, raisonneurs malheureux ?</v></div>
+  <div class="nom">saint carpion.</div>
+  <div class="verse"><v>De Josué vantez moins l’harmonie ;</v><v>C’est d’Amphion la plate parodie.</v><v>Par ses accords Amphion bâtissait :</v><v>En détonnant Josué renverseait.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>De nouveaux saints voilà bien l’injustice !</v><v>Des pauvres Juifs ils se moquent toujours.</v><v>Que feriez-vous pourtant sans leur secours ?</v><v>Otez la base, adieu tout l’édifice.</v><v>Le Christ est Juif, et Juive la beauté</v><v>Que l’esprit Saint…</v></div>
+  <div class="nom">saint guignolet.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Que l’esprit Saint…</bis> Bah ! bah ! la Trinité !</v><v>Du nombre trois j’ignore la puissance ;</v><v>Mais de tout tems il eut la préférence.</v><v>Bien avant nous le Gange proclama</v><v>Vistnou, Shiven, et leur aîné Brama.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>La Trinité serait donc Indienne ?</v></div>
+  <div class="nom">saint guignolet.</div>
+  <div class="verse"><v>Jadis l’Égypte avait aussi la sienne,</v><v>Isis, Horus, et le père Osiris.</v><v>On la retrouve en de lointains pays.</v><v>Nous combattons la Trinité païenne,</v><v>De cet Olympe antique souveraine.</v><v>Mais lis Platon, et tu reconnaîtras</v><v>Le germe obscur de la triple personne</v><v>Que pour du neuf aujourd’hui l’on nous donne.</v></div>
+  <div class="nom">saint carpion.</div>
+  <div class="verse"><v>Il a raison : <em>in vino veritas</em>.</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse"><v>Du grec ?</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Du grec ?</bis> Eh non, du latin.</v></div>
+  <div class="nom">saint blaise.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Du grec ? Eh non, du latin.</bis> C’est tout comme.</v><v>Voyez l’ivresse ! Il était si bon homme !</v><v>Ah ça, messieurs, croyez-vous à Jésus ?</v></div>
+  <div class="nom">saint carpion.</div>
+  <div class="verse"><v>La question, mon cher, est délicate,</v><v>Et <em>distingue</em>. Je crois à ses vertus,</v><v>A sa morale encore, et rien de plus.</v><v>J’admire aussi Zoroastre, Socrate,</v><v>Confucius, tous les sages enfin</v><v>Qu’il traduisit, et que l’on damne en vain.</v></div>
+  <div class="nom">saint guignolet.</div>
+  <div class="verse"><v>Mais à quoi bon transmuer une eau clair</v><v>En vin fumeux, pour des gens déjà gris ?</v><v>Pourquoi gâter Philémon et Baucis ?</v><v>Mal copier vous est chose ordinaire.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Eh quoi ! tu ris de cette impiété,</v><v>Saint Jean ?</v></div>
+  <div class="nom">saint jean.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Saint Jean ?</bis> Un peu.</v></div>
+  <div class="nom" style="margin-top: 0.5rem">moïse.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Saint Jean ? Un peu.</bis> Ciel ! un évangéliste !</v></div>
+  <div class="nom" style="margin-top: 0.5rem">saint jean.</div>
+  <div class="verse"><v>A ton avis, je suis donc un copiste ?</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Mais ce miracle est par toi raconté.</v></div>
+  <div class="nom">saint jean.</div>
+  <div class="verse"><v>Par moi ?</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Par moi ?</bis> Sans doute.</v></div>
+  <div class="nom">saint jean.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Par moi ? Sans doute.</bis> Apprenez, imbécilles,</v><v>Qu’au siècle deux on fit ces évangiles</v><v>Selon saint Marc, saint Luc, et saint Matthieu,</v><v>Qui tout au plus savaient leur croix de Dieu,</v><v>Selon moi-même et selon beaucoup d’autres.</v><v>On fit aussi ces Actes des Apôtres,</v><v>Qui ne sont point des actes de raison.</v><v>N’allez donc pas crucifier mon nom</v><v>Sur ces recueils de sottises grossières,</v><v>Et laissez-moi ; j’ai bien d’autres affaires.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>O mon ami, reviens à toi, partons.</v><v>Ne touche plus ces profanes tetons ;</v><v>Ils sont maudits.</v></div>
+  <div class="nom">saint jean.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Ils sont maudits.</bis> Que le diable t’emporte !</v></div>
+  <div class="nom" style="margin-top: 0.5rem">saint blaise.</div>
+  <div class="verse"><v>C’est trop parler, Moïse, il faut agir.</v><v>Au paradis allons chercher main-forte.</v></div>
+  <div class="nom">moïse.</div>
+  <div class="verse"><v>Allons, cher Blaise.</v></div>
+  <div class="nom">tous les saints.</div>
+  <div class="verse" style="margin-top: -0.3rem"><v><bis>Allons, cher Blaise.</bis> Allons, bien du plaisir. »</v></div>
+  <div class="gap" style="height:1em"></div>
+  <div class="verse">
+  <v>Débarassés de Moïse et de Blaise,</v>
+  <v>Nos gens enfin savouraient à leur aise</v>
+  <v>Des voluptés le poison dangereux,</v>
+  <v>Et s’en donnaient comme des bienheureux.</v>
+  <v>Le Carpion, muni d’une Bacchante,</v>
+  <v>Et la flattant d’une voix tremblotante,</v>
+  <v>Disait : <dops></dops><dopl> « Je</dopl> dois, charmante Théoné,</v>
+  <v>T’offrir aussi mon frugal déjeûné. »</v>
+  <v>Elle sourit, et sa lèvre jolie</v>
+  <v>Dévotement reçoit la blanche hostie.</v>
+  <v>Mais que dit-elle à ce repas nouveau ?</v>
+  <v>— <dops></dops><dopl> « Ce</dopl> pain est fade. —&nbsp;Eh non, c’est de l’agneau.</v>
+  <v>Nous autres saints, nous vivons de mystères.</v>
+  <v>Bois, maintenant, et n’en crois pas tes yeux,</v>
+  <v>Car ce vin là… — Le Falerne vaut mieux.</v>
+  <v>— C’est cependant un Dieu que tu digères.</v>
+  <v>— Quel conte ! — Un Dieu réel et bien vivant.</v>
+  <v>Mais ne crains rien : quoique très succulent,</v>
+  <v>Il est léger ; aux malades il passe.</v>
+  <v>— Me voilà sainte ! —&nbsp; Et sainte je t’embrasse. »</v>
+  </div>
+  <div class="verse">
+  <v>Mons Guignolet s’y prenait autrement ;</v>
+  <v>Car des pécheurs diverse est la manière.</v>
+  <v>Avec Aglaure il ose indécemment</v>
+  <v>Parodier tout ce que l’on révère.</v>
+  <v>Sur l’occiput il lui presse le jus</v>
+  <v>De ce raisin qui porte à la luxure,</v>
+  <v>Puis d’une croix y trace la figure,</v>
+  <v>Et dit ces mots : <dops></dops><dopl> « Au</dopl> nom du grand Bacchus,</v>
+  <v>Et de l’Amour, et de Vénus encore,</v>
+  <v>Je te <em>baptise</em>, et je te nomme Aglaure ».</v>
+  <v>Avec deux doigts unis dévotement,</v>
+  <v>Sa ronde joue il frappe faiblement.</v>
+  <v>Que fais-tu donc ? dit en riant la belle.</v>
+  <v>— Je te <em>confirme</em> ; et ma voix te rappelle</v>
+  <v>Tes vrais devoirs, si simples et si doux.</v>
+  <v>Trois mots sacrés les renfermeront tous ;</v>
+  <v>Sur ces trois mots ton culte entier repose.</v>
+  <v>La pampre vert, et le myrte, et la rose.</v>
+  <v>Au <em>mariage</em> il nous faut procéder.</v>
+  <v>Je suis ensemble et l’époux et le prêtre.</v>
+  <v>Que tes beaux yeux n’osent me regarder ;</v>
+  <v>Prends l’air timide, et tâche de paraître</v>
+  <v>Ce qu’à coup sûr tu ne voudrais pas être,</v>
+  <v>Vierge. — Est-ce bien ? —&nbsp;Pas trop mal. Donne-moi</v>
+  <v>Cette main blanche, en signe de ta foi.</v>
+  <v>Je nous unis d’une chaîne invisible,</v>
+  <v><em>Conjungo nos</em>. Croissons pour le bonheur,</v>
+  <v>Croissons en grâce, en desirs, en vigueur ;</v>
+  <v>Ne décroissons jamais, s’il est possible ;</v>
+  <v>Multiplions, et Dieu nous bénira.</v>
+  <v>Or maintenant, mon épouse nouvelle,</v>
+  <v>Jure avec moi d’être toujours fidelle.</v>
+  <v>— J’en fais serment, le tiendra qui pourra.</v>
+  <v>— <em>Brava ! Brava !</em> Mais de la <em>pénitence</em></v>
+  <v>Le sacrement est nécessaire aussi.</v>
+  <v>De tes plaisirs confesse la license ;</v>
+  <v>Ne cache rien ; l’on ne ment point ici.</v>
+  <v>— Tous mes péchés sont péchés de jeunesse,</v>
+  <v>Et vous pouvez zen deviner l’espèce.</v>
+  <v>Devinez-vous ? Très bien ; toujours Vénus.</v>
+  <v>Combien de fois ? — Oh ! je ne compte plus.</v>
+  <v>— Compte à-peu-près. — Dix mille. —&nbsp;Tu te vantes ;</v>
+  <v>Mais d’un seul mot je peux tout éffacer :</v>
+  <v><em>Absolvo te</em>. De ces fautes charmantes</v>
+  <v>La pénitence est… de recommencer ».</v>
+  <v>Les mains alors il étend sur ses charmes…</v>
+  <v>Saint Guignolet, le tocsin sonne, aux armes !</v>
+  <v>Vaine semonce ! il est sourd au tocsin,</v>
+  <v>Et dit tout haut : <dops></dops><dopl> « De</dopl> l’Amour libertin</v>
+  <v>Et de Bacchus, je t’<em>ordonne</em> prêtresse.</v>
+  <v>De leurs autels fais prospérer la messe ;</v>
+  <v>Prêche en leur nom ; mais point de longs discours ;</v>
+  <v>Prêche d’exemple, et prêche tous les jours ».</v>
+  <v>Vous le savez, frères, chaste est ma lyre ;</v>
+  <v>Le Saint-Esprit, qui me souffle et m’inspire,</v>
+  <v>Me presse en vain ; je n’ose peindre tout.</v>
+  <v>O Guignolet ! vous n’étiez pas debout.</v>
+  <v>Mais il soupir, et sa voix affaiblie</v>
+  <v>Laisse échapper quelques mots languissans :</v>
+  <v><dopla>« Ceci, ma chère, est mon ame et ma vie ».</v>
+  <v>Aglaure ensuite, en reprenant ses sans,</v>
+  <v>Répond tout bas : J’aime l’<em>eucharistie</em>.</v>
+  <v>Pour elle encor Guignolet officie,</v>
+  <v>Et de vaisers fortement appuyés</v>
+  <v>Couvre son front ; ô parodiste impie !</v>
+  <v>—&nbsp;<dops></dops><dopl>« Que</dopl> fais-tu là ? » —&nbsp;C’est l’<em>extrême-onction</em>.</v>
+  <v>Tu dois bientôt descendre sur la terre,</v>
+  <v>Et, sous l’abri des treilles de Cythère,</v>
+  <v>Tu vas remplir ta douce mission :</v>
+  <v>Aux voyaheurs cette onction est bonne ;</v>
+  <v>Reçois-la donc, et pars ; adieu friponne. »</v>
+  </div>
+  <div class="verse">
+  <v>Viennent alors les autres bienheureux</v>
+  <v>Que soutenaient leurs malignes compagnes.</v>
+  <v>Ces renégats, l’ivresse dans les yeux,</v>
+  <v>Le pampre en main, chancelans et joyeux,</v>
+  <v>Allaient courant les célestes campagnes.</v>
+  <v>Aux sons flûtés des féminines voix,</v>
+  <v>En rond l’on danse, on se heurte, on se presse,</v>
+  <v>On rit, on jure, on bronche, on se redresse ;</v>
+  <v>Et ces couplets sont répétés vingt fois :</v>
+  </div>
+  <div class="verse">
+  <v><dopla>« Ma</dopla> Trinité, c’est la bouche de rose.</v>
+  <v>On l’aime au ciel, on l’aime <em>et in terris</em> ;</v>
+  <v>On la conçoit, on la voit. on la touche.</v>
+  <v>Vive le sein, autre chose, et la bouche !</v>
+  <v>Vive l’amour ! <em>Amen, io Cypris !</em> »</v>
+  </div>
+  <div class="verse">
+  <v><dopla>« L’heureux</dopla> Bacchus avait une baguette ;</v>
+  <v>Et par Moïse elle fut contrefaite.</v>
+  <v>A l’ancienne il faut croire. Et <em> perche ?</em></v>
+  <v>C’était de l’eau que donnait la dernière ;</v>
+  <v>C’était du vin que versait la première.</v>
+  <v>Vive la treille ! <em>Amen, io Bacche !</em> »</v>
+  </div>
+  <div class="verse">
+  <v>Survient Neptune, et sa voix magistrale</v>
+  <v>A suspendu la sainte bacchanale.</v>
+  <v><dopla>« Du paradis s’avance un corps nombreux ;</v>
+  <v>Il vient à nous ; rentrez, mesdemoiselles.</v>
+  <v>Et vous, messieurs, vous fuirez avec elles,</v>
+  <v>Si de l’enfer vous redoutez les feux ».</v>
+  <v>Gens comme nous ne prennent pas la fuite,</v>
+  <v>S’écrie Esral. Et nous les attendrons,</v>
+  <v>Poursuit saint Jean. Et nous les combattrons,</v>
+  <v>Dit Guignolet. Et nous les rosserons,</v>
+  <v>Dit Carpion, qui vainement s’agite</v>
+  <v>Pour échapper à quatre jolis bras</v>
+  <v>Dont les efforts l’arrachent aux combats.</v>
+  <v>De ces héros la valeur on encheîne ;</v>
+  <v>Par leur jaquette, en riant, on les traîne.</v>
+  <v>Ils résistaient : des nouveaux bataillons</v>
+  <v>Leurs poings fermés défiaient le courage.</v>
+  <v>Bronchant toujours, et toujours fanfarons,</v>
+  <v>Par des hoquets coupant les faibles sons</v>
+  <v>De leur voix rauque, ils parlent de carnage,</v>
+  <v>Et dans l’Olympe entrent à reculons.</v>
+  <v>On les conduit sous de vastes portiques.</v>
+  <v>Trop fatigués de leurs farces bachiques,</v>
+  <v>Tous à la fois s’étendent sur le dos ;</v>
+  <v>Point d’<em>Angelus</em>, de vêpres, ni d’office ;</v>
+  <v>Et le sommeil, aux ivrognes propice,</v>
+  <v>Charge leurs yeux de ses plus lourds pavots.</v>
+  </div>
+  <p style="font-family: dolly-caps; text-transform: lowercase; font-size: 105%; text-align: center; margin-top: 2em;">fin du cinquième chant.</p>
+  <cite>Évariste de Parny, <in>La guerre des dieux</in>, <en>1799</en>.</p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="marivaux.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="beaux-arts.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="marivaux.html"><span class="arrow">←</span>&nbsp;la double inconstance</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="beaux-arts.html">beaux-arts&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>
+

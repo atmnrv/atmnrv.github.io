@@ -1,0 +1,16 @@
+@font-face {
+font-family: 'Bookerly';
+src: url('Bookerly-Regular.woff') format('woff');
+font-style: normal;
+font-weight: normal;
+text-rendering: optimizeLegibility;
+}
+
+@font-face {
+font-family: 'Bookerly';
+src: url('Bookerly-Italic.woff') format('woff');
+font-style: italic;
+font-weight: normal;
+text-rendering: optimizeLegibility;
+}
+

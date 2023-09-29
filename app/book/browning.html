@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+
+        div.id:first-of-type hr { visibility: hidden; }
+        div.id hr {
+            border: none;
+            width:10%;
+            height: 1px;
+            margin: auto;
+            margin-top: 4rem;
+            margin-bottom: 1.4em;
+            }
+        div.id > div:nth-child(2) {
+            font-family: dolly-caps;
+            text-transform: lowercase;
+            text-align: center;
+            font-size: 130%;
+            margin-bottom: 1.4em;
+            /* margin-bottom: 0.7em; */
+            }
+        div.id > div:nth-child(2) a {
+            display: block;
+            background: none;
+            }
+        div.id > div:nth-child(2) a:hover {
+            color: var(--st);
+            transition-property: color;
+            transition-duration: 0.2s;
+            }
+        div.id > div:nth-child(2) a:active {
+            color: var(--act);
+            }
+
+        @media not all and (max-width:520px) {
+            div.verse {
+            padding-left: 2rem;
+            }}
+        @media all and (max-width:520px) {
+            div.verse {
+            /* padding-left: 0rem; */
+            }}
+        div.verse v {
+            font-size: 0.95rem;
+            }
+  </style>
+
+  <title>Sonnets from the Portuguese | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <topic id="lightswitch" class="verlag"><div class="sur">Elizabeth Barrett Browning</div>sonnets from the&nbsp;portuguese</topic>
+
+  <div class="id" id="1"><hr><div><a href="#1">i</a></div></div>
+  <div class="verse">
+    <v>I thought once how Theocritus had sung</v>
+    <v>Of the sweet years, the dear and wished-for years,</v>
+    <v>Who each one in a gracious hand appears</v>
+    <v>To bear a gift for mortals, old or young :</v>
+    <v>And, as I mused it in his antique tongue,</v>
+    <v>I saw, in gradual vision through my tears,</v>
+    <v>The sweet, sad years, the melancholy years,</v>
+    <v>Those of my own life, who by turns had flung</v>
+    <v>A shadow across me. Straightway I was ’ware,</v>
+    <v>So weeping, how a mystic Shape did move</v>
+    <v>Behind me, and drew me backward by the hair ;</v>
+    <v>And a voice said in mastery, while I strove,&nbsp;.&nbsp;.</v>
+    <v><doplen>“Guess</doplen> now who holds thee ?”—“Death,” I said. But, there,</v>
+    <v>The silver answer rang,&nbsp;.&nbsp;. “Not Death, but Love.”</v>
+    </div>
+  <div class="id" id="2"><hr><div><a href="#2">ii</a></div></div>
+  <div class="verse">
+    <v>But only three in all God’s universe</v>
+    <v>Have heard this word thou hast said,—Himself, beside</v>
+    <v>Thee speaking, and me listening ! and replied</v>
+    <v>One of us&nbsp;.&nbsp;. <i>that</i> was God,&nbsp;.&nbsp;. and laid the curse</v>
+    <v>So darkly on my eyelids, as to amerce</v>
+    <v>My sight from seeing thee,—that if I had died,</v>
+    <v>The death-weights, placed there, would have signified</v>
+    <v>Less absolute exclusion. “Nay” is worse</v>
+    <v>From God than from all others, O my friend !</v>
+    <v>Men could not part us with their worldly jars,</v>
+    <v>Nor the seas change us, nor the tempests bend ;</v>
+    <v>Our hands would touch for all the mountain-bars,—</v>
+    <v>And, heaven being rolled between us at the end,</v>
+    <v>We should but vow the faster for the stars.</v>
+    </div>
+  <div class="id" id="3"><hr><div><a href="#3">iii</a></div></div>
+  <div class="verse">
+    <v>Unlike are we, unlike, O princely Heart !</v>
+    <v>Unlike our uses and our destinies.</v>
+    <v>Our ministering two angels look surprise</v>
+    <v>On one another, as they strike athwart</v>
+    <v>Their wings in passing. Thou, bethink thee, art</v>
+    <v>A guest for queens to social pageantries,</v>
+    <v>With gages from a hundred brighter eyes</v>
+    <v>Than tears even can make mine, to ply thy part</v>
+    <v>Of chief musician. What hast <i>thou</i> to do</v>
+    <v>With looking from the lattice-lights at me,</v>
+    <v>A poor, tired, wandering singer,&nbsp;.&nbsp;. singing through</v>
+    <v>The dark, and leaning up a cypress-tree ?</v>
+    <v>The chrism is on thine head,—on mine, the dew,—</v>
+    <v>And Death must dig the level where these agree.</v>
+  </div>
+  <div class="id" id="4"><hr><div><a href="#4">iv</a></div></div>
+  <div class="verse">
+  <v>Thou hast thy calling to some palace-floor,</v>
+    <v>Most gracious singer of high poems ! where</v>
+    <v>The dancers will break footing, from the care</v>
+    <v>Of watching up thy pregnant lips for more.</v>
+    <v>And dost thou lift this house’s latch too poor</v>
+    <v>For hand of thine ? and canst thou think and bear</v>
+    <v>To let thy music drop here unaware</v>
+    <v>In folds of golden fulness at my door ?</v>
+    <v>Look up and see the casement broken in,</v>
+    <v>The bats and owlets builders in the roof !</v>
+    <v>My cricket chirps against thy mandolin.</v>
+    <v>Hush, call no echo up in further proof</v>
+    <v>Of desolation ! there’s a voice within</v>
+    <v>That weeps&nbsp;.&nbsp;. as thou must sing&nbsp;.&nbsp;. alone, aloof.</v>
+    </div>
+  <div class="id" id="5"><hr><div><a href="#5">v</a></div></div>
+  <div class="verse">
+    <v>I lift my heavy heart up solemnly,</v>
+    <v>As once Electra her sepulchral urn,</v>
+    <v>And, looking in thine eyes, I over-turn</v>
+    <v>The ashes at thy feet. Behold and see</v>
+    <v>What a great heap of grief lay hid in me,</v>
+    <v>And how the red wild sparkles dimly burn</v>
+    <v>Through the ashen greyness. If thy foot in scorn</v>
+    <v>Could tread them out to darkness utterly,</v>
+    <v>It might be well perhaps. But if instead</v>
+    <v>Thou wait beside me for the wind to blow</v>
+    <v>The grey dust up,&nbsp;.&nbsp;. those laurels on thine head,</v>
+    <v>O my Belovëd, will not shield thee so,</v>
+    <v>That none of all the fires shall scorch and shred</v>
+    <v>The hair beneath. Stand further off then ! go.</v>
+    </div>
+  <div class="id" id="6"><hr><div><a href="#6">vi</a></div></div>
+  <div class="verse">
+    <v>Go from me. Yet I feel that I shall stand</v>
+    <v>Henceforward in thy shadow. Nevermore</v>
+    <v>Alone upon the threshold of my door</v>
+    <v>Of individual life, I shall command</v>
+    <v>The uses of my soul, nor lift my hand</v>
+    <v>Serenely in the sunshine as before,</v>
+    <v>Without the sense of that which I forbore,&nbsp;.&nbsp;.</v>
+    <v>Thy touch upon the palm. The widest land</v>
+    <v>Doom takes to part us, leaves thy heart in mine</v>
+    <v>With pulses that beat double. What I do</v>
+    <v>And what I dream include thee, as the wine</v>
+    <v>Must taste of its own grapes. And when I sue</v>
+    <v>God for myself, He hears that name of thine,</v>
+    <v>And sees within my eyes the tears of two.</v>
+    </div>
+  <div class="id" id="7"><hr><div><a href="#7">vii</a></div></div>
+  <div class="verse">
+    <v>The face of all the world is changed, I think,</v>
+    <v>Since first I heard the footsteps of thy soul</v>
+    <v>Move still, oh, still, beside me, as they stole</v>
+    <v>Betwixt me and the dreadful outer brink</v>
+    <v>Of obvious death, where I, who thought to sink,</v>
+    <v>Was caught up into love, and taught the whole</v>
+    <v>Of life in a new rhythm. The cup of dole</v>
+    <v>God gave for baptism, I am fain to drink,</v>
+    <v>And praise its sweetness, Sweet, with thee anear.</v>
+    <v>The names of country, heaven, are changed away</v>
+    <v>For where thou art or shalt be, there or here ;</v>
+    <v>And this&nbsp;.&nbsp;. this lute and song&nbsp;.&nbsp;. loved yesterday,</v>
+    <v>(The singing angels know) are only dear,</v>
+    <v>Because thy name moves right in what they say.</v>
+    </div>
+  <div class="id" id="8"><hr><div><a href="#8">viii</a></div></div>
+  <div class="verse">
+    <v>What can I give thee back, O liberal</v>
+    <v>And princely giver, who hast brought the gold</v>
+    <v>And purple of thine heart, unstained, untold,</v>
+    <v>And laid them on the outside of the wall</v>
+    <v>For such as I to take or leave withal,</v>
+    <v>In unexpected largesse ? am I cold,</v>
+    <v>Ungrateful, that for these most manifold</v>
+    <v>High gifts, I render nothing back at all ?</v>
+    <v>Not so ; not cold,—but very poor instead.</v>
+    <v>Ask God who knows. For frequent tears have run</v>
+    <v>The colours from my life, and left so dead</v>
+    <v>And pale a stuff, it were not fitly done</v>
+    <v>To give the same as pillow to thy head.</v>
+    <v>Go farther ! let it serve to trample on.</v>
+    </div>
+  <div class="id" id="9"><hr><div><a href="#9">ix</a></div></div>
+  <div class="verse">
+    <v>Can it be right to give what I can give ?</v>
+    <v>To let thee sit beneath the fall of tears</v>
+    <v>As salt as mine, and hear the sighing years</v>
+    <v>Re-sighing on my lips renunciative</v>
+    <v>Through those infrequent smiles which fail to live</v>
+    <v>For all thy adjurations ? O my fears,</v>
+    <v>That this can scarce be right! We are not peers</v>
+    <v>So to be lovers ; and I own, and grieve,</v>
+    <v>That givers of such gifts as mine are, must</v>
+    <v>Be counted with the ungenerous. Out, alas !</v>
+    <v>I will not soil thy purple with my dust,</v>
+    <v>Nor breathe my poison on thy Venice-glass,</v>
+    <v>Nor give thee any love—which were unjust.</v>
+    <v>Beloved, I only love thee ! let it pass.</v>
+    </div>
+  <div class="id" id="10"><hr><div><a href="#10">x</a></div></div>
+  <div class="verse">
+    <v>Yet, love, mere love, is beautiful indeed</v>
+    <v>And worthy of acceptation. Fire is bright,</v>
+    <v>Let temple burn, or flax ; an equal light</v>
+    <v>Leaps in the flame from cedar-plank or weed :</v>
+    <v>And love is fire. And when I say at need</v>
+    <v><i>I love thee</i>&nbsp;.&nbsp;. mark !&nbsp;.&nbsp;. <i>I love thee !</i>—in thy sight</v>
+    <v>I stand transfigured, glorified aright,</v>
+    <v>With conscience of the new rays that proceed</v>
+    <v>Out of my face toward thine. There’s nothing low</v>
+    <v>In love, when love the lowest : meanest creatures</v>
+    <v>Who love God, God accepts while loving so.</v>
+    <v>And what I <i>feel</i>, across the inferior features</v>
+    <v>Of what I <i>am</i>, doth flash itself, and show</v>
+    <v>How that great work of Love enhances Nature’s.</v>
+    </div>
+  <div class="id" id="11"><hr><div><a href="#11">xi</a></div></div>
+  <div class="verse">
+    <v>And therefore if to love can be desert,</v>
+    <v>I am not all unworthy. Cheeks as pale</v>
+    <v>As these you see, and trembling knees that fail</v>
+    <v>To bear the burden of a heavy heart,—</v>
+    <v>This weary minstrel-life that once was girt</v>
+    <v>To climb Aornus, and can scarce avail</v>
+    <v>To pipe now ’gainst the valley nightingale</v>
+    <v>A melancholy music,—why advert</v>
+    <v>To these things ?  O Belovëd, it is plain</v>
+    <v>I am not of thy worth nor for thy place !</v>
+    <v>And yet, because I love thee, I obtain</v>
+    <v>From that same love this vindicating grace,</v>
+    <v>To live on still in love, and yet in vain,—</v>
+    <v>To bless thee, yet renounce thee to thy face.</v>
+    </div>
+  <div class="id" id="12"><hr><div><a href="#12">xii</a></div></div>
+  <div class="verse">
+    <v>Indeed this very love which is my boast,</v>
+    <v>And which, when rising up from breast to brow,</v>
+    <v>Doth crown me with a ruby large enow</v>
+    <v>To draw men’s eyes and prove the inner cost,—</v>
+    <v>This love even, all my worth, to the uttermost,</v>
+    <v>I should not love withal, unless that thou</v>
+    <v>Hadst set me an example, shown me how,</v>
+    <v>When first thine earnest eyes with mine were crossed,</v>
+    <v>And love called love. And thus, I cannot speak</v>
+    <v>Of love even, as a good thing of my own :</v>
+    <v>Thy soul hath snatched up mine all faint and weak,</v>
+    <v>And placed it by thee on a golden throne,—</v>
+    <v>And that I love (O soul, we must be meek !)</v>
+    <v>Is by thee only, whom I love alone.</v>
+    </div>
+  <div class="id" id="13"><hr><div><a href="#13">xiii</a></div></div>
+  <div class="verse">
+    <v>And wilt thou have me fashion into speech</v>
+    <v>The love I bear thee, finding words enough,</v>
+    <v>And hold the torch out, while the winds are rough,</v>
+    <v>Between our faces, to cast light on each ?—</v>
+    <v>I drop it at thy feet. I cannot teach</v>
+    <v>My hand to hold my spirits so far off</v>
+    <v>From myself&nbsp;.&nbsp;. me&nbsp;.&nbsp;. that I should bring thee proof</v>
+    <v>In words, of love hid in me out of reach.</v>
+    <v>Nay, let the silence of my womanhood</v>
+    <v>Commend my woman-love to thy belief,—</v>
+    <v>Seeing that I stand unwon, however wooed,</v>
+    <v>And rend the garment of my life, in brief,</v>
+    <v>By a most dauntless, voiceless fortitude,</v>
+    <v>Lest one touch of this heart convey its grief.</v>
+    </div>
+  <div class="id" id="14"><hr><div><a href="#14">xiv</a></div></div>
+  <div class="verse">
+    <v>If thou must love me, let it be for nought</v>
+    <v>Except for love’s sake only.  Do not say</v>
+    <v><doplen>“I</doplen> love her for her smile&nbsp;.&nbsp;. her look&nbsp;.&nbsp;. her way</v>
+    <v>Of speaking gently,&nbsp;.&nbsp;. for a trick of thought</v>
+    <v>That falls in well with mine, and certes brought</v>
+    <v>A sense of pleasant ease on such a day”—</v>
+    <v>For these things in themselves, Belovëd, may</v>
+    <v>Be changed, or change for thee,—and love, so wrought,</v>
+    <v>May be unwrought so. Neither love me for</v>
+    <v>Thine own dear pity’s wiping my cheeks dry,—</v>
+    <v>A creature might forget to weep, who bore</v>
+    <v>Thy comfort long, and lose thy love thereby !</v>
+    <v>But love me for love’s sake, that evermore</v>
+    <v>Thou may’st love on, through love’s eternity.</v>
+    </div>
+  <div class="id" id="15"><hr><div><a href="#15">xv</a></div></div>
+  <div class="verse">
+    <v>Accuse me not, beseech thee, that I wear</v>
+    <v>Too calm and sad a face in front of thine ;</v>
+    <v>For we two look two ways, and cannot shine</v>
+    <v>With the same sunlight on our brow and hair.</v>
+    <v>On me thou lookest, with no doubting care,</v>
+    <v>As on a bee shut in a crystalline ;</v>
+    <v>Since sorrow hath shut me safe in love’s divine,</v>
+    <v>And to spread wing and fly in the outer air</v>
+    <v>Were most impossible failure, if I strove</v>
+    <v>To fail so. But I look on thee&nbsp;.&nbsp;. on thee&nbsp;.&nbsp;.</v>
+    <v>Beholding, besides love, the end of love,</v>
+    <v>Hearing oblivion beyond memory ;</v>
+    <v>As one who sits and gazes from above,</v>
+    <v>Over the rivers to the bitter sea.</v>
+  </div>
+  <div class="id" id="16"><hr><div><a href="#16">xvi</a></div></div>
+  <div class="verse">
+    <v>And yet, because thou overcomest so,</v>
+    <v>Because thou art more noble and like a king,</v>
+    <v>Thou canst prevail against my fears and fling</v>
+    <v>Thy purple round me, till my heart shall grow</v>
+    <v>Too close against thine heart henceforth to know</v>
+    <v>How it shook when alone. Why, conquering</v>
+    <v>May prove as lordly and complete a thing</v>
+    <v>In lifting upward, as in crushing low !</v>
+    <v>And as a vanquished soldier yields his sword</v>
+    <v>To one who lifts him from the bloody earth,</v>
+    <v>Even so, Belovëd, I at last record,</v>
+    <v>Here ends my strife. If <i>thou</i> invite me forth,</v>
+    <v>I rise above abasement at the word.</v>
+    <v>Make thy love larger to enlarge my worth.</v>
+    </div>
+
+  <cite>Elizabeth Barrett Browning, <in>Sonnets from the Portuguese</in>, <en>1850</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="#"><div id="prev" class="side"></div></a>
+<a class="nav" href="#"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="#"><span class="arrow">←</span>&nbsp;</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="#">&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
+  <style>
+      .nom {font-family: dolly-caps; margin-left: 0em; font-weight: bolder}
+      .action {position: absolute; text-align: left; font-family: dolly; font-style: italic;  font-weight: normal; margin-right: 2.5rem}
+      .nom + p { margin-top: 0.2em; /* margin-top: 0.35em; */ }
+      p {margin-left: 0.66rem; margin-bottom: 0.5em; /* margin-bottom: 0.7em; */}
+
+      div.volume {
+        font-family: dolly-caps; 
+        text-transform: lowercase;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.volume > div:nth-child(1) {
+        font-size: 130%;
+        margin-bottom: 0.66rem;
+        }
+
+    div.volume + div.id > hr { margin-top: 1.4em; }
+    div.id hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.id > div:nth-child(2) {
+        font-family: dolly-caps;
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 120%;
+        margin-bottom: 1.4em;
+        /* margin-bottom: 0.7em; */
+        }
+    div.id > div:nth-child(3) {
+        font-family: dolly-caps;
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 100%;
+        margin-bottom: 2em;
+        }
+      </style>
+
+  <title>La double inconstance | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <topic id="lightswitch" class="verlag"><div class="sur">Marivaux</div>la double inconstance</topic>
+  <div class="volume"><div>acte premier</div></div>
+  <div class="id"><hr><div>scène vi</div><div>Arlequin, Lisette.</div></div>
+
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">se retirant au coin du théàtre.</span></div>
+  <p>Je gage que voilà une éveillée qui vient pour m’affriander d’elle. Néant !</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">doucement.</span></div>
+  <p>C’eﬆ donc vous, Monsieur, qui êtes l’amant de Mademoiselle Silvia ?</p>
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">froidement.</span></div>
+  <p>Oui.</p>
+  <div class="nom">Lisette.</div>
+  <p>C’eﬆ une très-jolie fille.</p>
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">du même ton.</span></div>
+  <p>Oui.</p>
+  <div class="nom">Lisette.</div>
+  <p>Tout le monde l’aime.</p>
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">brusquement.</span></div>
+  <p>Tout le monde a tort.</p>
+  <div class="nom">Lisette.</div>
+  <p>Pourquoi cela, puisqu’elle le mérite ?</p>
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">brusquement.</span></div>
+  <p>C’eﬆ qu’elle n’aimera personne que moi.</p>
+  <div class="nom">Lisette.</div>
+  <p>Je n’en doute pas, et je lui pardonne son attachement pour vous.</p>
+  <div class="nom">Arlequin.</div>
+  <p>À quoi cela sert-il, ce pardon-là ?</p>
+  <div class="nom">Lisette.</div>
+  <p>Je veux dire que je ne suis plus si surprise que je l’étois de son obﬆination à vous aimer.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Et en vertu de quoi êtiez-vous surprise ?</p>
+  <div class="nom">Lisette.</div>
+  <p>C’eﬆ qu’elle refuse un prince aimable.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Et quand il seroit aimable, cela empêche-t-il que je ne le sois aussi, moi ?</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">d’un air doux.</span></div>
+  <p>Non : mais enfin, c’eﬆ un prince.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Qu’importe ? En fait de fille, ce prince n’eﬆ pas plus avancé que moi.</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">doucement.</span></div>
+  <p>À la bonne heure. J’entens seulement qu’il a des sujets et des États, et que, tout aimable que vous êtes, vous n’en avez point.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Vous me la bail&shy;lez bel&shy;le avec vos su&shy;jets et vos États ! Si je n’ai pas de su&shy;jets, je n’ai char&shy;ge de per&shy;son&shy;ne, et si tout va bien, je m’en ré&shy;jouis ; si tout va mal, ce n’eﬆ pas ma faute. Pour des États, qu’on en ait ou qu’on n’en ai point, on n’en tient pas plus de place, et cela ne rend ni plus beau, ni plus laid. Ainsi, de tou&shy;tes fa&shy;çons, vous étiez sur&shy;prise à pro&shy;pos de rien.</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">à part.</span></div>
+  <p>Voilà un vilain petit homme : je lui fais des compliments, et il me querelle.</p>
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">comme lui demandant ce qu’elle dit.</span></div>
+  <p>Hem ?</p>
+  <div class="nom">Lisette.</div>
+  <p>Il eﬆ vrai que la vôtre m’a trompé ; et voilà comme on a souvent tort de se prévenir en faveur de quelqu’un.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Oh ! très-fort ! Mais que voulez-vous ? je n’ai pas choisi ma physionomie.</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">en le regardant comme étonnée.</span></div>
+  <p>Non, je n’en sçaurois revenir, quand je vous regarde.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Me voilà pourtant, et il n’y a point de remede je serai toujours comme cela.</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">d’un air un peu fâché.</span></div>
+  <p>Oh ! j’en suis persuadée.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Par bonheur, vous ne vous en souciez gueres ?</p>
+  <div class="nom">Lisette.</div>
+  <p>Pourquoi me demandez-vous cela ?</p>
+  <div class="nom">Arlequin.</div>
+  <p>Eh ! Pour le sçavoir.</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">d’un air naturel.</span></div>
+  <p>Je serais bien sotte de vous dire la vérité là-dessus, et une fille doit se taire.</p>
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">   ( </span><span class="action">à part les premiers mots<span style="font-family: dolly; font-weight: normal; font-style: normal"> )</span>.</span></div>
+  <p>Comme elle y va !… Tenez, dans le fond, c’eﬆ dommage que vous soyez une si grande coquette.</p>
+  <div class="nom">Lisette.</div>
+  <p>Moi ?</p>
+  <div class="nom">Arlequin.</div>
+  <p>Vous-même.</p>
+  <div class="nom">Lisette.</div>
+  <p>Sçavez-vous bien qu’on n’a jamais dit pareille chose à une femme, et que vous m’insultez ?</p>
+  <div class="nom">Arlequin<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">d’un air naïf.</span></div>
+  <p>Point du tout. Il n’y a point du mal à voir ce que les gens nous mon&shy;trent. Ce n’eﬆ point moi qui ai tort de vous trou&shy;ver co&shy;quette ; c’eﬆ vous qui avez tort de l’être, Mademoiselle.</p>
+  <div class="nom">Lisette<span style="font-family: dolly; font-weight: normal">,   </span><span class="action">d’un air un peu vif.</span></div>
+  <p>Mais par où voyez-vous donc que je le suis ?</p>
+  <div class="nom">Arlequin.</div>
+  <p>Parce qu’il y a une heure que vous me di&shy;tes des dou&shy;ceurs, et que vous pre&shy;nez le tour pour me dire que vous m’ai&shy;mez. Écou&shy;tez, si vous m’ai&shy;mez tout de bon, re&shy;ti&shy;rez-vous vite, afin que cela s’en aille, car je suis pris, et na&shy;tu&shy;rel&shy;le&shy;ment je ne veux pas qu’une fil&shy;le me fas&shy;se l’amour la pre&shy;mière ; c’eﬆ moi qui veut com&shy;men&shy;cer à le faire à la fille : cela eﬆ bien meil&shy;leur. Et si vous ne m’ai&shy;mez pas, eh ! fy ! Mademoiselle, fy ! fy !</p>
+  <div class="nom">Lisette.</div>
+  <p>Allez, allez, vous n’êtes qu’un visionnaire.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Comment eﬆ-ce que les gar&shy;çons, à la Cour, peu&shy;vent souf&shy;frir ces ma&shy;nie&shy;res-là dans leurs maî&shy;tres&shy;ses ? Par la mor&shy;bleu ! qu’une fem&shy;me eﬆ laide quand elle eﬆ co&shy;quette !</p>
+  <div class="nom">Lisette.</div>
+  <p>Mais, mon pauvre garçon, vous extravaguez.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Vous par&shy;lez de Silvia : c’eﬆ cela qui eﬆ ai&shy;ma&shy;ble ! Si je vous con&shy;tois notre amour, vous tom&shy;be&shy;riez dans l’ad&shy;mi&shy;ra&shy;tion de sa mo&shy;de&shy;ﬆie. Les pre&shy;miers jours, il fal&shy;loit voir com&shy;me elle se re&shy;cu&shy;loit d’au&shy;près de moi, et puis elle re&shy;cu&shy;loit plus dou&shy;ce&shy;ment, et puis, pe&shy;tit à pe&shy;tit, elle ne re&shy;cu&shy;loit plus ; en&shy;suite elle me re&shy;gar&shy;doit en ca&shy;chette, et puis elle avoit honte quand je l’avois vû faire, et puis moi j’avois un plai&shy;sir de roi à voir sa honte ; en&shy;suite j’at&shy;tra&shy;pois sa main, qu’elle me lais&shy;soit pren&shy;dre, et puis elle étoit en&shy;core toute con&shy;fuse, et puis je lui par&shy;lois ; en&shy;suite elle ne me ré&shy;pon&shy;doit rien, mais n’en pen&shy;soit pas moins ; en&shy;suite elle me don&shy;noit des re&shy;gards pour des pa&shy;roles, et puis des pa&shy;roles qu’elle lais&shy;soit al&shy;ler sans y son&shy;ger, par&shy;ce que son cœur al&shy;loit plus vite qu’elle ; en&shy;fin, c’était un charme : aussi j’étois com&shy;me un fou. Et voilà ce qui s’ap&shy;pelle une fil&shy;le ! Mais vous ne res&shy;sem&shy;blez point à Silvia.</p>
+  <div class="nom">Lisette.</div>
+  <p>En vérité, vous me divertissez, vous me faites rire.</p>
+  <div class="nom">Arlequin.</div>
+  <p>Oh ! pour moi, je m’ennuye de vous faire rire à vos dépens. Adieu ! si tout le monde étoit comme moi, vous trouveriez plutôt un merle blanc qu’un amoureux.</p>
+  <cite>Marivaux, <in>La double inconstance</in>, <en>1723</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="laclos.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="parny.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="laclos.html"><span class="arrow">←</span>&nbsp;les liaisons dangereuses</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="parny.html">la guerre des dieux&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>

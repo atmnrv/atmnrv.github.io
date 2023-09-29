@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+    @media not all and (max-width:520px) {
+        div#content { margin-left:11.45rem; } /* 12 - .55*/
+        }
+    @media all and (max-width:520px) {
+        div#content { margin-left: 0.75rem; } /* 1.5 - .55*/ /* -0.25 os arbitrary, the left marhin shouldn't be thiner as the lower J would disturb too much */
+        title-block { margin-left: 0.75rem; width: calc(100vw - 3rem);}
+        div.btw { margin-left: 0.75rem; }
+      }
+    #h0 {
+        font-family: oni;
+        color: var(--txt);
+        letter-spacing: 0;
+        text-align: left;
+        white-space: nowrap;
+        overflow-x: hidden;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: default ;
+        }
+        [wide] #h0 {
+          width: 99.45%;
+        }
+    #h1, #h2, #h3, #h4, #h5, #h6, #h7, #h8 { line-height: 0; }
+    #h1 { font-size: 7.695rem;  height: 9.5rem; margin-left: -1.65rem; padding-top: 5.5rem; }
+/*  #h1 { font-size: 7.55rem;  height: 9.5rem; margin-left: -1.1rem; padding-top: 5.5rem; } NB: no indent */
+/*  #h1 { font-size: 7.695rem;  height: 9.5rem; margin-left: -1.65rem; padding-top: 5.5rem; } NB: negative left-indent fort descending */
+    #h4 { font-size: 1.4482rem; height: 3.5rem; margin-left: 0.25rem; padding-top: 2.5rem; }
+    #h7 { font-size: 0.3rem;   height: 1rem; margin-top: 0.4rem;   margin-left: 0.65rem; padding-top: 0rem; padding-bottom: 0rem; }
+    @media all and (max-width:520px) {
+        #h0 { margin-left: 0rem; }
+        #h1, #h4 { white-space: nowrap; overflow-x: hidden; overflow-y: hidden;}
+        #h1 { font-size: 35.9vw;  margin-right: 1rem; /* margin-right: 0.85rem; */ height: 12rem; padding-top: 8rem; -webkit-marquee-increment: 0vw;}
+    /*  #h1 { font-size: 7.31rem; } */
+        #h4 { font-size: 5.5vw;  margin-left: 1.6vw; /*margin-left-right: 0.36rem;*/ -webkit-marquee-increment: 0vw; }
+    /*  #h4 { font-size: 1.38rem; } */
+        #h7 { font-size: 0.285rem; margin-left: 0.55rem; -webkit-marquee-increment: 0vw;}
+
+    }
+/*  #h1 { font-size: 7.566rem;  line-height: 130%; padding-top: 0.8rem; } */
+    #h2 { font-size: 4.39rem;   line-height: 130%; display: none }
+    #h3 { font-size: 2.557rem;  line-height: 150%; display: none }
+/*  #h4 { font-size: 1.485rem;  line-height: 180%; } */
+    #h5 { font-size: 0.855rem; line-height: 220%; display: none }
+    #h6 { font-size: 0.5rem;    line-height: 270%; display: none }
+/*  #h7 { font-size: 0.3rem;    line-height: 330%; } */
+    #h8 { font-size: 0.17rem;   line-height: 300%; display: none }
+    #h9 { font-size: 0.1rem;    display: none }
+
+    .column#A div.bkg {
+      /*background-color: rgb(245, 245, 191);*/
+        background-image: url(images/oni/oa.svg);
+        background-repeat: no-repeat;
+        position: relative;
+        float:left;
+        top:0.05em;
+        height: 3.5em;
+        width: 3.3em;
+        margin: 0.4em 0em -0.6em 0.5em;
+        cursor: text;
+        }
+    .column#B div.bkg {
+      /*background-color: rgb(245, 245, 191); */
+        background-image: url(images/oni/ob.svg);
+        background-repeat: no-repeat;
+        position: relative;
+        float:left;
+        top:0em;
+        height: 3.55em;
+        width: 6em;
+        margin: 0.4em 0.25em -0.6em 0.25em;
+        cursor: text; }
+    [dark="true"] .column#A div.bkg { background-image: url(images/oni/oa_alt.svg); }
+    [dark="true"] .column#B div.bkg { background-image: url(images/oni/ob_alt.svg); }
+    oni-minot {font-family: oni-minot;}
+    para:after {
+      padding-left: 0.33em;
+      padding-right: 0.33em;
+      content: "⁍"; /* content: ""; */
+      }
+    dopsoni, sopsoni { display: initial; }  /* double chevron : oni */
+    dopsoni { margin-right: 0.3em; }        /* 0.606em; */
+    doploni { margin-left: -0.3em; }        /* -0.606em; */
+
+  </style>
+  <style>
+     /*   d o u b l e   c o l u m n   */
+
+    * {box-sizing: border-box;}
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 0.75rem
+        }
+    .column {
+        flex: 50%;
+        padding: 1.2em;
+        }
+    .column#A { padding-left: 0;}
+    .column#B { padding-right: 0;}
+
+    @media all and (max-width:520px) {
+        .row { flex-direction: column; }
+        .column#A { padding-right: 0rem; padding-bottom: 1.2rem ; }
+        .column#B { padding-left: 0rem; padding-top: 2.4rem;}
+        }
+
+     /* … */
+    .column#A,
+    .column#B { font-family: oni; font-size: 57%; letter-spacing: 0; }
+    @media all and (max-width: 520px) { .column#A, .column#B { font-size: 66%; }}
+    .column#A { text-align: justify; text-justify: inter-word; word-spacing: -36%; /*word-spacing: -0.06rem;*/ }
+    .column#B { text-align: left; /*word-spacing: -36%;*/ }
+    .column#A p,
+    .column#B p { margin-bottom: 0rem; }
+    .column#A p+p,
+    .column#B p+p { text-indent: 1.6em; }
+    .column#A div,
+    .column#B div { text-indent: 1.6em; margin-top: 0.5rem; font-size: 92%; }
+    </style>
+    <style>
+
+title-block.dsktp {
+  position: initial;
+  margin-left: -9rem;
+}
+
+
+
+     
+br.forwide {
+        display: none;
+      }
+      [wide] br.forwide {
+        display: block;
+      }
+    </style>
+  <style>
+    html:not([wide]) title-block.dsktp {
+        position: initial;
+        margin-left: -9rem;
+      }
+  </style>
+  
+<style>
+title-block.absolute {
+  position: relative;
+  margin-left: -12rem;
+  margin-left: -11.45rem;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+title-block.sticky {
+  position: sticky;
+  margin-left: -9.5rem;
+  top: 3.2rem;
+  border-top: none;
+  /* padding-top: 0.5rem;
+  padding-top: 5px;
+  padding-top: 0.1em; */
+}
+.sticky topic {
+  /* font-family: display;
+  font-family: "Avocado 14";
+  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 210%;
+  line-height: 0.8; */
+  /* margin-bottom: 0.67em;
+  margin-bottom: 0.4em; */
+}
+html:not([wide]) title-block.sticky:hover {
+  opacity: 1 !important;
+  transition-duration: .2s !important;
+  transition-property: opacity;
+}
+@media all and (max-width:520px) {
+  title-block.absolute {
+  display: none;
+}
+title-block.sticky {
+  display: none;
+}
+}
+
+[wide] title-block.absolute {
+  margin-left: 0;
+}
+[wide] title-block.sticky {
+  position: revert;
+  margin-left:0;
+  text-align: right;
+  font-size: 345%;
+  font-size: 200%;
+  /* min-height: 36rem; */
+  margin-bottom: 10rem;
+  margin-bottom: 5rem;
+}
+
+@media not all and (max-width:520px) {
+  html:not([wide]) #bullet {
+  display: none;
+  }
+  html:not([wide]) title-block.sticky {
+  background: var(--bkg);
+  }
+}
+
+[wide] short-rule {
+  font-size: 83%;
+}
+    </style>
+
+  <title>Oni | @mnnrv</title>
+</head>
+
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="typographie.html">­</a>
+<div id="content">
+  <title-block class="absolute"></title-block>
+  <title-block class="sticky">
+    <topic>Oni</topic>
+    <short-rule>Une famille de caractères optimisée pour le confort de lecture en (très) basse résolution</short-rule>
+  </title-block>
+
+  <title-block class="mobil"><topic>Oni</topic><short-rule>Une famille de caractères optimisée pour le confort de lecture en (très) basse résolution</short-rule></title-block>
+  <div class="gap dsktp" style="height:1.5em"></div><ul class="children"></ul>
+  <div class="specimen">
+    <script>
+      //la preuve par la démonstration consiste à lire cette ligne ma la loupe ⁌⁍
+      const msg1 = "⁌&nbsp;&nbsp;et si l’on lisait cette ligne à la loupe pour vérifier l’efficacité du caractère&nbsp;&nbsp;⁌";
+      const msg2 = "⁌&nbsp;&nbsp;la preuve du pudding, c’est qu’on le mange&nbsp;&nbsp;⁌";
+
+      function getRandomSentence() {
+        var index = Math.floor(Math.random() * (sentences.length));
+        return "<span style='visibility: hidden'>&nbsp;</span>"+sentences[index]+"<span style='visibility: hidden'>&nbsp;</span>";
+      }
+
+      function scribble() {
+        var source = document.getElementById("h1");
+        source.innerHTML = (getRandomSentence());
+        
+        let clonesource = source.innerHTML;
+        h2.innerHTML = clonesource;
+        h3.innerHTML = clonesource;
+        h4.innerHTML = clonesource;
+        h5.innerHTML = clonesource;
+        h6.innerHTML = clonesource;
+        h7.innerHTML = clonesource+"&nbsp;"+msg1+"&nbsp;"+clonesource+"&nbsp;"+msg2+"&nbsp;"+clonesource+"&nbsp;"+msg1+"&nbsp;"+clonesource+"&nbsp;"+msg2+"&nbsp;"+clonesource;
+        h8.innerHTML = clonesource;
+      }
+      var sentences = [
+        'the quick brown fox jumps over the lazy dog…',
+        'a low-resolution-oriented typeface',
+        'consistent and uniform high-contrast glyphes / ligatures',
+        'this page intentionally left blank',
+        'midnight cowboy looking for a day job and a motorcycle',
+        'black-cauldron mixture for the mass',
+        'monthly subscription to the herald for less than a quarter',
+        'the morning afternighT : a story within the template',
+        'you cannot watch a movie on your telephone, geT real !',
+        'the longest journey in history (by far)',
+        'the lost art of making children by the dozen',
+        'who’s the man behind the door ?',
+        'dracula !? so, it was him after all…',
+        'all hail the King, baby !',
+        'What’s the story ?',
+        'oh, my… why don’t you !',
+        'you’re a woman, I’m a machine',
+        'thespian feat of an ignoramus',
+        'five o’clock already…',
+        'superhot conductor',
+        '&#xe005;rio the punch',
+        'middlebrow academic language',
+        'sort of a jazz-fusion kind of thing',
+        'hyper-sexual Prozac pop',
+        'unisex swimsuit',
+
+        'minuscule pour le corps de texte',
+        'article temporairement indisponible',
+        'contenu disponible tout de suite',
+        '&#xe001;ujourd’hui dans le Monde (diplomatique) […].',
+        'demain à la une: vol de l’œil du chat.',
+        'les conseils de lecture de notre équipe sportive du dimanche',
+        'point de plus-que-parfait du subjonctif',
+        'de la cuisson au four à micro-onde',
+        'il est indispensable de se blanchir les os à l’eau de Javel',
+        'le tour du monde en quatre-vingt jours',
+        'Oh ! le bel ornithorynque que voilà…',
+        'y a-t-il un justicier parmi nous ?',
+        'l’histoire de la relation franco-allemande en cinq minutes chronomètre',
+        'la philanthropie de l’ouvrier charpentier',
+        'carambolage et cambriolage ne font pas bon ménage',
+        'je me suis fait tout petit devant une poupée qui dit "maman" quand on la touche',
+        'rendez-vous en l’an mil sept cent quatre-vingt-neuf',
+        'invitation à souper pour samedi soir',
+        'cyberespace non-fumeur',
+        'taille unique',
+        'une petite maison bleue dans la prairie',
+        'si la cathédrale…',
+        'on connait la chanson…',
+        'la symphonie fantastique',
+        'le bruit du temps',
+        'toilette intime',
+        'falbala et rintintin à &#xe004;onolulu',
+        'tournevis cruciforme',
+        'livraison à domicile',
+        'contreforme',
+        'vers l’infinitif et au-delà !',
+        'le fond du panier',
+        'point final.',
+        'mi-cuisson',
+        'mi-figue, mi-raisin',
+        '&#xe002;ezon Ikkoku ( Juliette, je t’aime)',
+        'cheval de course',
+        'synallagmatique et léonine',
+        'la preuve du pudding',
+        'accord parental souhaitable',
+        'fermeture pour cause d’inventaire',
+
+        'unruhe. hab keine angst—Ich werde dir helfen…',
+        'ich be&#xe045rchte, dass keiner von ihren ein einziges wort deutsch spricht',
+        'wir sehen uns später !',
+        'un’espressione chi fa la musica delle parole',
+      ];
+    </script>
+    <div id="h0" onclick="scribble()" contenteditable="false" style="cursor: help;">
+    <div id="h1">
+      <script>
+
+        document.write(getRandomSentence());
+    
+      </script>
+      </div>
+    <div id="h2">
+      <script>
+
+        var source = document.getElementById("h1"),
+            h2 = document.getElementById("h2");
+        // Create & append evil clone
+        let clonesource = source.innerHTML;
+        h2.innerHTML = clonesource;
+
+      </script>
+      </div>
+    <div id="h3">
+      <script>
+
+        var h3 = document.getElementById("h3");
+        h3.innerHTML = clonesource;
+
+      </script>
+      </div>
+    <div id="h4">
+      <script>
+
+        var h4 = document.getElementById("h4");
+        h4.innerHTML = clonesource;
+
+      </script>
+      </div>
+      
+    <div id="h5">
+      <script>
+
+        var h5 = document.getElementById("h5");
+        h5.innerHTML = clonesource;
+
+      </script>
+      </div>
+    <div id="h6">
+      <script>
+
+        var h6 = document.getElementById("h6");
+        h6.innerHTML = clonesource;
+
+      </script>
+      </div>
+    <div id="h7">
+      <script>
+
+        var h7 = document.getElementById("h7");
+        h7.innerHTML = clonesource+msg1+clonesource+msg2+clonesource+msg1+clonesource+msg2+clonesource;
+
+      </script>
+      </div>
+    <div id="h8">
+      <script>
+
+        var h8 = document.getElementById("h8");
+        h8.innerHTML = clonesource;
+
+      </script>
+      </div>
+      </div>
+      </div>
+  <div class="row">
+  <div class="column" id="A">
+    <p><div class="bkg"></div>u­jourd’hui, la mé­thode la plus com­mune, et sur­tout la plus ac­ces­sible, de consul­ter l’in­for­ma­tion na­tio­nale consiste à sor­tir de chez soi—prendre la voi­ture si l’on ha­bite loin du kiosque—pour ache­ter le jour­nal quo­ti­dien ; c’es­t-à-dire qu’il est con­seillé de pui­ser à la source. On cherche en­suite un ar­ticle de son choix dans le ca­nard : on le trouve (enfin), et l’on consta­te aus­si­tôt la dis­pa­ri­tion du moT<dopsoni></dopsoni><doploni> "gazette".</doploni></p>
+    <p>&#xe003;evermind the facts : a little di­plo­macy is in or­der, right ? we aren’t talk­ing about go­ing ful­l-on lo­rem ip­sum ei­ther (a) ; nev­er­the­less, the stan­dard throw­ing-in-a-bunch-of-catch­phras­es-and-see-what-sticks ap­proach just might do.</p>
+    <p>So, let’s…</p>
+    ­<p>Queens of the stone age ac­tu­ally di­aled the lev­els up to, and past, elev­en for a while ; then they left the in­dus­try alto­geth­er. <para></para> now­a­days ev­ery­one’s a writ­er. even son-in-law (b) of evil mas­ter­mind and klep­to­ma­niac drac­u­la has giv­en up a life of crime to start a new sel­f-au­thor­ing book / plat­form writ­ten in french – for what­ever rea­son. by the way, the ti­tle’s <oni-minot>fleur de jour</oni-minot>, should any­one be in­ter­est­ed in read­ing it. <para></para> à la une de l’ac­tua­lité fran­co­phone : les conseils de lec­ture de notre équipe spor­tive lo­cale : une con­struc­tion his­to­rique et uni­ver­selle de l’hu­ma­ni­té (c) ; un cha­pitre de quelque ro­man futu­riste, ainsi qu’une véri­table adap­ta­tion de l’œuvre au théàtre ; le texte jus­ti­fié d’un acte de vente. <para></para>  in­for­ma­tion capi­tale : l’œil du chat re­trou­vé au rond-point du sou­ve­nir fran­çais… faut-il s’en réjouir ? <span style="float: right;"></span></p>
+    <div>
+      <p>a. dolorem ipsum quia dolor sit amet</p>
+      <p>b. sixth wife’s offspring</pr>
+      <p>c . it still isn’t available</p>
+      </div>
+    </div>
+  <hr class="mobil" style="width:10%; margin: auto; height: 1px; border: none;">
+  <div class="column" id="B">
+    <p><div class="bkg"></div>quick brown fox jumps over the lazy dog… but you al­ready know that, you’ve read the book – we all have : it’s called a pan­gram, a not so ill-de­signed man­ner of in­tro­duc­ing a type­face, and as precious an item it is, it shouldn’t be tak­en too liter­ally. ad­mit­tedly, I’ve al­ways felt bad for the poor bastard, al­though he truly is lazy (of course it’s a<dopsoni></dopsoni><doploni> "he",</doploni> oth­­er­­wise we’d just call her a bitch !).</p>
+    <p>&#xe003;evermind the facts : a little di­plo­macy is in or­der, right ? we aren’t talk­ing about go­ing ful­l-on lo­rem ip­sum ei­ther (a) ; nev­er­the­less, the stan­dard throw­ing-in-a-bunch-of-catch­phras­es-and-see-what-sticks ap­proach just might do.</p>
+    <p>So, let’s…</p>
+    ­<p>Queens of the stone age ac­tu­ally di­aled the lev­els up to, and past, elev­en for a while ; then they left the in­dus­try alto­geth­er. <para></para> now­a­days ev­ery­one’s a writ­er. even son-in-law (b) of evil mas­ter­mind and klep­to­ma­niac drac­u­la has giv­en up a life of crime to start a new sel­f-au­thor­ing book / plat­form writ­ten in french – for what­ever rea­son. by the way, the ti­tle’s <oni-minot>fleur de jour</oni-minot>, should any­one be in­ter­est­ed in read­ing it. <para></para> à la une de l’ac­tua­lité fran­co­phone : les conseils de lec­ture de notre équipe spor­tive lo­cale : une con­struc­tion his­to­rique et uni­ver­selle de l’hu­ma­ni­té (c) ; un cha­pitre de quelque ro­man futu­riste, ainsi qu’une véri­table adap­ta­tion de l’œuvre au théàtre ; le texte jus­ti­fié d’un acte de vente. <para></para>  in­for­ma­tion capi­tale : l’œil du chat re­trou­vé au rond-point du sou­ve­nir fran­çais… faut-il s’en réjouir ? <span style="float: right;"></span></p>
+    <div>
+      <p>a. dolorem ipsum quia dolor sit amet</p>
+      <p>b. sixth wife’s offspring</pr>
+      <p>c . it still isn’t available</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="btw"><div class="btw-title">à propos</div>
+  <ul><li><p>Oni reste in­sur­pas­sé lors­qu’il est ques­tion de con­den­ser de l’infor­ma­tion écrite en un mi­ni­mum de pixels. Il est de fait <a href="oni-minot.html"><span style="text-decoration: line-through">le plus petit ca­rac­tère mon­dial,</span></a> mais c’est une qua­li­té se­con­daire ; il se dis­tingue d’abord par un des­sin sin­gu­lier et le confort (in­ver­se­ment pro­por­tion­nel à la taille) de ses lettres.</p></li><li><p>La fa­mille couvre l’en­semble de l’al­pha­bet latin ba­sique, et pro­pose un très riche jeu de liga­tures, glyphes contex­tuels et va­riantes stylistiques.</p></li></ul></div>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  </div>
+
+<a class="nav" href="typographie.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="oni-minot.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="typographie.html"><span class="arrow">←</span>&nbsp;typographie</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="typographie.html">chapitre</a></div>
+<div><a class="box-link" href="oni-minot.html">oni-minot&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+  const toggleMenu2 = function(e) {
+  const element = document.querySelector(".sticky")
+      , menu = document.querySelector("#menu")
+      , body = document.querySelector("body");
+
+  // click anychere on page
+  if (body.classList.contains("menu_open")
+  && e.target.id === "content") {
+    body.classList.toggle("menu_open");
+    setTimeout(function() {
+      menu.style.visibility = "hidden";
+    }, 600);
+  }
+
+  if (e.target === element || e.target.parentNode === element) {
+    body.classList.toggle("menu_open");
+    if (body.classList.contains("menu_open")) {
+      menu.style.visibility = "visible";
+    } else {
+      setTimeout(function() {
+        menu.style.visibility = "hidden";
+      }, 600);
+    }
+  }
+};
+document.addEventListener("click", toggleMenu2);
+
+</script>
+</body>
+</html>

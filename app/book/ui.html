@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+    p, pp, image-caption, li {hyphens: auto; -webkit-hyphens: auto;}
+  </style>
+  <style>
+    body {
+      overflow-x: hidden;
+      overflow-y: -webkit-paged-y;
+    }
+    @media not all and (min-width:1000px) and (max-width:520px) {
+      #next.side:not(.note) {
+        width: 1.5rem;
+      }
+    }
+    #next {
+      z-index: 2;
+      mix-blend-mode: multiply;
+    }
+  </style>
+  <style>
+    #overall-wrapper {
+      /* -webkit-mask-image: -webkit-radial-gradient(white, black); */
+      /* mask-image: radial-gradient(white, black); */
+      position: relative;
+      width: 44rem;
+      height: 21rem;
+      top: -0.2em;
+      left: -0.1em;
+
+      margin-bottom: 2em;
+    }
+    #overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      /* z-index: -2; */
+      background-image: url('images/iphone.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+    #iframe-wrapper {
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      mask-image: radial-gradient(white, black);
+      position: absolute;
+      top: 5.2%;
+      left: 2.1%;
+      width: 96%;
+      width: 94%;
+      height: 89.5%;
+      border-radius: 2rem;
+    }
+    #iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+
+      /* position: absolute;
+      top: 1rem;
+      left: 0.5rem; */
+    }
+  </style>
+  <title>UX·UI design | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href=".">­</a>
+<div id="content" lang="fr">
+  <topic>UX·UI Design <span style="text-transform: lowercase; font-feature-settings: 'c2sc';">(i)</span></topic>
+  <!-- <title-block>
+    <topic>mon petit nuancier</topic>
+    <short-rule>df</short-rule>
+  </title-block> -->
+  <aside><p>Aperçu non <nobr>contractuel</nobr>.</p></aside>
+ <!-- <p class="image"><img src="images/aac.png" alt=""></p> -->
+  <div id="overall-wrapper">
+    <div id="overlay"></div>
+    <div id="iframe-wrapper">
+      <iframe id="iframe" src="../colors/framed.html" title=" Nuancier"></iframe>
+    </div>
+  </div>
+  <p>L’évolution du nuancier est telle qu’elle s’est une fois pour toute engagée dans la voie (hypertechnique) du <em>sélecteur de <nobr>couleurs</nobr></em>.</p>
+  <p>Cette nouvelle approche s’inscrit dans une tendance plus générale de spécialisation, et confirme, sans doute, l’importance de la couleur en communication. Mais, en pratique, le sélecteur est un outil qui fonctionne à rebours de l’emploi qu’on lui résevait : encourageant l’approximation, par sa gestion laborieuse et extrêmement rigide de la palette, et favorisant la formule au préjudice de la <nobr>couleur</nobr>.</p>
+  <p>Mon <a href="../ui.html" class="xref">nuancier</a> prend le contre-pied de cette tournure laborantine, très à-la-lunette-du-microscope, de nos métiers. Il permet de trouver sa couleur en un seul geste (saturation comprise !) ; et, surtout, il laisse à la couleur toute la surface de s’exprimer. J'en recommande particulièrement l’usage sur un écran d’appoint—une tablette, par exemple—en mode pleine page. <a href="core/nuancier">Satisfaction <nobr>garantie</nobr>.</a></p>
+  
+  <div class="btw"><div class="btw-title">à propos</div>
+  <ul><li><p>La force émotionnelle et psychologique d’une couleur dépend de la surface qu’elle occupe, mais elle participe aussi beaucoup de l’étiquette qu’on lui colle. Si le nom d’une couleur est formulé avec autant de soin que la composition de la teinte elle-même, c’est parce que l’étiquette est une invitation au voyage qui contribue à séduire le consommateur; voilà pourquoi le champs lexical des noms de couleurs regorge de trésors d’invention—et pourquoi j’ai souhaité les intégrer au <nobr>programme</nobr>.</p></li>
+  <li><p>Ils sont plus faciles à retenir qu’une notation <nobr>hexadécimale</nobr>.</p></li></ul></div>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="graphisme.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="typographie.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="graphisme.html"><span class="arrow">←</span>&nbsp;graphisme</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div><a class="box-link" href="typographie.html">typographie&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+</body>
+</html>
+

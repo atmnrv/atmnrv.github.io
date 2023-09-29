@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+
+  <style>
+    div.entry p {margin-bottom: 0; text-align: ;}
+    div.entry p + p {text-indent: 1.6em;}
+    /* .subhead {margin-bottom: 1em; text-align: center; font-size: 120%; font-weight: normal; margin-top: 0; padding-top: calc(3.66rem + 2rem - 2rem); margin-bottom: 2.8rem;} */
+    * { hyphens: auto; -webkit-hyphens: auto;}
+    nobr {hyphens: none; -webkit-hyphens: none !important}
+    .last {hyphens: none; -webkit-hyphens: none !important}
+    
+    hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 3.8rem;
+
+        /* margin-top: 4rem; */
+        /* margin-bottom: 1.4em; */
+        }
+    greek {
+        font-family: bookerly;
+        font-size: 93%;
+        line-height: 0;
+
+        position: relative;
+        display: inline;
+        }
+
+
+ 
+
+    /* #navtable > div + div { border-left: none; border-top: none;} */
+    .subhead > a:hover:before {
+    position: relative;
+    color: var(--act);
+    font-weight: normal;
+    content: "# ";
+    margin-right: 0.10em;
+    top: -0.08em;
+    font-size: 90%;
+    visibility: hidden;
+    }
+    #content > p > c2sc {font-family: dolly-caps;}
+    #opa:hover {opacity: 1 !important; transition-duration: 0.2s !important; transition-property: opacity;}
+
+
+
+
+
+      .quote {
+          background-image: url("images/dbll.svg");
+          background-size:  0.425em;
+          background-position: 0 0em;
+          background-repeat: no-repeat;
+          -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+          margin-left: 0;
+          padding-left: 0.6em;
+          }
+
+
+      [dark="true"] .quote {
+          background-image: url("images/dbl_alt.svg");
+          }
+       .quote span:first-of-type {
+          margin-left: -0.18em;
+          } 
+
+      .side.note { font-style: initial;}
+      @media not all and (max-width:520px) {
+          .side.note {
+          display: -webkit-box !important;
+          -webkit-box-orient: vertical;
+          line-clamp: 4 !important;
+          overflow: hidden;
+          -webkit-line-clamp: 4;
+
+          padding-right: 0.4em;
+          margin-right: -0.4em;
+          letter-spacing: -0.015em ;
+        }
+          .side.note.visible {
+          -webkit-line-clamp: initial;
+          /* text-align: justify; */
+          }
+          .side.note:not(.visible) pp {
+          display: none;
+          }
+          
+      .note-src:hover + .side.note {
+          background: var(--a);
+          transition-property: background;
+          transition-duration: 0.2s;
+          border-radius: 8px;
+          }
+      /* [dark="true"] .note-src:hover + .side.note {
+          color: var(--bkg);
+          padding-right: 0.4em;
+          margin-right: -0.4em;
+          } */
+          [dark="true"] .side.note:hover {
+          transition-property: color;
+          transition-duration: 0.2s;
+          color: mistyrose;
+          }
+          }
+
+      .side.note.visible {display: block;}
+
+      /* alternative dark note theme */
+      
+      [dark="true"] .on:hover > .note-src, [dark="true"] .un:hover > .note-src {
+          color: mistyrose;
+          background: none;
+          transition-property: color;
+          transition-duration: 0.2s;
+  
+          padding-left: 0em;
+          margin-left: 0em;
+          
+          }
+      @media not all and (max-width:520px) {
+          [dark="true"] .note-src:hover + .side.note {
+          background: none;
+          color: mistyrose;
+          }}
+
+      [dark="true"] .on:active > *,
+      [dark="true"] .un:active > * { 
+          transition-property: color;
+          transition-duration: 0.2s !important;
+          }
+      [dark="true"] .on:not(:active) > *,
+      [dark="true"] .un:not(:active) > * { 
+          transition-property: color;
+          transition-duration: 0.2s !important;
+          }
+
+
+
+          /* [dark="true"] .side.note {color: mistyrose} */
+          p {text-align: ; }
+          .side.note  pp {
+          margin-top: 1em;
+          }
+      @media all and (max-width:520px)  {
+          blockquote .side.note {  margin-left: -1rem; width: calc(100% - 1rem);}}
+      @media not all and (max-width:520px)  {
+          blockquote .side.note { margin-left: -13rem; }}
+      @media all and (min-width:1200px) {
+          blockquote .side.note { margin-left: -15rem; }}
+
+
+
+
+
+table.quick {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    margin-top: -0.2em;
+    margin-bottom: 0.8em;
+}
+
+.quick       td                   { padding: 0.1em; text-align: left; width: 25%; }
+
+             tr td:nth-of-type(1),
+.quick.three tr td:nth-of-type(1) { width: 36% !important; padding-left: 2.5em; }
+             tr td:nth-of-type(2),
+.quick.three tr td:nth-of-type(2) { width: 30% !important}
+             tr td:nth-of-type(3),
+.quick.three tr td:nth-of-type(3) { width: auto !important}
+
+@media all and (max-width:520px) {
+table.quick { width: 100%; }
+             tr td:nth-of-type(1),
+.quick.three tr td:nth-of-type(1) { width: 28% !important; padding-left: 2em; }
+             tr td:nth-of-type(2),
+.quick.three tr td:nth-of-type(2) { width: 24% !important}
+             tr td:nth-of-type(3),
+.quick.three tr td:nth-of-type(3) { width: 28% !important}
+}
+
+
+.quick.bar tr td:nth-of-type(1) { width: 50% !important }
+.quick.bar tr td:nth-of-type(2) { width: 50% !important; padding-left: 4.5em; border-left: 1px solid gray; }
+
+
+    </style>
+
+<style>topic + p {
+
+  font-size: 114%;
+
+}</style>
+
+  <title>Pour en finir… | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content" lang="fr">
+  <topic class="article">Pour en finir avec « sociétal »</topic>
+  <p><!-- <span class="on"><span class="note-src"> -->Le néologisme est une des voies normales d’évolution de la langue et il ne saurait être question ici de le pros­crire.<!-- </span><span class="side note">Rédigée en novembre 1987, cette note était restée inédite. La publication dans ce même numéro d’un article où le mot <dops></dops><dopl> « sociétal »</dopl> est récurrent fournit simplement une occasion d’en publier une version améliorée. Il va de soi que cette note s’en prend à un usage et non à tel ou tel <nobr>auteur.</nobr></span></span> --> Mais qu’est-ce qu’un néologisme ? C’est toujours du nouveau fabriqué avec de l’ancien. Le néologisme est un <i>syntagme</i> (composition de plusieurs éléments, comme par exemple un radical et un suffixe) et ce syntagme n’est possible que parce qu’il s’intègre dans un paradigme. Dans le cours qu’il consacre à l’analogie créatrice, Saussure cite l’ex­em­ple d’« in­dé­co­rable », création imaginaire sans doute, mais que rien n’empêcherait d’incorporer aux lexique commun si le besoin s’en faisait sentir. <span class="on"><span class="note-src">Le cas récent d’« incontournable » illustre bien ce mécanisme.</span><span class="side note">Inventé pour traduire <i>unumgänglich</i> chez Heidegger, « incontournable » a été pris par les lacaniens à la fin des années cinquante. On le retrouve au début des années soixante-dix dans les hebdomadaires de gauche, d’où il se répand vers l’ensemble de la presse, pour finir par s’intégrer au langage <nobr>courant.</nobr></span></span> Si ce néologisme est en voie d’être reçu, c’est qu’il est formellement recevable : il ne fait qu’activer le paradigme des adjectifs dénotant sur le même modèle une incapacité—<dops></dops><dopl>« in­sur­mon­table »,</dopl> <dops></dops><dopl> « in­évi­table »,</dopl> <dops></dops><dopl> « indépassable »,</dopl> etc. Pour les mêmes raisons, la lutte des puristes contre <dops></dops><dopl> « indésirable »</dopl> est vouée à <nobr>l’échec.</nobr></p>
+  <p>Le cas de <dops></dops><dopl> « sociétal »</dopl> est tout différent. C’est un néologisme mal formé, parce que son paradigme de référence n’existe pas : un mot sans modèle. Il n’existe, en effet, aucun adjectif en ‑tal formé sur un substantif en ‑té. D’où le sentiment d’arbitraire (au sens non saussurien du terme) que suscite cette invention. Pourquoi pas <dops></dops><dopl> « so­cié­teux »,</dopl> <dops></dops><dopl> « sociétard »</dopl> ou encore—avis aux amateurs de percée théorique…—<span class="last"><nobr><dops></dops><dopl> « <nobr>sociétique</nobr> » ?</dopl></nobr></span></p>
+  <p>La première partie de cette note développera la question du paradigme d’un point de vue strictement linguistique. Dans la seconde, on s’interrogera sur les conditions qu’il faudrait réunir pour justifier une violation aussi flagrante des structures de la langue, conditions qui nous paraissent loin d’être <nobr>remplies.</nobr></p>
+  <div class="subhead">Un mot sans modèle</div>
+  <p>Partons du mot <dops></dops><dopl> « société ».</dopl> Les mots en ‑té sont eux-mêmes des dérivés abstraits exprimant une <dops></dops><dopl> « relation</dopl> de qualité ». Ils se constituent à partir de la forme marquée de l’adjectif (forme imprudemment qualifiée de <dops></dops><dopl> « féminine »</dopl> par les grammaires classiques), selon le <nobr>modèle :</nobr>
+  <table class="quick fast" form="false">
+    <tbody>
+        <tr><td hyphens="none">citoyenne</td>
+            <td hyphens="none">: citoyenneté</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">habile</td>
+            <td hyphens="none">: habileté</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">lâche</td>
+            <td hyphens="none">: lâcheté</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">légère</td>
+            <td hyphens="none">: légèreté</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">souveraine</td>
+            <td hyphens="none">: souveraineté</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">etc.</td>
+            <td hyphens="none"></td>
+            <td hyphens="none"></td></tr></tbody></table>
+  </p>
+  <p>Les mots en ‑iété font partie de cet ensemble, à ceci près qu’ils sont formés sur des adjectifs latins en <i>‑ius</i>
+  <table class="quick fast" form="false">
+    <tbody>
+        <tr><td hyphens="none"><i>anxius</i></td>
+            <td hyphens="none">: anxiété</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none"><i>contrarius</i></td>
+            <td hyphens="none">: contrariété</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none"><i>ebrius</i></td>
+            <td hyphens="none">: ébriété</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none"><i>notorius</i></td>
+            <td hyphens="none">: notoriété</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none"><i>proprius</i></td>
+            <td hyphens="none">: propriété</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none"><i>sobrius</i></td>
+            <td hyphens="none">: sobriété</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none"><i>varius</i></td>
+            <td hyphens="none">: variété</td>
+            <td hyphens="none"></td></tr></tbody></table>
+  <p>et, bien entendu,
+  <table class="quick fast" form="false">
+    <tbody>
+        <tr><td hyphens="none"><i>socius</i></td>
+            <td hyphens="none">: <i>société.</i></td>
+            <td hyphens="none"></td></tr></tbody></table>
+  </p>
+  <p><i>Socius</i> signifie « associé », « compagnon », « allié ». Benveniste, qui en a énuméré les emplois, précise que le mot implique une relation réciproque : on est soi-même le <i>socius</i> de son <i>socius</i>. <i>Societas</i> est le substantif dérivé qui désigne cette relation mutuelle entre associés (on trouve le même rapport en allemand entre <i>Geselle</i>, compagnon, et <i>Gesellschaft</i>, société). « Ce modèle, observe le linguiste, se reproduit en latin pour un certain nombre de relations typiques, caractérisant des groupements anciens de la société romaine. » <i>Civis</i> désigne un «concitoyen», un « pays », et <i>civitas</i> le rapport mutuel correspondant. Il en va de même pour les couples <i>sodalis</i> : <i>sodalitas</i> ou <i>nobilis</i> : <i>nobilitas</i> (Benveniste, 1966, p. 278).</p>
+  <p>Mais un dérivé abstrait peut lui-même faire l’objet d’une dérivation. Que se passe-t-il dans ce cas ? Les adjectifs formés par suffixation à partir de mots en ‑été ou ‑ité se terminent toujours en ‑étaire ou ‑itaire. Citons les principales séries de ce type (sous leur forme française, même si la dérivation s’est parfois faite dès l’Antiquité ou sur un modèle <nobr>antique</nobr>) :
+  <table class="quick fast three" form="false">
+    <tbody>
+        <tr><td hyphens="none">auteur</td>
+            <td hyphens="none">: autorité</td>
+            <td hyphens="none">: autoritaire</td>
+        <tr><td hyphens="none">digne</td>
+            <td hyphens="none">: dignité</td>
+            <td hyphens="none">: dignitaire</td></tr>
+        <tr><td hyphens="none">égal</td>
+            <td hyphens="none">: égalité</td>
+            <td hyphens="none">: égalitaire</td></tr>
+        <tr><td hyphens="none">humain</td>
+            <td hyphens="none">: humanité</td>
+            <td hyphens="none">: humanitaire</td></tr>
+        <tr><td hyphens="none">propre</td>
+            <td hyphens="none">: propriété</td>
+            <td hyphens="none">: propriétaire</td></tr>
+        <tr><td hyphens="none">uni</td>
+            <td hyphens="none">: unité</td>
+            <td hyphens="none">: unitaire</td></tr></tbody></table>
+  </p>
+  <p>C’est évidemment à ce paradigme que se rattache « sociétaire », même si, en français moderne, « socié » n’existe qu’au sein de composés savants comme «associé» ou «dissocié» (l’ancien français a longtemps maintenu « soiçon », « sochon » ou « souchon », mot directement issu de <i>socius</i> avec le sens de « compagnon », dont les variantes survivent encore comme noms de famille). L’adjectif de base a disparu dans bien d’autres cas, comme hérédité : héréditaire ou volonté : volontaire, sans mettre en cause le mécanisme de <nobr>formation.</nobr></p>
+  <p>Impossible, par conséquent, de dériver un adjectif en ‑tal d’un substantif en ‑té. Il suffit, pour s’en convaincre, de dériver sur le même modèle les mots de la même famille : «identital», « propriétal », « unital », « universital »… sont <nobr>inconcevables.</nobr></p>
+  <p>Reste, pour être complet, à faire la preuve par le contraire. N’existe-t-il pas des suffixations en ‑tal qui alterneraient avec des suffixations en ‑taire, formant un autre paradigme auquel pourrait se rattacher le couple « sociétaire »/« sociétal » ? Même s’il y a tout lieu de penser que la fabrication de «sociétal» s’est faite au petit bonheur, elle pourrait s’en être <nobr>inspirée.</nobr></p>
+  <p>Mais, là encore, la voie est sans issue. Si une telle alternance existe bel et bien, c’est seulement sous la forme d’une alternance exclusive et pour une catégorie très particulière de mots dérivés, ceux qui se terminent en ‑ent. On observe dans ce cas deux dérivations possibles, arbitrairement réparties selon les radicaux, l’une en ‑entai, l’autre en ‑entaire, jamais les deux à la fois. Ainsi a-t-on les deux séries <nobr>disjointes :</nobr></p>
+  <table class="quick bar" form="false">
+    <tbody>
+        <tr><td hyphens="none">fondamental</td>
+            <td hyphens="none">élémentaire</td></tr>
+        <tr><td hyphens="none">départemental</td>
+            <td hyphens="none">réglementaire</td></tr>
+        <tr><td hyphens="none">expérimental</td>
+            <td hyphens="none">complémentaire</td></tr>
+        <tr><td hyphens="none">gouvernemental</td>
+            <td hyphens="none">parlementaire</td></tr>
+        <tr><td hyphens="none">monumental</td>
+            <td hyphens="none">testamentaire</td></tr>
+        <tr><td hyphens="none">occidental</td>
+            <td hyphens="none">sédentaire</td></tr>
+        <tr><td hyphens="none">etc.</td>
+            <td hyphens="none"></td></tr></tbody></table>
+  <p>Seule exception, le doublet « dental »/« dentaire » (mais il est vrai que « dental » est une création récente de… linguistes). Qu’importe : la classe des mots sujets à cette dérivation alternative est strictement définie par la présence d’un radical lui-même suffixe en ‑ent (désignant généralement le lieu ou l’instrument d’une action). On est très loin du cas de <dops></dops><dopl> « société</dopl> ». <span class="on"><span class="note-src">Lorsque la suffixation en ‑tal s’opère sur des mots d’une autre classe (radicaux simples en ‑t), l’alternance avec ‑taire devient impossible : dialectal, digital, dotal, fatal, frontal, génital, marital, natal, sacerdotal, végétal, vital, etc.</span><span class="side note">L’unique doublet attesté est le très savant pariétal/pariétaire, qui ne vient pas d’un quelconque « pariété », mais de <i>paries</i>, la « paroi ».</span></span></p>
+  <p>Faut-il le souligner ? Jamais ces adjectifs en ‑tal ne sont issus de substantifs en ‑té. C’est l’inverse qui se produit :
+  <table class="quick fast" form="false">
+    <tbody>
+        <tr><td hyphens="none">fatal</td>
+            <td hyphens="none">: fatalité</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">natal</td>
+            <td hyphens="none">: natalité</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">vital</td>
+            <td hyphens="none">: vitalité</td>
+            <td hyphens="none"></td></tr>
+        <tr><td hyphens="none">etc.</td>
+            <td hyphens="none"></td>
+            <td hyphens="none"></td></tr></tbody></table>
+  </p>
+  <p>Ce qui ne fait que confirmer le caractère aberrant de la dérivation en sens contraire, celle qui irait de « société » à « sociétal ». <span class="on"><span class="note-src">Dans ce cas, décidément, la soudure est ratée.</span><span class="side note">Les spécialistes de néologie rappellent qu’« un vrai affixe demande un radical avec lequel il puisse se combiner » (Zwanenburg, 1987).</span></span></p>
+  <p>La linguistique n’a qu’un défaut : elle doit expliciter laborieusement ce que ressentent d’emblée les locuteurs rompus au maniement de leur langue. D’où le pédantisme des références aux sciences du langage… Fort heureusement, la plupart des locuteurs n’ont nul besoin de ces éclaircissements pour déceler les vices de fabrication les plus flagrants, tant sont prégnants les paradigmes ordinaires qui régissent le degré d’acceptabilité des néologismes.</p>
+  <div class="subhead">Une percée <nobr>théorique</nobr> ?</div>
+  <p>Pour quelles raisons, dans ces conditions, le milieu sociologique se laisse-t-il aussi aisément séduire par « sociétal » ? Comment peut-il abaisser à ce point les seuils ordinaires d’acceptabilité en matière de langage ? Les explications sont <nobr>multiples</nobr>.</p>
+  <p>Il y a d’abord le besoin qu’éprouve un milieu faiblement professionnalisé de s’accrocher à des mots qui lui soient propres et qui puissent lester un tant soit peu son maigre capital de technicité—mécanisme bien décrit par Philippe Besnard dans son histoire du mot « anomie » (Besnard, 1987).</p>
+  <p>Se greffe là-dessus le prestige du modèle américain. Car c’est aux États-Unis que <i>societal</i> a été forgé, ainsi qu’on le verra plus loin. Nous avons raisonné jusqu’ici comme si la langue française était seule en cause dans son rapport avec le latin. Lacune sans doute, mais moins grave qu’il n’y paraît. L’anglais et le français partagent pour l’essentiel le même vocabulaire savant, avec un jeu d’emprunts réciproques qui ne cesse d’actualiser et de compléter les paradigmes latins (comme la dérivation de type « con­ver­sation » ⟶ « conversationnel », très en vogue aujourd’hui). Si lourdes que soient parfois ces créations, <span class="on"><span class="note-src">elles finissent par entrer dans le lexique.</span><span class="side note">Qui sait encore que « sentimental » est passé dans notre langue à la suite du succès rencontré en France par <i>A sentimental journey</i> de Sterne (1768) ? Longtemps, le mot garda sa réputation d’anglicisme (l’éditeur de Balzac ne l’imprimait qu’en italiques). Cent ans après Sterne, quand paraît <i>L’éducation sentimentale</i>, on le trouve définitivement intégré dans la <nobr>langue.</nobr></span></span> Mais la néologie a ses limites, qui valent également pour les deux langues. <i>Societal</i> se heurte à la même absence de modèle que « sociétal » : pas d’adjectif en <i>-tal</i> sur un substantif en <i><nobr>-ty</nobr></i>.
+  <p>Soit, dira-t-on : le mot est sans modèle, le syntagme sans précédent. Mais au prix d’un accroc à la structure de la langue et sous la pression du besoin, ne pourrait-on concevoir un nouveau paradigme ? Après tout, la néologie elle-même se renouvelle, <span class="on"><span class="note-src">comme le montre l’émergence des « mots-valises », des <i>blends</i> ou des <i>Portemanteau-Wörter</i>, dont la productivité est toute récente.</span><span class="side note">Ainsi le mot autobus est-il créé en 1907 par la fusion d’automobile et d’omnibus. Puis viennent, parmi quel­ques dizaines de termes, transistor (transfer + resistor), formatique (information + électronique), gélule (gélatine + capsule), télématique (télétransmission + informatique), caméscope (caméra + <nobr>magnétoscope</nobr>)…</span></span></p>
+  <p>Qui ne voit pourtant que ce serait beaucoup d’affaire pour placer un seul mot ? Pareille innovation aurait d’abord des conséquences sur le plan linguistique, à commencer par la production éventuelle de doublets tels que libertaire/​« libertal », unitaire/​« unital », universitaire/​« universital », etc. Elle supposerait en même temps que l’enjeu en vaille la peine, en d’autres termes qu’à cette trouée dans le vocabulaire réponde une percée théorique de même <nobr>calibre</nobr>.</p>
+  <p>Faut-il perdre son temps à le démontrer ? Il n’y a rien de tel dans le néologisme qu’on nous propose. Les « variations sociétales » sont, suivant le cas, des variations nationales, culturelles, communautaires, sociales, historiques ou, plus simplement, des variations entre sociétés ou entre pays, sur la nature desquelles le mot « sociétal » permet précisément de ne pas se prononcer. L’article de Philippe d’Iribame publié dans ce même numéro a le mérite de chercher à donner un contenu (« culturel » en l’occurrence) à cette causalité toute <nobr>verbale</nobr>.</p>
+  <p>De la même façon, l’« effet sociétal » n’est, à tout prendre, qu’un <i>effet de société</i>, au sens où l’on parle communément de la société fran­çaise, de la société allemande, de la société américaine… Mais le principal effet à prendre au sérieux dans cette affaire est sans doute l’effet de science que l’expression cherche à produire, car elle permet de con­vertir instantanément un constat purement descriptif (les choses se passent différemment d’un pays à l’autre) en une pseudo-identification des causes (c’est la société qui est cause de…). Com­plè­te­ment raté dans sa morphologie, « sociétal » n’en est pas moins un mot magique. L’adjectif garde encore la société à l’état substantive, au point d’en faire à l’occasion un sujet causal. « Social », en comparaison, n’est pas si mauvais, qui conserve encore la valeur relationnelle ou interactive de ses <nobr>origines</nobr>.</p>
+  <p>Mais qu’en est-il de l’origine du mot ? C’est ici qu’il faut nous hisser, comme disait Hegel, « à la hauteur du concept ». L’émergence de <i>societal</i> dans la littérature américaine semble, en effet, avoir partie liée avec les douloureux problèmes de traduction posés par les penseurs allemands. Dans le premier chapitre de <i>Systematic sociology in Ger­many</i>, paru en 1929, Theodore Abel présente la sociologie formelle de Simmel en traduisant <i>gesellschaftlich</i> par <i>societal</i> et <i>Vergellschaftung</i> (la formation du lien social) par… <i>societalization</i>. Vingt ans plus tard, dans son grand recueil sur la sociologie de Simmel abondamment cité par des générations de sociologues, Kurt Wolff accomplit des gestes décisifs : il remplace <i>societalization</i> par <i>sociation</i>, mais con­serve <i>societal</i> en concurrence avec <i>social</i> (ainsi que les adverbes <i>societally</i> et <i>socially</i>) pour rendre indifféremment <i>sozial</i> ou <i>gesellschaftlich</i> (qui ont à la fois valeur d’adjectif et d’adverbe). De façon parfaitement aléatoire et souvent à quelques lignes d’intervalle (comme c’est le cas pp. 13, 16, 21, 22, <i>passim</i>, du recueil), sa traduction réalise toutes les permutations possibles entre les deux séries de mots ! Aimable confusion, dont on est bien en peine de tirer la moindre doctrine sur le sens de <i><nobr>societal</nobr></i>.</p>
+  <p>Pour ceux qu’étourdiraient ces vertigineuses spéculations germano-américaines, signalons l’usage plus prosaïque du terme dans la théorie de l’étiquetage des déviants, la <i>labelling theory</i> de Lemert et Becker, parfois rebaptisée <i>societal reaction theory</i>. Pour ces auteurs, en effet, le déviant reprend à son compte les réactions du corps social et finit par y conformer son comportement (Gove, 1975). Pas plus en ce cas que dans d’autres, <i>societal</i> ne s’imposait, mais on a cru mieux désigner ainsi la société environnante prise comme un tout, avec peut-être ce mince avantage pour les auteurs d’éviter la confusion entre les deux sens du mot « social » dans « corps social » en général et « travail social » en particulier. Laissons à d’autres le soin d’approfondir, s’il y a <nobr>lieu</nobr>.</p>
+  <p>L’histoire du concept n’étant d’aucun secours, pas plus que ses emplois actuels, on achèvera ce parcours sur une observation de bon sens. En est-il de même dans les autres disciplines? Que dirait-on par exemple d’économistes qui prétendraient séparer, au nom d’on ne sait quelle théorie, l’économique de l’« économal » ? Il suffit de voir ce que donneraient ailleurs les équivalents de nos distinguos entre « social » et «sociétal» et d’imaginer comment nous, sociologues, y réagirions. N’est-il pas temps de tourner vers nous-mêmes une réaction que nous ne manquerions pas d’éprouver vis-à-vis des autres sciences <nobr>sociales</nobr> ?</p>
+  <cite style="hyphens: none !important;">François Héran, <in>Pour en finir avec « sociétal » <span style="font-style: normal">in</span> Revue française de <nobr>sociologie</nobr>, XXXII</in>, <en>1991</en>.</p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<a class="nav" href="bibliographie.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="bastiat.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="bibliographie.html"><span class="arrow">←</span>&nbsp;bibliographie</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="bastiat.html">Ce qu’on voit et ce qu’on ne voit pas&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<script>
+/* let atliens = document.querySelectorAll(".side.note");
+for (var i = 0; i < atliens.length; i++) {
+    atliens[i].setAttribute("onclick", "myFunction()");
+  } */
+//
+document.addEventListener('click', toggleFullNote);
+function toggleFullNote(event) {
+  if (event.target && event.target.classList.contains('side', 'note')) {
+    if (! event.target.classList.contains('visible')) {
+      event.target.classList.add('visible');
+    } else {
+      event.target.classList.remove('visible');
+    }
+  }
+  if (event.target && event.target.parentNode.classList.contains('side', 'note')) {
+    if (! event.target.parentNode.classList.contains('visible')) {
+      event.target.parentNode.classList.add('visible');
+    } else {
+      event.target.parentNode.classList.remove('visible');
+    }
+  }
+  if (event.target && event.target.className == 'note-src') {
+    if (! event.target.nextElementSibling.classList.contains('visible')) {
+      event.target.nextElementSibling.classList.add('visible');
+    } else {
+      event.target.nextElementSibling.classList.remove('visible');
+    }
+  }
+  if (event.target && event.target.parentNode.className == 'note-src') {
+    if (! event.target.parentNode.nextElementSibling.classList.contains('visible')) {
+      event.target.parentNode.nextElementSibling.classList.add('visible');
+    } else {
+      event.target.parentNode.nextElementSibling.classList.remove('visible');
+    }
+  }
+}
+
+</script>
+
+
+</body>
+</html>

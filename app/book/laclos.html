@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="apple-touch-icon" href="core/favicon.ico" sizes="64x64">
+  <link rel="stylesheet" type="text/css" media="all" href="core/styles.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="core/woffs/SF.css" />
+  <script type="text/javascript" src="core/functions.js"></script>
+  <style>
+    div.volume {
+        font-family: dolly-caps; 
+        text-transform: lowercase;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.volume > div:nth-child(1) {
+        font-size: 130%;
+        margin-bottom: 0.66rem;
+        }
+    div.volume > div:nth-child(2) {
+        font-size: 110%;
+        }
+
+    div.volume + div.id > hr { margin-top: 1.4em; }
+    div.id hr {
+        border: none;
+        width:10%;
+        height: 1px;
+        margin: auto;
+        margin-top: 4rem;
+        margin-bottom: 1.4em;
+        }
+    div.id > div:nth-child(2) {
+        font-family: dolly-caps;
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 120%;
+        margin-bottom: 1.4em;
+        /* margin-bottom: 0.7em; */
+        }
+    div.id > div:nth-child(3) {
+        font-family: dolly-caps;
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 100%;
+        margin-bottom: 1.4em;
+        }
+  </style>
+  
+  <title>Les liaisons dangereuses | @mnrv</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="menu"><div><p id="titre"><span class="version">Version </span><span class="pleinepage" onclick="toggleFullPage()">pleine page</span> <br><span class="pleinepageclair">de</span> <span class="versionmobile">mobile</span> <span class="esper">&</span> <span class="nocturne" onclick="toggleDarkMode()">nocturne</span> <br><span class="dede">de </span> <span class="dela">la</span> maquette pour<br>le livre numérique</p><!-- <h1 class="toc-topic"><a href="commentlirecelivre.html">Comment lire ce livre</a></h1> --><h1 class="toc-topic"><a href="graphisme.html">Graphisme</a></h1><ul class="toc"><li><a href="graphisme.html">Où est la différence…<br>…quand on ne sait pas lire ?</a></li></ul><h1 class="toc-topic"><a href="typographie.html">Typographie</a></h1><ul class="toc"><li><a href="oni.html">Oni + Oni-minot</a></li><li><a href="milou.html">Milou</a></li><li><a href="houdini.html">Houdini</a></li><li><a href="minusculissime.html">Le plus petit caractère mondial</a></li><li><a href="minuscule.html">La police sur roulettes</a></li></ul><h1 class="toc-topic"><a href="ui.html">UX·UI design</a></h1><ul class="toc"><li><a href="core/nuancier">Technicouleur !</a></li></ul><h1 class="toc-topic"><a href="bibliographie.html">Bibliographie</a></h1><ul class="toc"><li><a href="heran.html"><ex>François Héran</ex><in>Pour en finir avec « sociétal »</in></a></li><li><a href="bastiat.html"><ex>Frédéric Bastiat</ex><in>Ce qu’on voit et <br class="desktop-only">ce qu’on ne voit pas</in></a></li><li><a href="rozan.html"><ex>Charles Rozan</ex><in>Petites ignorances de la conversation</in></a></li><li><a href="dequincey.html"><ex>Thomas De Quincey</ex><in>On murder</in></a></li><li><a href="crockford.html"><ex>Douglas Crockford</ex><in>How JavaScript Works</in></a></li><li><a href="wu.html"><ex>Wu Cheng’en</ex><in>Xī yóu jì</in></a></li><li><a href="dubellay.html"><ex>Joachim du Bellay</ex><in>La défense et illustration de&nbsp;la langue Française</in></a></li><li><a href="menard.html"><ex>Louis Ménard</ex><in>Simboliqe religieuse</in></a></li><li><a href="wittgenstein.html"><ex>Ludwig Wittgenstein</ex><in>Tractatus logico-philosophicus</in></a></li><li><a href="pareto.html"><ex>Vilfredo Pareto</ex><in>Trattato di sociologia generale</in></a></li><li><a href="walras.html"><ex>Léon Walras</ex><in>Éléments d’économie politique&nbsp;pure</in></a></li><li><a href="gibbon.html"><ex>Edward Gibbon</ex><in>The history of the decline and fall of the&nbsp;Roman&nbsp;Empire</in></a></li><li><a href="laclos.html"><ex>Choderlos de Laclos</ex><in>Les liaisons dangereuses</in></a></li><li><a href="marivaux.html"><ex>Marivaux</ex><in>La double inconstance</in></a></li><li><a href="parny.html"><ex>Évariste de Parny</ex><in>La guerre des dieux</in></a></li></ul><h1 class="toc-topic"><a href="beaux-arts.html">Beaux-arts</a></h1><!-- <ul class="toc"><li><a href="beaux-arts.html">La fonction détournée du langage</a></li></ul> --><h1 class="toc-topic"><a href="typographie.html">Appendice</a></h1><ul class="toc"><li><a href="baba.html">B.a.-Ba de l’économie du livre numérique</a></li><!-- <li style="color: #bbbbbb"><aa href="introduction.html">Faire court (Première préface)</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">Une cathédrale dans la bouteille</aa></li><li style="color: #bbbbbb"><aa href="introduction.html">L’avenir des escaliers</aa></li> --></ul><div class="gap" style="height:1em"></div><ul class="children"></ul><div style="display: none" class="systempreferences"><div class="box"><ul><li>Mode Nuit<button id="night_switch" type="toggle" aria-pressed="false" onclick="toggleDarkMode()"><span></span></button></li><li>Pleine Page<button id="fullpage_switch" type="toggle" aria-pressed="false" onclick="toggleFullPage()"><span></span></button></li></ul></div><div class="disclaimer" style="text-align: left;">Ces fonctions sont encore à l’état expérimental.</div></div><p id="contactme"><a href="mailto:mW0eCcOc@protonmail.com">@mnrv.github.io</a></p></div></div>
+<div id="bulletwrap"><div id="bullet"></div></div>
+<a class="navtop" href="bibliographie.html">­</a>
+<div id="content">
+  <topic id="lightswitch" class="verlag"><div class="sur">Choderlos de Laclos</div>les liaisons dangereuses</topic>
+  <div class="volume"><div>seconde partie</div></div>
+  <div class="id" id="51"><hr><div>Lettre LI</div><div>La Marquise de MERTEUIL au Vicomte de VALMONT.</div></div>
+  <p>En vé­ri­té, Vi­comte, vous êtes in­sup­por­table. Vous me trai­tez avec au­tant de lé­gè­re­té que si j’étais votre maî­tresse. Sa­vez-vous que je me fâ­che­rai, et que j’ai dans ce mo­ment une hu­meur ef­froya­ble ? Com­ment ! vous de­vez voir Danceny de­main matin ; vous sa­vez com­bien il est im­por­tant que je vous parle avant cette en­tre­vue ; et sans vous en in­quié­ter da­van­tage, vous me lais­sez vous at­ten­dre toute la jour­née, pour al­ler cou­rir je ne sais où ? Vous êtes cause que je suis ar­ri­vée <em>in­dé­cem­ment</em> tard chez M<e>me</e> de Volanges, et que tou­tes les vieil­les fem­mes m’ont trou­vée <em>mer­veil­leuse</em>. Il m’a fal­lu leur faire des ca­jo­le­ries toute la soi­rée pour les apai­ser : car il ne faut pas fâ­cher les vieil­les fem­mes ; ce sont elles qui font la ré­pu­ta­tion des jeunes.</p>
+  <p>À pré­sent il est une heure du ma­tin, et au lieu de me cou­cher, com­me j’en meurs d’en­vie, il faut que je vous écrive une longue Lettre, qui va redoubler mon sommeil par l’ennui qu’elle me causera. Vous êtes bien heureux que je n’aie pas le temps de vous gron­der da­van­tage. N’al­lez pas croire pour cela que je vous par­donne ; c’est seu­le­ment que je suis pres­sée. Écou­tez-moi donc, je me dépêche.</p>
+  <p>Pour peu que vous soyez adroit, vous de­vez avoir de­main la con­fi­dence de Danceny. Le mo­ment est fa­vo­ra­ble pour la con­fiance : c’est ce­lui du mal­heur. La pe­tite fille a été à con­fes­se ; elle a tout dit, com­me un en­fant ; et de­puis, elle est tour­men­tée à tel point de la peur du dia­ble, qu’elle veut rom­pre ab­so­lu­ment. Elle m’a ra­con­té tous ses pe­tits scru­pu­les, avec une vi­va­ci­té qui m’ap­pre­nait as­sez com­bien sa tête était mon­tée. Elle m’a mon­tré sa Let­tre de rup­ture, qui est une vraie ca­pu­ci­nade. Elle a ba­bil­lé une heure avec moi, sans me dire un mot qui ait le sens com­mun. Mais elle ne m’en a pas moins em­bar­ras­sée ; car vous ju­gez que je ne pou­vais ris­quer de m’ou­vrir vis-à-vis d’une aus­si mau­vaise tête.</p>
+  <p>J’ai vu pour­tant au mi­lieu de tout ce ba­var­dage, qu’elle n’en aime pas moins son Danceny ; j’ai re­mar­qué même une de ces res­sour­ces qui ne man­quent ja­mais à l’amour, et dont la pe­tite fille est as­sez plai­sam­ment la dupe. Tour­men­tée par le dé­sir de s’oc­cu­per de son amant, et par la crainte de se dam­ner en s’en oc­cu­pant, elle a ima­gi­né de prier Dieu de le lui faire ou­blier ; et com­me elle re­nou­velle cette pri­ère à cha­que ins­tant du jour, elle trouve le moyen d’y pen­ser sans cesse.</p>
+  <p>Avec quel­qu’un de plus <em>usagé</em> que Danceny, ce petit évé­ne­ment se­rait peut-être plus fa­vo­rable que con­trai­re ; mais le jeune hom­me est si Céladon, que si nous ne l’ai­dons pas, il lui fau­dra tant de temps pour vain­cre les plus lé­gers ob­sta­cles, qu’il ne nous lais­sera pas celui d’ef­fec­tuer notre projet.</p>
+  <p>Vous avez bien rai­son ; c’est dom­mage, et je suis aussi fâ­chée que vous qu’il soit le hé­ros de cette aven­ture : mais que vou­lez-vous ? ce qui est fait est fait ; et c’est votre faute. J’ai de­man­dé à voir <span class="innote-container"><span class="note-src">sa Ré­ponse</span><span class=innote role=note>Cette Lettre ne s’est pas retrouvée.</span></span> ; elle m’a fait pi­tié. Il lui fait des rai­son­ne­ments à perte d’ha­leine, pour lui prou­ver qu’un sen­ti­ment in­vo­lon­taire ne peut pas être un crime : com­me s’il ne ces­sait pas d’être in­vo­lon­taire du mo­ment qu’on ces­se de le com­bat­tre ! Cette idée est si sim­ple, qu’elle est ve­nue même à la pe­tite fille. Il se plaint de son mal­heur d’une ma­nière as­sez tou­chante : mais sa dou­leur est si douce et pa­raît si forte et si sin­cère, qu’il me sem­ble im­pos­si­ble qu’une fem­me qui trouve l’oc­ca­sion de dé­ses­pé­rer un hom­me à ce point, et avec aus­si peu de dan­ger, ne soit pas ten­tée de s’en pas­ser la fan­tai­sie. Il lui ex­pli­que en­fin qu’il n’est pas Moine com­me la pe­tite le croyait ; et c’est, sans con­tre­dit, ce qu’il fait de mieux : car, pour faire tant que de se livrer à l’amour Mo­nas­tique, as­su­ré­ment MM. les Che­va­liers de Malte ne mé­ri­te­raient pas la préférence.</p>
+  <p>Quoi qu’il en soit, au lieu de per­dre mon temps en rai­son­ne­ments qui m’au­raient com­pro­mise, et peut-être sans per­sua­der, j’ai ap­prou­vé le pro­jet de rup­ture : mais j’ai dit qu’il était plus hon­nête, en pa­reil cas, de dire ses rai­sons que de les écrire ; qu’il était d’usage aus­si de rendre les Let­tres et les autres ba­ga­tel­les qu’on pou­vait avoir reçues ; et pa­rais­sant en­trer ain­si dans les vues de la pe­tite per­sonne, je l’ai dé­ci­dée à don­ner un ren­dez-vous à Danceny. Nous en avons sur-le-champ con­cer­té les moyens, et je me suis char­gée de dé­ci­der la mère à sor­tir sans sa fille ; c’est de­main après-midi que se­ra cet ins­tant dé­ci­sif. Danceny en est déjà in­struit ; mais, pour Dieu, si vous en trou­vez l’oc­ca­sion, dé­ci­dez donc ce beau ber­ger à être moins lan­gou­reux ; et ap­pr­enez-lui, puis­qu’il faut lui tout dire, que la vraie fa­çon de vaincre les scru­pu­les, est de ne lais­ser rien à per­dre à ceux qui en ont.</p>
+  <p>Au res­te, pour que cette ri­di­cule scène ne se re­nou­ve­lât pas, je n’ai pas man­qué d’éle­ver quel­ques doutes dans l’es­prit de la pe­tite fille, sur la dis­cré­tion des Con­fes­seurs ; et je vous as­sure qu’elle paie à pré­sent la peur qu’elle m’a faite, par celle qu’elle a que le sien n’ail­le tout dire à sa mère. <span class="innote-container"><span class="note-src">J’es­père qu’après que j’en au­rai cau­sé en­core une fois ou deux avec elle, elle n’ira plus ra­con­ter ain­si ses sot­ti­ses au pre­mier venu.</span><span class=innote role=note>Le lec­teur a dû de­vi­ner de­puis long­temps, par les mœurs de Ma­dame de Merteuil, com­bien peu elle res­pec­tait la Re­li­gion. On au­rait sup­pri­mé tout cet ali­néa, mais on a cru qu’en mon­trant les ef­fets, on ne de­vait pas né­gli­ger d’en faire con­naî­tre les causes, <em>ndt</em>.</span></span></p>
+  <p>Adieu,&nbsp;vicomte ; em­pa­rez-vous de Danceny, et con­dui­sez-le. Il serait hon­teux que nous ne fis­sions pas ce que nous vou­lons, de deux en­fants. Si nous y trou­vons plus de peine que nous ne l’avions cru d’abord, son­geons, pour ani­mer notre zèle, vous, qu’il s’agit de la fille de Ma­dame de Volanges, et moi, qu’elle doit de­ve­nir la fem­me de Gercourt. Adieu.</p>
+  <p style="text-align: right"><i>De… ce 2 septembre 17**</i>.</p>
+  <div class="id" id="52"><hr><div>Lettre LII</div><div>Le Vicomte de VALMONT à la Présidente de TOURVEL.</div></div>
+  <p>Vous me dé­fen­dez, ma­dame, de vous par­ler de mon amour, mais où trou­ver le cou­rage né­ces­saire pour vous obéir ? Uni­que­ment oc­cu­pé d’un sen­ti­ment qui de­vrait être si doux et que vous ren­dez si cruel, lan­guis­sant dans l’exil où vous m’avez condamné, ne vi­vant que de pri­va­tions et de re­grets, en proie à des tour­ments d’au­tant plus dou­lou­reux qu’ils me rap­pellent sans cesse votre in­diffé­rence, me fau­dra-t-il en­core perdre la seule conso­la­tion qui me reste, et puis-­je en avoir d’autre que de vous offrir quel­que­fois une âme que vous rem­plis­sez de trouble et d’amer­tume ? Dé­tour­ne­rez-vous vos re­gards pour ne pas voir les pleurs que vous faites ré­pandre ? Refuse­rez-vous jusqu’à l’hom­mage des sa­cri­fices que vous exi­gez ? Ne serait-il donc pas plus digne de vous, de votre âme hon­nête et douce, de plaindre un mal­heu­reux, qui ne l’est que par vous, que de vou­loir en­core ag­gra­ver ses peines par une dé­fense à la fois in­juste et rigou­reuse ?</p>
+  <p>Vous fei­gnez de craindre l’amour, et vous ne vou­lez pas voir que vous seule cau­sez les maux que vous lui re­pro­chez. Ah ! sans doute, ce sen­ti­ment est pé­nible quand l’ob­jet qui l’ins­pire ne le par­tage point­ ; mais où trou­ver le bon­heur, si un amour réci­proque ne le pro­cure pas ? L’ami­tié tendre, la douce confiance et la seule qui soit sans ré­serve, les peines adou­cies, les plai­sirs aug­men­tés, l’es­poir en­chan­teur, les sou­ve­nirs déli­cieux, où les trou­ver ail­leurs que dans l’amour ? Vous le ca­lom­niez, vous qui, pour jouir de tous les biens qu’il offre, n’avez qu’à ne plus vous y refu­ser, et moi j’ou­blie les peines que j’éprouve pour m’oc­cu­per à le dé­fendre.</p>
+  <p>Vous me for­cez aussi à me dé­fendre moi-même, car tan­dis que je consacre ma vie à vous ado­rer, vous pas­sez la vôtre à me cher­cher des torts : déjà vous me sup­po­sez léger et trom­peur, et abu­sant contre moi de quelques er­reurs, dont moi-même je vous ai fait l’aveu, vous vous plai­sez à confondre ce que j’étais alors avec ce que je suis à pré­sent. Non contente de m’avoir livré au tour­ment de vivre loin de vous, vous y joi­gnez un per­siflage cruel sur des plai­sirs aux­quels vous sa­vez assez com­bien vous m’avez ren­du in­sen­sible. Vous ne croyez ni à mes pro­messes, ni à mes ser­ments : eh bien ! il me reste un ga­rant à vous offrir qu’au moins vous ne sus­pec­te­rez pas­ ; c’est vous-même. Je ne vous de­mande que de vous in­ter­ro­ger de bonne foi­ ; si vous ne croyez pas à mon amour, si vous dou­tez un mo­ment de ré­gner seule sur mon âme, si vous n’êtes pas assu­rée d’avoir fixé ce cœur, en effet jusqu’ici trop vo­lage, je consens à por­ter la peine de cette er­reur­ ; j’en gé­mi­rai, mais n’en ap­pel­le­rai point­ ; mais si, au contraire, nous ren­dant jus­tice à tous deux, vous êtes for­cée de conve­nir avec vous-même que vous n’avez, que vous n’au­rez ja­mais de ri­vale, ne m’obli­gez plus, je vous en sup­plie, à com­battre des chimères, et lais­sez-moi au moins cette conso­la­tion de vous voir ne plus dou­ter d’un sen­ti­ment qui, en effet, ne fini­ra, ne peut finir qu’avec ma vie. Per­met­tez-moi, ma­dame, de vous prier de ré­pondre posi­ti­ve­ment à cet ar­ticle de ma lettre.</p>
+  <p>Si j’aban­donne ce­pen­dant cette époque de ma vie, qui pa­raît me nuire si cruel­le­ment au­près de vous, ce n’est pas qu’au be­soin les rai­sons me man­quassent pour la dé­fendre.</p>
+  <p>Qu’ai-je fait, après tout, que ne pas résis­ter au tour­bil­lon dans le­quel j’avais été jeté ? En­tré dans le monde jeune et sans expé­rience, pas­sé, pour ainsi dire, de mains en mains par une foule de femmes qui, toutes, se hâtent de pré­ve­nir par leur faci­li­té une ré­flexion qu’elles sentent de­voir leur être agréable, était­ce donc à moi de don­ner l’exemple d’une résis­tance qu’on ne m’op­po­sait point, ou de­vais-je me punir d’un mo­ment d’er­reur, et que sou­vent on avait pro­vo­qué, par une constance à coup sûr inu­tile et dans la­quelle on n’au­rait vu qu’un ridi­cule ? Eh ! quel autre moyen qu’une prompte rup­ture peut justi­fier d’un choix hon­teux !</p>
+  <p>Mais, je puis le dire, cette ivresse des sens, peut-être même ce dé­lire de la vani­té, n’a point pas­sé jusqu’à mon cœur. Né pour l’amour, l’in­trigue pou­vait le dis­traire et ne suffi­sait pas pour l’oc­cu­per­ ; en­tou­ré d’ob­jets sé­dui­sants, mais mépri­sables, au­cun n’al­lait jusqu’à mon âme : on m’of­frait des plai­sirs, je cher­chais des ver­tus, et moi-même enfin je me crus in­cons­tant, parce que j’étais déli­cat et sen­sible.</p>
+  <p>C’est en vous voyant que je me suis éclai­ré : bien­tôt j’ai re­con­nu que le charme de l’amour te­nait aux qua­li­tés de l’âme­ ; qu’elles seules pou­vaient en cau­ser l’ex­cès et le justi­fier. Je sen­tis enfin qu’il m’était éga­le­ment im­pos­sible et de ne pas vous ai­mer, et d’en ai­mer une autre que vous.</p>
+  <p>Voi­là, ma­dame, quel est ce cœur au­quel vous crai­gnez de vous livrer et sur le sort de qui vous avez à pro­non­cer : mais quel que soit le des­tin que vous lui ré­ser­vez, vous ne chan­ge­rez rien aux senti­ments qui l’at­tachent à vous : ils sont inal­té­rables comme les ver­tus qui les ont fait naître.</p>
+  <p style="text-align: right"><i>De… ce 3 septembre 17**</i>.</p>
+  <cite>Pierre Choderlos de Laclos, <in>Les liaisons dangereuses</in>, <en>1782</en>.</cite>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+</div>
+
+<!-- 
+<style>
+  #gridA {
+    position: absolute;
+    top: 0.95em;
+    left: 0px;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 1;
+    width: 860px;
+    height: 2255px;
+    display: block;
+    }
+  #gridA div {
+    background: rgb(115, 161, 221);/* rgb(196,196,196); */
+    border: none;
+    height: 0.033em;
+    margin-bottom: 0.427em;
+    }
+</style>
+
+<div id="gridA" class="konami">
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+ -->
+
+<a class="nav" href="gibbon.html"><div id="prev" class="side"></div></a>
+<a class="nav" href="marivaux.html"><div id="next" class="side"></div></a>
+
+<div id="navigator" class=""><div id="navtable">
+<div><a class="box-link" href="gibbon.html"><span class="arrow">←</span>&nbsp;the decline and fall of the roman empire</a></div>
+<div class="center"><a class="box-link" href=".">index</a></div>
+<div class="center"><a class="box-link" href="bibliographie.html">chapitre</a></div>
+<div><a class="box-link" href="marivaux.html">la double inconstance&nbsp;<span class="arrow">→</span></a></div></div></div>
+
+<!-- <script type="text/javascript">
+  (function() {
+    setThemeFromCookie()
+    setSwitchState()
+    document.getElementById('lightDarkSwitchInput').onchange=toggleTheme
+  })();
+</script> -->
+</body>
+</html>
