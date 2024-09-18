@@ -540,6 +540,7 @@ img.zooom-img { filter: none; } /* addendum */
 @keyframes zooom-fade { 0% { opacity: 0 }}
 #zooom-overlay {
     background: var(--bkg);
+    background: white;
     position: fixed;
     top: 0;
     left: 0;
@@ -549,7 +550,7 @@ img.zooom-img { filter: none; } /* addendum */
     z-index: 1;
     opacity: 1;
     -webkit-animation: zooom-fade .3s;
-    animation: zooom-fade .6s
+    animation: zooom-fade .3s;
     }
 .zooom-img, .zooom-wrap {
     position: relative;
