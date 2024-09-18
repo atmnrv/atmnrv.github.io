@@ -38,6 +38,14 @@
   src: url('heliotrope_6_regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Heliotrope Caps';
+  font-style: normal;
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
+  src: url('heliotrope_6_caps_regular.woff2') format('woff2');
+}
+
 /* @font-face {
   font-family: 'Heliotrope';
   font-style: italic;

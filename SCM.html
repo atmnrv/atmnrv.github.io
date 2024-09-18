@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="alternate icon" type="image/png" href="../core/favicons/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="../core/favicons/favicon.svg">
+  <script type="text/javascript" src="app/book/core/zooom.js"></script>
+  <link rel="stylesheet" type="text/css" media="all" href="scm.css" />
+  <!-- <link rel="stylesheet" type="text/css" media="all" href="core/fonts.css" /> -->
+  <style>
+      /* #navtable > div + div {border: 0} */
+
+      :root {
+        --cust: #5758aa;
+        --txt: rgb(37, 53, 74);
+        --bkg: #f9f6ed;
+        /* --bkg: #FFFDEF; */
+        --o:   #44ae08;
+      }
+
+      /* ::-moz-selection { 
+  color: #f9f6ed;
+  background: #44ae08;
+} */
+
+/* ::selection {
+  color: #f9f6ed;
+  background: #44ae08;
+} */
+
+      a.cross::after { top: -0.25em; }
+a.cross.coma:not(.triple):not(.quadruple)::after { margin-left: 0em; }
+
+a.cross.simple::after     { content: "\FEFF†"; }
+a.cross.double::after     { content: "\FEFF‡"; }
+a.cross.triple::after     { content: "\FEFF§"; }
+a.cross.quadruple::after  { content: "\FEFF||"; font-size: 73%; -webkit-text-stroke: 0.03em; top: -0.35em; margin-left: 0.12rem; letter-spacing: -0.2em;}
+a.cross.quintuple::after  { content: "\FEFF¶"; }
+a.cross.sextuple::after   { content: "\FEFF*"; }
+
+a:after { color: #dd8e26; color: #44ae08;}
+a:hover { background: #fff7ee ; background: #7eff2612;}
+
+
+    strong {
+      font-weight: 600;
+      /* color: var(--cust); */
+    }
+    smcp {
+      font-family: Heliotrope Caps;
+      text-transform: lowercase;
+      font-feature-settings: "c2sc";
+    }
+    #content * {
+      hyphens: auto;
+    }
+    greyed {
+      color: lightgray;
+    }    
+    .subhead {
+      /* font-weight: 600; */
+      margin-bottom: 0.4rem;
+      margin-top: 1.4rem;
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+      margin-top: 1.4rem;
+      line-height: 1.3;
+      font-size: 0.96rem;
+      /* color: var(--cust); */
+    }
+    @media not all and (max-width:520px) {
+      img:not(.zooom-img) {
+      border: 1px solid lightgray;
+    }
+  }
+    @media all and (min-width:1200px) {
+      html {
+        background: rgb(243, 242, 242);
+      }
+      body {
+        max-width: calc(1000px + 3rem);
+      }
+      div#content {
+        margin-left: 14rem;
+        margin-right: 3.5rem;
+    }
+  }
+code {
+  /* color: #07a; */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  font-family: Consolas, Courier, monospace;
+  font-size: 90%;
+  background: rgb(244, 244, 244);
+  padding: 0.1em 0.1em 0 0.1em;
+  transition-property: background;
+  transition-duration: 0.1s;
+  transition-property: none;
+}
+  </style>
+
+  <title>SCM</title>
+</head>
+<body id="body">
+<div id="alert" class="">{…}</div>
+<div id="content" lang="fr">
+  <div style="font-family: 'Heliotrope'; font-weight: 600; /* text-transform: lowercase; */ /* text-indent: -1em; */">
+    <p>Objet : candidature spontanée</p>
+  </div>
+  <div class="gap" style="height:4em"></div>
+
+  <p style="margin-bottom: 1.5em; text-indent: -1em;">Monsieur Beauzamy,</p>
+
+  <p>Je vous écris dans l’espoir de poursuivre notre trop bref échange de jeudi dernier, à la suite de la conférence. Vous vouliez savoir ce que je pourrais faire pour la Société de Calcul Mathématique. Alors, j’ai pris le temps dresser une liste des tâches que je me propose d’accomplir au sein de l’entreprise, et des compétences que j’y apporterais.</p>
+
+  <p>Les activités de la <smcp>scm</smcp> sont suffisamment diverses pour que je trouve de nombreuses façons de me rendre utile. Cependant, j’ai fait le choix de me concentrer sur la société de prestation de service, pour des raisons évidentes : c’est le cœur économique de l’entreprise et l’activité qui rend toutes les autres possibles.</p>
+  <!-- <p>Je vous écris dans l’espoir de poursuivre notre bref échange à la suite de la dernière conférence. Après vous avoir fait part de mon intérêt pour la Société de Calcul Mathématique et ma volonté de la rejoindre</p> -->
+  <!-- <p>Après que je vous ai fait part de mon intérêt pour la Société de Calcul Mathématique, vous m’avez demandé de vous fournir plus de détails sur les compétences que je pourrais apporter à la <smcp>scm</smcp>.</p> -->
+
+  <!-- <p>Nous avons fait connaissance à la suite de votre dernière conférence. Je vous fis part de mon intérêt pour la Société de Calcul Mathématique.</p> -->
+  <!-- <p>À la suite de la dernière conférence, je vous faisais part de ma volonté d’intégrer votre équipe et de me mettre au service de la Société de Calcul Mathématique.</p> -->
+  <!-- <p>Nous avions échangé quelques mots à la suite de la dernière conférence </p> -->
+  <!-- <p>À la suite de la conférence</p> -->
+  <!-- <p>Je vous avais / je vous fis part d’intégrer la <smcp>scm</smcp></p> -->
+  <!-- <p>Voilà pourquoi j’ai pris le temps de </p> -->
+
+
+  <!-- <p>Après notre échange, j’ai pris quelques jours pour réfléchir et dresser une liste de mes principales attributions. </p> -->
+  <!-- <p>J’ai pris le temps dresser une liste des tâches que je me propose d’accomplir et des compétences que j’apporterais au sein de votre entreprise.</p> -->
+  
+  
+  <!-- <p>Les activités de la Société de Calcul Mathématique sont suffisamment nombreuses pour que je trouve plusieurs façons de me rendre utile à votre entreprise. Parmi ces activités, une se distingue : la société de prestation de service. Cœur économique de l’entreprise, c’est l’activité qui rend toutes les autres possibles, et, par conséquent, qui concentrera mon attention.</p> -->
+
+
+  <div class="subhead">la société de prestation de service</div>
+  <p>Une entreprise qui cherche à se développer doit impérativement <strong>se constituer une base de données clientèle</strong>—c’est le préalable de toute stratégie. La prospection est une étape laborieuse et coûteuse ; nous ne voulons pas gaspiller les efforts dans une approche trop large ou mal orientée. En structurant mieux nos démarches, nous pouvons définir des objectifs clairs et automatiser certains <nobr>processus</nobr>.</p>
+  <p>Autrement dit : <strong>démarcher moins, démarcher mieux</strong>.</p>
+  <ol>
+    <!-- <aside><p>Démarcher moins, démarcher mieux.</p></aside> -->
+    <li>
+      <p>Qui sont les clients ? Quelles sont leurs activités ? S’agit-il d’entreprises privées ou publiques, françaises ou étrangères, etc. ?—Il ne faut pas beaucoup plus pour <strong>identifier une <nobr>tendance</nobr></strong>.</p>
+      <p>Ces données peuvent être affinées par quelques observations, qui faciliteront nos démarches futures : par quel moyen le client nous a-t-il trouvé, quelle est la nature de nos missions, leur fréquence, et quelles sont les conclusions de nos prestations ? </p>
+      <p style="color: rgb(121, 121, 127); color: var(--o) /* text-indent: -1.12rem; */"><!-- <span style="vertical-align: 0.1em; line-height: 0;">☞</span>&nbsp; -->Les travaux de la <smcp>SCM</smcp> peuvent produire des résultats inattendus. Si une prestation révèle les faiblesses et conduit à la réorganisation d’une équipe de recherche « maison », nous devrions en prendre note : ce pourrait être un argument persuasif auprès d’un autre <nobr>client</nobr>.</p>
+      <p>Comprendre le client, c’est aussi comprendre les points forts et les atouts séducteurs de la <smcp>scm</smcp>.</p>
+    </li>
+    <!-- <aside><p>Fidéliser la clientèle.</p></aside> -->
+    <li>
+      <p>Si ce n’est pas déjà le cas, nous devrions appliquer une politique de <strong>suivi de la clientèle</strong> (en remerciant le client d’avoir choisi de travailler avec nous, par exemple), pour entretenir nos relations hors contrats. Compte tenu de son modèle économique (<smcp>B2B</smcp>), la <smcp>scm</smcp> devrait privilégier les relations longues avec des clients fidèles. Plus nous aidons un client, plus il lui sera difficle de partir. En outre, un client qui nous connaît sera plus susceptible de nous renouveler sa confiance ou de recommander nos services.</p>
+    </li>
+    <li>
+      <p>En parallèle, nous devrions tenir un <strong>registre des <nobr>prospections</nobr></strong>.</p>
+    </li>
+    <li>
+      <p>En concentrant nos efforts sur les marchés que nous connaissons bien, nous libérerons des ressources pour <strong>explorer de nouveaux marchés</strong>. Il existe certainement des entreprises qui ont besoin de nos services, mais qui ne nous connaissent pas—ou pis, qui nous connaissent, mais ne savent pas que la <smcp>scm</smcp> a une solution à leurs <nobr>problèmes</nobr>.</p>
+    </li>
+  </ol>
+
+  <div class="subhead">le site internet de la scm</div>
+  
+  <p>J’ignore à quelle date il fut mis en service (probablement aux détours des années 2000), mais le site de la <smcp>scm</smcp> a conservé le charme suranné des premiers jours d’internet. C’est un site qui fait très 1995—une belle <nobr>année </nobr>!</p>
+  <p>J’aimerais conserver cette esthétique. Néanmoins, le site gagnerait à être optimisé. Il est organisé, mais il l’est un peu trop ; et la logique est parfois abstruse (fiches de compétence ?). Cette complexité nuit à l’expérience du visiteur et du client. L’ergonomie est à revoir : le site doit être <strong>accueillant et intuitif</strong>. Un visiteur doit pouvoir retrouver sans peine un document qu’il a consulté précédemment. De plus, une bonne conception favorise le référencement par les moteurs de <nobr>recherche</nobr>.</p>
+  <p>Le site de la <smcp>scm</smcp> est une mine d’informations (pour peu qu’on trouve ce qu’on est venu chercher). En publiant son actualité, ses résultats, et en faisant valoir ses succès auprès des entreprises, la <smcp>scm</smcp> dispose d’un outil formidable pour s’attirer de nouveaux clients et maintenir le lien avec les familiers. Or, tel qu’il est conçu actuellement, le site souffre de ne pas savoir à quel public il s’adresse, jusqu’au point de passer pour un disque dur en accès libre. On devrait trouver en termes clairs la raison d’être de la <smcp>scm</smcp>, ses activités et les solutions qu’elle propose. Un site bien conçu devrait <strong>alléger autant que possible les démarches de prospection de <nobr>l’entreprise</nobr></strong>.</p>
+  <p>Le site internet est <strong>notre vitrine</strong>—l’interface principale entre la société et le grand public, et, bien souvent, son premier contact avec un client. Il s’agit de faire bonne <nobr>impression </nobr>!</p>
+
+  <div class="subhead">la scm sur linkedin</div>
+  <p>Est-ce que la <smcp>scm</smcp> fait de la prospection sur <nobr>LinkedIn </nobr>?</p>
+
+  <div class="subhead">la « trimestrielle »</div>
+  <aside><p>Le <code>.pdf</code> est un format “papier” à proscrire des compositions<nobr>écrans</nobr>.</p></aside>
+  <p>La liaison de la <smcp>scm</smcp> et de ses lecteurs est assurée par le biais de sa lettre trimestrielle, qui est excellente à tout point de vue. À l’exception, peut-être, de son mode de diffusion, qui a l’inconvénient de tenir les lecteurs à l’écart du site.</p>
+  <p>En revanche, le format <code>.pdf</code> nuit gravement à la fluidité du <nobr>site</nobr>.</p>
+
+  <div class="subhead">les conférences de la scm</div>
+  <p>Plus fréquentes que la « trimestrielle », et peut-être plus accessibles, les conférences de la <smcp>scm</smcp> créent de l’effervescence autour de la société et renforcent sa visiblité. Elles permettent de toucher de nouveaux publics et de développer un <nobr>réseau</nobr><!-- , et attestent de l’investissement de la <smcp>scm</smcp> dans l’actualité scientifique. La <smcp>scm</smcp> est fière de ses <nobr>résultats</nobr> -->.</p>
+  <p>Un autre aspect remarquable des ces conférences est qu’elles attestent l’engagement de la <smcp>scm</smcp> dans la vie sociale—je pense particulièrement à la conférence d’Arnaud Borderieux—et son intérêt pour les faits de société, comme la bureaucratie ou la gestion de <nobr>crise</nobr>.</p>
+  <p>L’assistance que je pourrais fournir consisterait à veiller à leur bonne organisation et à la qualité de leur captation, à proposer de nouveaux sujets, et éventuellement de nouveaux formats, à trouver des intervenants et, pourquoi pas, à jouer les modérateurs (le débat « manqué » avec Cédric Villani aurait gagné à être recentré).</p>
+  <p>Enfin, il est bon de rappeler que les conférences de la <smcp>scm</smcp> ne sont pas une source de revenus. Il convient donc de rester mesuré dans l’énergie que nous y consacrons.</p>
+
+  <div class="subhead">l’éditeur d’Archimède</div>
+  <p>J’hésite à parler d’activité péri­phé­rique, car, en consultant son catalogue, on découvre que la <smcp>scm</smcp> à publié une douzaine de livres en moins de trente ans d’existence—c’est plus que beaucoup d’auteurs.</p>
+  <p>Il n’en reste pas moins que la mise en page et la confection d’ouvrages (et toute autre publication) entreraient tout à fait dans mes compétences. J’ai appris que vous aviez composé votre Archimède avec le logiciel de traitement de texte Word. C’est méritoire, mais terriblement inefficace.</p>
+
+
+  <div class="subhead">petit point de typographie</div>
+  <aside>
+    <p>Site internet, comptes rendus, prospections, <nobr>analyses…</nobr></p>
+  </aside>
+    <p>L’essentiel des communications de la <smcp>scm</smcp> sont écrites. Et pourquoi écrit-on, si ce n’est pour convaincre ? En cela, les objectifs de la <smcp>scm</smcp> ne sont pas différents de ceux d’un écrivain : être lu est un moyen de gagner un client. <!-- Il n’y a pas de hasard à ce qu’on demande une parfaite maîtrise du français pour intégrer la <smcp>scm</smcp>—ce qu’il y a de troublant, c’est qu’on ne dise rien de la <nobr>typographie</nobr>. --></p>
+    
+  
+
+    <p>La typographie sert à conserver la plus précieuse des ressources pour un écrivain—l’attention du lecteur. C’est une ressource limitée et particulièrement volage qui demande que l’on traite ce dernier avec le plus grand soin.</p>
+    <aside>
+      <p class="image"><img class="zooom" src="rudolphinæ.png" alt="Tabulæ Rudolphinæ"></p>
+      <p><!-- Tabulæ Rudolphinæ -->une forme soignée ne nuit pas au fond</p>
+    </aside>
+    <p>En vérité, la plupart des lecteurs cherchent une raison d’arrêter de lire, non par malveillance, mais par calcul. Ils ont d'autres obligations et ne prêteront pas plus d'attention que nécessaire. L’attitude qui consiste à produire du texte comme si l’attention du lecteur était acquise est périlleuse, car on ne convainc pas sans avoir su capter l’atention en premier lieu. Dès lors que le lecteur s’est retiré, il n’y a plus personne à convaincre ; cela revient à parler seul.</p>
+    <p>Je ne dis pas que la qualité de la typographie est plus importante que celle du texte. Ce n'est pas le cas. Une bonne typographie ne remplace pas un bon texte : elle l’exalte. Si la forme est négligée, les lecteurs se détourneront du fond.</p>
+
+    <p>Je ne peux que vous encourager à consulter cette <a href="app/book/bibliographie.html" class="xref">bibliographie</a> pour vous en assurer. de mon ouvrage pour rendre compte de ce que pouvait apporter la composition numérique. Soit qu’on <em>feuillette</em> <a class="cross coma simple" href="app/book/walras.html">un traité d’économie,</a> <a class="cross coma double" href="app/book/crockford.html">un précis d’informatique,</a> <a class="cross coma triple" href="app/book/wu.html">un conte chinois,</a> <a class="cross coma quadruple" href="app/book/minusculissime.html">un commentaire sur une police d’écriture,</a> ou qu’on survole ces quel­ques lignes, la conclusion reste la même : un bon livre est, avant tout, un livre qui donne envie de lire.</p>
+
+    <p>Vous avez peut-être raison de dire que les gens, de toute façon, ne s’intéressent pas et ne lisent pas : ne leur donnons pas de raisons supplémentaires de nous ignorer.</p>
+
+
+
+
+    <div style="height: 1em"></div>
+    <div class="" style="text-align: center;">*</div>
+    <div style="height: 1em"></div>
+
+    <!-- <div class="subhead" style="text-align: center;">ce que je peux faire pour vous</div> -->
+
+    <p>Lorsque j’ai fait la démarche de rejoindre la <smcp>scm</smcp>, je convoitais le poste d’assistant de direction. J’ai la faiblesse de penser que mes compétences correspondent parfaitement à celles attendues d’un assistant de direction. Mais ce n’est pas le titre qui m’itéresse.</p>
+
+      <p>J’ai donc dressé un liste suggérant quelques idées pour le bon développement de l’entreprise. Cette liste n’est pas exhaustive ; ma modestie voulut qu’elle fît courte. Je préfère examiner vos besoins plus en détail pour y répondre de manière plus personnelle.</p>
+
+      
+      
+      <p>Lors de notre court échange, vous m'avez demandé ce que je pouvais faire. La réponse est simple : tout ce qui doit être fait pour alléger votre quotidien et vous permettre de vous concentrer sur l’essentiel.</p>
+      <p>La <smcp>scm</smcp> reste une petite structure ; ce qui appelle nécessairement à la polyvalence, m’adapter en fonction des besoins immédiats de l’entreprise.</p>
+
+      <p>Je serais donc ammener à être tour à tour administrateur (de site), correcteur, consultant, commercial, stratège, archiviste…</p>
+      
+      
+      <p>Mon rôle, en tant qu’assistant de direction, serait d’être un véritable facilitateur, que ce soit pour les tâches courantes ou pour celles plus spécifiques que vous préférez déléguer. Qu’il s’agisse de la gestion des communications, de la maintenance du site, ou encore de l’organisation de vos événements, mon objectif est de faire en sorte que tout soit fait de manière efficace, sans heurts. Sans bousculer vos habitudes. Lorsque je parle de typographie, par exemple, je n’attends pas que vous lisiez des manuels ; il s’agit de vous dire pourquoi c’est important, et ce sera fait.</p>
+      
+      <p>Mon objectif est de faciliter vos projets, de sorte que vous puissiez vous concentrer sur l'essentiel : la direction de la <smcp>scm</smcp>.</p>
+      
+      
+      <!-- <p>Je vous accompagnerai dans toutes les démarches de l’entreprise, en facilitant votre quotidien, pour que vous puissiez vous concentrer sur l’essentiel : l'orientation stratégique et la valorisation de vos résultats.</p> -->
+
+
+
+      <p>Veuillez recevoir, monsieur, l’expression de mon admiration la plus sincère, </p>
+      <p>Je vous re­mer­cie de l’at­ten­tion por­tée à ma can­di­da­ture, et reste natu­rel­le­ment dis­po­nible pour toute in­for­ma­tion complémentaire.</p>
+      <p>Veuil­lez re­ce­voir l’ex­pres­sion de mes senti­ments, &c.</p>
+      <cite style="text-align: right;"><a class="none" href="mailto:mdrans@proton.me">Mathieu Drans</a><br>17 sep 2024</cite>
+
+  <div style="height: 10em"></div>
+  <div style="height: 10em"></div>
+  <div style="height: 10em"></div>
+  <div style="height: 10em"></div>
+  <div style="height: 10em"></div>
+
+
+
+  <div style="height: 10em"></div>
+
+
+
+
+
+
+  <p>Les activités de la Société de Calcul Mathématique s’organise</p>
+  <ol>
+    <li>La société de prestation de service ;</li>
+    <li>Elle publie articles, bulletins et lettres d’information ;</li>
+    <li>Elle organise des conférences ;</li>
+    <li>Elle édite des ouvrages.</li>
+  </ol>
+  <p>La priorité sera de se constituer une base de donnée <span style="font-family: 'SFforNumbers'; font-feature-settings: 'ss19'; font-size: 158%; vertical-align: -0.1em; line-height: 0;">1</span>. Un simple document Excel</p>
+
+  <div style="height: 10em"></div>
+  <div style="height: 5em"></div>
+  <div style="height: 10em"></div>
+  <div style="height: 10em"></div>
+  <div style="height: 20em"></div>
+
+  <p>Je suis typo­graphe, gra­phiste et dessinateur.</p>
+  <p>Plu­tôt que d’en­ta­mer une énu­mé­ra­tion de com­pé­tences, je vous in­vite à visi­ter <a href="."><i>atmnrv.github.io</i>,</a> es­pace que j’ai conçu et dé­ve­lop­pé pour mon tra­vail typo­gra­phique. C’est court et il y a des images (sérigra­phie, es­tampe, des­sin…)<nnbsp></nnbsp>! S’il y a une rai­son d’ap­pré­cier mon tra­vail, c’est ici qu’elle se trouvera.</p>
+  <ol><li>Les livres numériques sont des <nobr>programmes</nobr> ;</li><li>Leur faculté programmable est un avantage décisif sur la composition manuelle et l’impression <nobr>mécanique</nobr> ;</li><li>C’est dans les livres numériques qu’on devrait trouver ses meilleures lectures. — <i>Ce qui est loin d’être le <nobr>cas</nobr> !</i></li></ol>
+
+  <p>J’aime les <i>ra­men</i>, les <i>dan­maku</i> et le <i>koi-koi</i>. — Mon inté­rêt pour la culture nip­po­ne com­mence par l’es­tampe et la car­te­rie, et se pro­longe en rhi­zone par son his­toire, ses cou­tumes et leurs ra­mi­fi­ca­tions. Un de mes grands plai­sirs consiste à jouer les cher­cheurs d’or dans les mer­veilles en­fouies qui font la ri­chesse du Ja­pon (et le charme des Ja­po­nais) en quête de quelque pé­pite de cinéma, d’édi­tion, ou de jeu vi­déo, etc.</p>
+  <p>(Comprenez que si j’aimais <i>Uro­tsuki­dōji</i>, je ne l’aurais pas dit.)</p>
+  <p>Être illus­tra­teur chez <span style="font-family: dolly-caps;">Yoko</span> est l’op­por­tu­nité rê­vée de conci­lier une pas­sion pour le des­sin et mes acti­vi­tés de chas­seur de tré­sor, et cou­ronn­ée par la grati­fi­ca­tion d’une as­pi­ra­tion pro­fes­sion­nelle: j’ai tou­jours vou­lu mettre un pied dans la mode.</p>
+  <p>Exi­geant, ri­gou­reux, d’un tem­pé­ra­ment vo­lon­taire et d’un na­tu­rel cu­rieux, j’ai le sou­ci du dé­tail au­tant que l’es­prit d’équipe. Aus­si, je me ré­jouis à la pers­pec­tive d’in­té­grer l’équipe créa­tive de <span style="font-family: dolly-caps;">Yoko</span> et de contri­buer au dé­ve­lop­pe­ment de la marque.</p>
+
+  
+  <p>Ce que j’ai à of­frir, on ne le trou­ve­ra pas ail­leurs, parce que la source de ma mo­ti­va­tion est dans la na­ture même du poste<nnbsp></nnbsp>:</p>
+  <ul>
+    <li><i>J’adore</i> la contrainte du ves­tiaire uni­sexe (unisexe&nbsp;≠&nbsp;neutre)<nnbsp></nnbsp>;</li>
+    <li>La dyna­mique entre col­lec­tion per­ma­nente et créa­tions spon­ta­nées, qui en­cou­rage les fulgu­rances artis­tiques et nour­rit la marque sur le long terme<nnbsp></nnbsp>;</li>
+    <li>La culture de l’en­tre­prise<nnbsp></nnbsp>: le ton de l’an­nonce laissant clai­re­ment en­tendre des res­pon­sa­bi­li­tés à la me­sure de l’in­ves­tis­se­ment personnel.</li></ul>
+    <p>En me pro­po­sant un cadre de tra­vail idéal, <span style="font-family: dolly-caps;">Yoko</span> de­vient le pre­mier bé­né­fi­ciaire de mes com­pé­tences et de mon sa­voir-faire, bien qu’elle soit aussi un contri­bu­teur<nnbsp></nnbsp>: à fac­teurs uniques, ré­sul­tat unique. Unique­ment pour <span style="font-family: dolly-caps;">Yoko</span>.</p> 
+  <p>Je vous re­mer­cie de l’at­ten­tion por­tée à ma can­di­da­ture, et reste natu­rel­le­ment dis­po­nible pour toute in­for­ma­tion complémentaire.</p>
+  <p>Veuil­lez re­ce­voir l’ex­pres­sion de mes senti­ments, &c.</p>
+  <cite style="text-align: right;"><a class="none" href="mailto:mdrans@proton.me">Mathieu Drans</a><br>17 sep 2024</cite>
+<!--   <p style="text-align: right; padding-top: 1em;"><i>Diplômé des Arts Décoratifs de Paris<br>Spécialité : Image Imprimée</i></p>
+ -->
+ <!--   <p style="text-align: right;"><i><a class="none" style="display: block; width: 100%;" href="beauxarts.html">Cliquer ici pour aller directement aux dessins.</a></i></p>
+ -->
+ <div class="gap" style="height:4em"></div><ul class="children"></ul>
+  <p style="text-align: center;"><i><a class="none" style="display: block; width: 100%;" href="../beauxarts.html"><span style="font-family: ScalaSans; font-size: 120%; line-height: 0;">☞</span>&nbsp;Aller directement au portfolio.</a></i></p>
+  <div class="gap" style="height:1em"></div><ul class="children"></ul>
+  </div>
+
+
+<div id="navigator" class=""><div id="navtable">
+<!-- <div></div> -->
+<div class="center"><!-- <a class="box-link" href="../.">atmnrv.github.io</a> --></div>
+<!-- <div></div> --></div></div>
+  
+  <!-- <div id="navigator" class=""><div id="navtable">
+  <div><a class="box-link" href="."><span class="arrow">←</span>vretour</a></div>
+  <div class="center"><a class="box-link" href=".">table</a></div>
+  <div><a class="box-link" href="graphisme.html">graphisme&nbsp;<span class="arrow">→</span></a></div></div></div>
+   -->
+
+<script>
+
+
+//   T A B L E   D E   N A V I G A T I O N   //
+
+const iter_navigator = () => document.getElementById("navigator");
+
+const max_scroll_height = () => document.body.scrollHeight;
+
+const reveal_bottom_nav = function() {
+    const navigator = iter_navigator();
+    if (! navigator) return;
+    const y_remaining = max_scroll_height() - (window.scrollY + window.innerHeight);
+    const invisible_threshold = body.clientWidth * .175;
+    const visible_threshold = body.clientWidth * .100;
+    const new_opacity =
+      y_remaining >= invisible_threshold ? 0
+      : y_remaining <= visible_threshold ? 1
+      : Math.pow( ((invisible_threshold - y_remaining)
+        / (invisible_threshold - visible_threshold)), 2);
+    navigator.style.opacity = new_opacity;
+    navigator.classList[new_opacity > 0 ? "add" : "remove"]("visible")
+};
+
+window.addEventListener("resize", reveal_bottom_nav);
+window.addEventListener("scroll", reveal_bottom_nav);
+
+
+//   N O T I F I C A T I O N   //   + alertswitcher()
+
+function notify(msg, duration=2000) {
+  alert_box = document.getElementById('alert');
+  alert_box.classList.add("visible");
+  alert_box.innerHTML = msg;
+  function toggle_alert() {alert_box.classList.toggle('slide');}
+  toggle_alert();
+
+  function eraser() {
+    alert_box.classList.remove("visible");
+    alert_box.removeEventListener("transitionend", eraser);
+  }
+
+  setTimeout(function() {
+    alert_box.addEventListener("transitionend", eraser);
+    toggle_alert();
+    }, duration);
+}
+
+
+/*   N O T E S   */
+
+function toggleNote(event) {
+    if (event.target && event.target.className == 'note-src') {
+      var next = event.target.nextElementSibling;
+      if (next.style.display == "block") {
+          next.style.display = "none";
+      } else {
+          next.style.display = "block";
+      }
+    }
+    if (event.target && event.target.className == 'note') {
+      if (event.target.style.display == "none") {
+          event.target.style.display = "block";
+      } else {
+          event.target.style.display = "none";
+      }
+    }
+    //mod for pp
+    if (event.target && event.target.parentNode.className == 'note') {
+      if (event.target.parentNode.style.display == "none") {
+          event.target.parentNode.style.display = "block";
+      } else {
+          event.target.parentNode.style.display = "none";
+      }
+    }
+    if (event.target && event.target.parentNode.parentNode.className == 'note') {
+      if (event.target.parentNode.parentNode.style.display == "none") {
+          event.target.parentNode.parentNode.style.display = "block";
+      } else {
+          event.target.parentNode.parentNode.style.display = "none";
+      }
+    }
+}
+
+document.addEventListener('click', toggleNote);
+
+
+</script>
+<script>
+  window.addEventListener('load', function () {
+    new Zooom({
+      zooomElement: 'img.zooom',
+      zooomWrap: 'zooom-wrap',
+      zooomImg: 'zooom-img',
+      zooomOverlay: 'zooom-overlay'
+    });
+  })
+</script>
+</body>
+</html>
